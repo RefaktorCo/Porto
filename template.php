@@ -53,12 +53,12 @@ function porto_menu_link(array $variables) {
     $element['#attributes']['class'][] = 'dropdown';
   }
   
-  if ($element['#href'] == '<front>' && drupal_is_front_page()) {
-    $element['#attributes']['class'][] = 'active-trail';
-  }
-  
   $sub_menu = $element['#below'] ? drupal_render($element['#below']) : '';
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  // if link class is active, make li class as active too
+  if(strpos($output,"active")>0){
+    $element['#attributes']['class'][] = "active";
+  }
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
