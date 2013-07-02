@@ -15,6 +15,7 @@ stylesheets[all][] = css/bootstrap-responsive.css
 stylesheets[all][] = css/theme-responsive.css
 
 scripts[] = vendor/modernizr.js
+scripts[] = js/custom.js
 
 regions[header_top] = Header Top
 regions[branding] = Branding

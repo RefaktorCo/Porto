@@ -11,6 +11,18 @@
 	float: right;
 }
 
+.dropdown i {
+	margin-left: 5px;
+}
+
+.dropdown-menu i {
+	display: none;
+}
+
+.dropdown-menu {
+	margin-top: -3px;
+}
+
 html,
 body {
 	height: 100%;

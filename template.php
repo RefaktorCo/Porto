@@ -71,15 +71,12 @@ function porto_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
-
 function porto_menu_tree($variables){
   // use global depth variable to define ul class
     global $depth;
     $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
     return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
 }
-
-
 
 /* Allow sub-menu items to be displayed */
 function porto_links($variables) {
