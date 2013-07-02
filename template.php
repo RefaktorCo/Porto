@@ -48,9 +48,17 @@ function porto_menu_link(array $variables) {
   $element = $variables['element'];
   static $item_id = 0;
   $menu_name = $element['#original_link']['menu_name'];
+  
+  // set the global depth variable
+  global $depth;
+  $depth = $element['#original_link']['depth'];
 
-  if ($element['#below']) {
+  if ( ($element['#below']) && ($depth == "1") ) {
     $element['#attributes']['class'][] = 'dropdown';
+  }
+  
+  if ( ($element['#below']) && ($depth == "2") ) {
+    $element['#attributes']['class'][] = 'dropdown-submenu';
   }
   
   $sub_menu = $element['#below'] ? drupal_render($element['#below']) : '';
@@ -63,6 +71,16 @@ function porto_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
+
+function porto_menu_tree($variables){
+  // use global depth variable to define ul class
+    global $depth;
+    $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
+    return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
+}
+
+
+
 /* Allow sub-menu items to be displayed */
 function porto_links($variables) {
   if (array_key_exists('id', $variables['attributes']) && $variables['attributes']['id'] == 'main-menu-links') {
@@ -73,18 +91,6 @@ function porto_links($variables) {
   return theme_links($variables);
 }
 
-function porto_menu_tree($variables){
-  global $cur_level;
-  $cur_level++;
-  
-  if ($cur_level == '1') {
-    return '<ul class="dropdown-menu">' . $variables['tree'] . '</ul>';
-  }
-  
-  else {
-	  return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
-  }
-}
 /**
  * Put Breadcrumbs in a ul li structure and add descending z-index style to each <a href> tag.
  */
