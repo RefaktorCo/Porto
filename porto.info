@@ -3,3 +3,31 @@ description = Responsive Drupal 7 Theme.
 core = 7.x
 engine = phptemplate
 version = 1.0-ALPHA
+
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/fonts/font-awesome/css/font-awesome.css
+stylesheets[all][] = vendor/flexslider/flexslider.css
+stylesheets[all][] = vendor/fancybox/jquery.fancybox.cs
+stylesheets[all][] = css/theme.css
+stylesheets[all][] = css/theme-elements.css
+stylesheets[all][] = css/skins/blue.css
+stylesheets[all][] = css/bootstrap-responsive.css
+stylesheets[all][] = css/theme-responsive.css
+
+scripts[] = vendor/modernizr.js
+
+regions[header_top] = Header Top
+regions[branding] = Branding
+regions[header_menu] = Header Menu
+
+regions[content]        = Content
+regions[sidebar_first]  = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[after_content]  = After Content
+
+regions[footer_1]       = Footer Box 1
+regions[footer_2]       = Footer Box 2
+regions[footer_3]       = Footer Box 3
+regions[footer_4]       = Footer Box 4
+regions[footer_bottom_left]    = Footer Bottom Left
+regions[footer_bottom_right]    = Footer Bottom Right
