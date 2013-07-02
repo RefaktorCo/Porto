@@ -71,18 +71,14 @@
 			</div>
 		</section>
 	  <?php endif; ?>
-	  
+	  <?php print render($page['before_content']); ?>
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
 	
 			    <div class="<?php if ($page['sidebar_first']) { echo "span9";} else { echo "span12"; } ?>">
 			    
-			     	<?php if ($tabs = render($tabs)): ?>
-					    <div id="drupal_tabs" class="tabs bigpadding">
-					      <?php print render($tabs); ?>
-					    </div>
-					  <?php endif; ?>
+			     	
 			      <?php print render($page['help']); ?>
 			      <?php if ($action_links): ?>
 			        <ul class="action-links">

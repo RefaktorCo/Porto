@@ -74,10 +74,17 @@ function porto_links($variables) {
 }
 
 function porto_menu_tree($variables){
-
-  return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
+  global $cur_level;
+  $cur_level++;
+  
+  if ($cur_level == '1') {
+    return '<ul class="dropdown-menu">' . $variables['tree'] . '</ul>';
+  }
+  
+  else {
+	  return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
+  }
 }
-
 /**
  * Put Breadcrumbs in a ul li structure and add descending z-index style to each <a href> tag.
  */

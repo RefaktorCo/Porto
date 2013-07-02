@@ -20,6 +20,7 @@ regions[header_top] = Header Top
 regions[branding] = Branding
 regions[header_menu] = Header Menu
 
+regions[before_content]        = Before Content
 regions[content]        = Content
 regions[sidebar_first]  = First Sidebar
 regions[sidebar_second] = Second Sidebar

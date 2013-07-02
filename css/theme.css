@@ -15,6 +15,13 @@ html,
 body {
 	height: 100%;
 }
+.md-mainimg img {
+  left: 0 !important;
+}
+
+.md-slide-wrap {
+  margin-bottom: 0px;
+}
 
 body {
 	background-color: #FFF;
