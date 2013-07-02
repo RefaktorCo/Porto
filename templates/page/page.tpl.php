@@ -8,18 +8,18 @@
 <div class="body">
   <header>
     <div class="container">
-      <div id="branding">   
+    
         
         <?php if (isset($page['branding'])) : ?>
 		      <?php print render($page['branding']); ?>
 		    <?php endif; ?>
       
 	      <?php if ($logo): ?>
-	        <div id="site-logo">
+	        <h1 class="logo">
 			      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
 			        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
 			      </a>
-	        </div>
+	        </h1>
 		    <?php endif; ?>
 		    
 		    <?php if ($site_name || $site_slogan): ?>
@@ -40,8 +40,16 @@
 		      </div> <!-- /#name-and-slogan -->
 		    <?php endif; ?>
 
-      </div>  
+    
       <!-- /branding --> 
+      <div id="header-top">
+        <?php print render($page['header_top']); ?>
+      </div>
+      
+      <nav>
+        <?php print render($page['header_menu']); ?>
+      </nav>
+      
     </div>  
 	</header>
 	
@@ -65,35 +73,38 @@
 	  <?php endif; ?>
 	  
 	  <div id="content" class="content full">
+	    <div class="container">
+	      <div class="row">
 	
-	    <div class="<?php if ($page['sidebar_first']) { echo "span9";} else { echo "span12"; } ?>">
-	    
-	     	<?php if ($tabs = render($tabs)): ?>
-			    <div id="drupal_tabs" class="tabs bigpadding">
-			      <?php print render($tabs); ?>
+			    <div class="<?php if ($page['sidebar_first']) { echo "span9";} else { echo "span12"; } ?>">
+			    
+			     	<?php if ($tabs = render($tabs)): ?>
+					    <div id="drupal_tabs" class="tabs bigpadding">
+					      <?php print render($tabs); ?>
+					    </div>
+					  <?php endif; ?>
+			      <?php print render($page['help']); ?>
+			      <?php if ($action_links): ?>
+			        <ul class="action-links">
+			          <?php print render($action_links); ?>
+			        </ul>
+			      <?php endif; ?>
+			
+					  <?php if (isset($page['content'])) : ?>
+					    <?php print render($page['content']); ?>
+					  <?php endif; ?>  
+			  
 			    </div>
-			  <?php endif; ?>
-	      <?php print render($page['help']); ?>
-	      <?php if ($action_links): ?>
-	        <ul class="action-links">
-	          <?php print render($action_links); ?>
-	        </ul>
-	      <?php endif; ?>
-	
-			  <?php if (isset($page['content'])) : ?>
-			    <?php print render($page['content']); ?>
-			  <?php endif; ?>  
-	  
-	    </div>
-	    
-	    <?php if (isset($page['sidebar_first'])) : ?>
-	    <div class="span3">
-	      <?php print render($page['sidebar_first']); ?>
-	    </div>
-	    <?php endif; ?>
-	    
-	  </div>
-		  
+			    
+			    <?php if (isset($page['sidebar_first'])) : ?>
+			    <div class="span3">
+			      <?php print render($page['sidebar_first']); ?>
+			    </div>
+			    <?php endif; ?>
+			    
+			  </div>
+	    </div>  
+	  </div>  
 	  <div class="row">
 	    <div class="span12">
 	      <?php print render($page['after_content']); ?>

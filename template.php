@@ -73,6 +73,31 @@ function porto_links($variables) {
   return theme_links($variables);
 }
 
+function porto_menu_tree($variables){
+
+  return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Put Breadcrumbs in a ul li structure and add descending z-index style to each <a href> tag.
+ */
+function porto_breadcrumb($variables) {
+ $breadcrumb = $variables['breadcrumb'];
+ $title = drupal_get_title();
+ $crumbs = '';
+ 
+ if (!empty($breadcrumb)) {
+   $crumbs = '<ul class="breadcrumb">';
+   foreach($breadcrumb as $value) {
+     $crumbs .= '<li>'.$value.' <span class="divider">/</span></li> ';
+   }
+   $crumbs .= '<li class="active">'. $title.'</li>';
+   $crumbs .= '</ul>';
+    
+ }
+ return $crumbs;
+}
+
 /**
  * Preprocess variables for the username.
  */

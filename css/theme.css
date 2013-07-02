@@ -1,3 +1,16 @@
+#branding {
+	display: inline-block;
+	float: left;
+}
+
+#header-top {
+	overflow: hidden;
+}
+
+.nav-top {
+	float: right;
+}
+
 html,
 body {
 	height: 100%;
