@@ -1,4 +1,0 @@
-Porto
-=====
-
-Porto Drupal Theme
