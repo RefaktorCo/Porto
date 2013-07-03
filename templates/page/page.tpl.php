@@ -56,7 +56,7 @@
 	<div role="main" class="main">
 	
 	  <?php if ($breadcrumb): ?>
-	  <section class="page-top">
+	  <section class="page-top breadcrumb-wrap">
 		  <div class="container">
 				<div class="row">
 					<div class="span12">
@@ -75,7 +75,7 @@
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
-	      <?php print $messages; ?>
+	      
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
 					  <div class="<?php if ($page['sidebar_right']) { echo "span3";} else { echo "span3"; } ?>">
@@ -87,6 +87,7 @@
 				  <?php endif; ?>
 			
 					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "span6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "span9"; }  else { echo "span12"; } ?>">
+					  
 					  <?php print $messages; ?>
 					  
 			     	<?php if ($tabs = render($tabs)): ?>
@@ -132,31 +133,32 @@
 			</div>
 		  
 	    <div class="span3">
-	      <?php if (isset($page['footer_col_1'])) : ?>
-			    <?php print render($page['footer_col_1']); ?>
+	      <?php if (isset($page['footer_1'])) : ?>
+			    <?php print render($page['footer_1']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
 	    <div class="span3">
-	      <?php if (isset($page['footer_col_2'])) : ?>
-			    <?php print render($page['footer_col_2']); ?>
+	      <?php if (isset($page['footer_2'])) : ?>
+			    <?php print render($page['footer_2']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span3">
-	      <?php if (isset($page['footer_col_3'])) : ?>
-			    <?php print render($page['footer_col_3']); ?>
+	    <div class="span4">
+	      <?php if (isset($page['footer_3'])) : ?>
+			    <?php print render($page['footer_3']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span3">
-	      <?php if (isset($page['footer_col_4'])) : ?>
-			    <?php print render($page['footer_col_4']); ?>
+	    <div class="span2">
+	      <?php if (isset($page['footer_4'])) : ?>
+			    <?php print render($page['footer_4']); ?>
 			  <?php endif; ?>
 	    </div>
 		    
 		</div>  
-	  <div id="secondary-footer">  
+  </div>	
+	  <div class="footer-copyright">  
 	    <div class="container">
 	      <div class="row">
 			    <div class="span6">
@@ -177,4 +179,3 @@
 	    </div>
 	  </div>  
 	</footer>
-</div>
