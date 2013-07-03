@@ -209,7 +209,7 @@ header nav ul.nav-main li.dropdown:hover > a {
 	margin-bottom:-1px;
 }
 
-header nav ul.nav-main li.dropdown:hover a.dropdown-toggle {
+header nav ul.nav-main li.dropdown:hover a {
 	-moz-border-radius: 5px 5px 0px 0px;
 	-webkit-border-radius: 5px 5px 0px 0px;
 	border-radius: 5px 5px 0px 0px;

@@ -75,10 +75,25 @@
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
-	
-			    <div class="<?php if ($page['sidebar_first']) { echo "span9";} else { echo "span12"; } ?>">
-			    
-			     	
+	      <?php print $messages; ?>
+			    <?php if ( ($page['sidebar_left']) ) : ?>
+				  <aside id="sidebar-left">
+					  <div class="<?php if ($page['sidebar_right']) { echo "span3";} else { echo "span3"; } ?>">
+					    <div id="sticky-sidebar">
+					    <?php print render($page['sidebar_left']); ?>
+					    </div>
+					  </div>
+				  </aside>
+				  <?php endif; ?>
+			
+					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "span6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "span9"; }  else { echo "span12"; } ?>">
+					  <?php print $messages; ?>
+					  
+			     	<?php if ($tabs = render($tabs)): ?>
+						  <div id="drupal_tabs" class="tabs ">
+						    <?php print render($tabs); ?>
+						  </div>
+					  <?php endif; ?>
 			      <?php print render($page['help']); ?>
 			      <?php if ($action_links): ?>
 			        <ul class="action-links">
@@ -86,17 +101,14 @@
 			        </ul>
 			      <?php endif; ?>
 			
-					  <?php if (isset($page['content'])) : ?>
-					    <?php print render($page['content']); ?>
-					  <?php endif; ?>  
+					  <?php if (isset($page['content'])) { print render($page['content']); } ?>
+					</div>
 			  
-			    </div>
-			    
-			    <?php if (isset($page['sidebar_first'])) : ?>
-			    <div class="span3">
-			      <?php print render($page['sidebar_first']); ?>
-			    </div>
-			    <?php endif; ?>
+				  <?php if ( ($page['sidebar_right']) ) : ?>
+				  <div class="<?php if ($page['sidebar_left']) { echo "span3";} else { echo "span3"; } ?>">
+				    <?php print render($page['sidebar_right']); ?>
+				  </div>
+				  <?php endif; ?>
 			    
 			  </div>
 	    </div>  
@@ -107,7 +119,7 @@
 	    </div>
 	  </div>  
 		 
-	  <?php print $messages; ?>
+	  
 	</div>
 </div>
 
