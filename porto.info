@@ -7,15 +7,30 @@ version = 1.0-ALPHA
 stylesheets[all][] = css/bootstrap.css
 stylesheets[all][] = css/fonts/font-awesome/css/font-awesome.css
 stylesheets[all][] = vendor/flexslider/flexslider.css
-stylesheets[all][] = vendor/fancybox/jquery.fancybox.cs
+stylesheets[all][] = vendor/fancybox/jquery.fancybox.css
+stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css
+stylesheets[all][] = vendor/isotope/jquery.isotope.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-elements.css
 stylesheets[all][] = css/skins/blue.css
 stylesheets[all][] = css/bootstrap-responsive.css
 stylesheets[all][] = css/theme-responsive.css
 
-
-scripts[] = vendor/modernizr.js
+scripts[] = vendor/jquery.easing.js
+scripts[] = vendor/jquery.cookie.js
+scripts[] = vendor/bootstrap.js
+scripts[] = vendor/selectnav.js
+scripts[] = vendor/twitterjs/twitter.js
+scripts[] = vendor/flexslider/jquery.flexslider.js
+scripts[] = vendor/jflickrfeed/jflickrfeed.js
+scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
+scripts[] = vendor/fancybox/jquery.fancybox.js
+scripts[] = vendor/jquery.validate.js
+scripts[] = vendor/isotope/jquery.isotope.js
+scripts[] = js/plugins.js
+scripts[] = js/views/view.home.js
+scripts[] = js/theme.js
+scripts[] = js/custom.js
 
 
 regions[header_top] = Header Top

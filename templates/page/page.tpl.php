@@ -179,31 +179,4 @@
 	    </div>
 	  </div>  
 	</footer>
-		<!-- Libs -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="sites/all/themes/porto/vendor/jquery.js"><\/script>')</script>
-		<script src="sites/all/themes/porto/vendor/jquery.easing.js"></script>
-		<script src="sites/all/themes/porto/vendor/jquery.cookie.js"></script>
-		<!-- <script src="master/style-switcher/style.switcher.js"></script> -->
-		<script src="sites/all/themes/porto/vendor/bootstrap.js"></script>
-		<script src="sites/all/themes/porto/vendor/selectnav.js"></script>
-		<script src="sites/all/themes/porto/vendor/twitterjs/twitter.js"></script>
-		<script src="sites/all/themes/porto/vendor/flexslider/jquery.flexslider.js"></script>
-		<script src="sites/all/themes/porto/vendor/jflickrfeed/jflickrfeed.js"></script>
-		<script src="sites/all/themes/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
-		<script src="sites/all/themes/porto/vendor/fancybox/jquery.fancybox.js"></script>
-		<script src="sites/all/themes/porto/vendor/jquery.validate.js"></script>
-		<script src="sites/all/themes/porto/vendor/isotope/jquery.isotope.js"></script>
-
-		<script src="sites/all/themes/porto/js/plugins.js"></script>
-		
-			<!-- Current Page Scripts -->
-		<script src="sites/all/themes/porto/js/views/view.home.js"></script>
-
-		<!-- Page Scripts -->
-
-		<!-- Theme Initializer -->
-		<script src="sites/all/themes/porto/js/theme.js"></script>
-
-		<!-- Custom JS -->
-		<script src="sites/all/themes/porto/js/custom.js"></script>
+	
