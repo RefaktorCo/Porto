@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
   $('li.dropdown a').append('<i class="icon-angle-down"></i>');
   
   $('.flexslider').flexslider({
+    slideshow: false,
     animation: "slide"
   })
   
