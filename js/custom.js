@@ -31,17 +31,21 @@ jQuery(document).ready(function ($) {
 		$("#nivoSlider").nivoSlider();
 	}
 	
-	cloud();
-
 	function cloud() {
-
-		$(".cloud").animate( {"top": "+=20px"}, 3000, "linear", function() {
-			$(".cloud").animate( {"top": "-=20px"}, 3000, "linear", function() {
-				$this.cloud();
-			});
-		});
-
+		$(".cloud").animate( {"top": "+=20px"}, 3000, "linear", cloud )
+		$(".cloud").animate( {"top": "-=20px"}, 3000, "linear", cloud );	
 	}
+	
+	cloud();
+	
+	function runIt() {
+      $('#div').show("slow")
+               .animate({"marginLeft":"300px"},8000)
+               .animate({"marginLeft":"0px"},8000)
+               .hide("slow", runIt);
+   }
+
+   runIt();
   
   $("ul.sort-source").each(function() {
 
