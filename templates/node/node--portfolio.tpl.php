@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row portfolio-wrap">
 	<div class="span6">
 	  <div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"animation":"slide", "animationLoop": true, "maxVisibleItems": 1}'>
 	    <ul class="slides">
