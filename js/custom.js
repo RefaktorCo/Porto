@@ -2,6 +2,10 @@
 jQuery(document).ready(function ($) {
   $('li.dropdown a').append('<i class="icon-angle-down"></i>');
   
+  $('.flexslider').flexslider({
+    animation: "slide"
+  })
+  
 // Circle Slider
 	if($("#fcSlideshow").get(0)) {
 		$("#fcSlideshow").flipshow();
