@@ -14,19 +14,9 @@ stylesheets[all][] = css/skins/blue.css
 stylesheets[all][] = css/bootstrap-responsive.css
 stylesheets[all][] = css/theme-responsive.css
 
-scripts[] = vendor/modernizr.js
-scripts[] = vendor/bootstrap.js
-scripts[] = vendor/jquery.easing.js
-scripts[] = vendor/jquery.cookie.js
-scripts[] = vendor/selectnav.js
-scripts[] = vendor/flexslider/jquery.flexslider.js
-scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
-scripts[] = vendor/fancybox/jquery.fancybox.js
-scripts[] = vendor/jquery.validate.js
-scripts[] = js/plugins.js
 
-scripts[] = js/theme.js
-scripts[] = js/custom.js
+scripts[] = vendor/modernizr.js
+
 
 regions[header_top] = Header Top
 regions[branding] = Branding

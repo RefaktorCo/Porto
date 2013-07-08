@@ -18,7 +18,7 @@ var Home = {
 
 	},
 
-	build: jQuery(document).ready(function ($) {
+	build: function() {
 
 		// Circle Slider
 		if($("#fcSlideshow").get(0)) {

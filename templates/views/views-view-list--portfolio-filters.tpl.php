@@ -11,7 +11,7 @@
 ?>
 
 <ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter">
-  <li><a href="#" data-option-value="*" class="active"><?php echo t('show all'); ?></a></li>
+  <li data-option-value="*" class="active"><a href="#"><?php echo t('Show All'); ?></a></li>
   <?php foreach ($rows as $id => $row): ?>
     <?php print $row; ?>
   <?php endforeach; ?>
