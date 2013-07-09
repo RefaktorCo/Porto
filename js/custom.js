@@ -1,6 +1,18 @@
 /* Add here all your JS customizations */
 jQuery(document).ready(function ($) {
 
+$(".fancybox").each(function() {
+
+			var el = $(this);
+
+			var config, defaults = {}
+			if(el.data("plugin-options"))
+				config = $.extend({}, defaults, options, el.data("plugin-options"));		
+			
+			$(this).fancybox(config);
+
+		});
+
   $("#search-block-form .form-actions").addClass("btn-primary");
 
 if($("body").hasClass("boxed"))
