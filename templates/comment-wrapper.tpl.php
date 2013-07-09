@@ -4,24 +4,23 @@
  * Contour's custom comment wrapper template.
  */
 ?>
-
-<section id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-<div class="clearfix"></div>
+<div class="post-block post-comments clearfix <?php print $classes; ?>" <?php print $attributes; ?>>
 
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
     <?php print render($title_prefix); ?>
-    <h5 class="text-color bold"><?php print t('Comments'); ?></h5>
+    	<h3><i class="icon-comments"></i><?php print t('Comments'); ?> (<?php print $node->comment_count; ?>)</h3>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
   
   <?php print render($content['comments']); ?>
 
   <?php if ($content['comment_form']): ?>
+  <div class="post-block post-leave-comment">
     <section id="comment-form-wrapper">
-      <h5 class="text-color bold"><?php print t('Add new comment'); ?></h5>
+      <h3><?php print t('Leave a comment'); ?></h3>
       <?php print render($content['comment_form']); ?>
     </section> <!-- /#comment-form-wrapper -->
-    <div class="bottom_spacer"></div>    
+  </div>  
   <?php endif; ?>
 
-</section> <!-- /#comments -->
+</div> <!-- /#comments -->

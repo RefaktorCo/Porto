@@ -1,3 +1,25 @@
+.thumbnail img {
+	display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+	height: 80px;
+	width: 80px;
+}
+
+.comment-block .pull-right {
+	margin-top: -10px;
+	margin-bottom: 5px;
+}
+
+ul.links.inline li {
+	padding-left: 10px;
+}
+
+.comment-content p {
+	clear: both;
+}
+
 #branding {
 	display: inline-block;
 	float: left;
