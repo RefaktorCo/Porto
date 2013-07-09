@@ -114,16 +114,12 @@
 			  </div>
 	    </div>  
 	  </div>  
-	  <div class="row">
-	    <div class="span12">
-	      <?php print render($page['after_content']); ?>
-	    </div>
-	  </div>  
+ 
 		 
 	  
 	</div>
 </div>
-
+  <?php print render($page['after_content']); ?>
 <footer>
   <div class="container">
     <div class="row">
@@ -158,6 +154,7 @@
 		    
 		</div>  
   </div>	
+
 	  <div class="footer-copyright">  
 	    <div class="container">
 	      <div class="row">
