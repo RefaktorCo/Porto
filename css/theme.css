@@ -39,7 +39,7 @@ border: 0px;
 	width: 80%;
 }
 
-.thumbnail img {
+.comment .thumbnail img {
 	display: block;
   max-width: 100%;
   margin-left: auto;

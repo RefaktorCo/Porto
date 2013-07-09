@@ -158,6 +158,38 @@ function porto_field($variables) {
     }
     $output .= implode(', ', $rendered_tags);
   }
+  
+  elseif ($variables['element']['#field_name'] == 'field_team_bio') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_twitter_link') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_facebook_link') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_linkedin_link') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
        
   else {
     $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
