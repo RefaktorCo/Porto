@@ -1,6 +1,8 @@
 /* Add here all your JS customizations */
 jQuery(document).ready(function ($) {
 
+
+
 $(".fancybox").each(function() {
 
 			var el = $(this);
@@ -10,6 +12,28 @@ $(".fancybox").each(function() {
 				config = $.extend({}, defaults, options, el.data("plugin-options"));		
 			
 			$(this).fancybox(config);
+
+		});
+		
+		$("ul.flickr-feed").each(function() {
+
+			var el = $(this);
+
+			var defaults = {
+				limit: 6,
+				qstrings: {
+					id: ''
+				},
+				itemTemplate: '<li><a rel="flickr" href="{{image_b}}" class="fancybox"><span class="thumbnail"><img alt="{{title}}" src="{{image_s}}" /></span></a></li>'
+			}
+
+			var config = $.extend({}, defaults, options, el.data("plugin-options"));
+
+			el.jflickrfeed(config, function(data) {
+
+				$(".fancybox[rel=flickr]").fancybox();
+
+			});
 
 		});
 
