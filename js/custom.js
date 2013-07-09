@@ -66,6 +66,12 @@ if($("body").hasClass("boxed"))
     animation: "slide"
   });
   
+  $('.testimonials .flexslider').flexslider({
+    slideshow: false,  
+    animation: "slide",
+    controlNav: false
+  }); 
+  
   $('.portfolio-wrap .flexslider').flexslider({
     slideshow: false,  
     animation: "slide"
