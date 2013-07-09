@@ -98,6 +98,14 @@ if($("body").hasClass("boxed"))
     itemMargin: 0
   });
   
+  $('.elements-slider .flexslider').flexslider({
+    animation: "slide",
+    slideshow: false, 
+    animationLoop: false,
+    controlNav: false,
+    maxVisibleItems: 1
+  });
+    
   $('.client-carousel .flexslider').flexslider({
     animation: "slide",
     animationLoop: false,
