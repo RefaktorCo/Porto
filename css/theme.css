@@ -154,7 +154,7 @@ header div.container {
 /* Search */
 header div.search {
 	float: right;
-	margin: 10px 0 0;
+	margin: 10px -40px 0px 10px;
 	min-width: 206px;
 }
 
