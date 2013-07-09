@@ -51,7 +51,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	    <h2 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 	  <?php print render($title_suffix); ?>
 	    
-	  <?php if ($display_submitted): ?>
+	  <?php if ($display_submitted && !$teaser): ?>
 	  
 	    <div class="post-meta">
 				<span><i class="icon-user"></i> By <?php print $name; ?> </span>
@@ -75,15 +75,19 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	    ?>
 	  </div>
 	  
-	  <?php if (!$page): ?>
-		  <div class="read_more"> 
-		  	<?php if($teaser): ?>
-		  	<a class="small button" href="<?php print $node_url;?>">read more</a>
-		    <?php endif;?>
-		  </div>
-		  <?php if (!$page): ?>
-		    <hr class="article-break">
-		  <?php endif; ?>  
+	 
+		  <?php if (!$page && $teaser): ?>
+	  
+	    <div class="post-meta">
+				<span><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<?php if (render($content['field_tags'])): ?> 
+				  <span><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				<?php endif; ?> 
+				<span><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
+				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right">Read more...</a>
+			</div>
+		
+	  
 	  <?php endif; ?>
 	  
 	  <?php if(!$teaser): ?>

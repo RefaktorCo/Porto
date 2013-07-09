@@ -72,6 +72,8 @@ article.post div.post-date span.day {
 /* Post Large Image */
 article.post-large-image {
 	margin-left: 60px;
+	border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
 }
 
 article.post-large-image div.post-image,
