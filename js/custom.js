@@ -59,6 +59,11 @@ if($("body").hasClass("boxed"))
 
 		});
 
+  $('.post-image .flexslider').flexslider({
+    slideshow: false,  
+    animation: "slide"
+  });
+  
   $('.portfolio-wrap .flexslider').flexslider({
     slideshow: false,  
     animation: "slide"

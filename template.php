@@ -135,6 +135,14 @@ function porto_field($variables) {
   if (!$variables['label_hidden']) {
     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';  
   }
+  
+  elseif ($variables['element']['#field_name'] == 'field_tags') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
        
   else {
     $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
