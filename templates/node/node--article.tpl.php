@@ -31,7 +31,9 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		<?php endif; ?>
 			
 		<?php if ($image_slide == 'false'): ?>
-		  <?php print render($content['field_image']); ?>
+		  <div class="single-post-image">
+		    <?php print render($content['field_image']); ?>
+		  </div>  
 		<?php endif; ?>
 			
   <?php endif; ?>
@@ -84,6 +86,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		  <?php endif; ?>  
 	  <?php endif; ?>
 	  
+	  <?php if(!$teaser): ?>
 	  <div class="post-block post-share">
 			<h3><i class="icon-share"></i>Share this post</h3>
 
@@ -109,6 +112,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
           <?php print ($profile->field_bio['und'][0]['value']); ?>
         <?php endif; ?>
 		</div>
+		<?php endif; ?>  
   
 	</div>
   

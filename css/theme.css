@@ -16,6 +16,12 @@
   margin-left: 115px;
 }
 
+.single-post-image li{
+	list-style: none;
+	margin-left: -60px;
+	margin-bottom: 30px;
+}
+
 ul.links.inline li {
 	padding-left: 10px;
 }
