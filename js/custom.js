@@ -69,12 +69,21 @@ if($("body").hasClass("boxed"))
     animation: "slide"
   });
   
+  $('.recent-posts .flexslider').flexslider({
+    animation: "slide",
+    slideshow: false, 
+    animationLoop: false,
+    directionNav: false,
+    itemWidth: 300,
+    itemMargin: 0
+  });
+  
   $('.client-carousel .flexslider').flexslider({
     animation: "slide",
     animationLoop: false,
     directionNav: false,
     itemWidth: 200,
-    itemMargin: 5
+    itemMargin: 0
   });
 
   $('li.dropdown a').append('<i class="icon-angle-down"></i>');
