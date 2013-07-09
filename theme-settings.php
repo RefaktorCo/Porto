@@ -31,7 +31,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Blog Image
     $form['options']['layout']['blog_image'] = array(
       '#type' => 'select',
-      '#title' => t('Blog Image Size'),
+      '#title' => t('Blog View Image Size'),
       '#default_value' => theme_get_setting('blog_image'),
       '#options' => array(
         'full' => t('Full (default)'),
