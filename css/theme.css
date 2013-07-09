@@ -2,6 +2,7 @@
 	-webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
+  width: 180px;
 }
 
 #search-block-form .form-actions{
@@ -11,13 +12,12 @@ float: right;
 -webkit-border-radius: 0 14px 14px 0;
 -moz-border-radius: 0 14px 14px 0;
 border-radius: 0 14px 14px 0;
-margin-right: 16px;
+margin-right: 42px;
 margin-top: -40px;
 }
 
-#search-block-form input[type="submit"] {
-
-
+#block-search-form form {
+	margin-bottom: -10px;
 }
 
 .thumbnail img {
