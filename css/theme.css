@@ -1,10 +1,18 @@
 .form-item-search-block-form input[type="text"] {
 	-webkit-border-radius: 14px 0 0 14px;
--moz-border-radius: 14px 0 0 14px;
-border-radius: 14px 0 0 14px;
+  -moz-border-radius: 14px 0 0 14px;
+  border-radius: 14px 0 0 14px;
 }
 
+#search-block-form .form-actions{
+	padding: 0px !important;
+}
 
+#search-block-form input[type="submit"] {
+	float: right;
+margin-top: -37px;
+margin-right: -12px;
+}
 
 .thumbnail img {
 	display: block;
