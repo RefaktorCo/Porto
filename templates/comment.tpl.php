@@ -48,5 +48,6 @@ global $parent_root;
     </span>  
     
   </div>
-<div class="clearfix"></div>
 </div>
+  </li>
+</ul>

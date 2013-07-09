@@ -12,6 +12,10 @@
 	margin-bottom: 5px;
 }
 
+.indented {
+  margin-left: 115px;
+}
+
 ul.links.inline li {
 	padding-left: 10px;
 }
