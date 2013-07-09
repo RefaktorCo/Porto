@@ -29,6 +29,16 @@ border: 0px;
 	margin-bottom: -10px;
 }
 
+.footer-logo {
+	float: left;
+	margin-right: 10px;
+}
+
+.footer-logo img {
+	height: 80%;
+	width: 80%;
+}
+
 .thumbnail img {
 	display: block;
   max-width: 100%;

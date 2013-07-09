@@ -45,7 +45,7 @@
       <div id="header-top">
         <?php print render($page['header_top']); ?>
       </div>
-      
+      <?php print render($page['header_icons']); ?>
       <nav>
         <?php print render($page['header_menu']); ?>
       </nav>

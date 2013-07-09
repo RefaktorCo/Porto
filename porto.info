@@ -34,6 +34,7 @@ scripts[] = js/custom.js
 
 regions[header_top] = Header Top
 regions[branding] = Branding
+regions[header_icons] = Header Icons
 regions[header_menu] = Header Menu
 
 regions[before_content]        = Before Content
