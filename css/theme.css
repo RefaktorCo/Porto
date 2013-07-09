@@ -16,6 +16,16 @@
   margin-left: 115px;
 }
 
+.post-medium-image .single-post-image {
+	overflow: hidden;
+}
+
+article.post-medium-image {
+	border-bottom: 1px solid #DDD;
+margin-bottom: 50px;
+padding-bottom: 10px;
+}
+
 .single-post-image li{
 	list-style: none;
 	margin-left: -60px;

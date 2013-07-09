@@ -171,27 +171,16 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		    ?>
 		  </div>
 		</div>
+  </div>		
+  </div>
 		
-		<div class="row">
-		  <div class="span9">  
+  <div class="row">
+		<div class="span9">  
 		  
-			  <?php if ($display_submitted && !$teaser): ?>
-			  
-			    <div class="post-meta">
-						<span><i class="icon-user"></i> By <?php print $name; ?> </span>
-						<?php if (render($content['field_tags'])): ?> 
-						  <span><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
-						<?php endif; ?> 
-						<span><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
-					</div>
-				
-			  <?php endif; ?>
-		  </div>
-		</div>
-	 
-		  <?php if (!$page && $teaser): ?>
+			  <?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
+	      <span><i class="icon-calendar"></i> <?php print format_date($node->created, 'custom', 'M d, Y'); ?> </span>
 				<span><i class="icon-user"></i> By <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
@@ -202,38 +191,10 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		
 	  
 	  <?php endif; ?>
-	  
-	  <?php if(!$teaser): ?>
-	  <div class="post-block post-share">
-			<h3><i class="icon-share"></i>Share this post</h3>
-
-			<!-- AddThis Button BEGIN -->
-			<div class="addthis_toolbox addthis_default_style ">
-				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-				<a class="addthis_button_tweet"></a>
-				<a class="addthis_button_pinterest_pinit"></a>
-				<a class="addthis_counter addthis_pill_style"></a>
-			</div>
-			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
-			<!-- AddThis Button END -->
-
+		  </div>
 		</div>
 	  
-	  <div class="post-block post-author clearfix">
-			<h3><i class="icon-user"></i>Author</h3>
-			<div class="thumbnail">
-			 <?php print $user_picture; ?>
-			</div>
-			<p><strong class="name"><?php print $name; ?> </strong></p>
-		    <?php if (isset($profile->field_bio['und'][0]['value'])): ?>
-          <?php print ($profile->field_bio['und'][0]['value']); ?>
-        <?php endif; ?>
-		</div>
-		<?php endif; ?>  
-  
-	</div>
-  
-  <?php print render($content['comments']); ?>
+
 
 </article>
 <?php endif; ?>
