@@ -5,13 +5,19 @@
 }
 
 #search-block-form .form-actions{
-	padding: 0px !important;
+background-color: #006dcc;
+padding: 3px 11px 4px 11px !important;
+float: right;
+-webkit-border-radius: 0 14px 14px 0;
+-moz-border-radius: 0 14px 14px 0;
+border-radius: 0 14px 14px 0;
+margin-right: 16px;
+margin-top: -40px;
 }
 
 #search-block-form input[type="submit"] {
-	float: right;
-margin-top: -37px;
-margin-right: -12px;
+
+
 }
 
 .thumbnail img {

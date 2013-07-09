@@ -1,6 +1,8 @@
 /* Add here all your JS customizations */
 jQuery(document).ready(function ($) {
 
+  $("#search-block-form .form-actions").addClass("btn-primary");
+
 if($("body").hasClass("boxed"))
 			return false;
 
