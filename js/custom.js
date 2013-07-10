@@ -7,16 +7,7 @@ $.scrollToTop();
 
 $("a[rel=tooltip]").tooltip();
 
-$("section.toggle label").prepend($("<i />").addClass("icon-plus"));
-		$("section.toggle label").prepend($("<i />").addClass("icon-minus"));
 
-		if ($("html").hasClass("ie8")) {
-
-			$("section.toggle input").click(function() {
-				$(this).parent().toggleClass("active");
-			});
-
-		}
 
 $(".fancybox").each(function() {
 
@@ -41,6 +32,7 @@ $(".fancybox").each(function() {
 		$(".fancybox[rel=flickr]").fancybox();
 	
   $("#search-block-form .form-actions").addClass("btn-primary");
+  $("#search-block-form--2 .form-actions").addClass("btn-primary");
 
 if($("body").hasClass("boxed"))
 			return false;
