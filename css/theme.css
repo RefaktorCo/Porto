@@ -6,11 +6,6 @@ position: absolute;
 right: 5px;
 }
 
-#block-nivo-slider-nivo-slider {
-	max-width: 940px;
-	margin: auto;
-}
-
 .theme-default .nivoSlider img {
 -moz-border-radius: 10px 10px 0px 0px;
 -webkit-border-radius: 10px 10px 0px 0px;

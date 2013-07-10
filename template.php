@@ -275,7 +275,7 @@ function porto_preprocess_html(&$vars){
     drupal_add_html_head( $bootstrap_responsive, 'wide_layout' );
   }
   
-  if (theme_get_setting('body_background') == "porto_backgrounds") {
+  if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
     drupal_add_html_head( $background_image, 'background_image');
   } 
   
