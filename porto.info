@@ -13,8 +13,6 @@ stylesheets[all][] = vendor/isotope/jquery.isotope.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-elements.css
 stylesheets[all][] = css/theme-blog.css
-stylesheets[all][] = css/less/mixins.less
-stylesheets[all][] = css/less/skin.less
 stylesheets[all][] = css/theme-responsive.css
 
 scripts[] = vendor/modernizr.js
@@ -53,3 +51,5 @@ regions[footer_3]       = Footer Box 3
 regions[footer_4]       = Footer Box 4
 regions[footer_bottom_left]    = Footer Bottom Left
 regions[footer_bottom_right]    = Footer Bottom Right
+
+settings[skin_color] = 0088cc

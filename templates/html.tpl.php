@@ -29,6 +29,8 @@
 	<?php if (theme_get_setting('site_layout') == 'boxed'): ?>
 	<script type='text/javascript'>jQuery(document).ready(function ($) { $('body').addClass('boxed'); });</script>
 	<?php endif; ?>
+	
+	
 
 <?php porto_user_css(); ?>  
 

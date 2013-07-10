@@ -39,6 +39,13 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     );
     
+     // Custom Background Color
+      $form['options']['general']['skin_color'] =array(
+        '#type' => 'jquery_colorpicker',
+		    '#title' => t('Color Scheme'),
+		    '#default_value' => theme_get_setting('skin_color'),
+      ); 
+    
     
   // Layout
   $form['options']['layout'] = array(

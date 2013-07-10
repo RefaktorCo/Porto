@@ -6,6 +6,18 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
+$less_settings = array(
+  'variables' => array(
+    '@skinColor' => '#'.theme_get_setting('skin_color').'',
+  ),
+);
+
+drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
+  'group' => CSS_THEME,
+  'preprocess' => false,
+  'less' => $less_settings,
+)); 
+
 /**
  * Assign theme hook suggestions for custom templates.
  */  

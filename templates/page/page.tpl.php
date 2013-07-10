@@ -8,7 +8,7 @@
 <div class="body">
   <header>
     <div class="container">
-    
+
         
         <?php if (isset($page['branding'])) : ?>
 		      <?php print render($page['branding']); ?>
