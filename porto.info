@@ -27,6 +27,7 @@ scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
 scripts[] = vendor/isotope/jquery.isotope.js
 scripts[] = vendor/fancybox/jquery.fancybox.js
 scripts[] = vendor/jflickrfeed/jflickrfeed.js
+scripts[] = vendor/jquery.mapmarker.js
 scripts[] = vendor/jquery.validate.js
 scripts[] = js/plugins.js
 
