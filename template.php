@@ -253,6 +253,12 @@ function porto_preprocess_html(&$vars){
     ),
   );
   
+   $background_image = array(
+    '#type' => 'markup',
+    '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
+    '#weight' => 7,
+  );
+  
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
@@ -265,9 +271,13 @@ function porto_preprocess_html(&$vars){
     drupal_add_html_head( $bootstrap_responsive_boxed, 'boxed_layout' );
   }
   
-   if (theme_get_setting('site_layout') == "wide") {
+  if (theme_get_setting('site_layout') == "wide") {
     drupal_add_html_head( $bootstrap_responsive, 'wide_layout' );
   }
+  
+  if (theme_get_setting('body_background') == "porto_backgrounds") {
+    drupal_add_html_head( $background_image, 'background_image');
+  } 
   
   if (theme_get_setting('body_background') == "custom_background_color") {
     drupal_add_html_head( $background_color, 'background_color');
