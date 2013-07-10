@@ -10,7 +10,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_tab' => 'defaults',
     '#weight' => '-10',
     '#attached' => array(
-      'css' => array(drupal_get_path('theme', 'expressa') . '/css/theme-settings.css'),
+      'css' => array(drupal_get_path('theme', 'porto') . '/css/theme-settings.css'),
     ),
   );
   
@@ -39,6 +39,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     );
     
+    
   // Layout
   $form['options']['layout'] = array(
     '#type' => 'fieldset',
@@ -55,6 +56,63 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         'boxed' => t('Boxed'),
       ),
     );
+    
+  //Background
+    $form['options']['layout']['background'] = array(
+      '#type' => 'fieldset',
+      '#title' => '<h3 class="options_heading">Background</h3>',
+      '#states' => array (
+          'visible' => array(
+            'select[name=site_layout]' => array('value' => 'boxed')
+          )
+        )
+    );
+    
+    // Body Background 
+    $form['options']['layout']['background']['body_background'] = array(
+      '#type' => 'select',
+      '#title' => 'Body Background',
+      '#default_value' => theme_get_setting('body_background'),
+      '#options' => array(
+        'porto_backgrounds' => t('Background Image (default)'),
+        'custom_background_color' => t('Background Color'),
+      ),
+    );
+    
+    // porto Background Choices
+    $form['options']['layout']['background']['background_select'] = array(
+      '#type' => 'radios',
+      '#title' => 'Select a background pattern:',
+      '#default_value' => theme_get_setting('background_select'),
+      '#options' => array(
+        'grunge_wall' => 'item',
+        'brushed_alu' => 'item',
+        'retina_wood' => 'item',
+        'noisy_grid' => 'item',
+        'dark_wood' => 'item',
+        'cartographer' => 'item',
+        'illusion' => 'item',
+        'nistri' => 'item',
+      ),
+      '#states' => array (
+          'visible' => array(
+            'select[name=body_background]' => array('value' => 'porto_backgrounds')
+          )
+        )
+      );  
+    
+      // Custom Background Color
+      $form['options']['layout']['background']['body_background_color'] =array(
+        '#type' => 'jquery_colorpicker',
+		    '#title' => t('Body Background Color'),
+		    '#default_value' => theme_get_setting('body_background_color'),
+	      '#states' => array (
+	        'visible' => array(
+	          'select[name=body_background]' => array('value' => 'custom_background_color')
+	        )
+        )
+      );    
+  
         
   // Twitter
   $form['options']['twitter'] = array(

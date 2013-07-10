@@ -253,6 +253,11 @@ function porto_preprocess_html(&$vars){
     ),
   );
   
+  $background_color = array(
+    '#type' => 'markup',
+    '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
+  );
+  
    
   drupal_add_html_head( $viewport, 'viewport');
   
@@ -262,6 +267,10 @@ function porto_preprocess_html(&$vars){
   
    if (theme_get_setting('site_layout') == "wide") {
     drupal_add_html_head( $bootstrap_responsive, 'wide_layout' );
+  }
+  
+  if (theme_get_setting('body_background') == "custom_background_color") {
+    drupal_add_html_head( $background_color, 'background_color');
   }
   
 }
