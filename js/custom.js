@@ -1,6 +1,8 @@
 /* Add here all your JS customizations */
 jQuery(document).ready(function ($) {
 
+$.scrollToTop();
+
 $("a[rel=tooltip]").tooltip();
 
 $("section.toggle label").prepend($("<i />").addClass("icon-plus"));
