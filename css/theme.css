@@ -1,3 +1,22 @@
+.theme-default .nivo-controlNav {
+margin-top: -57px;
+padding: 20px 0;
+z-index: 5;
+position: absolute;
+right: 5px;
+}
+
+#block-nivo-slider-nivo-slider {
+	max-width: 1170px;
+	margin: auto;
+}
+
+.theme-default .nivoSlider img {
+-moz-border-radius: 10px 10px 0px 0px;
+-webkit-border-radius: 10px 10px 0px 0px;
+border-radius: 10px 10px 0px 0px;
+}
+
 .form-item-search-block-form input[type="text"] {
 	-webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
