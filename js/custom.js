@@ -1,7 +1,18 @@
 /* Add here all your JS customizations */
 jQuery(document).ready(function ($) {
 
+$("a[rel=tooltip]").tooltip();
 
+$("section.toggle label").prepend($("<i />").addClass("icon-plus"));
+		$("section.toggle label").prepend($("<i />").addClass("icon-minus"));
+
+		if ($("html").hasClass("ie8")) {
+
+			$("section.toggle input").click(function() {
+				$(this).parent().toggleClass("active");
+			});
+
+		}
 
 $(".fancybox").each(function() {
 
@@ -15,28 +26,16 @@ $(".fancybox").each(function() {
 
 		});
 		
-		$("ul.flickr-feed").each(function() {
+		$('ul.flickr-feed').jflickrfeed({
+			limit: 6,
+			qstrings: {
+				id: '93691989@N03'
+			},
+			itemTemplate: '<li><a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
+	  });
 
-			var el = $(this);
-
-			var defaults = {
-				limit: 6,
-				qstrings: {
-					id: ''
-				},
-				itemTemplate: '<li><a rel="flickr" href="{{image_b}}" class="fancybox"><span class="thumbnail"><img alt="{{title}}" src="{{image_s}}" /></span></a></li>'
-			}
-
-			var config = $.extend({}, defaults, options, el.data("plugin-options"));
-
-			el.jflickrfeed(config, function(data) {
-
-				$(".fancybox[rel=flickr]").fancybox();
-
-			});
-
-		});
-
+		
+	
   $("#search-block-form .form-actions").addClass("btn-primary");
 
 if($("body").hasClass("boxed"))
