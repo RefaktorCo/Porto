@@ -31,10 +31,10 @@ $(".fancybox").each(function() {
 			qstrings: {
 				id: '93691989@N03'
 			},
-			itemTemplate: '<li><a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
+			itemTemplate: '<li><a rel="flickr" href="{{image_b}}" class="fancybox"><span class="thumbnail"><img alt="{{title}}" src="{{image_s}}" /></span></a></li>'
 	  });
 
-		
+		$(".fancybox[rel=flickr]").fancybox();
 	
   $("#search-block-form .form-actions").addClass("btn-primary");
 
