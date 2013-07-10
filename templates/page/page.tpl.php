@@ -120,7 +120,7 @@
 	</div>
 
   <?php print render($page['after_content']); ?>
-</div>
+
 <footer>
   <div class="container">
     <div class="row">
@@ -177,4 +177,4 @@
 	    </div>
 	  </div>  
 	</footer>
-	
+</div>	

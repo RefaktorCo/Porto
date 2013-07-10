@@ -232,8 +232,37 @@ function porto_preprocess_html(&$vars){
       'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
     )
   );
+  
+  $bootstrap_responsive = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/bootstrap-responsive.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+  );
+  
+  $bootstrap_responsive_boxed = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/bootstrap-responsive-boxed.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+  );
+  
    
   drupal_add_html_head( $viewport, 'viewport');
+  
+  if (theme_get_setting('site_layout') == "boxed") {
+    drupal_add_html_head( $bootstrap_responsive_boxed, 'boxed_layout' );
+  }
+  
+   if (theme_get_setting('site_layout') == "wide") {
+    drupal_add_html_head( $bootstrap_responsive, 'wide_layout' );
+  }
   
 }
 

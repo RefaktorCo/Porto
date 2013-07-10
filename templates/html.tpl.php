@@ -25,6 +25,10 @@
 	<!-- Web Fonts  -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	
+	<?php if (theme_get_setting('site_layout') == 'boxed'): ?>
+	<script type='text/javascript'>jQuery(document).ready(function ($) { $('body').addClass('boxed'); });</script>
+	<?php endif; ?>
 
 <?php porto_user_css(); ?>  
 

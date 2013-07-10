@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
 $(".contact-form .form-actions input[type='submit']").addClass("btn btn-primary btn-large");
 
-$("body").addClass("boxed");
+
 
 $.scrollToTop();
 
