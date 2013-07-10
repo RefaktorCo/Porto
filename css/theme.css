@@ -39,6 +39,11 @@ border: 0px;
 	width: 80%;
 }
 
+.contact-form .form-actions {
+	padding: 20px 0px;
+	background: transparent;
+}
+
 .comment .thumbnail img {
 	display: block;
   max-width: 100%;
