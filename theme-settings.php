@@ -38,11 +38,28 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         'medium' => t('Medium'),
       ),
     );
+    
+  // Layout
+  $form['options']['layout'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Layout'),
+  );  
+  
+    // Site Layout
+    $form['options']['layout']['site_layout'] = array(
+      '#type' => 'select',
+      '#title' => 'Body Layout',
+      '#default_value' => theme_get_setting('site_layout'),
+      '#options' => array(
+        'wide' => t('Wide (default)'),
+        'boxed' => t('Boxed'),
+      ),
+    );
         
   // Twitter
   $form['options']['twitter'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Twitter',
+    '#title' => t('Twitter'),
   );    
   
      // Twitter App Consumer Key
