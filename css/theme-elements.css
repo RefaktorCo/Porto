@@ -717,7 +717,7 @@ div.feature-box {
 div.feature-box div.feature-box-icon {
 	-moz-border-radius: 35px;
 	-webkit-border-radius: 35px;
-	background: #CCC;
+
 	border-radius: 35px;
 	color: #FFF;
 	display: inline-block;
@@ -825,8 +825,7 @@ div.flexslider-no-margin-bottom {
 /* Testimonials */
 blockquote.testimonial {
 	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	background: #CCC;
+	-webkit-border-radius: 10px; 
 	border-radius: 10px;
 	border: 0;
 	color: #666;
@@ -980,7 +979,6 @@ div.recent-posts div.date span.month {
 	-moz-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.07) inset;
 	-webkit-border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.07) inset;
-	background: #CCC;
 	border-radius: 0 0 2px 2px;
 	box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.07) inset;
 	color: #FFFFFF;

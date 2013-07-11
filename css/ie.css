@@ -15,11 +15,11 @@ html.ie8 header ul.social-icons li {
 
 /* Home */
 html.ie8 div.home-concept div.process-image img {
-	behavior: url(css/htc/PIE.htc);
+	behavior: url('css/htc/PIE.htc');
 }
 
 html.ie8 div.home-concept div.project-image img {
-	behavior: url(css/htc/PIE.htc);
+	behavior: url('css/htc/PIE.htc');
 }
 
 /* Timeline */
@@ -49,4 +49,11 @@ html.ie8 div.plan-ribbon-wrapper {
 html.ie8 div.plan-ribbon-wrapper div.plan-ribbon {
 	text-align: left;
 	padding-left: 20px;
+}
+html.ie #search-block-form .form-actions{
+  top: -3px;
+}
+
+html.ie8 footer h4 {
+font-size: 22px;
 }
