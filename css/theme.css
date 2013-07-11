@@ -1,3 +1,10 @@
+/* DEMO ONLY */
+.md-item-wrap {
+	background-image: url('../img/slidebg.jpeg');
+}
+.md-mainimg {display: none;}
+
+/* Drupal Stuff (need to organize) */
 .theme-default .nivo-controlNav {
 margin-top: -57px;
 padding: 20px 0;
