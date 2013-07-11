@@ -5,15 +5,6 @@ engine = phptemplate
 version = 1.0-ALPHA
 
 
-stylesheets[all][] = css/fonts/font-awesome/css/font-awesome.css
-stylesheets[all][] = vendor/flexslider/flexslider.css
-stylesheets[all][] = vendor/fancybox/jquery.fancybox.css
-stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css
-stylesheets[all][] = vendor/isotope/jquery.isotope.css
-stylesheets[all][] = css/theme.css
-stylesheets[all][] = css/theme-elements.css
-stylesheets[all][] = css/theme-blog.css
-
 
 scripts[] = vendor/modernizr.js
 scripts[] = vendor/bootstrap.js

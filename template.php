@@ -237,7 +237,7 @@ drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
 
 
 /**
- * Add various META tags to HTML head..
+ * Add theme META tags and style sheets to the header.
  */
 function porto_preprocess_html(&$vars){
   global $parent_root;
@@ -259,9 +259,107 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
+    '#weight' => 1,
   );
   
+  $font_awesome = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/fonts/font-awesome/css/font-awesome.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 2,
+  );
   
+  $flexslider = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/vendor/flexslider/flexslider.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 2,
+  );
+  
+  $flexslider = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/vendor/flexslider/flexslider.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 2,
+  );
+  
+  $fancybox = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/vendor/fancybox/jquery.fancybox.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 3,
+  );
+  
+  $circle_flip = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/vendor/circle-flip-slideshow/css/component.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 4,
+  );
+  
+  $isotope = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/vendor/isotope/jquery.isotope.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 5,
+  );
+  
+  $theme_style = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/theme.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 6,
+  );
+  
+  $theme_elements = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/theme-elements.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 7,
+  );
+  
+  $theme_blog = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/theme-blog.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 8,
+  );
   
   $bootstrap_responsive = array(
     '#tag' => 'link', 
@@ -271,6 +369,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
+    '#weight' => 9,
   );
   
   $bootstrap_responsive_boxed = array(
@@ -281,6 +380,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
+    '#weight' => 9,
   );
   
   $theme_responsive = array(
@@ -291,23 +391,33 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
+    '#weight' => 10,
   );
   
    $background_image = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-    '#weight' => 7,
+    '#weight' => 11,
   );
   
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
+    '#weight' => 12,
   );
   
    
   drupal_add_html_head( $viewport, 'viewport');
   
   drupal_add_html_head( $bootstrap, 'bootstrap');
+  drupal_add_html_head( $font_awesome, 'font_awesome');
+  drupal_add_html_head( $flexslider, 'flexslider');
+  drupal_add_html_head( $fancybox, 'fancybox');
+  drupal_add_html_head( $circle_flip, 'circle_flip');
+  drupal_add_html_head( $isotope, 'isotope');
+  drupal_add_html_head( $theme_style, 'theme_style');
+  drupal_add_html_head( $theme_elements, 'theme_elements');
+  drupal_add_html_head( $theme_blog, 'theme_blog');
   
   if (theme_get_setting('site_layout') == "boxed") {
     drupal_add_html_head( $bootstrap_responsive_boxed, 'boxed_layout' );

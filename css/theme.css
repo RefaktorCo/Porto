@@ -5,6 +5,11 @@
 .md-mainimg {display: none;}
 
 /* Drupal Stuff (need to organize) */
+
+.md-slide-wrap {
+  margin: 0px auto !important;
+}
+
 .theme-default .nivo-controlNav {
 margin-top: -57px;
 padding: 20px 0;
