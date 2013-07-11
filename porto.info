@@ -28,8 +28,6 @@ scripts[] = vendor/jflickrfeed/jflickrfeed.js
 scripts[] = vendor/jquery.mapmarker.js
 scripts[] = vendor/jquery.validate.js
 scripts[] = js/plugins.js
-
-
 scripts[] = js/custom.js
 
 regions[header_top] = Header Top
