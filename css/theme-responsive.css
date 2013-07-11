@@ -1,3 +1,9 @@
+@media (min-width: 979px) and (max-width: 1200px) {
+	#search-block-form--2 .form-actions { 
+		margin-right: -8px;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 979px) { 
 
 	/* Base */
@@ -21,6 +27,10 @@
 	/* Hexagon */
 	div.hexagon.pull-left-tablet {
 		margin-left: -91px;
+	}
+	
+	#search-block-form--2 .form-actions { 
+		margin-right: -62px;
 	}
 
 }
@@ -62,6 +72,14 @@
   .md-item-wrap { 
 	  margin-left: -20px;
 	  margin-right: -20px;
+  }
+  
+  .recent-posts {
+	  margin-bottom: 50px;
+  }
+  
+  #search-block-form--2 .form-item-search-block-form input[type="text"] {
+    width: 200px;
   }
 
 	div.home-intro-compact {

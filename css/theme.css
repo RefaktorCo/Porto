@@ -38,6 +38,10 @@ border-radius: 10px 10px 0px 0px;
   width: 180px;
 }
 
+#search-block-form--2 .form-item-search-block-form input[type="text"] {
+ width: 70%;
+}
+
 #search-block-form .form-actions{
 background-color: #006dcc;
 padding: 3px 11px 4px 11px !important;
@@ -52,12 +56,14 @@ margin-top: -40px;
 #search-block-form--2 .form-actions{
 background-color: #006dcc;
 padding: 3px 11px 4px 11px !important;
-float: right;
+display: inline-block;
 -webkit-border-radius: 0 14px 14px 0;
 -moz-border-radius: 0 14px 14px 0;
 border-radius: 0 14px 14px 0;
-margin-right: 42px;
-margin-top: -40px;
+position: relative;
+top: -4px;
+margin-left: -4px;
+
 }
 
 .block ul.primary li a {
