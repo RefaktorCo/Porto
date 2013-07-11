@@ -251,6 +251,7 @@ function porto_preprocess_html(&$vars){
     )
   );
   
+ 
   $bootstrap_responsive = array(
     '#tag' => 'link', 
     '#attributes' => array( 
@@ -300,6 +301,7 @@ function porto_preprocess_html(&$vars){
   if (theme_get_setting('body_background') == "custom_background_color") {
     drupal_add_html_head( $background_color, 'background_color');
   }
+
   
 }
 
