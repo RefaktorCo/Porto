@@ -156,10 +156,9 @@ $(".fancybox").each(function() {
 
 			}
 
-		});  			
-});
-
-if($("body").hasClass("boxed"))
+		});  	
+		
+		if($("body").hasClass("boxed"))
 			return false;
 
 		var headerHeight = $("body > header").height();
@@ -216,3 +215,6 @@ if($("body").hasClass("boxed"))
 			return false;
 
 		});
+		
+});
+
