@@ -39,13 +39,20 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     );
     
-     // Custom Background Color
-      $form['options']['general']['skin_color'] =array(
-        '#type' => 'jquery_colorpicker',
-		    '#title' => t('Color Scheme'),
-		    '#default_value' => theme_get_setting('skin_color'),
-      ); 
-    
+     
+  
+  // Color
+  $form['options']['color'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Color'),
+  );  
+  
+    // Custom Background Color
+    $form['options']['color']['skin_color'] =array(
+      '#type' => 'jquery_colorpicker',
+	    '#title' => t('Color Scheme'),
+	    '#default_value' => theme_get_setting('skin_color'),
+    ); 
     
   // Layout
   $form['options']['layout'] = array(
@@ -86,7 +93,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     );
     
-    // porto Background Choices
+    // Porto Background Choices
     $form['options']['layout']['background']['background_select'] = array(
       '#type' => 'radios',
       '#title' => 'Select a background pattern:',
@@ -129,11 +136,24 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         )
       );    
   
+  
+  // CSS
+  $form['options']['css'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('CSS'),
+  );
+  
+    // User CSS
+      $form['options']['css']['user_css'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Add your own CSS'),
+        '#default_value' => theme_get_setting('user_css'),
+      ); 
         
   // Twitter
   $form['options']['twitter'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Twitter'),
+    '#title' => t('Twitter API'),
   );    
   
      // Twitter App Consumer Key

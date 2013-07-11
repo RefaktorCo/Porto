@@ -32,7 +32,7 @@
 	
 	
 
-<?php porto_user_css(); ?>  
+<?php porto_user_css();?>  
 
 </head>
 
