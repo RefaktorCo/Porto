@@ -10,6 +10,13 @@
   margin: 0px auto !important;
 }
 
+.mobile-menu {
+	display: none;
+	margin-top: 55px;
+  width: 100%;
+
+}
+
 .theme-default .nivo-controlNav {
 margin-top: -57px;
 padding: 20px 0;
