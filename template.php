@@ -251,7 +251,18 @@ function porto_preprocess_html(&$vars){
     )
   );
   
- 
+  $bootstrap = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/bootstrap.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+  );
+  
+  
+  
   $bootstrap_responsive = array(
     '#tag' => 'link', 
     '#attributes' => array( 
@@ -272,6 +283,16 @@ function porto_preprocess_html(&$vars){
     ),
   );
   
+  $theme_responsive = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/theme-responsive.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+  );
+  
    $background_image = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
@@ -286,6 +307,8 @@ function porto_preprocess_html(&$vars){
    
   drupal_add_html_head( $viewport, 'viewport');
   
+  drupal_add_html_head( $bootstrap, 'bootstrap');
+  
   if (theme_get_setting('site_layout') == "boxed") {
     drupal_add_html_head( $bootstrap_responsive_boxed, 'boxed_layout' );
   }
@@ -293,6 +316,8 @@ function porto_preprocess_html(&$vars){
   if (theme_get_setting('site_layout') == "wide") {
     drupal_add_html_head( $bootstrap_responsive, 'wide_layout' );
   }
+  
+  drupal_add_html_head( $theme_responsive, 'theme_responsive');
   
   if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
     drupal_add_html_head( $background_image, 'background_image');
