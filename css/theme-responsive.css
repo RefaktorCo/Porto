@@ -58,6 +58,11 @@
   .region-header-top .search form {
 	  margin-top: 10px;
   }
+  
+  .md-item-wrap { 
+	  margin-left: -20px;
+	  margin-right: -20px;
+  }
 
 	div.home-intro-compact {
 		margin-left: 0;
