@@ -1,225 +1,6 @@
-footer h2 {
-	font-size: 1.8em;
-	margin-bottom: 14px;
-	line-height: 27px;
-}
-
-/* ' TWITTER */ 
-.tweet_list{
-	font-size:12px;
-	color:rgb(180, 180, 180) !important;
-	-webkit-transition-duration:0.2s;
-	-moz-transition-duration:0.2s;
-	-ms-transition-duration:0.2s;
-	-o-transition-duration:0.2s;
-	margin: 20px 0px 0px 0px;
-}
-
-.tweet_list img {
-margin-right: 10px;
-float: left;
-margin-bottom: 15px;
-}
-.tweet_list a{
-color:#4dbce9;
-}
-.tweet_list li {
-margin-bottom: 15px;
--webkit-transition-duration:0.2s;
--moz-transition-duration:0.2s;
--ms-transition-duration:0.2s;
--o-transition-duration:0.2s;
-letter-spacing: 0.05em;
-list-style: none;
-}
-.tweet_avatar {
-margin-right:5px;
-}
-.tweet_first {
-
-}
-.tweet_list:hover li {
-opacity:0.5;
--webkit-transition-duration:0.2s;
--moz-transition-duration:0.2s;
--ms-transition-duration:0.2s;
--o-transition-duration:0.2s;
-}
-.tweet_list li:hover {
-opacity:1;
--webkit-transition-duration:0.2s;
--moz-transition-duration:0.2s;
--ms-transition-duration:0.2s;
--o-transition-duration:0.2s;
-}
-
-/* Drupal Stuff (need to organize) */
-
-.md-slide-wrap {
-  margin-bottom: 0px !important;
-}
-
-.mobile-menu {
-	display: none;
-	margin-top: 55px;
-  width: 100%;
-
-}
-
-.theme-default .nivo-controlNav {
-margin-top: -57px;
-padding: 20px 0;
-z-index: 5;
-position: absolute;
-right: 5px;
-}
-
-.theme-default .nivoSlider img {
--moz-border-radius: 10px 10px 0px 0px;
--webkit-border-radius: 10px 10px 0px 0px;
-border-radius: 10px 10px 0px 0px;
-}
-
-.form-item-search-block-form input[type="text"] {
-	-webkit-border-radius: 14px 0 0 14px;
-  -moz-border-radius: 14px 0 0 14px;
-  border-radius: 14px 0 0 14px;
-  width: 180px;
-}
-
-#search-block-form--2 .form-item-search-block-form input[type="text"] {
-  width: 70%;
-}
-
-#search-block-form .form-actions{
-background-color: #006dcc;
-padding: 3px 11px 4px 11px !important;
-display: inline-block;
--webkit-border-radius: 0 14px 14px 0;
--moz-border-radius: 0 14px 14px 0;
-border-radius: 0 14px 14px 0;
-position: relative;
-top: -4px;
-margin-left: -4px;
-}
-
-#search-block-form--2 .form-actions{
-background-color: #006dcc;
-padding: 3px 11px 4px 11px !important;
-display: inline-block;
--webkit-border-radius: 0 14px 14px 0;
--moz-border-radius: 0 14px 14px 0;
-border-radius: 0 14px 14px 0;
-position: relative;
-top: -4px;
-margin-left: -4px;
-
-}
-
-.block ul.primary li a {
-background: transparent;
-border: 0px;
-}
-
-.block ul.primary {
-	border-bottom: 0px;
-}
-
-#block-search-form form {
-	margin-bottom: -10px;
-}
-
-.footer-logo {
-	float: left;
-	margin-right: 10px;
-}
-
-.footer-logo img {
-	height: 35px;
-}
-
-.contact-form .form-actions {
-	padding: 20px 0px;
-	background: transparent;
-}
-
-.comment .thumbnail img {
-	display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-	height: 80px;
-	width: 80px;
-}
-
-.comment-block .pull-right {
-	margin-top: -10px;
-	margin-bottom: 5px;
-}
-
-.indented {
-  margin-left: 115px !important;
-}
-
-.post-medium-image .single-post-image {
-	overflow: hidden;
-}
-
-article.post-medium-image {
-	border-bottom: 1px solid #DDD;
-margin-bottom: 50px;
-padding-bottom: 10px;
-}
-
-.single-post-image li{
-	list-style: none;
-	margin-left: -60px;
-	margin-bottom: 30px;
-}
-
-ul.links.inline li {
-	padding-left: 10px;
-}
-
-.comment-content p {
-	clear: both;
-}
-
-#branding {
-	display: inline-block;
-	float: left;
-}
-
-#header-top {
-	overflow: hidden;
-}
-
-.nav-top {
-	float: right;
-}
-
-.dropdown i {
-	margin-left: 5px;
-}
-
-.dropdown-menu i {
-	display: none;
-}
-
-.dropdown-menu {
-	margin-top: -3px;
-}
-
 html,
 body {
 	height: 100%;
-}
-.md-mainimg img {
-  left: 0 !important;
-}
-
-.md-slide-wrap {
-  margin-bottom: 0px;
 }
 
 body {
@@ -1067,4 +848,224 @@ a.scroll-to-top:hover {
 a.scroll-to-top.visible {
 	filter: alpha(opacity=75);
 	opacity: 0.75;
+}
+
+/* DRUPAL THEME STYLES */
+
+.md-slide-wrap {
+  margin-bottom: 0px !important;
+}
+
+.mobile-menu {
+	display: none;
+	margin-top: 55px;
+  width: 100%;
+
+}
+
+.md-mainimg img {
+  left: 0 !important;
+}
+
+.md-slide-wrap {
+  margin-bottom: 0px;
+}
+
+.theme-default .nivo-controlNav {
+	margin-top: -57px;
+	padding: 20px 0;
+	z-index: 5;
+	position: absolute;
+	right: 5px;
+}
+
+.theme-default .nivoSlider img {
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.form-item-search-block-form input[type="text"] {
+	-webkit-border-radius: 14px 0 0 14px;
+  -moz-border-radius: 14px 0 0 14px;
+  border-radius: 14px 0 0 14px;
+  width: 180px;
+}
+
+#search-block-form--2 .form-item-search-block-form input[type="text"] {
+  width: 70%;
+}
+
+#search-block-form .form-actions{
+	background-color: #006dcc;
+	padding: 3px 11px 4px 11px !important;
+	display: inline-block;
+	-webkit-border-radius: 0 14px 14px 0;
+	-moz-border-radius: 0 14px 14px 0;
+	border-radius: 0 14px 14px 0;
+	position: relative;
+	top: -4px;
+	margin-left: -4px;
+}
+
+#search-block-form--2 .form-actions{
+	background-color: #006dcc;
+	padding: 3px 11px 4px 11px !important;
+	display: inline-block;
+	-webkit-border-radius: 0 14px 14px 0;
+	-moz-border-radius: 0 14px 14px 0;
+	border-radius: 0 14px 14px 0;
+	position: relative;
+	top: -4px;
+	margin-left: -4px;
+}
+
+.block ul.primary li a {
+	background: transparent;
+	border: 0px;
+}
+
+.block ul.primary {
+	border-bottom: 0px;
+}
+
+#block-search-form form {
+	margin-bottom: -10px;
+}
+
+.footer-logo {
+	float: left;
+	margin-right: 10px;
+}
+
+.footer-logo img {
+	height: 35px;
+}
+
+.contact-form .form-actions {
+	padding: 20px 0px;
+	background: transparent;
+}
+
+.comment .thumbnail img {
+	display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+	height: 80px;
+	width: 80px;
+}
+
+.comment-block .pull-right {
+	margin-top: -10px;
+	margin-bottom: 5px;
+}
+
+.indented {
+  margin-left: 115px !important;
+}
+
+.post-medium-image .single-post-image {
+	overflow: hidden;
+}
+
+article.post-medium-image {
+	border-bottom: 1px solid #DDD;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
+
+.single-post-image li{
+	list-style: none;
+	margin-left: -60px;
+	margin-bottom: 30px;
+}
+
+ul.links.inline li {
+	padding-left: 10px;
+}
+
+.comment-content p {
+	clear: both;
+}
+
+#branding {
+	display: inline-block;
+	float: left;
+}
+
+#header-top {
+	overflow: hidden;
+}
+
+.nav-top {
+	float: right;
+}
+
+.dropdown i {
+	margin-left: 5px;
+}
+
+.dropdown-menu i {
+	display: none;
+}
+
+.dropdown-menu {
+	margin-top: -3px;
+}
+
+footer h2 {
+	font-size: 1.8em;
+	margin-bottom: 14px;
+	line-height: 27px;
+}
+
+/* TWITTER  WIDGET */ 
+.tweet_list{
+	font-size:12px;
+	color:rgb(180, 180, 180) !important;
+	-webkit-transition-duration:0.2s;
+	-moz-transition-duration:0.2s;
+	-ms-transition-duration:0.2s;
+	-o-transition-duration:0.2s;
+	margin: 20px 0px 0px 0px;
+}
+
+.tweet_list img {
+	margin-right: 10px;
+	float: left;
+	margin-bottom: 15px;
+}
+
+.tweet_list a{
+	color:#4dbce9;
+}
+
+.tweet_list li {
+	margin-bottom: 15px;
+	-webkit-transition-duration:0.2s;
+	-moz-transition-duration:0.2s;
+	-ms-transition-duration:0.2s;
+	-o-transition-duration:0.2s;
+	letter-spacing: 0.05em;
+	list-style: none;
+}
+.tweet_avatar {
+  margin-right:5px;
+}
+
+.tweet_list:hover li {
+	opacity:0.5;
+	-webkit-transition-duration:0.2s;
+	-moz-transition-duration:0.2s;
+	-ms-transition-duration:0.2s;
+	-o-transition-duration:0.2s;
+}
+
+.tweet_list li:hover {
+	opacity:1;
+	-webkit-transition-duration:0.2s;
+	-moz-transition-duration:0.2s;
+	-ms-transition-duration:0.2s;
+	-o-transition-duration:0.2s;
 }
