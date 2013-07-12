@@ -178,5 +178,4 @@
 	  </div>  
 	</footer>
 	
-<script src="<?php global $parent_root; echo $parent_root; ?>/master/style-switcher/style.switcher.js"></script> 
 </div>	

@@ -28,17 +28,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value' => theme_get_setting('breadcrumbs'),
     );
     
-    // Blog Image
-    $form['options']['general']['blog_image'] = array(
-      '#type' => 'select',
-      '#title' => t('Blog View Image Size'),
-      '#default_value' => theme_get_setting('blog_image'),
-      '#options' => array(
-        'full' => t('Full (default)'),
-        'medium' => t('Medium'),
-      ),
-    );
-    
+   
      
   
   // Color
@@ -134,8 +124,31 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
 	          'select[name=body_background]' => array('value' => 'custom_background_color')
 	        )
         )
-      );    
-  
+      );   
+      
+      // Portfolio Columns
+      $form['options']['layout']['portfolio_columns'] = array(
+        '#type' => 'select',
+        '#title' => t('Portfolio Columns'),
+        '#default_value' => theme_get_setting('portfolio_columns'),
+        '#options' => array(
+          'span6' => 'Two',
+          'span4' => 'Three',
+          'span3' => 'Four (default)',
+        ),
+      ); 
+      
+       // Blog Image
+    $form['options']['layout']['blog_image'] = array(
+      '#type' => 'select',
+      '#title' => t('Blog View Image Size'),
+      '#default_value' => theme_get_setting('blog_image'),
+      '#options' => array(
+        'full' => t('Full (default)'),
+        'medium' => t('Medium'),
+      ),
+    );
+    
   
   // CSS
   $form['options']['css'] = array(
