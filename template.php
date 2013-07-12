@@ -54,7 +54,9 @@ function porto_process_page(&$variables) {
   }
 }	
 
-/* Assign top level menu list items an ascending class of menu_$number  */
+/**
+ * Set up menu.
+ */
 function porto_menu_link(array $variables) {
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
@@ -83,14 +85,19 @@ function porto_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
+/**
+ * Define menu UL class.
+ */
 function porto_menu_tree($variables){
   // use global depth variable to define ul class
-    global $depth;
-    $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
-    return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
+  global $depth;
+  $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
+  return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
 }
 
-/* Allow sub-menu items to be displayed */
+/**
+ * Allow sub-menu links to display.
+ */
 function porto_links($variables) {
   if (array_key_exists('id', $variables['attributes']) && $variables['attributes']['id'] == 'main-menu-links') {
   	$pid = variable_get('menu_main_links_source', 'main-menu');
@@ -100,6 +107,9 @@ function porto_links($variables) {
   return theme_links($variables);
 }
 
+/**
+ * Customize search form.
+ */
 function porto_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
   
@@ -108,10 +118,8 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#title_display'] = 'invisible';
     $form_default = t('Search...');
     $form['search_block_form']['#default_value'] = $form_default;
-    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() . '/img/search_icon.png', '#alt' => 'search');
-    
-
-$form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
+    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . drupal_get_path('theme', 'porto') . '/img/search_icon.png', '#alt' => 'search');
+    $form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
   }
 } 
 
@@ -252,7 +260,6 @@ drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
   'preprocess' => false,
   'less' => $less_settings,
 )); 
-
 
 /**
  * Add theme META tags and style sheets to the header.
@@ -424,7 +431,6 @@ function porto_preprocess_html(&$vars){
     '#weight' => 12,
   );
   
-   
   drupal_add_html_head( $viewport, 'viewport');
   
   drupal_add_html_head( $bootstrap, 'bootstrap');
@@ -455,7 +461,6 @@ function porto_preprocess_html(&$vars){
     drupal_add_html_head( $background_color, 'background_color');
   }
 
-  
 }
 
 ?>
