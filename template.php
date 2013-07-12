@@ -6,7 +6,17 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
-
+function porto_html_head_alter(&$head_elements) {
+	unset($head_elements['system_meta_generator']);
+	foreach ($head_elements as $key => $element) {
+		if (isset($element['#attributes']['rel']) && $element['#attributes']['rel'] == 'canonical') {
+		  unset($head_elements[$key]);
+		}
+		if (isset($element['#attributes']['rel']) && $element['#attributes']['rel'] == 'shortlink') {
+		  unset($head_elements[$key]);
+		}
+  }
+}
 
 /**
  * Assign theme hook suggestions for custom templates.
@@ -98,7 +108,7 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#title_display'] = 'invisible';
     $form_default = t('Search...');
     $form['search_block_form']['#default_value'] = $form_default;
-    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() . '/img/search_icon.png');
+    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() . '/img/search_icon.png', '#alt' => 'search');
     
 
 $form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
@@ -154,6 +164,14 @@ function porto_field($variables) {
   }
   
   elseif ($variables['element']['#field_name'] == 'field_tags') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'body') {
     // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
       $rendered_tags[] = drupal_render($item);

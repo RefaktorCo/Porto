@@ -4,6 +4,12 @@
 }
 .md-mainimg {display: none;}
 
+footer h2 {
+	font-size: 1.8em;
+	margin-bottom: 14px;
+	line-height: 27px;
+}
+
 /* Drupal Stuff (need to organize) */
 
 .md-slide-wrap {
