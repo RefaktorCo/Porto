@@ -1,2 +1,2 @@
-Version 1.0 (07/13/13)
+1.0 (07/13/13)
   *Initial release.
