@@ -19,8 +19,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'fieldset',
     '#title' => t('General'),
   );
-          
-       
+            
     // Breadcrumbs
     $form['options']['general']['breadcrumbs'] = array(
       '#type' => 'checkbox',
@@ -28,9 +27,6 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value' => theme_get_setting('breadcrumbs'),
     );
     
-   
-     
-  
   // Color
   $form['options']['color'] = array(
     '#type' => 'fieldset',
@@ -53,7 +49,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Site Layout
     $form['options']['layout']['site_layout'] = array(
       '#type' => 'select',
-      '#title' => 'Body Layout',
+      '#title' => t('Body Layout'),
       '#default_value' => theme_get_setting('site_layout'),
       '#options' => array(
         'wide' => t('Wide (default)'),
@@ -75,7 +71,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Body Background 
     $form['options']['layout']['background']['body_background'] = array(
       '#type' => 'select',
-      '#title' => 'Body Background',
+      '#title' => t('Body Background'),
       '#default_value' => theme_get_setting('body_background'),
       '#options' => array(
         'porto_backgrounds' => t('Background Image (default)'),
@@ -86,7 +82,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Porto Background Choices
     $form['options']['layout']['background']['background_select'] = array(
       '#type' => 'radios',
-      '#title' => 'Select a background pattern:',
+      '#title' => t('Select a background pattern:'),
       '#default_value' => theme_get_setting('background_select'),
       '#options' => array(
         'az_subtle' => 'item',
@@ -138,18 +134,17 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         ),
       ); 
       
-       // Blog Image
-    $form['options']['layout']['blog_image'] = array(
-      '#type' => 'select',
-      '#title' => t('Blog View Image Size'),
-      '#default_value' => theme_get_setting('blog_image'),
-      '#options' => array(
-        'full' => t('Full (default)'),
-        'medium' => t('Medium'),
-      ),
-    );
+	    // Blog Image
+	    $form['options']['layout']['blog_image'] = array(
+	      '#type' => 'select',
+	      '#title' => t('Blog View Image Size'),
+	      '#default_value' => theme_get_setting('blog_image'),
+	      '#options' => array(
+	        'full' => t('Full (default)'),
+	        'medium' => t('Medium'),
+	      ),
+	    );
     
-  
   // CSS
   $form['options']['css'] = array(
     '#type' => 'fieldset',
@@ -172,7 +167,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
      // Twitter App Consumer Key
     $form['options']['twitter']['twitter_app_consumer_key'] =array(
       '#type' => 'textfield',
-      '#title' => 'Twitter App Consumer Key',
+      '#title' => t('Twitter App Consumer Key'),
       '#default_value' => theme_get_setting('twitter_app_consumer_key'),
       '#states' => array (
         'invisible' => array(
@@ -184,7 +179,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Twitter App Consumer Secret
     $form['options']['twitter']['twitter_app_consumer_secret'] =array(
       '#type' => 'textfield',
-      '#title' => 'Twitter App Consumer Secret',
+      '#title' => t('Twitter App Consumer Secret'),
       '#default_value' => theme_get_setting('twitter_app_consumer_secret'),
       '#states' => array (
         'invisible' => array(
@@ -196,7 +191,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Twitter App Access Token
     $form['options']['twitter']['twitter_app_access_token'] =array(
       '#type' => 'textfield',
-      '#title' => 'Twitter App Access Token',
+      '#title' => t('Twitter App Access Token'),
       '#default_value' => theme_get_setting('twitter_app_access_token'),
       '#states' => array (
         'invisible' => array(
@@ -208,7 +203,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     // Twitter App Access Token Secret
     $form['options']['twitter']['twitter_app_access_secret'] =array(
       '#type' => 'textfield',
-      '#title' => 'Twitter App Access Token Secret',
+      '#title' => t('Twitter App Access Token Secret'),
       '#default_value' => theme_get_setting('twitter_app_access_secret'),
       '#states' => array (
         'invisible' => array(
