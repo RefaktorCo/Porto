@@ -9,38 +9,36 @@
   <header>
     <div class="container">
 
-        
-        <?php if (isset($page['branding'])) : ?>
-		      <?php print render($page['branding']); ?>
-		    <?php endif; ?>
-      
-	      <?php if ($logo): ?>
-	        <h1 class="logo">
-			      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-			        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-			      </a>
-	        </h1>
-		    <?php endif; ?>
-		    
-		    <?php if ($site_name || $site_slogan): ?>
-		      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
-		
-		        <?php if ($site_name): ?>
-		          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
-		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-		          </h1>
-		        <?php endif; ?>
-		
-		        <?php if ($site_slogan): ?>
-		          <div id="site-slogan"<?php if ($disable_site_slogan) { print ' class="hidden"'; } ?>>
-		            <?php print $site_slogan; ?>
-		          </div>
-		        <?php endif; ?>
-		
-		      </div> <!-- /#name-and-slogan -->
-		    <?php endif; ?>
-
+      <?php if (isset($page['branding'])) : ?>
+	      <?php print render($page['branding']); ?>
+	    <?php endif; ?>
     
+      <?php if ($logo): ?>
+        <h1 class="logo">
+		      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+		        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+		      </a>
+        </h1>
+	    <?php endif; ?>
+	    
+	    <?php if ($site_name || $site_slogan): ?>
+	      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
+	
+	        <?php if ($site_name): ?>
+	          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+	            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+	          </h1>
+	        <?php endif; ?>
+	
+	        <?php if ($site_slogan): ?>
+	          <div id="site-slogan"<?php if ($disable_site_slogan) { print ' class="hidden"'; } ?>>
+	            <?php print $site_slogan; ?>
+	          </div>
+	        <?php endif; ?>
+	
+	      </div> <!-- /#name-and-slogan -->
+	    <?php endif; ?>
+
       <!-- /branding --> 
       <div id="header-top">
         <?php print render($page['header_top']); ?>

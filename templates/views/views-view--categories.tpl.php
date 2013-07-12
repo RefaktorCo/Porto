@@ -2,7 +2,7 @@
 
 /**
  * @file views-view--portfolio-mason-three.tpl.php
- * Contour's views template for the Portfolio Mason (third style) view.
+ * Porto's views template for the Portfolio Mason (third style) view.
  *
  * Variables available:
  * - $classes_array: An array of classes determined in
@@ -28,57 +28,56 @@
  */
 ?>
 
+<ul class="nav nav-list primary pull-bottom">
+  <?php print render($title_prefix); ?>
+  <?php print render($title_suffix); ?>
+  <?php if ($exposed): ?>
+    <div class="view-filters">
+      <?php print $exposed; ?>
+    </div>
+  <?php endif; ?>
 
-	  <ul class="nav nav-list primary pull-bottom">
-	  <?php print render($title_prefix); ?>
-	  <?php print render($title_suffix); ?>
-	  <?php if ($exposed): ?>
-	    <div class="view-filters">
-	      <?php print $exposed; ?>
-	    </div>
-	  <?php endif; ?>
-	
-	  <?php if ($attachment_before): ?>
-	    <div class="attachment attachment-before">
-	      <?php print $attachment_before; ?>
-	    </div>
-	  <?php endif; ?>
-	  
-	  <?php if ($header): ?>
-	    <?php print $header; ?>
-	   <?php endif; ?>
-	
-	  <?php if ($rows): ?>
-	    <?php print $rows; ?>
-	  <?php elseif ($empty): ?>
-	    <div class="view-empty">
-	      <?php print $empty; ?>
-	    </div>
-	  <?php endif; ?>
-	
-	  <?php if ($pager): ?>
-	    <?php print $pager; ?>
-	  <?php endif; ?>
-	
-	  <?php if ($attachment_after): ?>
-	    <div class="attachment attachment-after">
-	      <?php print $attachment_after; ?>
-	    </div>
-	  <?php endif; ?>
-	
-	  <?php if ($more): ?>
-	    <?php print $more; ?>
-	  <?php endif; ?>
-	
-	  <?php if ($footer): ?>
-	    <div class="view-footer">
-	      <?php print $footer; ?>
-	    </div>
-	  <?php endif; ?>
-	
-	  <?php if ($feed_icon): ?>
-	    <div class="feed-icon">
-	      <?php print $feed_icon; ?>
-	    </div>
-	  <?php endif; ?>
-	  </ul>
+  <?php if ($attachment_before): ?>
+    <div class="attachment attachment-before">
+      <?php print $attachment_before; ?>
+    </div>
+  <?php endif; ?>
+  
+  <?php if ($header): ?>
+    <?php print $header; ?>
+   <?php endif; ?>
+
+  <?php if ($rows): ?>
+    <?php print $rows; ?>
+  <?php elseif ($empty): ?>
+    <div class="view-empty">
+      <?php print $empty; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($pager): ?>
+    <?php print $pager; ?>
+  <?php endif; ?>
+
+  <?php if ($attachment_after): ?>
+    <div class="attachment attachment-after">
+      <?php print $attachment_after; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($more): ?>
+    <?php print $more; ?>
+  <?php endif; ?>
+
+  <?php if ($footer): ?>
+    <div class="view-footer">
+      <?php print $footer; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($feed_icon): ?>
+    <div class="feed-icon">
+      <?php print $feed_icon; ?>
+    </div>
+  <?php endif; ?>
+</ul>

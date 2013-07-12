@@ -167,6 +167,8 @@ hr.short {
 
 hr.tall {
 	margin: 44px 0 44px 0;
+	border: none;
+	height: 6px;
 }
 
 hr.taller {

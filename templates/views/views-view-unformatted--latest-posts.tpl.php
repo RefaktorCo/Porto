@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @file views-view-unformatted--contour-view.tpl.php
- * Contour's custom view unformatted template for all views tagged with "Contour Views".
+ * @file views-view-unformatted--Porto-view.tpl.php
+ * Porto's custom view unformatted template for all views tagged with "Porto Views".
  *
  * @ingroup views_templates
  */

@@ -191,10 +191,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		
 	  
 	  <?php endif; ?>
-		  </div>
 		</div>
-	  
-
-
+	</div>
 </article>
 <?php endif; ?>

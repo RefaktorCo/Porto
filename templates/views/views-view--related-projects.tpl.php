@@ -2,7 +2,7 @@
 
 /**
  * @file views-view--portfolio-mason-three.tpl.php
- * Contour's views template for the Portfolio Mason (third style) view.
+ * Porto's views template for the Portfolio Mason (third style) view.
  *
  * Variables available:
  * - $classes_array: An array of classes determined in
