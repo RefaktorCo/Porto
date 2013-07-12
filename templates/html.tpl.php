@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Expressa's HTML template.
+ * Porto's HTML template.
  */
 ?>
 

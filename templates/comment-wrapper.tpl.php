@@ -1,7 +1,7 @@
 <?php
 /**
  * @file comment-wrapper.tpl.php
- * Contour's custom comment wrapper template.
+ * Porto's custom comment wrapper template.
  */
 ?>
 <div class="post-block post-comments clearfix <?php print $classes; ?>" <?php print $attributes; ?>>

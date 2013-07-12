@@ -1,7 +1,7 @@
 <?php
 /**
  * @file comment.tpl.php
- * Contour's comment template.
+ * Porto's comment template.
  */
  
 global $parent_root;
@@ -28,26 +28,24 @@ global $parent_root;
 	          <?php if (!empty($content['links'])) { print render($content['links']); } ?>
 	        </span>
         </span>
-   
- 
-    <?php if ($new): ?>
-    <span class="new"><?php print $new ?></span>
-    <?php endif; ?>
-    <div class="comment-content"<?php print $content_attributes; ?>>
-      <p>
-      <?php hide($content['links']); print render($content); ?>
-      </p>
-      <?php if ($signature): ?>
-       <div class="user-signature clearfix">
-         <?php print $signature ?>
+
+		    <?php if ($new): ?>
+		    <span class="new"><?php print $new ?></span>
+		    <?php endif; ?>
+		    <div class="comment-content"<?php print $content_attributes; ?>>
+		      <p>
+		      <?php hide($content['links']); print render($content); ?>
+		      </p>
+		      <?php if ($signature): ?>
+		       <div class="user-signature clearfix">
+		         <?php print $signature ?>
+		      </div>
+		     <?php endif; ?>
+		    </div>
+		    <span class="date pull-right">
+		      <?php print format_date($node->created, 'custom', 'M d, Y'); ?>
+		    </span>  
       </div>
-     <?php endif; ?>
     </div>
-    <span class="date pull-right">
-      <?php print format_date($node->created, 'custom', 'M d, Y'); ?>
-    </span>  
-    
-  </div>
-</div>
   </li>
 </ul>
