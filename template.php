@@ -364,6 +364,17 @@ function porto_preprocess_html(&$vars){
     '#weight' => 6,
   );
   
+  $drupal_theme_style = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/drupal-styles.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 7,
+  );
+  
   $theme_elements = array(
     '#tag' => 'link', 
     '#attributes' => array( 
@@ -372,7 +383,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 7,
+    '#weight' => 8,
   );
   
   $theme_blog = array(
@@ -383,7 +394,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 8,
+    '#weight' => 9,
   );
   
   $bootstrap_responsive = array(
@@ -394,7 +405,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 9,
+    '#weight' => 10,
   );
   
   $bootstrap_responsive_boxed = array(
@@ -405,7 +416,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 9,
+    '#weight' => 11,
   );
   
   $theme_responsive = array(
@@ -416,19 +427,19 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 10,
+    '#weight' => 12,
   );
   
    $background_image = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-    '#weight' => 11,
+    '#weight' => 13,
   );
   
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-    '#weight' => 12,
+    '#weight' => 14,
   );
   
   drupal_add_html_head( $viewport, 'viewport');
@@ -440,6 +451,7 @@ function porto_preprocess_html(&$vars){
   drupal_add_html_head( $circle_flip, 'circle_flip');
   drupal_add_html_head( $isotope, 'isotope');
   drupal_add_html_head( $theme_style, 'theme_style');
+  drupal_add_html_head( $drupal_theme_style, 'drupal_theme_style');
   drupal_add_html_head( $theme_elements, 'theme_elements');
   drupal_add_html_head( $theme_blog, 'theme_blog');
   

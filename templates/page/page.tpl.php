@@ -56,11 +56,13 @@
 	  <?php if ($breadcrumb): ?>
 	  <section class="page-top breadcrumb-wrap">
 		  <div class="container">
+		    <?php if (theme_get_setting('breadcrumbs') == '1'): ?>
 				<div class="row">
 					<div class="span12">
 						<div id="breadcrumbs"><?php print $breadcrumb; ?> </div>	
 					</div>
 				</div>
+				<?php endif; ?>
 				<div class="row">
 					<div class="span12">
 						<h2><?php print drupal_get_title(); ?></h2>
