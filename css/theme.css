@@ -947,6 +947,33 @@ a.scroll-to-top.visible {
 	background: transparent;
 }
 
+.comment-form .form-actions {
+	padding: 20px 0px;
+	background: transparent;
+	border-top: none;
+}
+
+.comment-form .form-actions input[type="submit"] {
+  margin-right: 10px;
+}
+
+.comment-form .form-type-textfield:first-child {
+	margin-left: 0px;
+}
+
+.comment-form .form-type-textfield input[type="text"] {
+	width: 100%;
+}
+
+.comment-form .form-textarea-wrapper {
+	width: 97%;
+}
+
+.comment-form .filter-wrapper {
+	margin-left: -20px;
+  margin-top: 10px;
+}
+
 .comment .thumbnail img {
 	display: block;
   max-width: 100%;
@@ -987,6 +1014,7 @@ ul.links.inline li {
 
 .comment-content p {
 	clear: both;
+	margin-left: 30px !important;
 }
 
 #branding {

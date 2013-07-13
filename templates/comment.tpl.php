@@ -32,10 +32,13 @@ global $parent_root;
 		    <?php if ($new): ?>
 		    <span class="new"><?php print $new ?></span>
 		    <?php endif; ?>
+		    
 		    <div class="comment-content"<?php print $content_attributes; ?>>
+		      <div class="row">
 		      <p>
 		      <?php hide($content['links']); print render($content); ?>
 		      </p>
+		      </div>
 		      <?php if ($signature): ?>
 		       <div class="user-signature clearfix">
 		         <?php print $signature ?>

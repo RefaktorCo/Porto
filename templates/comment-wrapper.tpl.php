@@ -4,7 +4,7 @@
  * Porto's custom comment wrapper template.
  */
 ?>
-<div class="post-block post-comments clearfix <?php print $classes; ?>" <?php print $attributes; ?>>
+<div id="comments" class="post-block post-comments clearfix <?php print $classes; ?>" <?php print $attributes; ?>>
 
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
     <?php print render($title_prefix); ?>
