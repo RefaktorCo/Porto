@@ -1056,6 +1056,10 @@ footer h2 {
 	line-height: 27px;
 }
 
+hr {
+	border: none !important;
+}
+
 /* TWITTER  WIDGET */ 
 .tweet_list{
 	font-size:12px;
