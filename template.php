@@ -160,6 +160,27 @@ function porto_preprocess_username(&$vars) {
 }
 
 /**
+ * Overrides theme_item_list().
+ */
+function porto_item_list($vars) {
+  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
+    unset($vars['attributes']['class']);
+    foreach ($vars['items'] as $i => &$item) {
+      if (in_array('pager-current', $item['class'])) {
+        $item['class'] = array('active');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+      elseif (in_array('pager-ellipsis', $item['class'])) {
+        $item['class'] = array('disabled');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+    }
+    return '<div class="pagination pagination-large pull-right">' . theme_item_list($vars) . '</div>';
+  }
+  return theme_item_list($vars);
+}
+
+/**
  * Add a comma delimiter between several field types.
  */
 function porto_field($variables) {

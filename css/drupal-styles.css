@@ -106,8 +106,12 @@
   margin-right: 10px;
 }
 
-.comment-form .form-type-textfield:first-child {
+.comment-form .form-type-textfield {
 	margin-left: 0px;
+}
+
+.comment-form .form-item-name {
+	margin-right: 30px;
 }
 
 .comment-form .form-type-textfield input[type="text"] {
@@ -124,6 +128,10 @@
 
 .toggle label {
 	font-weight: normal;
+}
+
+label {
+	clear: both;
 }
 
 div.post-leave-comment h3 {
@@ -235,6 +243,10 @@ hr {
 
 .span6 .portfolio-item img {
 	width: 560px;
+}
+
+.item-list ul li {
+  margin: 0px !important;
 }
 	
 /* TWITTER  WIDGET */ 
