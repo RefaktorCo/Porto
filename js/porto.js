@@ -15,6 +15,11 @@ jQuery(document).ready(function ($) {
   $(".comment-form .form-actions input[type='submit']").addClass("btn-primary btn-large");
   
   $(".comment-form .form-type-textfield").addClass("span4");
+  
+  $(".contact-form .form-item-name").addClass("span3");
+  $(".contact-form .form-item-mail").addClass("span3");
+  $(".contact-form .form-item-subject").addClass("span6");
+  
 	
 	// Tooltip
 	$("a[rel=tooltip]").tooltip();

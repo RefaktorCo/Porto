@@ -945,6 +945,7 @@ a.scroll-to-top.visible {
 .contact-form .form-actions {
 	padding: 20px 0px;
 	background: transparent;
+	border-top: none;
 }
 
 .comment-form .form-actions {
@@ -1058,6 +1059,26 @@ footer h2 {
 
 hr {
 	border: none !important;
+}
+
+.contact-form .form-item-name, .contact-form .form-item-subject {
+	margin-left: 0px;
+}
+
+.contact-form .form-item-name input[type="text"] {
+	width: 95%;
+}
+
+.contact-form .form-item-mail input[type="text"] {
+	width: 93%;
+}
+
+.contact-form .form-item-subject input[type="text"] {
+	width: 97%;
+}
+
+.contact-form .form-textarea-wrapper textarea {
+  height: 200px;
 }
 
 /* TWITTER  WIDGET */ 
