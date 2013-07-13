@@ -969,6 +969,14 @@ a.scroll-to-top.visible {
 	width: 97%;
 }
 
+.comment-form .form-textarea-wrapper .text-full {
+	height: 250px;
+}
+
+div.post-leave-comment h3 {
+  margin: 0 0 25px !important; 
+}
+
 .comment-form .filter-wrapper {
 	margin-left: -20px;
   margin-top: 10px;
