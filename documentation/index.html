@@ -76,20 +76,27 @@ Option 2:
 <li><a href="https://drupal.org/project/contact_form_blocks">Contact Form Blocks</a></li>
 </ul>
 
-<h2>Mega Slider</h2>
+<h3>Porto Content Data</h3>
+<p>If you used the "theme only" option to install the theme on an existing install that already has content we recommend you use our Porto Content Data module to create the additional content types, fields and Views needed to fully utilize the theme. You will find it in the root of the directory that contains the download files. This module is a custom <a href="http://drupal.org/project/features" target="_blank">Features</a> module and will not run without it. We recommend copying all of the modules from the /drupal_7/sites/all/modules folder into your install if you do not already have them. After you have all the modules simply upload and activate the Porto Content Data module and the content types, fields and Views will automatically be created.</p>
+
+<h2>Image Sliders</h2>
+<h4>Mega Slider</h4>
 <p>Porto includes the Drupal <a href="http://codecanyon.net/item/mega-slider/4313171" target="_blank">Mega Slider</a> module. This module offers an incredible number of options to create the exact slider to meet your needs. To begin configuring your slider visit /admin/structure/md-slider and press the "add new slider" link. You can find documentation for the slider inside the md_slider module folder and you can reference the video below.</p>
 
 <p><iframe width="560" height="315" src="http://www.youtube.com/embed/G2LW6RrjhvM" frameborder="0" allowfullscreen></iframe></p>
 
-<h3>Porto Content Data</h3>
-<p>If you used the "theme only" option to install the theme on an existing install that already has content we recommend you use our Porto Content Data module to create the additional content types, fields and Views needed to fully utilize the theme. You will find it in the root of the directory that contains the download files. This module is a custom <a href="http://drupal.org/project/features" target="_blank">Features</a> module and will not run without it. We recommend copying all of the modules from the /drupal_7/sites/all/modules folder into your install if you do not already have them. After you have all the modules simply upload and activate the Porto Content Data module and the content types, fields and Views will automatically be created.</p>
+<h4>NivoSlider</h4>
+
+
+
+
 
 <h2>Content Types</h2>
 
 <p>Porto utilizes two custom content types which have their own custom theme template files that are used to achieve different layouts and styles. If you are not working off of the full demo install please use the Porto Content Data plugin referenced above to automatically generate all these content types and their fields. We will also go over each of the content types as well as their fields and corresponding template files below:</p>
 
 <h4>Portfolio</h4>
-<p>This content type is used to manage the portfolio items used in the various Portfolio template styles Portooffers. All the styles are managed by this single content type and below is the list of fields and corresponding template files used by this content type: </p>
+<p>This content type is used to manage the portfolio items used in the Portfolio block. Below is the list of fields and corresponding template files used by this content type: </p>
 
 <img src="images/porto-portfolio.png"><br/><br/>
 <p><strong>Fields:</strong></p>
@@ -109,232 +116,56 @@ Option 2:
 <li>/templates/views/views-view-list--portfolio-filters.tpl.phpp</li>
 </ul>
 
-<h4>Product Display</h4>
-<p>This content type is used display Drupal Commerce products as node content. </p>
-<img src="images/product-display.png"><br/><br/>
+<h4>Team</h4>
+<p>This content type is used to create the content used in the Testimonials view block. </p>
+<img src="images/porto-team.png"><br/><br/>
 <p><strong>Fields:</strong></p>
 <ul>
-<li><strong>Product Variations:</strong> This uses the Commerce-specific "product reference" field type with an "inline entity form - multiple values" widget. This is how you can add and display different variations to your products like size and color.</li>
-<li><strong>Product Slider:</strong> Used to upload images for the single product image slider.</li>
-<li><strong>Featured:</strong> This is a simple boolean field using the on/off widget for tagging a product as "featured" for use in Views filters.</li>
-<li><strong>Item Info:</strong> A text field to enter the basic item info.</li>
-<li><strong>Product Care:</strong> A text field to enter information about product care.</li>
+<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+<li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+<li><strong>Team Bio:</strong> A text field used to enter a short description about the team member.</li>
+<li><strong>Facebook Link:</strong> Used to add a link to the team member's Facebook page.</li>
+<li><strong>Twitter Link:</strong> Used to add a link to the team member's Twitter page.</li>
+<li><strong>LinkedIn Link:</strong> Used to add a link to the team member's LinkedIn page.</li>
 </ul>
 <p><strong>Template files:</strong></p>
 <ul>
-<li>/templates/node/node--product-display.tpl.php</li>
-<li>/templates/node/node--shop.tpl.php</li>
-<li>/templates/node/node--view--featured-products--block.tpl.php</li>
-<li>/templates/page/page--node--product-display.tpl.php</li>
-<li>/templates/page/page--shop.tpl.php</li>
-<li>/templates/views/views-view--more-products.tpl.php</li>
-<li>/templates/views/views-view--shop.tpl.php</li>
-</ul>
-
-<h4>Testimonials</h4>
-<p>This content type is used to create the testimonial items used in the Testimonials view block (like the one used on the front page of the demo). </p>
-<img src="images/testimonials.png"><br/><br/>
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Testimonial content:</strong> A simple text field to enter the actual content of the testimonial.</li>
-<li><strong>Image:</strong> Used to upload a testimonial iamge.</li>
-<li><strong>Testimonial name:</strong> Used to show the name of the person giving the testimonial.</li>
-</ul>
-<p><strong>Template files:</strong></p>
-<ul>
-<li>/templates/node/node--testimonials.tpl.php</li>
-<li>/templates/views/views-view--testimonials.tpl.php</li>
+<li>/templates/node/node--view--team--block.tpl.php</li>
+<li>/templates/views/views-view--team.tpl.php</li>
+<li>/templates/views/views-view-fields--team-filters.tpl.php</li>
+<li>/templates/views/views-view-list--team-filters.tpl.php</li>
 </ul>
 
 <h2>Theme Settings</h2>
-<p>Visit /admin/appearance/settings/Portoto configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
-
-<h2>Pages and Headings</h2>
-<p>Portodoes not require any custom fields for the Basic Page content type, but the theme demo does utilize custom heading blocks on each page. The blocks are configured to only be shown on their respective pages using the block visibility settings. Heading blocks are best used in the "Before Content No Wrapper" block region. Below is an example of the markup used in a Portopage heading block:</p>
-
-<pre>
-&lt;div class=&quot;container container-color bigpadding top-grey&quot;&gt;
-	&lt;section class=&quot;row&quot;&gt;
-	&lt;h6 class=&quot;text-color-alt largefont bold&quot;&gt;WE ARE CONTOUR&lt;/h6&gt;
-	&lt;/section&gt;
-	&lt;section class=&quot;row&quot;&gt;
-	&lt;h2 class=&quot;bold text-color&quot;&gt;BUILDING BRANDS SINCE 1999.&lt;/h2&gt;
-	&lt;/section&gt;
-	&lt;section class=&quot;row&quot;&gt;
-	&lt;h6 class=&quot;text-color smallfont bold&quot;&gt;WE CREATE OUT OF THIS WORLD EXPERIENCES FOR OUT OF THIS WORLD BRANDS AND ACTIVATE THEM ACROSS ALL DIGITAL MEDIA.&lt;/h6&gt;
-	&lt;/section&gt;
-&lt;/div&gt;
-</pre>
+<p>Visit /admin/appearance/settings/Porto to configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
 
 <h2>Portfolio</h2>
-<p>Portoincludes six main portfolio styles (as well as two extra block styles)that can be used to display the portfolio content on your site. Each is powered by a Views block and we will outline each one as well as the two single item styles.</p>
 
-<h4>Portfolio (Main) - Example: <a href="http://refaktorthemes.com/contour/portfolio" target="_blank"> http://refaktorthemes.com/contour/portfolio</a></h4>
-<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block-page.txt to import this View. Then simply place the "View: Portfolio Block Page" in the Content region and configure the block visibility settings to your liking.</p>
-<ul>
+<h4>Portfolio Block - Example: <a href="http://refaktorthemes.com/porto/portfolio-4-columns" target="_blank"> http://refaktorthemes.com/porto/portfolio-4-columns</a></h4>
+<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--view--portfolio-block-page--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-block-page.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Two - Example: <a href="http://refaktorthemes.com/contour/portfolio-two" target="_blank"> http://refaktorthemes.com/contour/portfolio-two</a></h4>
-<p>This is the second standard Portfolio style which utilizes the "Portfolio Two" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-two.txt to import this View. Then simply place the "View: Portfolio Two" in the Content region and configure the block visibility settings to your liking.</p>
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--portfolio-two--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-two.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Three - Example: <a href="http://refaktorthemes.com/contour/portfolio-three" target="_blank"> http://refaktorthemes.com/contour/portfolio-three</a></h4>
-<p>This is the third standard Portfolio style which utilizes the "Portfolio Three" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-three.txt to import this View. Then simply place the "View: Portfolio Three" in the Content region and configure the block visibility settings to your liking.</p>
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--portfolio-three--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-three.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Mason - Example: <a href="http://refaktorthemes.com/contour/portfolio-mason" target="_blank"> http://refaktorthemes.com/contour/portfolio-mason</a></h4>
-<p>This is the mason Portfolio style which utilizes the "Portfolio Mason" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-mason.txt to import this View. Then simply place the "View: Portfolio Mason" in the Content region and configure the block visibility settings to your liking.</p>
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--portfolio-mason--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-mason.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Mason Two - Example: <a href="http://refaktorthemes.com/contour/portfolio-mason-two" target="_blank"> http://refaktorthemes.com/contour/portfolio-mason-two</a></h4>
-<p>This is the mason Portfolio style which utilizes the "Portfolio Mason Two" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-mason-two.txt to import this View. Then simply place the "View: Portfolio Mason Two" in the Content region and configure the block visibility settings to your liking.</p>
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--portfolio-mason-two--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-mason-two.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Mason Three - Example: <a href="http://refaktorthemes.com/contour/portfolio-mason-three" target="_blank"> http://refaktorthemes.com/contour/portfolio-mason-three</a></h4>
-<p>This is the mason Portfolio style which utilizes the "Portfolio Mason Three" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-mason-three.txt to import this View. Then simply place the "View: Portfolio Mason Three" in the Content region and configure the block visibility settings to your liking.</p>
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--portfolio-mason-three--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-mason-three.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio (block) - Example: <a href="http://refaktorthemes.com/contour/" target="_blank"> http://refaktorthemes.com/contour/</a></h4>
-<p>This is a View that displays the four latest standard portfolio items in a block (see the front page of the demo for an example). If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
-<p><strong>Note:</strong> to edit the default heading text for this block edit /templates/views/views-view--portfolio-block.tpl.php</p>
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--portfolio-block--block.tpl.php</li>
+<li>/templates/node/node--portfolio.tpl.php</li>
+<li>/templates/field--field_image--portfolio.tpl.php</li>
+<li>/templates/node/node--view--portfolio--block.tpl.php</li>
 <li>/templates/views/views-view--portfolio-block.tpl.php</li>
 </ul>
-</ul>
 
-<h4>More Projects - Example: <a href="http://refaktorthemes.com/contour/portfolio/19" target="_blank"> http://refaktorthemes.com/contour/portfolio/19/</a></h4>
-<p>This is a View that displays the three latest standard portfolio items in a block (see the bottom of the Item Basic page on the demo). If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/more-projects.txt to import this View. Then simply place the "View: More Projects" in the Content region and configure the block visibility settings to your liking.</p>
-
-<ul>
+<h4>Related Projects:</h4>
+Porto also includes support for a "Related Projects" block that you can use to showcase additional Portfolio items on the single Portfolio node pages, or anywhere else you would like. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/related-projects.txt to import this View. Then simply place the "View: Related Projects" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--view--more-projects--block.tpl.php</li>
-<li>/templates/views/views-view--more-projects.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Item: Basic - Example: <a href="http://refaktorthemes.com/contour/portfolio/19" target="_blank"> http://refaktorthemes.com/contour/portfolio/19/</a></h4>
-<p>This is the default style for the single Portfolio nodes. It displays the Portfolio Slider to the left of the content, and below is an example of the node content used for the demo portfolio items:</p>
-
-<pre>
-&lt;h5 class=&quot;text-color grey&quot;&gt;PROJECT SOLUTION&lt;/h5&gt;
-&lt;p class=&quot;midpadding&quot;&gt;
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. &lt;br&gt;&lt;br&gt;
-	Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-&lt;/p&gt;
-&lt;!-- specifics --&gt;
-&lt;h5 class=&quot;text-color grey smalltopmargin&quot;&gt;SERVICES OFFERED&lt;/h5&gt;
-&lt;ul class=&quot;midtoppadding&quot;&gt;
-	&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;greytext&quot;&gt;Identity &amp;amp; Branding&lt;/span&gt;&lt;/li&gt;
-	&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;greytext&quot;&gt;Web Design&lt;/span&gt;&lt;/li&gt;
-	&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;greytext&quot;&gt;Web Development&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- button --&gt;
-&lt;div class=&quot;medium color-button btn fifty&quot;&gt;
-	&lt;a href=&quot;#&quot;&gt;LAUNCH WEBSITE&lt;/a&gt;
-&lt;/div&gt;
-</pre>
-
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--portfolio.tpl.php</li>
-<li>/templates/page/page--node--portfolio.tpl.php</li>
-</ul>
-</ul>
-
-<h4>Portfolio Item: Wide - Example: <a href="http://refaktorthemes.com/contour/portfolio/16" target="_blank"> http://refaktorthemes.com/contour/portfolio/16/</a></h4>
-<p>This is the wide style for the single Portfolio nodes. It displays the Portfolio Slider to the left of the content, and below is an example of the node content used for the demo portfolio items:</p>
-
-<pre>
-&lt;div class=&quot;container folio container-color bigpadding&quot;&gt;
-	&lt;section class=&quot;row&quot;&gt;
-	&lt;!-- first section --&gt;
-	&lt;div class=&quot;four columns&quot;&gt;
-		&lt;h5 class=&quot;text-color grey&quot;&gt;PROJECT BRIEF&lt;/h5&gt;
-		&lt;p class=&quot;midpadding&quot;&gt;
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-		&lt;/p&gt;
-	&lt;/div&gt;
-	&lt;!-- second section --&gt;
-	&lt;div class=&quot;four columns&quot;&gt;
-		&lt;h5 class=&quot;text-color grey&quot;&gt;THE SOLUTION&lt;/h5&gt;
-		&lt;p class=&quot;midpadding&quot;&gt;
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. &lt;br/&gt;&lt;br/&gt;
-			Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-		&lt;/p&gt;
-	&lt;/div&gt;
-	&lt;!-- third section --&gt;
-	&lt;div class=&quot;four columns&quot;&gt;
-		&lt;h5 class=&quot;text-color grey&quot;&gt;SERVICES OFFERED&lt;/h5&gt;
-		&lt;ul class=&quot;midtoppadding&quot;&gt;
-			&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt; Identity &amp;amp; Branding&lt;/li&gt;
-			&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt; Web Design&lt;/li&gt;
-			&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt; Web Development&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;!-- button --&gt;
-		&lt;div class=&quot;medium primary btn eight columns&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Launch Website&lt;/a&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;/section&gt;
-&lt;/div&gt;
-</pre>
-
-<p><strong>Note:</strong></p> back up /templates/node/node--portfolio.tpl.php and then duplicate /templates/node/node--portfolio-wide.tpl.php and rename it /templates/node/node--portfolio.tpl.php if you wish to use this as your Portfolio node style.
-<ul>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--portfolio.tpl.php</li>
-<li>/templates/page/page--node--portfolio.tpl.php</li>
-</ul>
+<li>/templates/node/node--view--related-projects--block.tpl.php</li>
+<li>/templates/views/views-view--related-projects.tpl.php</li>
 </ul>
 
 <h4>Portfolio Filters:</h4>
-<p>The Mason portfolio pages seen on the demo include support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
+<p>The Portfolio includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
-<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio Mason views.</p>
+<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio view.</p>
 
 
-<h2>Notes (posts)</h2>
+<h2>Blog (posts)</h2>
 <p>If you would like to use Article (recommended) or Blog posts on your site Portocomes equipped with several templates that modify the look and feel of the posts list and single items. The default post page on the demo can be seen <a href="http://refaktorthemes.com/contour/notes" target="_blank">here</a>, a single post can be seen <a href="http://refaktorthemes.com/contour/notes/25-fresh-business-concepts" target="_blank">here</a> and an alternate list format can be seen <a href="http://refaktorthemes.com/contour/note-list" target="_blank">here.</a> There are no extra content types or custom fields that you need to set up and we will cover each template below:</p>
 
 <h4>Default Notes View</h4>
