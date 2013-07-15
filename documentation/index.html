@@ -86,57 +86,25 @@ Option 2:
 
 <h2>Content Types</h2>
 
-<p>Portoutilizes several different custom content types that all have their own custom theme template files that are used to achieve various layouts and styles. If you are not working off of the full demo install please use the PortoContent Data plugin referenced above to automatically generate all these content types and their fields. We will also go over each of the content types as well as their fields and corresponding template files below:</p>
-
-<h4>Flexslider</h4>
-<p>This content type is used to manage the slides that are used in a Flexslider view block (like the one used on the front page of the demo). </p>
-<img src="images/flexslider.png"><br/><br/>
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Image:</strong> The default Image field used for uploading the slide image.</li>
-<li><strong>Caption:</strong> Used to add a caption to the slide.</li>
-<li><strong>Caption Position:</strong> Used to set the position of the caption (left or right).</li>
-<li><strong>Navigation Text:</strong> Used to set the text for the slide's navigation button.</li>
-</ul>
-<p><strong>Template files:</strong></p>
-<ul>
-<li>/templates/node/node--flexslider.tpl.php</li>
-<li>/templates/node/node--view--flexslider-navigation--block.tpl.php</li>
-<li>/templates/views/views-view--flexslider-navigation.tpl.php</li>
-<li>/templates/views/views-view--flexslider.tpl.php</li>
-</ul>
+<p>Porto utilizes two custom content types which have their own custom theme template files that are used to achieve different layouts and styles. If you are not working off of the full demo install please use the Porto Content Data plugin referenced above to automatically generate all these content types and their fields. We will also go over each of the content types as well as their fields and corresponding template files below:</p>
 
 <h4>Portfolio</h4>
 <p>This content type is used to manage the portfolio items used in the various Portfolio template styles Portooffers. All the styles are managed by this single content type and below is the list of fields and corresponding template files used by this content type: </p>
 
-<img src="images/portfolio.png"><br/><br/>
+<img src="images/porto-portfolio.png"><br/><br/>
 <p><strong>Fields:</strong></p>
 <ul>
-<li><strong>Image:</strong> The default Image field used for uploading the slide image.</li>
-<li><strong>Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
-<li><strong>Slider:</strong> This is used to upload the images used in the single item node slider.</li>
-<li><strong>Type:</strong> This is a simple list(text) field using a select list widget and is used to select between Standard And Mason.</li>
+<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+<li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
 </ul>
 <p><strong>Template files:</strong></p>
 <ul>
 <li>/templates/node/node--portfolio.tpl.php</li>
-<li>/templates/node/node--view--featured-products--block.tpl.php</li>
-<li>/templates/node/node--view--more-products--block.tpl.phpp</li>
-<li>/templates/node/node--view--portfolio-block--block.tpl.php</li>
-<li>/templates/node/node--view--portfolio-block-page--block.tpl.php</li>
-<li>/templates/node/node--view--portfolio-mason--block.tpl.php</li>
-<li>/templates/node/node--view--portfolio-mason-three--block.tpl.php</li>
-<li>/templates/node/node--view--portfolio-mason-two--block.tpl.php</li>
-<li>/templates/node/node--view--portfolio-three--block.tpl.php</li>
-<li>/templates/node/node--view--portfolio-two--block.tpl.php</li>
-<li>/templates/page/page--node--portfolio.tpl.php</li>
-<li>/templates/views/views-view--more-products.tpl.php</li>
+<li>/templates/field--field_image--portfolio.tpl.php</li>
+<li>/templates/node/node--view--portfolio--block.tpl.php</li>
+<li>/templates/node/node--view--related-projects--block.tpl.php</li>
 <li>/templates/views/views-view--portfolio-block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-mason-three.tpl.php</li>
-<li>/templates/views/views-view--portfolio-mason-two.tpl.phpp</li>
-<li>/templates/views/views-view--portfolio-block-page.tpl.php</li>
-<li>/templates/views/views-view--portfolio-three.tpl.php</li>
-<li>/templates/views/views-view--portfolio-two.tpl.php</li>
+<li>/templates/views/views-view--related-projects-block.tpl.php</li>
 <li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
 <li>/templates/views/views-view-list--portfolio-filters.tpl.phpp</li>
 </ul>
@@ -387,125 +355,6 @@ Option 2:
 <li>/templates/node/node--article.tpl.php</li>
 <li>/templates/page/page--node--article.tpl.php</li>
 </ul>
-
-<h2>Commerce (Shop)</h2>
-<p>Portosupports the <a href="http://drupal.org/project/commerce" target="_blank">Drupal Commerce</a> module, a powerful eCommerce framework for building online stores. Drupal Commerce has a complete set of <a href="http://www.drupalcommerce.org/documentation" target="_blank">documentation</a> which we highly recommend reading if you have never used DC before. We will go over some of the basics and highlight the aspects of the theme that enhance DC and how you can use them on your site. If you do plan on using Drupal Commerce with your install of Portowe also highly recommend you install the full demo content as it will provide you a completely functional configuration of Drupal Commerce to begin working with. </p>
-
-<h4>Product Types</h4>
-
-<p>When the Commerce module is activated you can visit /admin/commerce to begin configuring Drupal Commerce. We will not be going over every options page, but we will outline the creation of Product Types and explain how that relates to the "Product Display" content type. Visit /admin/commerce/products/types to begin creating your own Product Types. Below is an example of what the fields look like on a Portodemo product type:</p>
-<img src="images/product-type.png"><br/><br/>
-<p>Product Types have some default fields like SKU which are required for Commerce products to function correctly, but you can create as many additional fields as you need for your products.</p>
-
-<p><strong>Important:</strong> Any product fields that are intended to function as attribute selection fields on Add to Cart forms need to be configured to do so. When editing that field, scroll down to the ATTRIBUTE FIELD SETTINGS option and enable the option. For example, if you have several variations of a "Hat" product (red, blue, green) and you want the customer to be able to select the color they want when adding the item to the cart, the Color field would need to be configured in this way.</p> 
-<img src="images/field-attribute.png"><br/>
-
-<h4>Creating products using "Product Display"</h4>
-<p>As described earlier in the Content Types section of the documentation, Portouses a content type called Product Display which acts as a bridge between Drupal and Commerce products. The "Product Reference" field allows you to create your product(s) at the same time of the node creation. Below is a step by step guide for using this content type to create a Drupal Commerce product node in Contour: </p>
-<ul>
-<li>1. Visit /node/add/product-display to begin creating your product (if you do not have this content type refer to the Content Types portion of the docs for instructions on how to set this up). Enter a title like you would for any other Drupal node.</li>
-<li>2. Under the "Product Reference" field select the type of product you are creating and press "Add New Product". </li>
-<li>3. Configure your product and press the "Save Product" button. If you are doing multiple variations of the same product, add another product variation of the same product type and configure as necessary. For example if you are creating a Hat product and it comes in three colors, create a variation for each of the three colors.</li>
-<li>4. Configure the rest of the Product Display fields (image slider, etc) and save the node. </li>
-</ul>
-
-<h4>Product Search</h4>
-<p>If you visit the demo <a href="http://refaktorthemes.com/contour/shop" target="_blank">Shop page</a> you will see various options in the left sidebar for narrowing down the products that are shown. This is called faceted search and is a very powerful way to handle stores with a lot of different products. To fully utilize faceted search with Drupal Commerce, the following modules are required:</p>
-<ul>
-<li><a href="http://drupal.org/project/commerce_search_api">Commerce Search API</a></li>
-<li><a href="http://drupal.org/project/search_api">Search API</a></li>
-<li><a href="http://drupal.org/project/Facetapi">Facet API</a></li>
-<li><a href="http://drupal.org/project/search_api_db">Search API Database Search</a></li>
-<li><a href="http://drupal.org/project/search_api_ranges">Search API Ranges</a></li>
-</ul>
-<p>Visit /admin/config/search/search_api to begin the process of configuring Commerce to utilize the Search API. Two elements are needed: the search server and the search index. The search server can be enabled and configured with the default options already provided. The real configuration happens with the search index.</p>
-<p> <strong>Note:</strong> before proceeding with the setup of your search index, visit /admin/config/system/cron and manually run cron to ensure your products will be available for searching.</p>
-
-<p>Visit /admin/config/search/search_api/add_index to add your index. Give your search index a name you can identify later on as this search index will actually be used in a View to create the actual store page itself. For the "item type" option select Node from the dropdown menu as you will be searching from the Product Display nodes. Under "server" select the search sever you just created before (likely called "default" if you used the default server). After you are done press "Create Index"</p>
-
-<p> When you click on the name of your search index while on the /admin/config/search/search_api page you will be able to configure all the various options available. If you click on the Fields tab you will be able to select the fields that will be made available to search. If you are working off your own custom Product Types the fields you will want to enable will likely be different from the ones we enabled for the demo content, but here is the list of nodes that have been selected for the Demo store as a reference:</p>
-
-<ul>
-<p>Node ID, Content type, Title, Status, Date created, Date changed, Tags, Portfolio Category, Product Variatons, Item language, Product Variatons » Price » Amount (decimal) (Min), Product Variatons » Price » Amount (decimal) (Max), Title (Fulltext) (1.0 x), Tags name (Fulltext) (1.0 x), Portfolio Category name (Fulltext) (1.0 x), Tags » Name, Portfolio Category » Name, Product Variatons » Color, Product Variatons » Size, Product Variatons » Product Type, Product Variatons » Price » Amount (decimal)</p>
-</ul>
-
-<p>The facets tab is the other important section to configure. There you can select the different facet search blocks that you will make available on your store page. Each facet has a set of options that you can configure to your liking. These facets show up as block regions so you can add them to the sidebar region or wherever you choose to display them. Keep in mind these facet search blocks will only display on a View page displaying the search index content. Once you have set up your search index you are ready for the final step which is the creation of your store View page. </p>
-
-<h4>Creating a "Shop" page.</h4>
-<p>The key to making everything tie together is the View page which uses the search index to display the products. This is done by creating a View like you would any other View, but by selecting your search index from the "Show" select menu during the initial view creation. This View is an unformatted list of the rendered entity, and no other special configurations are needed. The following template files are associated with Contour's demo shop page:</p>
-<ul>
-<li>/templates/node/node--shop.tpl.php</li>
-<li>/templates/page/page--shop.tpl.php</li>
-<li>/templates/views/views-view--shop.tpl.php</li>
-</ul>
-
-<p><strong>Note:</strong> if you use a different URL alias for your store page you will need to carry out the following steps: </p>
-<ul>
-<li>1. Duplicate /templates/node/node--shop.tpl.php and /templates/page/page--shop.tpl.php and rename them according to your store page URL alias. </li>
-<li>2. Open template.php and modify our contour_preprocess_node function (line 29) to reflect the correct alias of your store.</li>
-</ul>
-
-<h4>Shop Header Block</h4>
-<p>The demo store page uses a custom header block to handle the display of the necessary store links. The following markup is used in a block inside the Header Branding Right region and set to only display on the store related pages:</p>
-<pre>
-&lt;?php global $user, $base_url; ?&gt;
-&lt;ul id=&quot;header-links&quot;&gt;
-	&lt;li&gt;&lt;?php $block = module_invoke('views', 'block_view', 'header_cart_block-block_1'); print render($block['content']); ?&gt; &lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/cart&quot;&gt;&lt;i class=&quot;icon-shopping-cart right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-	&lt;?php if (!$user-&gt;uid): ?&gt;
-	&lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/user/register&quot; title=&quot;Sign-up&quot;&gt;Sign-up&lt;/a&gt;&lt;/li&gt;
-	&lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/user&quot; title=&quot;Login&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
-	&lt;?php endif; ?&gt;
-	&lt;?php if ($user-&gt;uid): ?&gt;
-	&lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/user&quot; title=&quot;Login&quot;&gt;My Account&lt;/a&gt;&lt;/li&gt;
-	&lt;?php endif; ?&gt;
-  &lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/wishlist&quot; title=&quot;Wishlist&quot;&gt;Wishlist&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
-
-<h4>Wishlist</h4>
-<p>To make use of the Wishlist functionality that can be seen on the Portodemo you will need to install the Flag module. Once you do visit /admin/structure/flags/import to import the following code: </p>
-<pre>
-$flags = array();
-// Exported flag: "Shop Wishlist".
-$flags['shop'] = array(
-  'content_type' => 'node',
-  'title' => 'Shop Wishlist',
-  'global' => '0',
-  'types' => array(
-    0 => 'product_display',
-  ),
-  'flag_short' => 'Add to Wishlist',
-  'flag_long' => '',
-  'flag_message' => '',
-  'unflag_short' => 'Remove from Wishlist',
-  'unflag_long' => '',
-  'unflag_message' => '',
-  'unflag_denied_text' => '',
-  'link_type' => 'toggle',
-  'roles' => array(
-    'flag' => array(
-      0 => '1',
-      1 => '2',
-    ),
-    'unflag' => array(
-      0 => '1',
-      1 => '2',
-    ),
-  ),
-  'weight' => 0,
-  'show_on_form' => 0,
-  'access_author' => '',
-  'show_on_page' => 0,
-  'show_on_teaser' => 0,
-  'show_contextual_link' => 0,
-  'i18n' => 0,
-  'api_version' => 2,
-);
-return $flags;
-</pre>
-<p>Then if you don't already have it you can use the code in /views_exports/wishlist-block.txt to create a View to display a block of the Wishlist items. </p>
-
 
 <h2>Block Regions</h2>
 <p>Porto features 17 block regions where you can add your own custom content. Visit yourdomain.com/admin/structure/block to add your own content to the defined block regions. Press "Add Block" to create a new custom blog, or select an existing block from the Disabled list below the defined block regions.</p>
