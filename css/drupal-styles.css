@@ -186,6 +186,10 @@ ul.links.inline li {
 	margin-left: 30px !important;
 }
 
+.profile .user-picture { 
+	margin-top: 60px !important;
+}
+
 #branding {
 	display: inline-block;
 	float: left;

@@ -12,7 +12,6 @@ scripts[] = vendor/bootstrap.js
 scripts[] = vendor/jquery.easing.js
 scripts[] = vendor/jquery.cookie.js
 scripts[] = includes/twitter/jquery.tweet.js
-scripts[] = vendor/selectnav.js
 scripts[] = vendor/flexslider/jquery.flexslider.js
 scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
 scripts[] = vendor/isotope/jquery.isotope.js
