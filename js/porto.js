@@ -38,13 +38,6 @@ jQuery(document).ready(function ($) {
 	});
 	
 	// FlickrFeed	
-	$('ul.flickr-feed').jflickrfeed({
-		limit: 6,
-		qstrings: {
-			id: '93691989@N03'
-		},
-		itemTemplate: '<li><a rel="flickr" href="{{image_b}}" class="fancybox"><span class="thumbnail"><img alt="{{title}}" src="{{image_s}}" /></span></a></li>'
-  });
 	$(".fancybox[rel=flickr]").fancybox();
 	
 	// Post slider
