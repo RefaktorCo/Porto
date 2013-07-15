@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contour Documentation</title>
+<link href="http://fonts.googleapis.com/css?family=Voces" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style.css"/>
+<script src="jquery.js"></script>
+<script src="toc.js"></script>
+</head>
+<body>
+<div id="toc">
+	
+</div>
+
+
+<div id="wrapper">
+<h2>Overview</h2>
+<p>Contour is a unique, modern and multipurpose Drupal 7 theme perfect for creative single portfolios, agencies, studios and even eCommerce. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support"> support forum</a>. Once you have registered please contact us via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a> with your forum username so you can be granted posting rights.</p>
+<p>Updated: 06/25/13<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/codeblcvk">Hasan Ali</a></p>
+<h2>Installation</h2>
+<p>There are several ways Contour can be installed. For existing sites that already have content, the first method will only involve the installation and activation of the theme. The second option includes a full Drupal 7 install with the same SQL database file used to create the theme demo. Please choose which installation method works best for you and follow the instructions. We do highly recommend you perform the full install, especially if you plan on using the Commerce functionality.
+<h3>Theme Only</h3>
+Option 1:
+<ul>
+  <li>Visit yourdomain.com/admin/appearance/install</li>
+  <li>Upload the Contour.zip file</li>
+  <li>Enable and set to default</li>
+</ul>
+Option 2:
+<ul>
+  <li>Extract the Contour.zip file and upload via FTP to /sites/all/themes</li>
+  <li>Visit yourdomain.com/admin/appearance/</li>
+  <li>Scroll down to "DISABLED THEMES" and set and enable Contour</li>
+</ul>
+
+<h3>Full Drupal Install</h3>
+<p>The following steps are designed for people that have experience manually installing Drupal and importing databases. If you do not feel comfortable performing these steps yourself, contact your server administrator for help. <strong>NOTE</strong> this option is for a completely new Drupal install. Do not import the provided SQL file into an existing Drupal database or you will lose all of your data!</p>
+<ol>
+<li>Create a database for this installation of Drupal and import the SQL file that came with the theme.</li>
+<li>Follow <a href="http://drupal.org/documentation/install/settings-file" target="_blank"> these directions</a> to create the settings.php file. Save this file somewhere so you can copy it over to the Drupal installation we have provided.</li>
+<li>Copy the entire contents of the Drupal_7 folder to the location on your web server where you want your site to be accessed. If you want your primary domain to point to your install of Contour, copy everything to the root folder. If you want your site to be accessed as a subsection of your domain (for example: yourdomain.com/drupal) then simply rename the Drupal_7 folder to the desired name and upload to the root of your server. Also be sure to copy over the settings.php file mentioned in the previous step</li>
+<li>Login to your site with the username <strong>Steve</strong> and the password <strong>admin</strong> and visit /admin/people to change the admin username and password.</li>
+<li>Go through the Drupal configuration found in /admin/config options and update all the necessary information to reflect your website. Also be sure to visit /admin/config/media/file-system and change the Temporary Directory.</li>
+
+</ol>
+<h2>Contour Sub-Theme</h2>
+<p>Contour comes with a shell sub-theme called Contour_sub that you can use to make customizations to the style and template structure of the parent theme without having to modify the parent theme itself. This is useful if you plan on updating the parent theme as we release updates on ThemeForest. If you performed the full install you will already see Contour_sub in the list of themes available. If you did the standalone install you can find the Contour_sub.zip file in the root of the download files and you can install it like any other theme. </p>
+<p>There is an empty stylesheet already defined which is /css/custom.css (inside the Contour_sub folder). Use this file to add all of the custom CSS that you plan on using. You can also copy any template file from the /Contour/templates folder into the /contour_sub/templates folder and it will listen to the sub-themes template file first. This will allow you to update the parent theme as we make updates without losing your customizations. Just pay attention to the changelog and compare the parent theme files with yours and make any adjustments as needed.</p>
+<p>You will need to configure the sub-themes theme settings separately from the parent theme's, so visit /admin/appearance/settings/contour_sub to configure the theme settings for the sub-theme. You also need to configure the block regions separately.</p>
+</ol>  
+<h2>Menu</h2>
+<p>Contour has a block region called Header Menu Left which can be used to add any menu block you like. The demo simply uses the default Main Menu block but you can create a custom menu block if you like.</p>
+<h4>Dropdown Menus</h4>
+<p>In order for the dropdown menus to function properly on touch devices the parent level menu items need to be dummy hashtag links. For example if your site is welovecats.com then all of your parent level menu items with child links need to use the url http://welovecats.com/#</p>
+
+
+<h2>Modules</h2>
+<p>You can find all of the modules used in the demo in the modules.zip archive in the root of the folder you downloaded from ThemeForest. Not all modules are required to use the theme, but below is a list of modules you will need to utilize various elements of the theme</p>
+
+<h4>General Required Modules</h4>
+<ul>
+<li><a href="http://drupal.org/project/jquery_update">jQuery update (7.x-2.x-dev)</a></li>
+<li><a href="http://drupal.org/project/ctools">ctools</a></li>
+<li><a href="http://drupal.org/project/views">Views</a></li>
+</ul>
+
+<h4>Project Planner</h4>
+<ul>
+<li><a href="http://drupal.org/project/webform">Webform</a></li>
+</ul>
+
+<h4>Shop</h4>
+<ul>
+<li><a href="http://drupal.org/project/commerce">Commerce</a></li>
+<li> Commerce Add Link (found inside the modules.zip file) </li>
+<li><a href="http://drupal.org/project/commerce_search_api">Commerce Search API</a></li>
+<li><a href="http://drupal.org/project/search_api">Search API</a></li>
+<li><a href="http://drupal.org/project/Facetapi">Facet API</a></li>
+<li><a href="http://drupal.org/project/search_api_db">Search API Database Search</a></li>
+<li><a href="http://drupal.org/project/search_api_ranges">Search API Ranges</a></li>
+<li><a href="http://drupal.org/project/flag">Flag (for Wishlist functionality)</a></li>
+</ul>
+
+<h4>Notes</h4>
+<ul>
+<li><a href="http://drupal.org/project/prev_next">Prev/Next API (for article pagination)</a></li>
+</ul>
+
+<h4>Contact</h4>
+<ul>
+<li><a href="https://drupal.org/project/contact_form_blocks">Contact Form Blocks</a></li>
+</ul>
+
+<h3>Contour Content Data</h3>
+<p>If you used the "theme only" option to install the theme on an existing install that already has content we recommend you use our Contour Content Data module to create the additional content types, fields and Views needed to fully utilize the theme. You will find it in the root of the directory that contains the download files. This module is a custom <a href="http://drupal.org/project/features" target="_blank">Features</a> module and will not run without it. We recommend copying all of the modules from the /drupal_7/sites/all/modules folder into your install if you do not already have them. After you have all the modules simply upload and activate the Contour Content Data module and the content types, fields and Views will automatically be created.</p>
+
+<h2>Content Types</h2>
+
+<p>Contour utilizes several different custom content types that all have their own custom theme template files that are used to achieve various layouts and styles. If you are not working off of the full demo install please use the Contour Content Data plugin referenced above to automatically generate all these content types and their fields. We will also go over each of the content types as well as their fields and corresponding template files below:</p>
+
+<h4>Flexslider</h4>
+<p>This content type is used to manage the slides that are used in a Flexslider view block (like the one used on the front page of the demo). </p>
+<img src="images/flexslider.png"><br/><br/>
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Image:</strong> The default Image field used for uploading the slide image.</li>
+<li><strong>Caption:</strong> Used to add a caption to the slide.</li>
+<li><strong>Caption Position:</strong> Used to set the position of the caption (left or right).</li>
+<li><strong>Navigation Text:</strong> Used to set the text for the slide's navigation button.</li>
+</ul>
+<p><strong>Template files:</strong></p>
+<ul>
+<li>/templates/node/node--flexslider.tpl.php</li>
+<li>/templates/node/node--view--flexslider-navigation--block.tpl.php</li>
+<li>/templates/views/views-view--flexslider-navigation.tpl.php</li>
+<li>/templates/views/views-view--flexslider.tpl.php</li>
+</ul>
+
+<h4>Portfolio</h4>
+<p>This content type is used to manage the portfolio items used in the various Portfolio template styles Contour offers. All the styles are managed by this single content type and below is the list of fields and corresponding template files used by this content type: </p>
+
+<img src="images/portfolio.png"><br/><br/>
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Image:</strong> The default Image field used for uploading the slide image.</li>
+<li><strong>Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+<li><strong>Slider:</strong> This is used to upload the images used in the single item node slider.</li>
+<li><strong>Type:</strong> This is a simple list(text) field using a select list widget and is used to select between Standard And Mason.</li>
+</ul>
+<p><strong>Template files:</strong></p>
+<ul>
+<li>/templates/node/node--portfolio.tpl.php</li>
+<li>/templates/node/node--view--featured-products--block.tpl.php</li>
+<li>/templates/node/node--view--more-products--block.tpl.phpp</li>
+<li>/templates/node/node--view--portfolio-block--block.tpl.php</li>
+<li>/templates/node/node--view--portfolio-block-page--block.tpl.php</li>
+<li>/templates/node/node--view--portfolio-mason--block.tpl.php</li>
+<li>/templates/node/node--view--portfolio-mason-three--block.tpl.php</li>
+<li>/templates/node/node--view--portfolio-mason-two--block.tpl.php</li>
+<li>/templates/node/node--view--portfolio-three--block.tpl.php</li>
+<li>/templates/node/node--view--portfolio-two--block.tpl.php</li>
+<li>/templates/page/page--node--portfolio.tpl.php</li>
+<li>/templates/views/views-view--more-products.tpl.php</li>
+<li>/templates/views/views-view--portfolio-block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-mason-three.tpl.php</li>
+<li>/templates/views/views-view--portfolio-mason-two.tpl.phpp</li>
+<li>/templates/views/views-view--portfolio-block-page.tpl.php</li>
+<li>/templates/views/views-view--portfolio-three.tpl.php</li>
+<li>/templates/views/views-view--portfolio-two.tpl.php</li>
+<li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
+<li>/templates/views/views-view-list--portfolio-filters.tpl.phpp</li>
+</ul>
+
+<h4>Product Display</h4>
+<p>This content type is used display Drupal Commerce products as node content. </p>
+<img src="images/product-display.png"><br/><br/>
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Product Variations:</strong> This uses the Commerce-specific "product reference" field type with an "inline entity form - multiple values" widget. This is how you can add and display different variations to your products like size and color.</li>
+<li><strong>Product Slider:</strong> Used to upload images for the single product image slider.</li>
+<li><strong>Featured:</strong> This is a simple boolean field using the on/off widget for tagging a product as "featured" for use in Views filters.</li>
+<li><strong>Item Info:</strong> A text field to enter the basic item info.</li>
+<li><strong>Product Care:</strong> A text field to enter information about product care.</li>
+</ul>
+<p><strong>Template files:</strong></p>
+<ul>
+<li>/templates/node/node--product-display.tpl.php</li>
+<li>/templates/node/node--shop.tpl.php</li>
+<li>/templates/node/node--view--featured-products--block.tpl.php</li>
+<li>/templates/page/page--node--product-display.tpl.php</li>
+<li>/templates/page/page--shop.tpl.php</li>
+<li>/templates/views/views-view--more-products.tpl.php</li>
+<li>/templates/views/views-view--shop.tpl.php</li>
+</ul>
+
+<h4>Testimonials</h4>
+<p>This content type is used to create the testimonial items used in the Testimonials view block (like the one used on the front page of the demo). </p>
+<img src="images/testimonials.png"><br/><br/>
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Testimonial content:</strong> A simple text field to enter the actual content of the testimonial.</li>
+<li><strong>Image:</strong> Used to upload a testimonial iamge.</li>
+<li><strong>Testimonial name:</strong> Used to show the name of the person giving the testimonial.</li>
+</ul>
+<p><strong>Template files:</strong></p>
+<ul>
+<li>/templates/node/node--testimonials.tpl.php</li>
+<li>/templates/views/views-view--testimonials.tpl.php</li>
+</ul>
+
+<h2>Theme Settings</h2>
+<p>Visit /admin/appearance/settings/contour to configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
+
+<h2>Pages and Headings</h2>
+<p>Contour does not require any custom fields for the Basic Page content type, but the theme demo does utilize custom heading blocks on each page. The blocks are configured to only be shown on their respective pages using the block visibility settings. Heading blocks are best used in the "Before Content No Wrapper" block region. Below is an example of the markup used in a Contour page heading block:</p>
+
+<pre>
+&lt;div class=&quot;container container-color bigpadding top-grey&quot;&gt;
+	&lt;section class=&quot;row&quot;&gt;
+	&lt;h6 class=&quot;text-color-alt largefont bold&quot;&gt;WE ARE CONTOUR&lt;/h6&gt;
+	&lt;/section&gt;
+	&lt;section class=&quot;row&quot;&gt;
+	&lt;h2 class=&quot;bold text-color&quot;&gt;BUILDING BRANDS SINCE 1999.&lt;/h2&gt;
+	&lt;/section&gt;
+	&lt;section class=&quot;row&quot;&gt;
+	&lt;h6 class=&quot;text-color smallfont bold&quot;&gt;WE CREATE OUT OF THIS WORLD EXPERIENCES FOR OUT OF THIS WORLD BRANDS AND ACTIVATE THEM ACROSS ALL DIGITAL MEDIA.&lt;/h6&gt;
+	&lt;/section&gt;
+&lt;/div&gt;
+</pre>
+
+<h2>Portfolio</h2>
+<p>Contour includes six main portfolio styles (as well as two extra block styles)that can be used to display the portfolio content on your site. Each is powered by a Views block and we will outline each one as well as the two single item styles.</p>
+
+<h4>Portfolio (Main) - Example: <a href="http://refaktorthemes.com/contour/portfolio" target="_blank"> http://refaktorthemes.com/contour/portfolio</a></h4>
+<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block-page.txt to import this View. Then simply place the "View: Portfolio Block Page" in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-block-page--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-block-page.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Two - Example: <a href="http://refaktorthemes.com/contour/portfolio-two" target="_blank"> http://refaktorthemes.com/contour/portfolio-two</a></h4>
+<p>This is the second standard Portfolio style which utilizes the "Portfolio Two" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-two.txt to import this View. Then simply place the "View: Portfolio Two" in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-two--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-two.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Three - Example: <a href="http://refaktorthemes.com/contour/portfolio-three" target="_blank"> http://refaktorthemes.com/contour/portfolio-three</a></h4>
+<p>This is the third standard Portfolio style which utilizes the "Portfolio Three" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-three.txt to import this View. Then simply place the "View: Portfolio Three" in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-three--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-three.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Mason - Example: <a href="http://refaktorthemes.com/contour/portfolio-mason" target="_blank"> http://refaktorthemes.com/contour/portfolio-mason</a></h4>
+<p>This is the mason Portfolio style which utilizes the "Portfolio Mason" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-mason.txt to import this View. Then simply place the "View: Portfolio Mason" in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-mason--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-mason.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Mason Two - Example: <a href="http://refaktorthemes.com/contour/portfolio-mason-two" target="_blank"> http://refaktorthemes.com/contour/portfolio-mason-two</a></h4>
+<p>This is the mason Portfolio style which utilizes the "Portfolio Mason Two" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-mason-two.txt to import this View. Then simply place the "View: Portfolio Mason Two" in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-mason-two--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-mason-two.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Mason Three - Example: <a href="http://refaktorthemes.com/contour/portfolio-mason-three" target="_blank"> http://refaktorthemes.com/contour/portfolio-mason-three</a></h4>
+<p>This is the mason Portfolio style which utilizes the "Portfolio Mason Three" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-mason-three.txt to import this View. Then simply place the "View: Portfolio Mason Three" in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-mason-three--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-mason-three.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio (block) - Example: <a href="http://refaktorthemes.com/contour/" target="_blank"> http://refaktorthemes.com/contour/</a></h4>
+<p>This is a View that displays the four latest standard portfolio items in a block (see the front page of the demo for an example). If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
+<p><strong>Note:</strong> to edit the default heading text for this block edit /templates/views/views-view--portfolio-block.tpl.php</p>
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--portfolio-block--block.tpl.php</li>
+<li>/templates/views/views-view--portfolio-block.tpl.php</li>
+</ul>
+</ul>
+
+<h4>More Projects - Example: <a href="http://refaktorthemes.com/contour/portfolio/19" target="_blank"> http://refaktorthemes.com/contour/portfolio/19/</a></h4>
+<p>This is a View that displays the three latest standard portfolio items in a block (see the bottom of the Item Basic page on the demo). If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/more-projects.txt to import this View. Then simply place the "View: More Projects" in the Content region and configure the block visibility settings to your liking.</p>
+
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--more-projects--block.tpl.php</li>
+<li>/templates/views/views-view--more-projects.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Item: Basic - Example: <a href="http://refaktorthemes.com/contour/portfolio/19" target="_blank"> http://refaktorthemes.com/contour/portfolio/19/</a></h4>
+<p>This is the default style for the single Portfolio nodes. It displays the Portfolio Slider to the left of the content, and below is an example of the node content used for the demo portfolio items:</p>
+
+<pre>
+&lt;h5 class=&quot;text-color grey&quot;&gt;PROJECT SOLUTION&lt;/h5&gt;
+&lt;p class=&quot;midpadding&quot;&gt;
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. &lt;br&gt;&lt;br&gt;
+	Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+&lt;/p&gt;
+&lt;!-- specifics --&gt;
+&lt;h5 class=&quot;text-color grey smalltopmargin&quot;&gt;SERVICES OFFERED&lt;/h5&gt;
+&lt;ul class=&quot;midtoppadding&quot;&gt;
+	&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;greytext&quot;&gt;Identity &amp;amp; Branding&lt;/span&gt;&lt;/li&gt;
+	&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;greytext&quot;&gt;Web Design&lt;/span&gt;&lt;/li&gt;
+	&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;greytext&quot;&gt;Web Development&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- button --&gt;
+&lt;div class=&quot;medium color-button btn fifty&quot;&gt;
+	&lt;a href=&quot;#&quot;&gt;LAUNCH WEBSITE&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--portfolio.tpl.php</li>
+<li>/templates/page/page--node--portfolio.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Item: Wide - Example: <a href="http://refaktorthemes.com/contour/portfolio/16" target="_blank"> http://refaktorthemes.com/contour/portfolio/16/</a></h4>
+<p>This is the wide style for the single Portfolio nodes. It displays the Portfolio Slider to the left of the content, and below is an example of the node content used for the demo portfolio items:</p>
+
+<pre>
+&lt;div class=&quot;container folio container-color bigpadding&quot;&gt;
+	&lt;section class=&quot;row&quot;&gt;
+	&lt;!-- first section --&gt;
+	&lt;div class=&quot;four columns&quot;&gt;
+		&lt;h5 class=&quot;text-color grey&quot;&gt;PROJECT BRIEF&lt;/h5&gt;
+		&lt;p class=&quot;midpadding&quot;&gt;
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;!-- second section --&gt;
+	&lt;div class=&quot;four columns&quot;&gt;
+		&lt;h5 class=&quot;text-color grey&quot;&gt;THE SOLUTION&lt;/h5&gt;
+		&lt;p class=&quot;midpadding&quot;&gt;
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. &lt;br/&gt;&lt;br/&gt;
+			Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;!-- third section --&gt;
+	&lt;div class=&quot;four columns&quot;&gt;
+		&lt;h5 class=&quot;text-color grey&quot;&gt;SERVICES OFFERED&lt;/h5&gt;
+		&lt;ul class=&quot;midtoppadding&quot;&gt;
+			&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt; Identity &amp;amp; Branding&lt;/li&gt;
+			&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt; Web Design&lt;/li&gt;
+			&lt;li class=&quot;text-color&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt; Web Development&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;!-- button --&gt;
+		&lt;div class=&quot;medium primary btn eight columns&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Launch Website&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;/section&gt;
+&lt;/div&gt;
+</pre>
+
+<p><strong>Note:</strong></p> back up /templates/node/node--portfolio.tpl.php and then duplicate /templates/node/node--portfolio-wide.tpl.php and rename it /templates/node/node--portfolio.tpl.php if you wish to use this as your Portfolio node style.
+<ul>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--portfolio.tpl.php</li>
+<li>/templates/page/page--node--portfolio.tpl.php</li>
+</ul>
+</ul>
+
+<h4>Portfolio Filters:</h4>
+<p>The Mason portfolio pages seen on the demo include support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
+
+<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio Mason views.</p>
+
+
+<h2>Notes (posts)</h2>
+<p>If you would like to use Article (recommended) or Blog posts on your site Contour comes equipped with several templates that modify the look and feel of the posts list and single items. The default post page on the demo can be seen <a href="http://refaktorthemes.com/contour/notes" target="_blank">here</a>, a single post can be seen <a href="http://refaktorthemes.com/contour/notes/25-fresh-business-concepts" target="_blank">here</a> and an alternate list format can be seen <a href="http://refaktorthemes.com/contour/note-list" target="_blank">here.</a> There are no extra content types or custom fields that you need to set up and we will cover each template below:</p>
+
+<h4>Default Notes View</h4>
+<p>The default page seen on the demo <a href="http://refaktorthemes.com/contour/notes" target="_blank">here</a> is a View page of the Article content type. You can either use the Contour Content Data module to create the view or you can use the export code found in /views_exports/notes.txt. The following theme file(s) are associated with this template:</p>
+<ul>
+<li>/templates/page/page--notes.tpl.php</li>
+</ul>
+
+<h4>Note List View</h4>
+<p>The <a href="http://refaktorthemes.com/contour/note-list" target="_blank">Note List</a> is an alternative template for displaying a list of your posts and is also a View page of the Article content type.  You can either use the Contour Content Data module to create the view or you can use the export code found in /views_exports/note-list.txt. The following theme files are associated with this template:</p>
+<ul>
+<li>/templates/page/page--note-list.tpl.php</li>
+</ul>
+
+<h4>Note Single</h4>
+<p>The <a href="http://refaktorthemes.com/contour/notes/25-fresh-business-concepts" target="_blank">Note Single</a> is simply the layout of a single post of the Article or Blog content type on your site (we recommend using Article). The following theme files are associated with this template:</p>
+<ul>
+<li>/templates/node/node--article.tpl.php</li>
+<li>/templates/page/page--node--article.tpl.php</li>
+</ul>
+
+<h2>Commerce (Shop)</h2>
+<p>Contour supports the <a href="http://drupal.org/project/commerce" target="_blank">Drupal Commerce</a> module, a powerful eCommerce framework for building online stores. Drupal Commerce has a complete set of <a href="http://www.drupalcommerce.org/documentation" target="_blank">documentation</a> which we highly recommend reading if you have never used DC before. We will go over some of the basics and highlight the aspects of the theme that enhance DC and how you can use them on your site. If you do plan on using Drupal Commerce with your install of Contour we also highly recommend you install the full demo content as it will provide you a completely functional configuration of Drupal Commerce to begin working with. </p>
+
+<h4>Product Types</h4>
+
+<p>When the Commerce module is activated you can visit /admin/commerce to begin configuring Drupal Commerce. We will not be going over every options page, but we will outline the creation of Product Types and explain how that relates to the "Product Display" content type. Visit /admin/commerce/products/types to begin creating your own Product Types. Below is an example of what the fields look like on a Contour demo product type:</p>
+<img src="images/product-type.png"><br/><br/>
+<p>Product Types have some default fields like SKU which are required for Commerce products to function correctly, but you can create as many additional fields as you need for your products.</p>
+
+<p><strong>Important:</strong> Any product fields that are intended to function as attribute selection fields on Add to Cart forms need to be configured to do so. When editing that field, scroll down to the ATTRIBUTE FIELD SETTINGS option and enable the option. For example, if you have several variations of a "Hat" product (red, blue, green) and you want the customer to be able to select the color they want when adding the item to the cart, the Color field would need to be configured in this way.</p> 
+<img src="images/field-attribute.png"><br/>
+
+<h4>Creating products using "Product Display"</h4>
+<p>As described earlier in the Content Types section of the documentation, Contour uses a content type called Product Display which acts as a bridge between Drupal and Commerce products. The "Product Reference" field allows you to create your product(s) at the same time of the node creation. Below is a step by step guide for using this content type to create a Drupal Commerce product node in Contour: </p>
+<ul>
+<li>1. Visit /node/add/product-display to begin creating your product (if you do not have this content type refer to the Content Types portion of the docs for instructions on how to set this up). Enter a title like you would for any other Drupal node.</li>
+<li>2. Under the "Product Reference" field select the type of product you are creating and press "Add New Product". </li>
+<li>3. Configure your product and press the "Save Product" button. If you are doing multiple variations of the same product, add another product variation of the same product type and configure as necessary. For example if you are creating a Hat product and it comes in three colors, create a variation for each of the three colors.</li>
+<li>4. Configure the rest of the Product Display fields (image slider, etc) and save the node. </li>
+</ul>
+
+<h4>Product Search</h4>
+<p>If you visit the demo <a href="http://refaktorthemes.com/contour/shop" target="_blank">Shop page</a> you will see various options in the left sidebar for narrowing down the products that are shown. This is called faceted search and is a very powerful way to handle stores with a lot of different products. To fully utilize faceted search with Drupal Commerce, the following modules are required:</p>
+<ul>
+<li><a href="http://drupal.org/project/commerce_search_api">Commerce Search API</a></li>
+<li><a href="http://drupal.org/project/search_api">Search API</a></li>
+<li><a href="http://drupal.org/project/Facetapi">Facet API</a></li>
+<li><a href="http://drupal.org/project/search_api_db">Search API Database Search</a></li>
+<li><a href="http://drupal.org/project/search_api_ranges">Search API Ranges</a></li>
+</ul>
+<p>Visit /admin/config/search/search_api to begin the process of configuring Commerce to utilize the Search API. Two elements are needed: the search server and the search index. The search server can be enabled and configured with the default options already provided. The real configuration happens with the search index.</p>
+<p> <strong>Note:</strong> before proceeding with the setup of your search index, visit /admin/config/system/cron and manually run cron to ensure your products will be available for searching.</p>
+
+<p>Visit /admin/config/search/search_api/add_index to add your index. Give your search index a name you can identify later on as this search index will actually be used in a View to create the actual store page itself. For the "item type" option select Node from the dropdown menu as you will be searching from the Product Display nodes. Under "server" select the search sever you just created before (likely called "default" if you used the default server). After you are done press "Create Index"</p>
+
+<p> When you click on the name of your search index while on the /admin/config/search/search_api page you will be able to configure all the various options available. If you click on the Fields tab you will be able to select the fields that will be made available to search. If you are working off your own custom Product Types the fields you will want to enable will likely be different from the ones we enabled for the demo content, but here is the list of nodes that have been selected for the Demo store as a reference:</p>
+
+<ul>
+<p>Node ID, Content type, Title, Status, Date created, Date changed, Tags, Portfolio Category, Product Variatons, Item language, Product Variatons » Price » Amount (decimal) (Min), Product Variatons » Price » Amount (decimal) (Max), Title (Fulltext) (1.0 x), Tags name (Fulltext) (1.0 x), Portfolio Category name (Fulltext) (1.0 x), Tags » Name, Portfolio Category » Name, Product Variatons » Color, Product Variatons » Size, Product Variatons » Product Type, Product Variatons » Price » Amount (decimal)</p>
+</ul>
+
+<p>The facets tab is the other important section to configure. There you can select the different facet search blocks that you will make available on your store page. Each facet has a set of options that you can configure to your liking. These facets show up as block regions so you can add them to the sidebar region or wherever you choose to display them. Keep in mind these facet search blocks will only display on a View page displaying the search index content. Once you have set up your search index you are ready for the final step which is the creation of your store View page. </p>
+
+<h4>Creating a "Shop" page.</h4>
+<p>The key to making everything tie together is the View page which uses the search index to display the products. This is done by creating a View like you would any other View, but by selecting your search index from the "Show" select menu during the initial view creation. This View is an unformatted list of the rendered entity, and no other special configurations are needed. The following template files are associated with Contour's demo shop page:</p>
+<ul>
+<li>/templates/node/node--shop.tpl.php</li>
+<li>/templates/page/page--shop.tpl.php</li>
+<li>/templates/views/views-view--shop.tpl.php</li>
+</ul>
+
+<p><strong>Note:</strong> if you use a different URL alias for your store page you will need to carry out the following steps: </p>
+<ul>
+<li>1. Duplicate /templates/node/node--shop.tpl.php and /templates/page/page--shop.tpl.php and rename them according to your store page URL alias. </li>
+<li>2. Open template.php and modify our contour_preprocess_node function (line 29) to reflect the correct alias of your store.</li>
+</ul>
+
+<h4>Shop Header Block</h4>
+<p>The demo store page uses a custom header block to handle the display of the necessary store links. The following markup is used in a block inside the Header Branding Right region and set to only display on the store related pages:</p>
+<pre>
+&lt;?php global $user, $base_url; ?&gt;
+&lt;ul id=&quot;header-links&quot;&gt;
+	&lt;li&gt;&lt;?php $block = module_invoke('views', 'block_view', 'header_cart_block-block_1'); print render($block['content']); ?&gt; &lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/cart&quot;&gt;&lt;i class=&quot;icon-shopping-cart right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;?php if (!$user-&gt;uid): ?&gt;
+	&lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/user/register&quot; title=&quot;Sign-up&quot;&gt;Sign-up&lt;/a&gt;&lt;/li&gt;
+	&lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/user&quot; title=&quot;Login&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+	&lt;?php endif; ?&gt;
+	&lt;?php if ($user-&gt;uid): ?&gt;
+	&lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/user&quot; title=&quot;Login&quot;&gt;My Account&lt;/a&gt;&lt;/li&gt;
+	&lt;?php endif; ?&gt;
+  &lt;li class=&quot;text&quot;&gt;&lt;a href=&quot;&lt;?php echo $base_url; ?&gt;/wishlist&quot; title=&quot;Wishlist&quot;&gt;Wishlist&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<h4>Wishlist</h4>
+<p>To make use of the Wishlist functionality that can be seen on the Contour demo you will need to install the Flag module. Once you do visit /admin/structure/flags/import to import the following code: </p>
+<pre>
+$flags = array();
+// Exported flag: "Shop Wishlist".
+$flags['shop'] = array(
+  'content_type' => 'node',
+  'title' => 'Shop Wishlist',
+  'global' => '0',
+  'types' => array(
+    0 => 'product_display',
+  ),
+  'flag_short' => 'Add to Wishlist',
+  'flag_long' => '',
+  'flag_message' => '',
+  'unflag_short' => 'Remove from Wishlist',
+  'unflag_long' => '',
+  'unflag_message' => '',
+  'unflag_denied_text' => '',
+  'link_type' => 'toggle',
+  'roles' => array(
+    'flag' => array(
+      0 => '1',
+      1 => '2',
+    ),
+    'unflag' => array(
+      0 => '1',
+      1 => '2',
+    ),
+  ),
+  'weight' => 0,
+  'show_on_form' => 0,
+  'access_author' => '',
+  'show_on_page' => 0,
+  'show_on_teaser' => 0,
+  'show_contextual_link' => 0,
+  'i18n' => 0,
+  'api_version' => 2,
+);
+return $flags;
+</pre>
+<p>Then if you don't already have it you can use the code in /views_exports/wishlist-block.txt to create a View to display a block of the Wishlist items. </p>
+
+<h2>Project Planner </h2>
+<p>The <a href="http://refaktorthemes.com/contour/project-planner" target="_blank">Project Planner</a> uses a <a href="http://drupal.org/project/webform">Webform</a> module block called inside of the node content of a basic page. Once the module has been installed you can visit /node/add and add a new Webform. Once you have added all the fields you want in your form, click the "Webform" tab and then "Form Settings". Scroll down to the Advanced Setting panel and check off the "Available as Block" option.</p>
+<p>Use the example markup in /examples/planner.php in a basic page content node. You will notice that the block region is called manually with PHP. To get the correct value for the Webform block you just created visit /admin/structure/block/ and click the Configure link on your Webform block. In the URL in your browser part of the URL will be client-block-X (x being a number). Replace the client-block-58 in the example code with whatever client-block-x is for your particular block.</p>
+
+<h2>Shortcodes</h2>
+<h4>Padding Shortcodes:</h4>
+ <ul class="blacktext">
+  <li>
+    class=smallpadding &gt;
+    10px top bottom
+  </li>
+  
+  <li>
+    class=smallsidepadding &gt;
+    10px left right
+  </li>
+  
+  <li>
+    class=smalltoppadding &gt;
+    10px top
+  </li>
+  
+  <li>
+    class=smallbottompadding &gt;
+    10px bottom
+  </li>
+  
+  <li>
+    class=midpadding &gt;
+    20px top bottom
+  </li>
+  
+  <li>
+    class=midtoppadding &gt;
+    20px top
+  </li>
+  
+  <li>
+    class=midbottompadding &gt;
+    20px bottom
+  </li>
+  
+  <li>
+    class=bigpadding &gt;
+    50px top bottom
+  </li>
+  
+  <li>
+    class=bigsidepadding &gt;
+    50px left right
+  </li>
+  
+  <li>
+    class=bigtoppadding &gt;
+    50px top
+  </li>
+  
+  <li>
+    class=bigbottompadding &gt;
+    50px bottom
+  </li>
+  
+  <li>
+    class=largepadding &gt;
+    100px top bottom
+  </li>
+  
+  <li>
+    class=largetoppadding &gt;
+    100px top
+  </li>
+  
+  <li>
+    class=largebottompadding &gt;
+    100px bottom
+  </li>
+
+<li>class=leftpadding &gt; 20px left</li>
+
+<li>class=rightpadding &gt; 20px right</li>
+</ul>
+<p>Example:</p>
+<pre>&lt;div class=&quot;midpadding&quot;&gt;&lt;/div&gt;</pre>
+<h4>Margin Shortcodes:</h4>
+<ul class="blacktext">
+  <li>
+    class=smallmargin &gt;
+    10px top bottom
+  </li>
+  
+  <li>
+    class=smalltopmargin &gt;
+    10px top
+  </li>
+  
+  <li>
+    class=smallbottommargin &gt;
+    10px bottom
+  </li>
+  
+  <li>
+    class=midmargin &gt;
+    20px top bottom
+  </li>
+  
+  <li>
+    class=midtopmargin &gt;
+    20px top
+  </li>
+  
+  <li>
+    class=midbottommargin &gt;
+    20px bottom
+  </li>
+  
+  <li>
+    class=bigmargin &gt;
+    50px top bottom
+  </li>
+  
+  <li>
+    class=bigtopmargin &gt;
+    50px top
+  </li>
+  
+  <li>
+    class=bigbottommargin &gt;
+    50px bottom
+  </li>
+  
+  <li>
+    class=largemargin &gt;
+    100px top bottom
+  </li>
+  
+  <li>
+    class=largetopmargin &gt;
+    100px top
+  </li>
+  
+  <li>
+    class=largebottommargin &gt;
+    100px bottom
+  </li>
+</ul>
+<p>Example:</p>
+<pre>&lt;div class=&quot;midmargin&quot;&gt;&lt;/div&gt;</pre>
+
+<h4>Text Styles:</h4>
+<ul class="blacktext">
+<li>class=smallfont &gt; 11px font</li>
+<li>class=meta &gt; 12px font</li>
+<li>class=largefont &gt; 16px font</li>
+<li>class=light &gt; fontweight 200</li>
+<li>class=bold &gt; fontweight 700</li>
+<li>class=extrabold &gt; fontweight 800</li>
+<li>class=italic &gt; italic</li>
+
+<li>class=blacktext &gt; black color text</li>
+<li>class=whitetext &gt; white color text</li>
+<li>class=greytext &gt; grey color text</li>
+<li>class=bluetext &gt; blue color text</li>
+<li>class=yellowtext &gt; yellow color text</li>
+
+<li>class=left &gt; align text left <span class="bold meta">If used on div will also align div to left</span> </li>
+<li>class=right &gt; align text right <span class="bold meta">If used on div will also align div to right</span></li>
+<li>class=center &gt; center text</li>
+</ul>
+<p>Example:</p>
+<pre>&lt;div class=&quot;blacktext&quot;&gt;&lt;/div&gt;</pre>
+
+<h4>Color Scheme Shortcodes:</h4>
+<p>In addition to the shortcodes above we created a set of selectors that provide color based on the color scheme selected in the theme settings.</p>
+<ul>
+<li>class=container-color &gt; gives element the primary background color of the scheme in use</li>
+<li>class=text-color &gt; gives element the primary text color of the scheme in use</li>
+<li>class=text-inverse &gt; gives element the inverse text color of the scheme in use</li>
+<li>class=text-alt &gt; gives element the alt text color of the scheme in use (example blue text/white background)</li>
+<li>class=color-button &gt; gives button the primary background color of the scheme in use</li>
+</ul>
+<p>Example:</p>
+<pre>&lt;div class=&quot;text-color&quot;&gt;&lt;/div&gt;</pre>
+
+<h2>Block Regions</h2>
+<p>Contour features 17 block regions where you can add your own custom content. Visit yourdomain.com/admin/structure/block to add your own content to the defined block regions. Press "Add Block" to create a new custom blog, or select an existing block from the Disabled list below the defined block regions.</p>
+<h4>Header Block Regions</h4>
+<p>Contour features four header regions: Header Branding Left, Header Branding Right, Header Menu Left and Header Menu Right. You can use the "demonstrate block regions" link on /admin/structure/block to see exactly where these are located, but the names are fairly self explanatory. If you would like to mimic the social icon region seen in the top right hand corner of the demo you can use the following markup in a block:</p>
+<pre>&lt;ul id=&quot;header-links&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;Google +&quot;&gt;&lt;i class=&quot;icon-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;Linked-in&quot;&gt;&lt;i class=&quot;icon-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;icon-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;icon-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<h4>Content Block Regions</h4>
+<p>Contour has a total of 7 content block regions: Before Content No Wrapper, Before Content, Content, Sidebar Left, Sidebar Right, After Content and After Content No Wrapper. Like the Header regions described above these regions are fairly self explanatory. One thing to note is that the "No Wrapper" regions are called outside of the main content wrap so you can use completely full width content (like the Image Slider) or use your own custom wrappers. Those regions are there to do whatever you like with and are not restricted by any additional markup.</p>
+
+<h4>Footer Block Regions</h4>
+<p>Finally there are 6 footer block regions available, four individual four column regions and two additional six column regions below. </p>
+
+<h2>Extras</h2>
+<h4>Code Examples</h4>
+<p>We've included some code examples inside the /examples folder in the root of the theme with some markup used on several of the demo page templates. The full HTML version of the theme can also be found in the root of the download files (contour-html.zip). Inside you can find a ton of code examples for all the different page templates.</p>
+<h3>Twitter Widget</h3>
+<p>Before you can use the Twitter widget you need to configure the Twitter options in the theme settings (/admin/appearance/settings/contour). To get the necessary authentication keys you must visit <a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a> and log in with your Twitter account. Once there you can create an app and generate the OAuth keys needed to enter into the theme settings. Once you have those entered you can use the following markup in a Block (make sure to set the text filter to PHP code):</p>
+<pre>
+&lt;h6 class=&quot;whitetext bold meta&quot;&gt;CONTOUR ON TWITTER&lt;/h6&gt;
+&lt;div class='tweet query midtoppadding'&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+                        
+    jQuery(document).ready(function ($) {
+      
+      $(&quot;.tweet&quot;).tweet({
+        modpath: '&lt;?php global $theme_root; echo $theme_root;?&gt;/includes/twitter/',
+        username: &quot;envato&quot;,
+        avatar_size: 34,
+        count: 3,
+        loading_text: &quot;loading tweets...&quot;
+      });
+    
+    });
+    
+  &lt;/script&gt;
+</pre>
+<h2>Thank You</h2>
+<p>Thank you very much for purchasing the Contour responsive Drupal 7 theme. Once again if you have any issues or feedback please connect via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a>. Enjoy using Contour!</p>
+</p>&copy 2013 Refaktor.
+</div>
+<script>$('#toc').toc();</script></body></html>
