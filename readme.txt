@@ -1,4 +1,9 @@
 ==Porto==
+
+Theme by Refaktor - http://refaktorthemes.com 
+Demo - http://refaktorthemes.com/porto
+Original design by Crivos - http://themeforest.net/user/crivos
+
 Porto is a professional, multipurpose Drupal theme perfect for any business or portfolio website.
 
 ==Libraries and Resources==
