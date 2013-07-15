@@ -164,6 +164,33 @@ Porto also includes support for a "Related Projects" block that you can use to s
 
 <p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio view.</p>
 
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/views/views-view-list--portfolio-filters.tpl.php</li>
+<li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
+</ul>
+
+<h2>Team</h2>
+
+<h4>Team Block - Example: <a href="http://refaktorthemes.com/porto/team" target="_blank"> http://refaktorthemes.com/porto/team</a></h4>
+<p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/team.txt to import this View. Then simply place the "View: Team" in the Content region and configure the block visibility settings to your liking.</p>
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--view--team--block.tpl.php</li>
+<li>/templates/views/views-view--team.tpl.php</li>
+</ul>
+
+<h4>Team Filters:</h4>
+<p>The Team block view also includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Team). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Team content type via a term reference field so you can select the category or categories you want to place your items into.</p>
+
+<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/team-filters.txt to import as a View for placement in the View header of the Team view.</p>
+
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/views/views-view-list--team-filters.tpl.php</li>
+<li>/templates/views/views-view-fields--team-filters.tpl.php</li>
+</ul>
+
 
 <h2>Blog (posts)</h2>
 <p>If you would like to use Article (recommended) or Blog posts on your site Portocomes equipped with several templates that modify the look and feel of the posts list and single items. The default post page on the demo can be seen <a href="http://refaktorthemes.com/contour/notes" target="_blank">here</a>, a single post can be seen <a href="http://refaktorthemes.com/contour/notes/25-fresh-business-concepts" target="_blank">here</a> and an alternate list format can be seen <a href="http://refaktorthemes.com/contour/note-list" target="_blank">here.</a> There are no extra content types or custom fields that you need to set up and we will cover each template below:</p>
