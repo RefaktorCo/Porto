@@ -24,9 +24,10 @@ jQuery(document).ready(function ($) {
 	// Tooltip
 	$("a[rel=tooltip]").tooltip();
 	
+	// prettyPhoto
 	$(window).load(function() {
-	    $("a[rel^='flickr']").prettyPhoto();
-    }); 
+	  $("a[rel^='flickr']").prettyPhoto();
+  }); 
 	
 	// Post slider
   $('.post-image .flexslider').flexslider({
