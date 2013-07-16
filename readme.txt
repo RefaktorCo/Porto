@@ -14,6 +14,7 @@ Font Awesome(http://fortawesome.github.com/Font-Awesome/) released under commerc
 MobileMenu (https://github.com/mambows/mobilemenu).
 Modernizr(http://modernizr.com/) released under the MIT license(2).
 jQuery Flipshow(http://www.codrops.com) by Codrops and released under the MIT license(2).
+prettyPhoto(http://www.no-margin-for-errors.com) by Stephane Caron released under the GNU(3).
 FlexSlider(http://www.woothemes.com/flexslider/) released under the GNU(3).
 jQuery Flickr Plugin(http://www.newmediacampaigns.com/page/jquery-flickr-plugin) by Joel Sutherland released under the MIT license(2).
 Drupal Mega Slider (http://codecanyon.net/item/mega-slider/4313171) released under Envato extended licese (6).

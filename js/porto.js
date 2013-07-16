@@ -24,21 +24,9 @@ jQuery(document).ready(function ($) {
 	// Tooltip
 	$("a[rel=tooltip]").tooltip();
 	
-	// Fancybox
-	$(".fancybox").each(function() {
-	
-		var el = $(this);
-
-		var config, defaults = {}
-		if(el.data("plugin-options"))
-			config = $.extend({}, defaults, options, el.data("plugin-options"));		
-		
-		$(this).fancybox(config);
-
-	});
-	
-	// FlickrFeed	
-	$(".fancybox[rel=flickr]").fancybox();
+	$(window).load(function() {
+	    $("a[rel^='flickr']").prettyPhoto();
+    }); 
 	
 	// Post slider
   $('.post-image .flexslider').flexslider({

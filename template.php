@@ -341,10 +341,10 @@ function porto_preprocess_html(&$vars){
     '#weight' => 2,
   );
   
-  $fancybox = array(
+  $prettyPhoto = array(
     '#tag' => 'link', 
     '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/fancybox/jquery.fancybox.css', 
+      'href' => ''.$parent_root.'/vendor/prettyPhoto/css/prettyPhoto.css', 
       'rel' => 'stylesheet',
       'type' => 'text/css',
       'media' => 'screen',
@@ -468,7 +468,7 @@ function porto_preprocess_html(&$vars){
   drupal_add_html_head( $bootstrap, 'bootstrap');
   drupal_add_html_head( $font_awesome, 'font_awesome');
   drupal_add_html_head( $flexslider, 'flexslider');
-  drupal_add_html_head( $fancybox, 'fancybox');
+  drupal_add_html_head( $prettyPhoto, 'prettyPhoto');
   drupal_add_html_head( $circle_flip, 'circle_flip');
   drupal_add_html_head( $isotope, 'isotope');
   drupal_add_html_head( $theme_style, 'theme_style');
