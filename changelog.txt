@@ -1,2 +1,7 @@
-1.0 (07/13/13)
+1.0.1 (07/24/13)
+  *Updated Google Fonts and Maps links for SSL compatibility.
+  *Fixed PHP error on article nodes when Profile2 module is missing.
+  *Updated documentation.
+
+1.0 (07/20/13)
   *Initial release.

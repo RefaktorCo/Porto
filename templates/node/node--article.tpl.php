@@ -7,8 +7,11 @@ if ($items = field_get_items('node', $node, 'field_image')) {
   elseif (count($items) > 1) {
     $image_slide = 'true';
   }
+}  
   
-  $uid = user_load($node->uid);
+$uid = user_load($node->uid);
+
+if (module_exists('profile2')) {  
   $profile = profile2_load_by_user($uid, 'main');
 }
 
