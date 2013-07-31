@@ -1,6 +1,8 @@
 1.0.2 (07/31/13)
   *Tweaked menu preprocess functions to fix a menu depth issue.
   *Fixed misnamed module folder in demo install.
+  *Ensure breadcrumb wrapper will never show on front page.
+
 
 1.0.1 (07/24/13)
   *Updated Google Fonts and Maps links for SSL compatibility.
