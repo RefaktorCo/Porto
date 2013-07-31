@@ -1,3 +1,7 @@
+1.0.2 (07/31/13)
+  *Tweaked menu preprocess functions to fix a menu depth issue.
+  *Fixed misnamed module folder in demo install.
+
 1.0.1 (07/24/13)
   *Updated Google Fonts and Maps links for SSL compatibility.
   *Fixed PHP error on article nodes when Profile2 module is missing.

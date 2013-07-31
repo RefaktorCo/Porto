@@ -53,7 +53,7 @@
 	
 	<div role="main" class="main">
 	
-	  <?php if ($breadcrumb): ?>
+	  <?php if ( ($breadcrumb) AND (!drupal_is_front_page()) ): ?>
 	  <section class="page-top breadcrumb-wrap">
 		  <div class="container">
 		    <?php if (theme_get_setting('breadcrumbs') == '1'): ?>
