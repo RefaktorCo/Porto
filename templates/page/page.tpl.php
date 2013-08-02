@@ -71,6 +71,7 @@
 			</div>
 		</section>
 	  <?php endif; ?>
+	  
 	  <?php print render($page['before_content']); ?>
 	  <div id="content" class="content full">
 	    <div class="container">
