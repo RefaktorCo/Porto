@@ -3,6 +3,9 @@
   *Fixed misnamed module folder in demo install.
   *Ensure breadcrumb wrapper will never show on front page.
   *Fixed a logic error in porto_fields causing certain field content to not display. 
+  *Lightbox on Flickr images now shows next/prev links. 
+  *Updated docs.
+  *Fixed weird permissions on Drupal folder in /licenses.
 
 1.0.1 (07/24/13)
   *Updated Google Fonts and Maps links for SSL compatibility.
