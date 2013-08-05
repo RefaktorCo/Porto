@@ -5,6 +5,20 @@
 	margin: 22px 0px;
 }
 
+body.sticky-menu-active header #name-and-slogan {
+	float: left;
+	margin: 45px 0px 0px 0px;
+}
+
+body.sticky-menu-active header #site-slogan{
+  font-size: 12px;
+}
+
+body.sticky-menu-active header h1.logo {
+	position: relative;
+	margin: 45px 15px 0px 0px;
+}
+
 #site-name {
 	margin: 0px 0px 0px 0px;
 	font-size: 32px;
@@ -14,10 +28,15 @@
 	margin-top: 25px;
 }
 
-header div.logo {
+header h1.logo {
 	float: left;
 	margin: 15px 20px 15px 0px;
 	padding: 0;
+}
+
+body.sticky-menu-active header #site-name {
+  margin: 2px 0px -10px 0px;
+  font-size: 22px;
 }
 
 .md-slide-wrap {
@@ -73,7 +92,7 @@ header div.logo {
 	border-radius: 0 14px 14px 0;
 	position: relative;
 	top: -4px;
-	margin-left: -4px;
+	margin-left: -5px;
 }
 
 #search-block-form--2 .form-actions{

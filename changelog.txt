@@ -2,6 +2,7 @@
   *Re-organized branding section to clean up different configuration scenerios.
   *Additional tweaks related to previous menu fix.
   *Updated slider module.
+  *Fixed issue with search block at resolutions below 768px.
 
 1.0.2 (08/02/13)
   *Tweaked menu preprocess functions to fix a menu depth issue.
