@@ -1,3 +1,8 @@
+1.0.3 (08/05/13)
+  *Re-organized branding section to clean up different configuration scenerios.
+  *Additional tweaks related to previous menu fix.
+  *Updated slider module.
+
 1.0.2 (08/02/13)
   *Tweaked menu preprocess functions to fix a menu depth issue.
   *Fixed misnamed module folder in demo install.

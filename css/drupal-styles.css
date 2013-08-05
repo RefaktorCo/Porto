@@ -1,5 +1,25 @@
 /* DRUPAL THEME STYLES */
 
+#name-and-slogan {
+	float: left;
+	margin: 22px 0px;
+}
+
+#site-name {
+	margin: 0px 0px 0px 0px;
+	font-size: 32px;
+}
+
+.slogan-no-name { 
+	margin-top: 25px;
+}
+
+header div.logo {
+	float: left;
+	margin: 15px 20px 15px 0px;
+	padding: 0;
+}
+
 .md-slide-wrap {
   margin-bottom: 0px !important;
 }

@@ -14,11 +14,11 @@
 	    <?php endif; ?>
     
       <?php if ($logo): ?>
-        <h1 class="logo">
+        <div class="logo">
 		      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
 		        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
 		      </a>
-        </h1>
+        </div>
 	    <?php endif; ?>
 	    
 	    <?php if ($site_name || $site_slogan): ?>
@@ -31,7 +31,7 @@
 	        <?php endif; ?>
 	
 	        <?php if ($site_slogan): ?>
-	          <div id="site-slogan"<?php if ($disable_site_slogan) { print ' class="hidden"'; } ?>>
+	          <div id="site-slogan"<?php if ($disable_site_slogan) { print ' class="hidden"'; } if ($disable_site_name) { print ' class="slogan-no-name"'; } ?>>
 	            <?php print $site_slogan; ?>
 	          </div>
 	        <?php endif; ?>

@@ -60,12 +60,13 @@ function porto_process_page(&$variables) {
 function porto_menu_link(array $variables) {
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
+  static $item_id = 0;
   $menu_name = $element['#original_link']['menu_name'];
   
   // set the global depth variable
+  global $depth;
   $depth = $element['#original_link']['depth'];
-  $rootid = $element['#original_link']['plid'] == 0 ? ' _menuidroot_ ' : ' _menuidchild_ ';
-  
+
   if ( ($element['#below']) && ($depth == "1") ) {
     $element['#attributes']['class'][] = 'dropdown';
   }
@@ -73,7 +74,7 @@ function porto_menu_link(array $variables) {
   if ( ($element['#below']) && ($depth == "2") ) {
     $element['#attributes']['class'][] = 'dropdown-submenu';
   }
-
+  
   $sub_menu = $element['#below'] ? drupal_render($element['#below']) : '';
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   // if link class is active, make li class as active too
@@ -81,22 +82,17 @@ function porto_menu_link(array $variables) {
     $element['#attributes']['class'][] = "active";
   }
 
-  return '<li' . $rootid . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
 /**
  * Define menu UL class.
  */
 function porto_menu_tree($variables){
-
-  $menutree    = $variables['tree'];
-  $rootpos  = strpos($menutree,' _menuidroot_ ');
-  $childpos  = strpos($menutree,' _menuidchild_ ');
-  $class = ($rootpos === FALSE) || ($rootpos > $childpos) ? 'dropdown-menu' : 'nav nav-pills nav-main';
-  str_replace(' _menuidroot_ ', '',$menutree);
-  str_replace(' _menuidchild_ ','',$menutree);
-
-  return '<ul class="'.$class.'">' . $menutree . '</ul>';
+  // use global depth variable to define ul class
+  global $depth;
+  $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
+  return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -110,8 +106,6 @@ function porto_links($variables) {
   }
   return theme_links($variables);
 }
-
-
 
 /**
  * Customize search form.
