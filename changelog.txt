@@ -1,5 +1,5 @@
 1.0.3 (08/05/13)
-  *Re-organized branding section to clean up different configuration scenerios.
+  *Re-organized branding section to clean up different configuration scenarios.
   *Additional tweaks related to previous menu fix.
   *Updated slider module.
   *Fixed issue with search block at resolutions below 768px.
