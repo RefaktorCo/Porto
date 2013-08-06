@@ -98,6 +98,71 @@ jQuery(document).ready(function ($) {
 		$("#nivoSlider").nivoSlider();
 	}
 	
+	function toggle() {
+
+		var $this = this;
+			previewParClosedHeight = 25;
+
+		$("section.toggle > label").prepend($("<i />").addClass("icon-plus"));
+		$("section.toggle > label").prepend($("<i />").addClass("icon-minus"));
+		$("section.toggle.active > p").addClass("preview-active");
+		$("section.toggle.active > div.toggle-content").slideDown(350, function() {});
+
+		$("section.toggle > label").click(function(e) {
+
+			var parentSection = $(this).parent(),
+				parentWrapper = $(this).parents("div.toogle"),
+				previewPar = false,
+				isAccordion = parentWrapper.hasClass("toogle-accordion");
+
+			if(isAccordion && typeof(e.originalEvent) != "undefined") {
+				parentWrapper.find("section.toggle.active > label").trigger("click");
+			}
+
+			parentSection.toggleClass("active");
+
+			// Preview Paragraph
+			if(parentSection.find("> p").get(0)) {
+
+				previewPar = parentSection.find("> p");
+				var previewParCurrentHeight = previewPar.css("height");
+				previewPar.css("height", "auto");
+				var previewParAnimateHeight = previewPar.css("height");
+				previewPar.css("height", previewParCurrentHeight);
+
+			}
+
+			// Content
+			var toggleContent = parentSection.find("> div.toggle-content");
+
+			if(parentSection.hasClass("active")) {
+
+				$(previewPar).animate({
+					height: previewParAnimateHeight
+				}, 350, function() {
+					$(this).addClass("preview-active");
+				});
+
+				toggleContent.slideDown(350, function() {});
+
+			} else {
+
+				$(previewPar).animate({
+					height: previewParClosedHeight
+				}, 350, function() {
+					$(this).removeClass("preview-active");
+				});
+
+				toggleContent.slideUp(350, function() {});
+
+			}
+
+		});
+
+	}
+	
+	toggle();
+	
 	// Cloud Animation
 	function cloud() {
 		$(".cloud").animate( {"top": "+=20px"}, 3000, "linear", cloud )
