@@ -27,8 +27,9 @@
  * @ingroup views_templates
  */
 ?>
+<div class="container">
 <div class="row center client-carousel">
-	<div class="flexslider unstyled" data-plugin-options='{"directionNav":false, "animation":"slide", "slideshow": false, "maxVisibleItems": 6}'>
+	<div class="flexslider unstyled flexslider-control-nav" data-plugin-options='{"directionNav":false, "animation":"slide", "slideshow": false, "maxVisibleItems": 6}'>
 		<ul class="slides">
 		  <?php print render($title_prefix); ?>
 		  <?php if ($title): ?>
@@ -90,4 +91,5 @@
 		  <?php endif; ?>
 		</ul>
 	</div>		
+</div>
 </div><?php /* class view */ ?>
