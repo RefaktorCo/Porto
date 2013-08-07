@@ -4,9 +4,9 @@
  * Porto's theme implementation to display a single Drupal page.
  */
 ?>
-<body class="<?php print $classes; ?>"<?php print $attributes;?>>
-<div class="one-page" data-target=".single-menu" data-spy="scroll" data-offset="150">
-  <header>
+<body class="<?php print $classes; ?> one-page" data-target=".single-menu" data-spy="scroll" data-offset="150" <?php print $attributes;?>>
+<div class="body">
+  <header class="single-menu flat-menu">
     <div class="container">
 
       <?php if (isset($page['branding'])) : ?>
