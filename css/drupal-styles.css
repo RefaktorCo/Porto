@@ -58,6 +58,10 @@ body.sticky-menu-active header #site-name {
   margin-bottom: 0px;
 }
 
+.md-objects p {
+	color: inherit;
+}
+
 .theme-default .nivo-controlNav {
 	margin-top: -57px;
 	padding: 20px 0;
