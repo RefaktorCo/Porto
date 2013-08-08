@@ -32,6 +32,11 @@
 <div class="row latest-projects" id="projects">
 <div class="span12">
   <h1>Latest <strong>Projects</strong></h1>
+  
+   <?php if ($header): ?>
+	   <?php print $header; ?>
+	 <?php endif; ?>
+  
   <div class="row">
   <div class="flexslider flexslider-top-title flexslider-center-mobile unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide", "maxVisibleItems": 4}'>
     <ul class="slides">
@@ -49,9 +54,7 @@
 	    </div>
 	  <?php endif; ?>
 	  
-	  <?php if ($header): ?>
-	    <?php print $header; ?>
-	   <?php endif; ?>
+	 
 	
 	  <?php if ($rows): ?>
 	    <?php print $rows; ?>
