@@ -19,6 +19,7 @@ scripts[] = vendor/prettyPhoto/js/jquery.prettyPhoto.js
 scripts[] = vendor/jflickrfeed/jflickrfeed.js
 scripts[] = vendor/jquery.mapmarker.js
 scripts[] = vendor/jquery.stellar.js
+scripts[] = vendor/jquery.gmap.js
 scripts[] = vendor/magnific-popup/magnific-popup.js
 scripts[] = vendor/jquery.validate.js
 scripts[] = js/mobile-menu.js
