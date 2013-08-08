@@ -28,8 +28,9 @@
  */
 ?>
 
-<div class="row">	
-	<ul class="portfolio-list">
+<div class="row">
+  <div class="flexslider flexslider-top-title flexslider-center-mobile unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide", "maxVisibleItems": 4}'>
+    <ul class="slides">
 	  <?php print render($title_prefix); ?>
 	  <?php print render($title_suffix); ?>
 	  <?php if ($exposed): ?>
@@ -82,4 +83,5 @@
 	    </div>
 	  <?php endif; ?>
 	</ul>
+</div>
 </div>

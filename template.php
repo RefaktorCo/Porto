@@ -420,6 +420,17 @@ function porto_preprocess_html(&$vars){
     '#weight' => 4,
   );
   
+  $magnific = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/vendor/magnific-popup/magnific-popup.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 5,
+  );
+  
   $isotope = array(
     '#tag' => 'link', 
     '#attributes' => array( 
@@ -428,7 +439,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 5,
+    '#weight' => 6,
   );
   
   $theme_style = array(
@@ -439,7 +450,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 6,
+    '#weight' => 7,
   );
   
   $drupal_theme_style = array(
@@ -450,7 +461,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 7,
+    '#weight' => 8,
   );
   
   $theme_elements = array(
@@ -461,7 +472,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 8,
+    '#weight' => 9,
   );
   
   $theme_blog = array(
@@ -472,7 +483,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 9,
+    '#weight' => 10,
   );
   
   $bootstrap_responsive = array(
@@ -483,7 +494,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 10,
+    '#weight' => 11,
   );
   
   $bootstrap_responsive_boxed = array(
@@ -494,7 +505,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 11,
+    '#weight' => 12,
   );
   
   $theme_responsive = array(
@@ -505,19 +516,19 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 12,
+    '#weight' => 13,
   );
   
    $background_image = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-    '#weight' => 13,
+    '#weight' => 14,
   );
   
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-    '#weight' => 14,
+    '#weight' => 15,
   );
   
   drupal_add_html_head( $viewport, 'viewport');
@@ -527,6 +538,7 @@ function porto_preprocess_html(&$vars){
   drupal_add_html_head( $flexslider, 'flexslider');
   drupal_add_html_head( $prettyPhoto, 'prettyPhoto');
   drupal_add_html_head( $circle_flip, 'circle_flip');
+  drupal_add_html_head( $magnific, 'magnific');
   drupal_add_html_head( $isotope, 'isotope');
   drupal_add_html_head( $theme_style, 'theme_style');
   drupal_add_html_head( $drupal_theme_style, 'drupal_theme_style');

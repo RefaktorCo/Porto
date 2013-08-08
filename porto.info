@@ -18,6 +18,7 @@ scripts[] = vendor/isotope/jquery.isotope.js
 scripts[] = vendor/prettyPhoto/js/jquery.prettyPhoto.js
 scripts[] = vendor/jflickrfeed/jflickrfeed.js
 scripts[] = vendor/jquery.mapmarker.js
+scripts[] = vendor/magnific-popup/magnific-popup.js
 scripts[] = vendor/jquery.validate.js
 scripts[] = js/mobile-menu.js
 scripts[] = js/plugins.js
