@@ -28,7 +28,7 @@
  */
 ?>
 
-<div class="row">
+<div class="row latest-projects">
   <div class="flexslider flexslider-top-title flexslider-center-mobile unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide", "maxVisibleItems": 4}'>
     <ul class="slides">
 	  <?php print render($title_prefix); ?>

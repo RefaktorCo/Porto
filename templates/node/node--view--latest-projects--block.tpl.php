@@ -28,7 +28,7 @@
 	<div class="span3">
 		<div class="portfolio-item thumbnail">
 			<a class="thumb-info lightbox" href="#popupProject_<?php print $node->nid; ?>" data-plugin-options='{"type":"inline", preloader: false}'>
-				<?php print render ($content['field_image']); ?>
+				<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="item">
 				<span class="thumb-info-inner"><?php print $title; ?></span>
 					<span class="thumb-info-type"><?php print strip_tags(render($content['field_portfolio_category'])); ?></span>
 				</span>

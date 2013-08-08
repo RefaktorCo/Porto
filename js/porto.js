@@ -79,6 +79,15 @@ jQuery(document).ready(function ($) {
     itemWidth: 200,
     itemMargin: 0
   });
+  
+  // Client slider
+  $('.latest-projects .flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    directionNav: false,
+    itemWidth: 200,
+    itemMargin: 0
+  });
 	
 	// Dropdown arrow for menu
 	$('li.dropdown a').append('<i class="icon-angle-down"></i>');
