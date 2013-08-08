@@ -86,7 +86,7 @@ jQuery(document).ready(function ($) {
     slideshow: false, 
     animationLoop: true, 
     animation: "slide", 
-    maxVisibleItems: 4
+   
   });
 	
 	// Dropdown arrow for menu
