@@ -10,7 +10,6 @@
 
 		<div class="span6">
 
-		
 			<?php
 			  // Hide comments, tags, and links now so that we can render them later.
 			  hide($content['field_portfolio_slider']);
