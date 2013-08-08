@@ -47,7 +47,12 @@ body.sticky-menu-active header #site-name {
 	display: none;
 	margin-top: 55px;
   width: 100%;
+}
 
+.nav-pills > li:hover > a{
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
 }
 
 .md-mainimg img {
