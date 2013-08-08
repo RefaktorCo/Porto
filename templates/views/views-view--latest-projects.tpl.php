@@ -27,8 +27,9 @@
  * @ingroup views_templates
  */
 ?>
-
-<div class="row latest-projects">
+<section class="highlight top">
+<div class="container">
+<div class="row latest-projects" id="projects">
   <div class="flexslider flexslider-top-title flexslider-center-mobile unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide", "maxVisibleItems": 4}'>
     <ul class="slides">
 	  <?php print render($title_prefix); ?>
@@ -85,3 +86,5 @@
 	</ul>
 </div>
 </div>
+</div>
+</section>

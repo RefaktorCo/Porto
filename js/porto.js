@@ -82,11 +82,11 @@ jQuery(document).ready(function ($) {
   
   // Client slider
   $('.latest-projects .flexslider').flexslider({
-    animation: "slide",
-    animationLoop: false,
-    directionNav: false,
-    itemWidth: 200,
-    itemMargin: 0
+    controlNav: false, 
+    slideshow: false, 
+    animationLoop: true, 
+    animation: "slide", 
+    maxVisibleItems: 4
   });
 	
 	// Dropdown arrow for menu
