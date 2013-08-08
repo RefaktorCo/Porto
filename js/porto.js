@@ -32,6 +32,30 @@ jQuery(document).ready(function ($) {
 	$(window).load(function() {
 	  $("a[rel^='flickr']").prettyPhoto();
   }); 
+  
+  function parallax() {
+
+		$(window).load(function () {
+
+			if($(".parallax").get(0)) {
+				if(!Modernizr.touch) {
+					$(window).stellar({
+						responsive:true,
+						scrollProperty: 'scroll',
+						parallaxElements: false,
+						horizontalScrolling: false,
+						horizontalOffset: 0,
+						verticalOffset: 0
+					});
+				} else {
+					$(".parallax").addClass("disabled");
+				}
+			}
+		});
+
+	}
+	
+	parallax();
 	
   function flexslider() {
 
