@@ -45,7 +45,30 @@
       </div>
       <?php print render($page['header_icons']); ?>
       <nav>
-        <?php print render($page['header_menu']); ?>
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+							<li class="dropdown active">
+								<a data-hash class="dropdown-toggle" href="#home">
+									Home
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="index.html">Default Home</a></li>
+									<li><a href="index-one-page.html">One Page Website</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#projects">Latest Projects</a>
+							</li>
+							<li>
+								<a href="#features">Features</a>
+							</li>
+							<li>
+								<a href="#team">Meet the Team</a>
+							</li>
+							<li>
+								<a href="#contact">Contact Us</a>
+							</li>
+						</ul>
       </nav>
       
     </div>  
@@ -178,6 +201,15 @@
 	    </div>
 	  </div>  
 	</footer>
-	
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top -150
+    }, 500);
+    return false;
+});
+});
+</script>	
 </div>	
 </body>

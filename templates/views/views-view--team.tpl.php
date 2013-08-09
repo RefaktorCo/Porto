@@ -28,7 +28,7 @@
  */
 ?>
 	
-<div class="container">
+<div id="team" class="container">
 <?php if ($header): ?>
   <?php print $header; ?>
 <?php endif; ?>

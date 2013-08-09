@@ -67,6 +67,10 @@ body.sticky-menu-active header #site-name {
 	color: inherit;
 }
 
+.one-page-map {
+	margin-top: -70px !important;
+}
+
 span.thumb-info-caption p {
   min-height: 60px;
 }
