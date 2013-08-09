@@ -27,6 +27,13 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value' => theme_get_setting('breadcrumbs'),
     );
     
+    // Sticky Header
+    $form['options']['general']['sticky_header'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Sticky Header'),
+      '#default_value' => theme_get_setting('sticky_header'),
+    );
+    
   // Color
   $form['options']['color'] = array(
     '#type' => 'fieldset',

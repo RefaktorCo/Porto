@@ -28,7 +28,7 @@
  */
 ?>
 <div class="row testimonials">
-  <div class="flexslider flexslider-top-title unstyled">
+<div class="flexslider flexslider-top-title unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide"}'>
 							
 	  <?php print render($title_prefix); ?>
 	  <?php if ($title): ?>

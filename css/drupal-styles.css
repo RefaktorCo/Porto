@@ -71,6 +71,8 @@ body.sticky-menu-active header #site-name {
 	margin-top: -70px !important;
 }
 
+#header-top { overflow: hidden; }
+
 span.thumb-info-caption p {
   min-height: 60px;
 }

@@ -45,6 +45,7 @@ regions[footer_bottom_right]  = Footer Bottom Right
 
 ; Define theme setting defaults.
 settings[breadcrumbs] = 1
+settings[sticky_header] = 1
 settings[skin_color] = 0088cc
 settings[site_layout] = wide
 settings[body_background] = porto_backgrounds

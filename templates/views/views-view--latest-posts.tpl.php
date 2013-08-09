@@ -29,7 +29,7 @@
 ?>
 
 <div class="row">
-  <div class="flexslider unstyled" data-plugin-options='{"directionNav":false, "animation":"slide"}'>
+  <div class="flexslider unstyled" data-plugin-options='{"directionNav":false, "animation":"slide", "animationLoop":false,"animation":"slide","itemWidth":300,"itemMargin":0}'>
 	  <ul class="slides">
 	  <?php print render($title_prefix); ?>
 	  <?php print render($title_suffix); ?>
