@@ -5,7 +5,7 @@
  */
 ?>
 <body class="<?php print $classes; ?> one-page" data-target=".single-menu" data-spy="scroll" data-offset="150" <?php print $attributes;?>>
-<div class="body">
+<div id="top" class="body">
   <header class="single-menu flat-menu">
     <div class="container">
 
@@ -180,12 +180,22 @@
 	</footer>
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
+
+  $('header .nav-main li').removeClass("active");
+	$('header .nav-main li:first-child').addClass("active");
+	
+	$("header .nav-main li a").click(function(){
+    $("header .nav-main li a").parent().removeClass("active");
+    $(this).parent().addClass("active");
+  });
+	
 	$('a').click(function(){
 	    $('html, body').animate({
 	        scrollTop: $(this.hash).offset().top -150
-	    }, 500);
+	    }, 800);
 	    return false;
 	});
+	
 });
 </script>	
 </div>	
