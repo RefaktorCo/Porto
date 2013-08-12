@@ -2,6 +2,7 @@
   *Added new templates for Testimonials, FAQ and Carousel content type/View blocks.
   *Fix for Portfolio/Team filter terms with multiple words.
   *Support for "One Page" template.
+  *Fixed issue in IE10 related to search input button.
 
 1.0.3 (08/05/13)
   *Re-organized branding section to clean up different configuration scenarios.

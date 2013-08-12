@@ -32,6 +32,10 @@ body.sticky-menu-active header.single-menu h1.logo {
 	margin-top: 60px;
 }
 
+header div.search input:focus {
+	width: auto !important;
+}
+
 header h1.logo {
 	float: left;
 	margin: 15px 20px 15px 0px;
