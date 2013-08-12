@@ -28,6 +28,10 @@ body.sticky-menu-active header h1.logo {
 	margin-top: 25px;
 }
 
+body.sticky-menu-active header.single-menu h1.logo {
+	margin-top: 60px;
+}
+
 header h1.logo {
 	float: left;
 	margin: 15px 20px 15px 0px;
@@ -82,7 +86,6 @@ span.thumb-info-caption p {
 	padding: 20px 0;
 	z-index: 5;
 	position: absolute;
-	right: 5px;
 }
 
 .theme-default .nivoSlider img {
