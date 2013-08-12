@@ -3,6 +3,7 @@
   *Fix for Portfolio/Team filter terms with multiple words.
   *Support for "One Page" template.
   *Fixed issue in IE10 related to search input button.
+  *New theme setting to toggle the use of the "sticky header".
 
 1.0.3 (08/05/13)
   *Re-organized branding section to clean up different configuration scenarios.
