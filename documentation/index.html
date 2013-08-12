@@ -93,12 +93,12 @@ Option 2:
 
 <p>The "Latest Block Posts" area in the Map Region block calls a View block called "Latest Posts". If you don't already have this View you can use the code in views-exports/latest-posts.txt to import this View for use in this block region. </p>
 
-<h2>Content Types</h2>
+<h2>Theme Settings</h2>
+<p>Visit /admin/appearance/settings/Porto to configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
 
-<p>Porto utilizes two custom content types which have their own custom theme template files that are used to achieve different layouts and styles. If you are not working off of the full demo install please use the Porto Content Data plugin referenced above to automatically generate all these content types and their fields. We will also go over each of the content types as well as their fields and corresponding template files below:</p>
+<h2>Custom Content Types</h2>
 
 <h4>Portfolio</h4>
-<p>This content type is used to manage the portfolio items used in the Portfolio block. Below is the list of fields and corresponding template files used by this content type: </p>
 
 <img src="images/porto-portfolio.png"><br/><br/>
 <p><strong>Fields:</strong></p>
@@ -106,42 +106,6 @@ Option 2:
 <li><strong>Image:</strong> The default Image field used for uploading the images.</li>
 <li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
 </ul>
-<p><strong>Template files:</strong></p>
-<ul>
-<li>/templates/node/node--portfolio.tpl.php</li>
-<li>/templates/field--field_image--portfolio.tpl.php</li>
-<li>/templates/node/node--view--portfolio--block.tpl.php</li>
-<li>/templates/node/node--view--related-projects--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-block.tpl.php</li>
-<li>/templates/views/views-view--related-projects-block.tpl.php</li>
-<li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
-<li>/templates/views/views-view-list--portfolio-filters.tpl.phpp</li>
-</ul>
-
-<h4>Team</h4>
-<p>This content type is used to create the content used in the Testimonials view block. </p>
-<img src="images/porto-team.png"><br/><br/>
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
-<li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
-<li><strong>Team Bio:</strong> A text field used to enter a short description about the team member.</li>
-<li><strong>Facebook Link:</strong> Used to add a link to the team member's Facebook page.</li>
-<li><strong>Twitter Link:</strong> Used to add a link to the team member's Twitter page.</li>
-<li><strong>LinkedIn Link:</strong> Used to add a link to the team member's LinkedIn page.</li>
-</ul>
-<p><strong>Template files:</strong></p>
-<ul>
-<li>/templates/node/node--view--team--block.tpl.php</li>
-<li>/templates/views/views-view--team.tpl.php</li>
-<li>/templates/views/views-view-fields--team-filters.tpl.php</li>
-<li>/templates/views/views-view-list--team-filters.tpl.php</li>
-</ul>
-
-<h2>Theme Settings</h2>
-<p>Visit /admin/appearance/settings/Porto to configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
-
-<h2>Portfolio</h2>
 
 <h4>Portfolio Block - Example: <a href="http://refaktorthemes.com/porto/portfolio-4-columns" target="_blank"> http://refaktorthemes.com/porto/portfolio-4-columns</a></h4>
 <p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
@@ -175,9 +139,21 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
 </ul>
 
-<h2>Team</h2>
+<h4>Team</h4>
 
 <h4>Team Block - Example: <a href="http://refaktorthemes.com/porto/team" target="_blank"> http://refaktorthemes.com/porto/team</a></h4>
+
+<img src="images/porto-team.png"><br/><br/>
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+<li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+<li><strong>Team Bio:</strong> A text field used to enter a short description about the team member.</li>
+<li><strong>Facebook Link:</strong> Used to add a link to the team member's Facebook page.</li>
+<li><strong>Twitter Link:</strong> Used to add a link to the team member's Twitter page.</li>
+<li><strong>LinkedIn Link:</strong> Used to add a link to the team member's LinkedIn page.</li>
+</ul>
+
 <p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/team.txt to import this View. Then simply place the "View: Team" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
@@ -195,6 +171,42 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li>/templates/views/views-view-list--team-filters.tpl.php</li>
 <li>/templates/views/views-view-fields--team-filters.tpl.php</li>
 </ul>
+
+<h4>Carousel</h4>
+<p>This content type lets you create a Flexslider-powered image carousel. It utilizes just the standard Image field (field_image) set to allow an unlimited number of images. </p>
+
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+</ul>
+
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--carousel.tpl.php</li>
+<li>/templates/views/views-view--client-carousel.tpl.php</li>
+<li>/templates/views/views-view-unformatted--client-carousel.tpl.php</li>
+</ul>
+
+<p>The export code /views-exports/carousel.txt can be used to create the Carousel View which uses a Block display. This block can then be added to the region of your choice.</p>
+
+<h4>Testimonials</h4>
+<img src="images/porto-testimonials.png"><br/><br/>
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Testimonial Content:</strong> Used for the written content of the testimonial.</li>
+<li><strong>Testimonial Image:</strong> The default Image field used for uploading the testimonial author's image.</li>
+<li><strong>Testimonial Name:</strong> A text field for the name of the testimonial's author.</li>
+<li><strong>Testimonial Info:</strong> A text field for adding additional info about the testimonial's author such as their company or organization.</li>
+</ul>
+
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--testimonials.tpl.php</li>
+<li>/templates/views/views-view--testimonials.tpl.php</li>
+<li>/templates/views/views-view-unformatted--testimonials.tpl.php</li>
+</ul>
+
+<p>The export code /views-exports/testimonials.txt can be used to create the Testimonials View which uses a Block display. This block can then be added to the region of your choice.</p>
 
 
 <h2>Blog (posts)</h2>
@@ -231,7 +243,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <h2>Extras</h2>
 <h4>Code Examples</h4>
 <p>We've included some code examples inside the /examples folder in the root of the theme with some markup used on several of the demo page templates.</p>
-<h3>Flickr Feed</h3>
+<h4>Flickr Feed</h4>
 <p>The following markup can be used to generate a Flickr Feed anywhere on your site:</p>
 <pre>
 &lt;script&gt;
@@ -246,7 +258,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 	});
 &lt;/script&gt;
 </pre>
-<h3>Twitter Widget</h3>
+<h4>Twitter Widget</h4>
 <p>Before you can use the Twitter widget you need to configure the Twitter options in the theme settings (/admin/appearance/settings/porto). To get the necessary authentication keys you must visit <a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a> and log in with your Twitter account. Once there you can create an app and generate the OAuth keys needed to enter into the theme settings. Once you have those entered you can use the following markup in a Block (make sure to set the text filter to PHP code):</p>
 <pre>
 &lt;h6 class=&quot;whitetext bold meta&quot;&gt;PortoON TWITTER&lt;/h6&gt;
