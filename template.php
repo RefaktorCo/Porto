@@ -37,30 +37,9 @@ function porto_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
   }
   
- // only do this for page-type nodes and only if Path module exists
-  if (module_exists('path') && isset($vars['node']) && $vars['node']->type == 'page') {
-    // look up the alias from the url_alias table
-    $source = 'node/' .$vars['node']->nid;
-    $alias = db_query("SELECT alias FROM {url_alias} WHERE source = '$source'")->fetchField();
-
-    if ($alias != '')  {
-      // build a suggestion for every possibility
-      $parts = explode('/', $alias);
-      $suggestion = '';
-      foreach ($parts as $part) {
-        if ($suggestion == '') {
-          // first suggestion gets prefaced with 'page--'
-          $suggestion .= "page--$part";
-        } else {
-          // subsequent suggestions get appended
-          $suggestion .= "__$part";
-        }
-        // add the suggestion to the array
-        $vars['theme_hook_suggestions'][] = $suggestion;
-      }
-    }
-  }
-  
+ if (request_path() == 'one-page') {
+    $vars['theme_hook_suggestions'][] = 'page__onepage';
+  }  
 }
 
 /**
