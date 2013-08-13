@@ -51,6 +51,10 @@ body.sticky-menu-active header #site-name {
   margin-bottom: 0px !important;
 }
 
+.md-object .main-button {
+	padding: 18px;
+}
+
 .mobile-menu {
 	display: none;
 	margin-top: 55px;
