@@ -73,6 +73,9 @@
 	  <?php endif; ?>
 	  
 	  <?php print render($page['before_content']); ?>
+	  
+	  <?php print render($page['one_page']); ?>
+	  
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
