@@ -9,8 +9,8 @@ jQuery(document).ready(function ($) {
 	$('header .region-header-menu').mobileMenu();
 	
 	// Temporary Menu fix for last parent item with children
-	$("nav .content ul:first").removeClass("dropdown-menu");
-	$("nav .content ul:first").addClass("nav nav-pills nav-main");
+	$("ul.porto-nav:first-child").removeClass("dropdown-menu");
+	$("ul.porto-nav:first-child").addClass("nav nav-pills nav-main");
 		
 	// Add Button Class
 	$(".contact-form .form-actions input[type='submit']").addClass("btn btn-primary btn-large");

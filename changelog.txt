@@ -1,3 +1,6 @@
+1.1.1 (08/14/13)
+  *Fixed a bug with the header/menu related to the 1.1 update.
+
 1.1 (08/14/13)
   *Updated Drupal core in full installation.
   *Added new templates for Testimonials, FAQ, Parallax and Carousel content type/View blocks.

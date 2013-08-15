@@ -68,7 +68,6 @@ function porto_menu_link(array $variables) {
   $menu_name = $element['#original_link']['menu_name'];
   
   // set the global depth variable
-  global $depth;
   $depth = $element['#original_link']['depth'];
 
   if ( ($element['#below']) && ($depth == "1") ) {
@@ -96,7 +95,7 @@ function porto_menu_tree($variables){
   // use global depth variable to define ul class
   global $depth;
   $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
-  return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
+  return '<ul class="'.$class.' porto-nav">' . $variables['tree'] . '</ul>';
 }
 
 /**
