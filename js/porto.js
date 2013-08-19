@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
 	// Mobile Menu
 	$('header .region-header-menu').mobileMenu();
 	
-	// Temporary Menu fix for last parent item with children
+  // Temporary Menu fix for last parent item with children
 	$("ul.porto-nav:first-child").removeClass("dropdown-menu");
 	$("ul.porto-nav:first-child").addClass("nav nav-pills nav-main");
 		

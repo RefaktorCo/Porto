@@ -68,6 +68,7 @@ function porto_menu_link(array $variables) {
   $menu_name = $element['#original_link']['menu_name'];
   
   // set the global depth variable
+  global $depth;
   $depth = $element['#original_link']['depth'];
 
   if ( ($element['#below']) && ($depth == "1") ) {
