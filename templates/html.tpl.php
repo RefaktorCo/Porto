@@ -41,7 +41,7 @@
 	<?php endif; ?>
 	
 <?php porto_user_css();?>  
-
+<script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/vendor/modernizr.js'></script>
 </head>
 
 

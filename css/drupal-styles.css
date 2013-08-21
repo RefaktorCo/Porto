@@ -1,7 +1,5 @@
 /* DRUPAL THEME STYLES */
 
-
-
 #name-and-slogan {
 	float: left;
 	margin: 22px 0px;
@@ -137,6 +135,12 @@ span.thumb-info-caption p {
 	position: relative;
 	top: -4px;
 	margin-left: -4px;
+}
+
+#user-login .form-actions {
+	padding: 0px;
+	background-color: transparent;
+	border: none;
 }
 
 .block ul.primary li a {
@@ -294,6 +298,11 @@ footer h2 {
 
 hr {
 	border: none !important;
+}
+
+div.testimonial-author div.thumbnail img {
+  max-height: 100px;
+  max-width: 100px;
 }
 
 .contact-form .form-item-name, .contact-form .form-item-subject {
