@@ -1,8 +1,9 @@
-1.1.2 (08/21/13)
+1.1.2 (08/25/13)
   *Max height/width set for testimonial images.
   *Fixed styling of "Log in" submit button on user login form.
   *Parallax effect now properly disabled on touch devices.
   *Fixed "zoom here" feature on Google Map.
+  *Fixed logo/sitename overlap with branding section.
 
 1.1.1 (08/14/13)
   *Fixed a bug with the header/menu related to the 1.1 update.

@@ -40,6 +40,7 @@ header h1.logo {
 	float: left;
 	margin: 15px 20px 15px 0px;
 	padding: 0;
+	position: relative;
 }
 
 body.sticky-menu-active header #site-name {
