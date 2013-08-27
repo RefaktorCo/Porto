@@ -5,6 +5,7 @@
   *Fixed "zoom here" feature on Google Map.
   *Fixed logo/sitename overlap with branding section.
   *Added support for CSS3 animations.
+  *Reverted to previous version of Mega Slider for improved stability.
   *Updated documentation.
 
 1.1.1 (08/14/13)
