@@ -1,5 +1,9 @@
 /* DRUPAL THEME STYLES */
 
+div.home-intro {
+  background-color: #141414;
+}
+
 #name-and-slogan {
 	float: left;
 	margin: 22px 0px;

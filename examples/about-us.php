@@ -41,9 +41,9 @@
 	<div class="span12">
 		
 		<ul class="timeline">
-			<li>
-				<div class="thumb">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/office-4.jpg" alt="">
+			<li data-appear-animation="fadeInUp">
+        <div class="thumb" data-appear-animation="fadeInRight">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/office-4.jpg" alt="">
 				</div>
 				<div class="featured-box" style="height: auto;">
 					<div class="box-content">
@@ -52,9 +52,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class="thumb">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/office-3.jpg" alt="">
+			<li data-appear-animation="fadeInUp">
+        <div class="thumb" data-appear-animation="fadeInRight">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/office-3.jpg" alt="">
 				</div>
 				<div class="featured-box" style="height: auto;">
 					<div class="box-content">
@@ -63,9 +63,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class="thumb">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/office-2.jpg" alt="">
+			<li data-appear-animation="fadeInUp">
+        <div class="thumb" data-appear-animation="fadeInRight">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/office-2.jpg" alt="">
 				</div>
 				<div class="featured-box" style="height: auto;">
 					<div class="box-content">
@@ -74,9 +74,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class="thumb">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/office-1.jpg" alt="">
+			<li data-appear-animation="fadeInUp">
+        <div class="thumb" data-appear-animation="fadeInRight">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/office-1.jpg" alt="">
 				</div>
 				<div class="featured-box" style="height: auto;">
 					<div class="box-content">

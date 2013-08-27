@@ -12,7 +12,7 @@
 			<div class="span12">
 			
 			  <?php if (render($content['field_parallax_icon'])) :?>
-				  <i class="icon icon-featured <?php print render($content['field_parallax_icon']); ?>"></i>
+				  <i class="icon icon-featured <?php print render($content['field_parallax_icon']); ?>" data-appear-animation="bounceIn"></i>
 				<?php endif; ?>
 				
 				<?php if (render($content['field_big_caption'])) :?>
