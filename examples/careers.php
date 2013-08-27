@@ -106,7 +106,7 @@
 			qstrings: {
 				id: '93691989@N03'
 			},
-                       itemTemplate: '<li><a rel="flickr[pp_gal]" href="{{image_b}}" class="fancybox"><span class="thumbnail"><img alt="{{title}}" src="{{image_s}}" /></span></a></li>'
+     itemTemplate: '<li><a rel="flickr[pp_gal]" href="{{image_b}}" class="fancybox"><span class="thumbnail"><img alt="{{title}}" src="{{image_s}}" /></span></a></li>'
 	  });
 	});
 </script>

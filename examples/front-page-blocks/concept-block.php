@@ -5,20 +5,20 @@
 			<span class="sun"></span>
 			<span class="cloud" style="top: 48.21333333333333px;"></span>
 			<div class="span2 offset1">
-				<div class="process-image">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/home-concept-item-1.png" alt="img">
+				<div class="process-image" data-appear-animation="bounceIn">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/home-concept-item-1.png" alt="img">
 					<strong>Strategy</strong>
 				</div>
 			</div>
 			<div class="span2">
-				<div class="process-image">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/home-concept-item-2.png" alt="img">
+				<div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="200">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/home-concept-item-2.png" alt="img">
 					<strong>Planning</strong>
 				</div>
 			</div>
 			<div class="span2">
-				<div class="process-image">
-					<img src="<?php global $parent_root; echo $parent_root; ?>/img/home-concept-item-3.png" alt="img">
+				<div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="400">
+					<img src="<?php global $theme_root; echo $theme_root; ?>/img/home-concept-item-3.png" alt="img">
 					<strong>Build</strong>
 				</div>
 			</div>
@@ -26,8 +26,8 @@
 			  <div class="project-image">
 		           <div id="fcSlideshow" class="fc-slideshow">
 			     <ul class="fc-slides">
-				<li><a href="portfolio-single-project.html"><img src="<?php global $parent_root; echo $parent_root; ?>/img/projects/project-home-1.jpg" alt="img" /></a></li>
-				<li><a href="portfolio-single-project.html"><img src="<?php global $parent_root; echo $parent_root; ?>/img/projects/project-home-2.jpg" alt="img" /></a></li>
+				<li><a href="portfolio-single-project.html"><img src="<?php global $theme_root; echo $theme_root; ?>/img/projects/project-home-1.jpg" alt="img" /></a></li>
+				<li><a href="portfolio-single-project.html"><img src="<?php global $theme_root; echo $theme_root; ?>/img/projects/project-home-2.jpg" alt="img" /></a></li>
 			     </ul>
 			   </div>
 			  <strong class="our-work">Our Work</strong>
