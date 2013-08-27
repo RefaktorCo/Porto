@@ -22,6 +22,7 @@ scripts[] = vendor/jquery.stellar.js
 scripts[] = vendor/jquery.gmap.js
 scripts[] = vendor/magnific-popup/magnific-popup.js
 scripts[] = vendor/jquery.validate.js
+scripts[] = vendor/jquery.appear.js
 scripts[] = js/mobile-menu.js
 scripts[] = js/plugins.js
 scripts[] = js/porto.js

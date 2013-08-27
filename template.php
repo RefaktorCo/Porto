@@ -494,6 +494,17 @@ function porto_preprocess_html(&$vars){
     '#weight' => 9,
   );
   
+  $theme_animate = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => ''.$parent_root.'/css/theme-animate.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 10,
+  );
+  
   $theme_blog = array(
     '#tag' => 'link', 
     '#attributes' => array( 
@@ -502,7 +513,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 10,
+    '#weight' => 11,
   );
   
   $bootstrap_responsive = array(
@@ -513,7 +524,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 11,
+    '#weight' => 12,
   );
   
   $bootstrap_responsive_boxed = array(
@@ -524,7 +535,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 12,
+    '#weight' => 13,
   );
   
   $theme_responsive = array(
@@ -535,19 +546,19 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 13,
+    '#weight' => 14,
   );
   
    $background_image = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-    '#weight' => 14,
+    '#weight' => 15,
   );
   
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-    '#weight' => 15,
+    '#weight' => 16,
   );
   
   drupal_add_html_head( $viewport, 'viewport');
@@ -562,6 +573,7 @@ function porto_preprocess_html(&$vars){
   drupal_add_html_head( $theme_style, 'theme_style');
   drupal_add_html_head( $drupal_theme_style, 'drupal_theme_style');
   drupal_add_html_head( $theme_elements, 'theme_elements');
+  drupal_add_html_head( $theme_animate, 'theme_animate');
   drupal_add_html_head( $theme_blog, 'theme_blog');
   
   if (theme_get_setting('site_layout') == "boxed") {
