@@ -31,7 +31,7 @@
   <div class="container">
     <div class="row" id="projects">
       <div class="span12">
-        <h1>Latest <strong>Projects</strong></h1>
+        
   
 			  <?php if ($header): ?>
 				  <?php print $header; ?>
