@@ -192,7 +192,7 @@ jQuery(document).ready(function ($) {
     $(this).parent().addClass("active");
   });
 	
-	$('a').click(function(){
+	$('header a').click(function(){
 	    $('html, body').animate({
 	        scrollTop: $(this.hash).offset().top -150
 	    }, 800);

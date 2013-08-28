@@ -1,10 +1,11 @@
-1.1.2 (08/27/13)
+1.1.2 (08/28/13)
   *Max height/width set for testimonial images.
   *Fixed styling of "Log in" submit button on user login form.
   *Parallax effect now properly disabled on touch devices.
   *Fixed "zoom here" feature on Google Map.
   *Fixed logo/sitename overlap with branding section.
   *Added support for CSS3 animations.
+  *Fixed accordion bug on one page template.
   *Reverted to previous version of Mega Slider for improved stability.
   *Updated documentation.
 
