@@ -54,11 +54,11 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	  <?php if ($display_submitted && !$teaser): ?>
 	  
 	    <div class="post-meta">
-				<span><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> By <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
-				  <span><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
 			</div>
 		
 	  <?php endif; ?>
@@ -79,12 +79,11 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		  <?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
-				<span><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> By <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
-				  <span><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
-				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right">Read more...</a>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
 			</div>
 		
 	  
