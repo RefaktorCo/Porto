@@ -1,5 +1,7 @@
 /* DRUPAL THEME STYLES */
 
+.theme-default .nivoSlider {box-shadow: none !important;}
+
 div.home-intro {
   background-color: #141414;
 }
