@@ -219,5 +219,25 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       )
     );
     
+  // Footer
+  $form['options']['footer'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Footer'),
+  );
+  
+    // Footer Ribbon
+    $form['options']['footer']['ribbon'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Footer Ribbon'),
+      '#default_value' => theme_get_setting('ribbon'),
+    );
+  
+    // Footer Ribbon Text
+      $form['options']['footer']['ribbon_text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Footer Ribbon Text'),
+        '#default_value' => theme_get_setting('ribbon_text'),
+      );   
+    
 }
 ?>

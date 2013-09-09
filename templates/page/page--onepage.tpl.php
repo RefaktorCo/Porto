@@ -129,9 +129,11 @@
   <div class="container">
     <div class="row">
     
+		  <?php if (theme_get_setting('ribbon') == '1'): ?>
 			<div class="footer-ribon">
-				<span>Get in Touch</span>
+				<span><?php print theme_get_setting('ribbon_text'); ?></span>
 			</div>
+      <?php endif; ?>
 		  
 	    <div class="span3">
 	      <?php if (isset($page['footer_1'])) : ?>

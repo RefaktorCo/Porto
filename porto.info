@@ -56,3 +56,5 @@ settings[background_select] = az_subtle
 settings[body_background_color] = CCCCCC
 settings[portfolio_columns] = span3
 settings[blog_image] = full
+settings[ribbon] = 1
+settings[ribbon_text] = "Get In Touch"
