@@ -4,6 +4,7 @@
   *Added unique classes to post meta element wrappers.
   *Fixed double class definition in branding element.
   *Fixed issue with NivoSlider in IE.
+  *Improved handling of sitemap on full install.
 
 1.1.2 (08/28/13)
   *Max height/width set for testimonial images.

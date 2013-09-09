@@ -2,6 +2,10 @@
 
 .theme-default .nivoSlider {box-shadow: none !important;}
 
+.site-map-menus .title {
+	display: none;
+}
+
 div.home-intro {
   background-color: #141414;
 }
