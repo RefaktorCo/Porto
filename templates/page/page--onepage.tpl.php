@@ -31,10 +31,10 @@
 	        <?php endif; ?>
 	
 	        <?php if ($site_slogan): ?>
-	          <div id="site-slogan"<?php if ($disable_site_slogan) { print ' class="hidden"'; } if ($disable_site_name) { print ' class="slogan-no-name"'; } ?>>
-	            <?php print $site_slogan; ?>
-	          </div>
-	        <?php endif; ?>
+		          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
+		            <?php print $site_slogan; ?>
+		          </div>
+		        <?php endif; ?>
 	
 	      </div> <!-- /#name-and-slogan -->
 	    <?php endif; ?>

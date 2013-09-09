@@ -2,6 +2,7 @@
   *Fixed bug related to portfolio filters and multiple terms on the same node.
   *Added theme setting for Footer ribbon.
   *Added unique classes to post meta element wrappers.
+  *Fixed double class definition in branding element.
 
 1.1.2 (08/28/13)
   *Max height/width set for testimonial images.
