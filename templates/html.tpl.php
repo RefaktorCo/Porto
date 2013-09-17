@@ -44,10 +44,10 @@
 <script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/vendor/modernizr.js'></script>
 </head>
 
-
+<body class="<?php print $classes; ?>"<?php print $attributes;?>>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>
-
+</body>
 
 </html>
