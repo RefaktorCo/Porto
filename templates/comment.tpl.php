@@ -46,7 +46,7 @@ global $parent_root;
 		     <?php endif; ?>
 		    </div>
 		    <span class="date pull-right">
-		      <?php print format_date($node->created, 'custom', 'M d, Y'); ?>
+		      <?php print format_date($comment->created, 'custom', 'M d, Y'); ?>
 		    </span>  
       </div>
     </div>
