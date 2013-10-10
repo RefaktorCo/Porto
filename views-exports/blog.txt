@@ -47,6 +47,5 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
 );
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page');
-$handler->display->display_options['path'] = 'blog';
+/* Display: Block */
+$handler = $view->new_display('block', 'Block', 'block');
