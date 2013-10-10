@@ -1,7 +1,10 @@
-1.1.4 (09/18/13)
+1.1.4 (10/10/13)
   *Social icons in Team block will only display if URL is entered into field.
   *Fixed bug where comment date was the same as the node date.
   *Fixed issue with Drupal classes not being added to the body tag.
+  *Fixed location issue with maps pin.
+  *Fixed bug related to team filters and multiple terms on the same node.
+  *Added support for "Popular/Recent" posts view block.
 
 1.1.3 (09/09/13)
   *Fixed bug related to portfolio filters and multiple terms on the same node.

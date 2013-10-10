@@ -71,6 +71,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	      hide($content['links']);
 	      hide($content['field_tags']);
 	      hide($content['field_image']);
+	      hide($content['field_thumbnail']);
 	      print render($content);
 	    ?>
 	  </div>
@@ -84,6 +85,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
 				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
+				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right">Read more...</a>
 			</div>
 		
 	  
@@ -166,6 +168,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		      hide($content['links']);
 		      hide($content['field_tags']);
 		      hide($content['field_image']);
+		      hide($content['field_thumbnail']);
 		      print render($content);
 		    ?>
 		  </div>

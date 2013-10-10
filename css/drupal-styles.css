@@ -2,6 +2,10 @@
 
 .theme-default .nivoSlider {box-shadow: none !important;}
 
+.tabbed-title {
+  font-size: 13px;
+}
+
 .site-map-menus .title {
 	display: none;
 }
