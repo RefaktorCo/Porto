@@ -19,6 +19,25 @@ function porto_html_head_alter(&$head_elements) {
 }
 
 /**
+ * Overwrite theme_button()
+ * @file template.php
+ */
+function porto_button($variables) {
+
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'submit';
+  element_set_attributes($element, array('id', 'name', 'value'));
+
+  $element['#attributes']['class'][] = 'btn-primary btn form-' . $element['#button_type'];
+  if (!empty($element['#attributes']['disabled'])) {
+    $element['#attributes']['class'][] = 'form-button-disabled';
+  }
+
+  return '<input' . drupal_attributes($element['#attributes']) . ' />';
+}
+
+
+/**
  * Assign theme hook suggestions for custom templates.
  */  
 function porto_preprocess_page(&$vars, $hook) {

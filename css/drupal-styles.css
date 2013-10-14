@@ -2,6 +2,27 @@
 
 .theme-default .nivoSlider {box-shadow: none !important;}
 
+#edit-checkout {
+	margin-left: 10px;
+}
+
+.view-commerce-cart-form .form-type-textfield {
+	margin-top: -5px !important;
+}
+
+.view-commerce-cart-form td {
+  width: 24%;
+  padding: 20px 15px 5px 15px;
+}
+
+.commerce-price-formatted-components .component-title, .commerce-price-formatted-components .component-total {
+	padding: 15px;
+}
+
+.checkout-continue {
+	margin-right: 10px;
+}
+
 .tabbed-title {
   font-size: 13px;
 }

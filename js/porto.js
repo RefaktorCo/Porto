@@ -12,18 +12,13 @@ jQuery(document).ready(function ($) {
 	$("ul.porto-nav:first-child").removeClass("dropdown-menu");
 	$("ul.porto-nav:first-child").addClass("nav nav-pills nav-main");
 
-	// Add Button Class
-	$(".contact-form .form-actions input[type='submit']").addClass("btn btn-primary btn-large");
-	$("#search-block-form .form-actions").addClass("btn-primary");
-  $("#search-block-form--2 .form-actions").addClass("btn-primary");
-  $(".comment-form .form-actions input[type='submit']").addClass("btn-primary btn-large");
-  $("#user-login .form-actions input[type='submit']").addClass("btn-primary btn-large");
-  
   $(".comment-form .form-type-textfield").addClass("span4");
   
   $(".contact-form .form-item-name").addClass("span3");
   $(".contact-form .form-item-mail").addClass("span3");
   $(".contact-form .form-item-subject").addClass("span6");
+  
+  $('.checkout-review').addClass('table');
   
 	
 	// Tooltip
