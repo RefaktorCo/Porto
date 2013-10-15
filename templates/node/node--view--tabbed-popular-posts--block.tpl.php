@@ -3,7 +3,9 @@
 	 <?php if (render($content['field_thumbnail'])) :?>
 	  <div class="thumbnail">
 	    <a href="<?php print $node_url; ?>">
-	      <img src="<?php echo file_create_url($node->field_thumbnail['und'][0]['uri']); ?>" alt="">
+	      <?php if (render($content['field_thumbnail'])): ?>  
+	        <img src="<?php echo file_create_url($node->field_thumbnail['und'][0]['uri']); ?>" alt="">
+	      <?php endif; ?>
 	    </a>
 	  </div>
 	  <?php endif; ?>
