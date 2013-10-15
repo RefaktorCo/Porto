@@ -1,10 +1,11 @@
-1.2 (10/13/13)
+1.2 (10/15/13)
   *Social icons in Team block will only display if URL is entered into field.
   *Fixed bug where comment date was the same as the node date.
   *Fixed issue with Drupal classes not being added to the body tag.
   *Fixed location issue with maps pin.
   *Fixed bug related to team filters and multiple terms on the same node.
   *Added support for "Popular/Recent" posts view block.
+  *Basic styling for Drupal Commerce elements (shopping cart, checkout page, order review)
   *Button styling applied to all submit buttons.
 
 1.1.3 (09/09/13)
