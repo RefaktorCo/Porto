@@ -1,5 +1,10 @@
 /* DRUPAL THEME STYLES */
 
+.link-wrapper {
+	float: right;
+	padding: 20px 0px;
+}
+
 .theme-default .nivoSlider {box-shadow: none !important;}
 
 #edit-checkout {

@@ -1,3 +1,6 @@
+1.2.1 (10/29/13)
+  *Fixed missing call to Drupal links in node--article.tpl.
+
 1.2 (10/15/13)
   *Social icons in Team block will only display if URL is entered into field.
   *Fixed bug where comment date was the same as the node date.
