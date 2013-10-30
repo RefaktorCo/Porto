@@ -1,5 +1,9 @@
-1.2.1 (10/29/13)
+1.2.1 (10/30/13)
   *Fixed missing call to Drupal links in node--article.tpl.
+  *Fixed custom color not working on search icon button.
+  *Fixed issue with header search input width.
+  *Removed hyphen from in between words on Portfolio/Team category display.
+  *"Comments" will now read "Comment" in post meta if there is only one comment.
 
 1.2 (10/15/13)
   *Social icons in Team block will only display if URL is entered into field.

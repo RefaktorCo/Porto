@@ -72,9 +72,7 @@ body.sticky-menu-active header.single-menu h1.logo {
 	margin-top: 60px;
 }
 
-header div.search input:focus {
-	width: auto !important;
-}
+
 
 header h1.logo {
 	float: left;
@@ -159,7 +157,6 @@ span.thumb-info-caption p {
 }
 
 #search-block-form .form-actions{
-	background-color: #006dcc;
 	padding: 3px 11px 4px 11px !important;
 	display: inline-block;
 	-webkit-border-radius: 0 14px 14px 0;
@@ -171,7 +168,6 @@ span.thumb-info-caption p {
 }
 
 #search-block-form--2 .form-actions{
-	background-color: #006dcc;
 	padding: 3px 11px 4px 11px !important;
 	display: inline-block;
 	-webkit-border-radius: 0 14px 14px 0;

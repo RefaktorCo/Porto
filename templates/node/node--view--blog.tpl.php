@@ -58,7 +58,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 			</div>
 		
 	  <?php endif; ?>
