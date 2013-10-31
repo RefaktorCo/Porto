@@ -133,7 +133,7 @@ header div.search input:focus {
 }
 
 /* Logo */
-header h1.logo {
+header .logo {
 	float: left;
 	margin: 15px 0;
 	padding: 0;
@@ -240,7 +240,7 @@ nav ul.nav-main li.dropdown:hover > ul {
 }
 
 /* Flat Menu */
-header.flat-menu h1.logo {
+header.flat-menu .logo {
 	margin: 5px 0;
 }
 
@@ -365,11 +365,11 @@ body.sticky-menu-active header.flat-menu div.header-top {
 	display: none;
 }
 
-body.sticky-menu-active header.flat-menu h1.logo {
+body.sticky-menu-active header.flat-menu .logo {
 	bottom: 0;
 }
 
-body.sticky-menu-active header.single-menu h1.logo {
+body.sticky-menu-active header.single-menu .logo {
 	bottom: 5px;
 }
 
@@ -391,7 +391,7 @@ body.sticky-menu-active header {
 	filter: none;
 }
 
-body.sticky-menu-active header h1.logo {
+body.sticky-menu-active header .logo {
 	position: absolute;
 	bottom: -7px;
 }
@@ -405,7 +405,7 @@ body.boxed header.single-menu {
 	padding: 0;
 }
 
-header.single-menu h1.logo {
+header.single-menu .logo {
 	margin: 3px 0;
 }
 
@@ -464,7 +464,7 @@ header.colored div.search input.search-query {
 	box-shadow: none;
 }
 
-header.center h1.logo {
+header.center .logo {
     float: none;
     text-align: center;
     position: static;
@@ -856,7 +856,7 @@ section.page-top ul.breadcrumb > li {
 	text-shadow: none;
 }
 
-section.page-top h2 {
+section.page-top h1 {
 	border-bottom: 5px solid #CCC;
 	color: #FFF;
 	display: inline-block;
@@ -865,6 +865,7 @@ section.page-top h2 {
 	min-height: 37px;
 	padding: 0 0 17px;
 	position: relative;
+	font-size: 2.8em;
 }
 
 /* Page Top Custom - Create your Own */

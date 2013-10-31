@@ -54,13 +54,13 @@ body.sticky-menu-active header #site-slogan{
   font-size: 12px;
 }
 
-body.sticky-menu-active header h1.logo {
+body.sticky-menu-active header .logo {
 	position: relative;
 	margin: 45px 15px 0px 0px;
 }
 
 #site-name {
-	margin: 0px 0px 0px 0px;
+	margin: 5px 0px 10px 0px;
 	font-size: 32px;
 }
 
@@ -68,13 +68,11 @@ body.sticky-menu-active header h1.logo {
 	margin-top: 25px;
 }
 
-body.sticky-menu-active header.single-menu h1.logo {
+body.sticky-menu-active header.single-menu .logo {
 	margin-top: 60px;
 }
 
-
-
-header h1.logo {
+header .logo {
 	float: left;
 	margin: 15px 20px 15px 0px;
 	padding: 0;

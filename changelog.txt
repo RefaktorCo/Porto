@@ -5,6 +5,7 @@
   *Removed hyphen from in between words on Portfolio/Team category display.
   *"Comments" will now read "Comment" in post meta if there is only one comment.
   *Fixed issue with hashtags in Twitter widget. 
+  *Site title will use H1 tag if page title is not present, otherwise page title will use H1.
 
 1.2 (10/15/13)
   *Social icons in Team block will only display if URL is entered into field.
