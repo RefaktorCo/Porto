@@ -863,9 +863,10 @@ section.page-top h1 {
 	font-weight: 200;
 	margin: 0 0 -25px;
 	min-height: 37px;
-	padding: 0 0 19px;
+	padding: 0 0 17px;
 	position: relative;
 	font-size: 2.8em;
+	line-height: 52px;
 }
 
 /* Page Top Custom - Create your Own */

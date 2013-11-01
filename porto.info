@@ -2,7 +2,7 @@ name = Porto
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 1.2.1
+version = 1.2.2
 
 ; NOTE: Stylesheets are called via the preprocess_html function in template.php.
 
