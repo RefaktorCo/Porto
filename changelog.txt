@@ -1,3 +1,6 @@
+1.2.2 (11/1/13)
+  *Fixed issue with page title bottom border color/position.
+
 1.2.1 (10/31/13)
   *Fixed missing call to Drupal links in node--article.tpl.
   *Fixed custom color not working on search icon button.
