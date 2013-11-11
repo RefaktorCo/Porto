@@ -108,9 +108,7 @@ header.flat-menu nav ul.nav-main li ul li a {
 	padding: 8px 10px 8px 5px;
 }
 
-.md-mainimg img {
-  left: 0 !important;
-}
+
 
 .md-slide-wrap {
   margin-bottom: 0px;
@@ -152,6 +150,10 @@ span.thumb-info-caption p {
 
 #search-block-form--2 .form-item-search-block-form input[type="text"] {
   width: 70%;
+}
+
+header div.search input:focus {
+  width: auto !important;
 }
 
 #search-block-form .form-actions{

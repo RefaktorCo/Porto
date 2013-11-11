@@ -1,3 +1,8 @@
+1.2.3 (11/11/13)
+  *Updated "Mega Slider" to latest 2.4 version.
+  *"About author" section will no longer display if Profile2 module is not activated.
+  *Added a couple missing t() wrappers to theme generated strings.
+
 1.2.2 (11/1/13)
   *Fixed issue with page title bottom border color/position.
   *Fixed issue with DB export for full install.

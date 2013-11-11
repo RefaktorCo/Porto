@@ -57,7 +57,7 @@ if (module_exists('profile2')) {
 	  <?php if ($display_submitted && !$teaser): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> <?php echo t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
@@ -82,7 +82,7 @@ if (module_exists('profile2')) {
 		  <?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> <?php echo t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
@@ -93,7 +93,7 @@ if (module_exists('profile2')) {
 	  
 	  <?php endif; ?>
 	  
-	  <?php if(!$teaser): ?>
+	  <?php if( (!$teaser) AND (module_exists('profile2')) ): ?>
 	  <div class="post-block post-share">
 			<h3><i class="icon-share"></i>Share this post</h3>
 
