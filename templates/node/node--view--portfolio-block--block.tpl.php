@@ -1,4 +1,5 @@
-<li class="<?php echo theme_get_setting('portfolio_columns');?> isotope-item <?php print strip_tags(render($content['field_portfolio_category'])); ?>">
+<li class="<?php echo theme_get_setting('portfolio_columns');?> isotope-item 
+<?php print str_replace('&amp;', 'and', str_replace(',-', ' ', str_replace(' ', '-',strip_tags(render($content['field_portfolio_category']))))); ?>">
 	<div class="portfolio-item thumbnail">
 		<a href="<?php print $node_url; ?>" class="thumb-info">
 			<?php print render ($content['field_image']); ?>
@@ -12,3 +13,5 @@
 		</a>
 	</div>
 </li>
+
+

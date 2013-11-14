@@ -1,3 +1,6 @@
+1.2.4 (11/14/13)
+  *Additional improvements for special characters in taxonmy terms.
+
 1.2.3 (11/11/13)
   *Updated "Mega Slider" to latest 2.4 version.
   *"About author" section will no longer display if Profile2 module is not activated.
