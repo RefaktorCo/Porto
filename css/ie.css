@@ -4,6 +4,12 @@ html.ie header {
 	filter: none;
 }
 
+html.ie8 div.home-concept,
+html.ie8 div.home-concept div.process-image,
+html.ie8 div.home-concept div.project-image {
+	background: none;
+}
+
 /* Social Icons */
 html.ie8 header ul.social-icons {
 	margin-top: 2px;
@@ -13,31 +19,18 @@ html.ie8 header ul.social-icons li {
 	background-color: #F1F1F1;
 }
 
-/* Home */
-html.ie8 div.home-concept div.process-image img {
-	behavior: url('css/htc/PIE.htc');
-}
-
-html.ie8 div.home-concept div.project-image img {
-	behavior: url('css/htc/PIE.htc');
-}
-
 /* Timeline */
 html.ie8 ul.timeline li div.thumb {
 	background: none;
 }
 
-html.ie8 ul.timeline li div.thumb img {
-	behavior: url(css/htc/PIE.htc);
-}
-
 /* Testimonials */
-html.ie8 div.testimonial-author div.thumbnail {
+html.ie8 div.testimonial-author div.img-thumbnail {
 	height: 60px;
 	width: 60px;
 }
 
-html.ie8 div.testimonial-author div.thumbnail img {
+html.ie8 div.testimonial-author div.img-thumbnail img {
 	float: left;
 }
 
@@ -49,11 +42,4 @@ html.ie8 div.plan-ribbon-wrapper {
 html.ie8 div.plan-ribbon-wrapper div.plan-ribbon {
 	text-align: left;
 	padding-left: 20px;
-}
-html.ie #search-block-form .form-actions{
-  top: -3px;
-}
-
-html.ie8 h4 {
-font-size: 22px;
 }

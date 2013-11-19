@@ -72,8 +72,6 @@ article.post div.post-date span.day {
 /* Post Large Image */
 article.post-large-image {
 	margin-left: 60px;
-	border-bottom: 1px solid #ddd;
-  margin-bottom: 30px;
 }
 
 article.post-large-image div.post-image,
@@ -91,7 +89,11 @@ article.post-large-image h2 {
 
 /* Post Medium Image */
 article.post-medium-image div.flexslider {
-	margin-bottom: 20px;
+	margin-bottom: 45px;
+}
+
+article.post-large-image div.flexslider {
+	margin-bottom: 80px;
 }
 
 /* Single Post */
@@ -122,7 +124,7 @@ div.post-author {
 	margin: 15px 0 0 0;
 }
 
-div.post-author div.thumbnail {
+div.post-author div.img-thumbnail {
 	display: inline-block;
 	float: left;
 	margin-right: 20px;
@@ -206,7 +208,7 @@ ul.comments li {
 	padding: 10px 0 0 115px;
 }
 
-ul.comments li div.thumbnail {
+ul.comments li div.img-thumbnail {
 	margin-left: -115px;
 	position: absolute;
 }
