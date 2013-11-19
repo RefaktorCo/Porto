@@ -24,10 +24,7 @@ jQuery(document).ready(function ($) {
 	// Tooltip
 	$("a[rel=tooltip]").tooltip();
 	
-	// prettyPhoto
-	$(window).load(function() {
-	  $("a[rel^='flickr']").prettyPhoto();
-  }); 
+
   
   function animations() {
 

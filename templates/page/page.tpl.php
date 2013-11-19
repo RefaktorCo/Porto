@@ -64,13 +64,13 @@
 		  <div class="container">
 		    <?php if (theme_get_setting('breadcrumbs') == '1'): ?>
 				<div class="row">
-					<div class="span12">
+					<div class="col-md-12">
 						<div id="breadcrumbs"><?php print $breadcrumb; ?> </div>	
 					</div>
 				</div>
 				<?php endif; ?>
 				<div class="row">
-					<div class="span12">
+					<div class="col-md-12">
 						<h1><?php print drupal_get_title(); ?></h1>
 					</div>
 				</div>
@@ -85,7 +85,7 @@
 	      
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
-					  <div class="<?php if ($page['sidebar_right']) { echo "span3";} else { echo "span3"; } ?>">
+					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
 					    <div id="sticky-sidebar">
 					    <?php print render($page['sidebar_left']); ?>
 					    </div>
@@ -93,7 +93,7 @@
 				  </aside>
 				  <?php endif; ?>
 			
-					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "span6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "span9"; }  else { echo "span12"; } ?>">
+					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "col-md-6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "col-md-9"; }  else { echo "col-md-12"; } ?>">
 					  
 					  <?php print $messages; ?>
 					  
@@ -113,7 +113,7 @@
 					</div>
 			  
 				  <?php if ( ($page['sidebar_right']) ) : ?>
-				  <div class="<?php if ($page['sidebar_left']) { echo "span3";} else { echo "span3"; } ?>">
+				  <div class="<?php if ($page['sidebar_left']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
 				    <?php print render($page['sidebar_right']); ?>
 				  </div>
 				  <?php endif; ?>
@@ -138,25 +138,25 @@
 			</div>
       <?php endif; ?>
 		  
-	    <div class="span3">
+	    <div class="col-md-3">
 	      <?php if (isset($page['footer_1'])) : ?>
 			    <?php print render($page['footer_1']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span3">
+	    <div class="col-md-3">
 	      <?php if (isset($page['footer_2'])) : ?>
 			    <?php print render($page['footer_2']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span4">
+	    <div class="col-md-4">
 	      <?php if (isset($page['footer_3'])) : ?>
 			    <?php print render($page['footer_3']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span2">
+	    <div class="col-md-2">
 	      <?php if (isset($page['footer_4'])) : ?>
 			    <?php print render($page['footer_4']); ?>
 			  <?php endif; ?>
@@ -168,14 +168,14 @@
 	  <div class="footer-copyright">  
 	    <div class="container">
 	      <div class="row">
-			    <div class="span6">
+			    <div class="col-md-6">
 			    
 					  <?php if (isset($page['footer_bottom_left'])) : ?>
 					    <?php print render($page['footer_bottom_left']); ?>
 					  <?php endif; ?>
 			  
 			    </div>
-			    <div class="span6">
+			    <div class="col-md-6">
 			    
 					  <?php if (isset($page['footer_bottom_right'])) : ?>
 					    <?php print render($page['footer_bottom_right']); ?>
