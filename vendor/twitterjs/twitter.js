@@ -7,7 +7,7 @@ Version: 		0.1
 var twitterFeed = {
 
 	options: {
-		id: "", 
+		id: "",
 		count: 1,
 		URL: "php/twitter-feed.php",
 		wrapper: "tweet"
@@ -62,7 +62,7 @@ var twitterFeed = {
 								status = $this.addLink(status);
 							}
 
-							feedHTML += '<i class="icon-twitter"></i> ' + status + ' <a class="time"  href="https://twitter.com/' + tweetusername + '/status/' + tweetid + '">' + $this.relativeTime(feeds[i].created_at) + '</a>';
+							feedHTML += '<i class="icon icon-twitter"></i> ' + status + ' <a class="time"  href="https://twitter.com/' + tweetusername + '/status/' + tweetid + '">' + $this.relativeTime(feeds[i].created_at) + '</a>';
 
 							displayCounter++;
 						}
@@ -73,7 +73,7 @@ var twitterFeed = {
 			});
 
 	},
-	
+
 	addLink: function(data) {
 
 		//Add link to all http:// links within tweets
@@ -89,7 +89,7 @@ var twitterFeed = {
 		return data;
 
 	},
-	
+
 	relativeTime: function(timeValue) {
 
 		var values = timeValue.split(" ");
