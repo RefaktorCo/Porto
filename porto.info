@@ -18,6 +18,7 @@ stylesheets[all][] = css/theme-responsive.css
 stylesheets[all][] = css/drupal-styles.css
 
 ; Define theme JS libraries.
+scripts[] = js/plugins.js
 scripts[] = vendor/modernizr.js
 scripts[] = vendor/bootstrap.js
 scripts[] = vendor/jquery.easing.js
@@ -33,9 +34,9 @@ scripts[] = vendor/magnific-popup/magnific-popup.js
 scripts[] = vendor/jquery.validate.js
 scripts[] = vendor/jquery.appear.js
 scripts[] = js/mobile-menu.js
-scripts[] = js/plugins.js
+
 scripts[] = js/theme.js
-scripts[] = js/porto.js
+
 
 ; Define theme block regions.
 regions[header_top] = Header Top
