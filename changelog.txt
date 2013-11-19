@@ -1,4 +1,4 @@
-1.2.4 (11/14/13)
+1.2 (11/19/13)
   *Additional improvements for special characters in taxonmy terms.
 
 1.2.3 (11/11/13)
