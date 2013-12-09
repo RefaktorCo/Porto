@@ -152,7 +152,7 @@ span.thumb-info-caption p {
   width: 70%;
 }
 
-header div.search input:focus {
+header div.search input[type="image"]:focus {
   width: auto !important;
 }
 

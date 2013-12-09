@@ -1,5 +1,9 @@
-1.2.4 (11/14/13)
+1.2.4 (12/9/13)
   *Additional improvements for special characters in taxonmy terms.
+  *Updated Drupal Core in full demo install.
+  *Updated Mega Slider module to latest version.
+  *Fixed issue with pagination in Portfolio block.
+  *Renamed several view node templates to fix issue with adding additional displays.
 
 1.2.3 (11/11/13)
   *Updated "Mega Slider" to latest 2.4 version.
