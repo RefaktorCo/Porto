@@ -56,9 +56,22 @@ function porto_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
   }
   
- if (request_path() == 'one-page') {
+  if (request_path() == 'one-page') {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
+  
+  //Pass the color value from theme settings to @skinColor variable in skin.less
+  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
+  
+    'group' => CSS_THEME,
+    'preprocess' => false,
+    'less' => array(
+      'variables' => array(
+        '@skinColor' => '#'.theme_get_setting('skin_color').'',
+      ),
+    ),
+
+  )); 
 }
 
 /**
@@ -370,20 +383,6 @@ function porto_user_css() {
   echo "<!-- End user defined CSS -->";	
 }
 
-/**
- * Get color from theme settings and pass it to LESS stylesheet.
- */
-$less_settings = array(
-  'variables' => array(
-    '@skinColor' => '#'.theme_get_setting('skin_color').'',
-  ),
-);
-
-drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
-  'group' => CSS_THEME,
-  'preprocess' => false,
-  'less' => $less_settings,
-)); 
 
 /**
  * Add theme META tags and style sheets to the header.

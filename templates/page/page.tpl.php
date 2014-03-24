@@ -134,7 +134,7 @@
     
       <?php if (theme_get_setting('ribbon') == '1'): ?>
 			<div class="footer-ribon">
-				<span><?php print theme_get_setting('ribbon_text'); ?></span>
+				<span><?php echo t("%string", array('%string' => theme_get_setting('ribbon_text')) );?></span>
 			</div>
       <?php endif; ?>
 		  

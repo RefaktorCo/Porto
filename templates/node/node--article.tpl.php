@@ -87,7 +87,7 @@ if (module_exists('profile2')) {
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
 				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
-				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right">Read more...</a>
+				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right"><?php echo t('Read more...'); ?></a>
 			</div>
 		
 	  
