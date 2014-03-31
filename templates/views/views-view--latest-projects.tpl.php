@@ -32,7 +32,6 @@
     <div class="row" id="projects">
       <div class="span12">
         
-  
 			  <?php if ($header): ?>
 				  <?php print $header; ?>
 				<?php endif; ?>

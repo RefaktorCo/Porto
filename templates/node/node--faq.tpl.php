@@ -10,4 +10,3 @@
 	<label><?php echo $title; ?></label>
 	<p><?php print render($content['body']); ?></p>
 </section>
-

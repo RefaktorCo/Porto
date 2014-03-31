@@ -54,11 +54,11 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	  <?php if ($display_submitted && !$teaser): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 			</div>
 		
 	  <?php endif; ?>
@@ -76,16 +76,15 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	    ?>
 	  </div>
 	  
-	 
 		  <?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> <?php print t('By'); ?> <?php print $name; ?></span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
-				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right">Read more...</a>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right"><?php print t('Read more...');?></a>
 			</div>
 		
 	  
@@ -93,7 +92,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	  
 	  <?php if(!$teaser): ?>
 	  <div class="post-block post-share">
-			<h3><i class="icon-share"></i>Share this post</h3>
+			<h3><i class="icon-share"></i><?php print t('Share this post'); ?></h3>
 
 			<!-- AddThis Button BEGIN -->
 			<div class="addthis_toolbox addthis_default_style ">
@@ -108,7 +107,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		</div>
 	  
 	  <div class="post-block post-author clearfix">
-			<h3><i class="icon-user"></i>Author</h3>
+			<h3><i class="icon-user"></i><?php print t('Author'); ?></h3>
 			<div class="thumbnail">
 			 <?php print $user_picture; ?>
 			</div>
@@ -157,9 +156,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		  <?php print render($title_prefix); ?>
 		    <h2 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 		  <?php print render($title_suffix); ?>
-		    
-		  
-		   
+
 		  <div class="article_content"<?php print $content_attributes; ?>>
 		    <?php
 		      // Hide comments, tags, and links now so that we can render them later.
@@ -179,19 +176,17 @@ if ($items = field_get_items('node', $node, 'field_image')) {
   <div class="row">
 		<div class="span9">  
 		  
-			  <?php if (!$page && $teaser): ?>
+	   <?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
-	      <span><i class="icon-calendar"></i> <?php print format_date($node->created, 'custom', 'M d, Y'); ?> </span>
-				<span><i class="icon-user"></i> By <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="icon-user"></i> <?php print t('By'); ?> <?php print $name; ?></span>
 				<?php if (render($content['field_tags'])): ?> 
-				  <span><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comments</a></span>
-				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right">Read more...</a>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right"><?php print t('Read more...');?></a>
 			</div>
 		
-	  
 	  <?php endif; ?>
 		</div>
 	</div>

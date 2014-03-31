@@ -6,6 +6,9 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
+/**
+ * Implements hook_html_head_alter().
+ */
 function porto_html_head_alter(&$head_elements) {
 	unset($head_elements['system_meta_generator']);
 	foreach ($head_elements as $key => $element) {
@@ -19,8 +22,7 @@ function porto_html_head_alter(&$head_elements) {
 }
 
 /**
- * Overwrite theme_button()
- * @file template.php
+ * Add Bootstrap classes to button elements.
  */
 function porto_button($variables) {
 
@@ -244,14 +246,6 @@ function porto_field($variables) {
     $output .= implode(', ', $rendered_tags);
   }
   
-  elseif ($variables['element']['#field_name'] == 'body') {
-    // For tags, concatenate into a single, comma-delimitated string.
-    foreach ($variables['items'] as $delta => $item) {
-      $rendered_tags[] = drupal_render($item);
-    }
-    $output .= implode(', ', $rendered_tags);
-  }
-  
   elseif ($variables['element']['#field_name'] == 'field_team_bio') {
     // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
@@ -384,242 +378,66 @@ function porto_user_css() {
 }
 
 
-/**
- * Add theme META tags and style sheets to the header.
- */
-function porto_preprocess_html(&$vars){
-  global $parent_root;
-  
-  $viewport = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'viewport',
-      'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
-    )
-  );
-  
-  $bootstrap = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/bootstrap.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 1,
-  );
-  
-  $font_awesome = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/fonts/font-awesome/css/font-awesome.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 2,
-  );
-  
-  $flexslider = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/flexslider/flexslider.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 2,
-  );
-  
-  $flexslider = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/flexslider/flexslider.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 2,
-  );
-  
-  $prettyPhoto = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/prettyPhoto/css/prettyPhoto.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 3,
-  );
-  
-  $circle_flip = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/circle-flip-slideshow/css/component.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 4,
-  );
-  
-  $magnific = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/magnific-popup/magnific-popup.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 5,
-  );
-  
-  $isotope = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/vendor/isotope/jquery.isotope.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 6,
-  );
-  
-  $theme_style = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/theme.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 7,
-  );
-  
-  $drupal_theme_style = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/drupal-styles.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 8,
-  );
-  
-  $theme_elements = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/theme-elements.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 9,
-  );
-  
-  $theme_animate = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/theme-animate.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 10,
-  );
-  
-  $theme_blog = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/theme-blog.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 11,
-  );
-  
-  $bootstrap_responsive = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/bootstrap-responsive.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 12,
-  );
-  
-  $bootstrap_responsive_boxed = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/bootstrap-responsive-boxed.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 13,
-  );
-  
-  $theme_responsive = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => ''.$parent_root.'/css/theme-responsive.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 14,
-  );
-  
-   $background_image = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-    '#weight' => 15,
-  );
-  
-  $background_color = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-    '#weight' => 16,
-  );
-  
-  drupal_add_html_head( $viewport, 'viewport');
-  
-  drupal_add_html_head( $bootstrap, 'bootstrap');
-  drupal_add_html_head( $font_awesome, 'font_awesome');
-  drupal_add_html_head( $flexslider, 'flexslider');
-  drupal_add_html_head( $prettyPhoto, 'prettyPhoto');
-  drupal_add_html_head( $circle_flip, 'circle_flip');
-  drupal_add_html_head( $magnific, 'magnific');
-  drupal_add_html_head( $isotope, 'isotope');
-  drupal_add_html_head( $theme_style, 'theme_style');
-  drupal_add_html_head( $drupal_theme_style, 'drupal_theme_style');
-  drupal_add_html_head( $theme_elements, 'theme_elements');
-  drupal_add_html_head( $theme_animate, 'theme_animate');
-  drupal_add_html_head( $theme_blog, 'theme_blog');
-  
-  if (theme_get_setting('site_layout') == "boxed") {
-    drupal_add_html_head( $bootstrap_responsive_boxed, 'boxed_layout' );
-  }
-  
-  if (theme_get_setting('site_layout') == "wide") {
-    drupal_add_html_head( $bootstrap_responsive, 'wide_layout' );
-  }
-  
-  drupal_add_html_head( $theme_responsive, 'theme_responsive');
-  
-  if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
-    drupal_add_html_head( $background_image, 'background_image');
-  } 
-  
-  if (theme_get_setting('body_background') == "custom_background_color") {
-    drupal_add_html_head( $background_color, 'background_color');
-  }
-
+function porto_js_alter(&$js) {
+ // Unset the sticky.js if theme settings don't allow or user is logged in.
+ if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
+   global $parent_root;
+   unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
+ }
 }
 
-?>
+function porto_css_alter(&$css) {
+ // If we don't have a boxed layout unset the css.
+ if (theme_get_setting('site_layout') != "boxed") {
+   global $parent_root;
+   unset($css[drupal_get_path('theme', 'porto') . '/css/bootstrap-responsive-boxed.css']);
+ }
+   // If we don't have a boxed layout unset the css.
+ if (theme_get_setting('site_layout') != "wide") {
+   global $parent_root;
+   unset($css[drupal_get_path('theme', 'porto') . '/css/bootstrap-responsive.css']);
+ }
+}
+
+/**
+* Add theme META tags and style sheets to the header.
+*/
+function porto_preprocess_html(&$vars){
+ global $parent_root;
+
+ $viewport = array(
+   '#type' => 'html_tag',
+   '#tag' => 'meta',
+   '#attributes' => array(
+     'name' => 'viewport',
+     'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
+   )
+ );
+
+  $background_image = array(
+   '#type' => 'markup',
+   '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
+   '#weight' => 1,
+ );
+
+ $background_color = array(
+   '#type' => 'markup',
+   '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
+   '#weight' => 2,
+ );
+
+ drupal_add_html_head( $viewport, 'viewport');
+
+ if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
+   drupal_add_html_head( $background_image, 'background_image');
+ }
+
+ if (theme_get_setting('body_background') == "custom_background_color") {
+   drupal_add_html_head( $background_color, 'background_color');
+ }
+ // Add boxed class if layout is set that way.
+ if (theme_get_setting('site_layout') == 'boxed'){
+   $vars['classes_array'][] = 'boxed';
+ }
+
+}

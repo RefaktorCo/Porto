@@ -61,7 +61,7 @@ if (module_exists('profile2')) {
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 			</div>
 		
 	  <?php endif; ?>
@@ -78,15 +78,14 @@ if (module_exists('profile2')) {
 	    ?>
 	  </div>
 	  
-	 
-		  <?php if (!$page && $teaser): ?>
+		<?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
 				<span class="post-meta-user"><i class="icon-user"></i> <?php echo t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
-				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> Comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<span class="post-meta-comments"><i class="icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment');?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right"><?php echo t('Read more...'); ?></a>
 			</div>
 		
@@ -95,7 +94,7 @@ if (module_exists('profile2')) {
 	  
 	  <?php if( (!$teaser) AND (module_exists('profile2')) ): ?>
 	  <div class="post-block post-share">
-			<h3><i class="icon-share"></i>Share this post</h3>
+			<h3><i class="icon-share"></i><?php print t('Share this post');?></h3>
 
 			<!-- AddThis Button BEGIN -->
 			<div class="addthis_toolbox addthis_default_style ">
@@ -110,7 +109,7 @@ if (module_exists('profile2')) {
 		</div>
 	  
 	  <div class="post-block post-author clearfix">
-			<h3><i class="icon-user"></i>Author</h3>
+			<h3><i class="icon-user"></i><?php print t('Author'); ?></h3>
 			<div class="thumbnail">
 			 <?php print $user_picture; ?>
 			</div>
