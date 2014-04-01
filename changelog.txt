@@ -6,6 +6,7 @@
   *Fixed several missing translation function wrappers. 
   *Renamed several view node templates to fix issue with adding additional displays.
   *Fixed issue related to LESS errors on admin pages.
+  *CSS files no longer called in preprocess_html function.
 
 1.2.3 (11/11/13)
   *Updated "Mega Slider" to latest 2.4 version.

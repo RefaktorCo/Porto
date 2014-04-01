@@ -40,7 +40,8 @@ function porto_button($variables) {
 
 
 /**
- * Assign theme hook suggestions for custom templates.
+ * Assign theme hook suggestions for custom templates and pass color theme setting
+ * to skin.less file.
  */  
 function porto_preprocess_page(&$vars, $hook) {
   if (isset($vars['node'])) {
@@ -95,7 +96,7 @@ function porto_process_page(&$variables) {
 /**
  * Set up menu.
  */
-function porto_menu_link(array $variables) {
+function porto_menu_link__header_menu(array $variables) {
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
   static $item_id = 0;
@@ -126,12 +127,15 @@ function porto_menu_link(array $variables) {
 /**
  * Define menu UL class.
  */
-function porto_menu_tree($variables){
+function porto_menu_tree__header_menu($variables){
+  
   // use global depth variable to define ul class
   global $depth;
   $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
   return '<ul class="'.$class.' porto-nav">' . $variables['tree'] . '</ul>';
+  
 }
+
 
 /**
  * Allow sub-menu links to display.
@@ -143,6 +147,40 @@ function porto_links($variables) {
 	return drupal_render($tree);
   }
   return theme_links($variables);
+}
+
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function porto_block_view_alter(&$data, $block) {
+  // Check we get the right menu block (side bar)
+  if ($block->region == 'header_menu') {
+    // change the theme wrapper for the first level
+    $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
+    $data['content']['218']['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+    
+    foreach($data['content'] as &$key):
+     
+      if (isset($key['#theme'])) {
+        $key['#theme'] = 'menu_link__header_menu';
+      }
+      if (isset($key['#below'])) {
+        foreach($key['#below'] as &$key2):
+          $key2['#theme'] = 'menu_link__header_menu';
+        endforeach;
+      }
+      if (isset($key['#below']['#theme_wrappers'])) {
+        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+      }
+				
+    endforeach;
+    
+    
+    dpm($data);
+  
+  }
+  
 }
 
 /**
