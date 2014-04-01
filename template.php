@@ -136,6 +136,48 @@ function porto_menu_tree__header_menu($variables){
   
 }
 
+/**
+ * Implements hook_block_view_alter().
+ */
+function porto_block_view_alter(&$data, $block) {
+  // Check we get the right menu block (side bar)
+  if ($block->region == 'header_menu') {
+    // change the theme wrapper for the first level
+    $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
+    
+    foreach($data['content'] as &$key):
+     
+      if (isset($key['#theme'])) {
+        $key['#theme'] = 'menu_link__header_menu';
+      }
+      if (isset($key['#below']['#theme_wrappers'])) {
+        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+      }
+      if (isset($key['#below'])) {
+        foreach($key['#below'] as &$key2):
+        
+           if (isset($key2['#theme'])) {
+             $key2['#theme'] = 'menu_link__header_menu';
+           }
+           if (isset($key2['#below']['#theme_wrappers'])) {
+             $key2['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+           }
+           if (isset($key2['#below'])) {
+              foreach($key2['#below'] as &$key3):
+              
+                if (isset($key3['#theme'])) {
+                  $key3['#theme'] = 'menu_link__header_menu';
+                }
+              endforeach;
+              
+           }
+        endforeach;
+        
+      }
+    endforeach;
+     
+  }
+}
 
 /**
  * Allow sub-menu links to display.
@@ -147,40 +189,6 @@ function porto_links($variables) {
 	return drupal_render($tree);
   }
   return theme_links($variables);
-}
-
-
-/**
- * Implements hook_block_view_alter().
- */
-function porto_block_view_alter(&$data, $block) {
-  // Check we get the right menu block (side bar)
-  if ($block->region == 'header_menu') {
-    // change the theme wrapper for the first level
-    $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
-    $data['content']['218']['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
-    
-    foreach($data['content'] as &$key):
-     
-      if (isset($key['#theme'])) {
-        $key['#theme'] = 'menu_link__header_menu';
-      }
-      if (isset($key['#below'])) {
-        foreach($key['#below'] as &$key2):
-          $key2['#theme'] = 'menu_link__header_menu';
-        endforeach;
-      }
-      if (isset($key['#below']['#theme_wrappers'])) {
-        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
-      }
-				
-    endforeach;
-    
-    
-    dpm($data);
-  
-  }
-  
 }
 
 /**
