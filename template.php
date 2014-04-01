@@ -172,7 +172,7 @@ function porto_block_view_alter(&$data, $block) {
               
            }
         endforeach;
-        
+       
       }
     endforeach;
      
