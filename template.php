@@ -94,7 +94,7 @@ function porto_process_page(&$variables) {
 }	
 
 /**
- * Set up menu.
+ * Add list classes for links in "Header Menu" region.
  */
 function porto_menu_link__header_menu(array $variables) {
   unset($variables['element']['#attributes']['class']);
@@ -125,7 +125,7 @@ function porto_menu_link__header_menu(array $variables) {
 }
 
 /**
- * Define menu UL class.
+ * Define menu UL class for "Header Menu" region.
  */
 function porto_menu_tree__header_menu($variables){
   
@@ -137,14 +137,14 @@ function porto_menu_tree__header_menu($variables){
 }
 
 /**
- * Implements hook_block_view_alter().
+ * Implements hook_block_view_alter() for "Header Menu" region.
  */
 function porto_block_view_alter(&$data, $block) {
-  // Check we get the right menu block (side bar)
+
   if ($block->region == 'header_menu') {
-    // change the theme wrapper for the first level
+   
     $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
-    
+
     foreach($data['content'] as &$key):
      
       if (isset($key['#theme'])) {
@@ -175,7 +175,7 @@ function porto_block_view_alter(&$data, $block) {
        
       }
     endforeach;
-     
+
   }
 }
 
@@ -423,15 +423,18 @@ function porto_user_css() {
   echo "<!-- End user defined CSS -->";	
 }
 
-
+/**
+*  Unset the sticky.js if theme settings don't allow or user is logged in.
+*/
 function porto_js_alter(&$js) {
- // Unset the sticky.js if theme settings don't allow or user is logged in.
  if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
    global $parent_root;
    unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
  }
 }
-
+/**
+*  Unset Bootstrap stylesheets depending on theme settings.
+*/
 function porto_css_alter(&$css) {
  // If we don't have a boxed layout unset the css.
  if (theme_get_setting('site_layout') != "boxed") {
@@ -446,7 +449,7 @@ function porto_css_alter(&$css) {
 }
 
 /**
-* Add theme META tags and style sheets to the header.
+* Add several style-related elements into the <head> tag.
 */
 function porto_preprocess_html(&$vars){
  global $parent_root;

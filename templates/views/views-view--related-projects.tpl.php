@@ -27,6 +27,9 @@
  * @ingroup views_templates
  */
 ?>
+<?php if ($header): ?>
+  <?php print $header; ?>
+<?php endif; ?>
 
 <div class="row">	
 	<ul class="portfolio-list">
@@ -43,11 +46,7 @@
 	      <?php print $attachment_before; ?>
 	    </div>
 	  <?php endif; ?>
-	  
-	  <?php if ($header): ?>
-	    <?php print $header; ?>
-	   <?php endif; ?>
-	
+
 	  <?php if ($rows): ?>
 	    <?php print $rows; ?>
 	  <?php elseif ($empty): ?>
