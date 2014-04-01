@@ -16,7 +16,7 @@
 <div id="wrapper">
 <h2>Overview</h2>
 <p>Porto is a professional, multipurpose Drupal theme perfect for any business or portfolio website. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support"> support forum</a>. Once you have registered please contact us via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a> with your forum username so you can be granted posting rights.</p>
-<p>Updated: 10/15/13<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
+<p>Updated: 04/01/14<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
 crivos" target="_blank">
 Crivos</a></p>
 <h2>Installation</h2>
@@ -40,7 +40,7 @@ Option 2:
 <ol>
 <li>Create a database for this installation of Drupal and import the SQL file that came with the theme.</li>
 <li>Follow <a href="http://drupal.org/documentation/install/settings-file" target="_blank"> these directions</a> to create the settings.php file. Save this file somewhere so you can copy it over to the Drupal installation we have provided.</li>
-<li>Copy the entire contents of the Drupal_7 folder to the location on your web server where you want your site to be accessed. If you want your primary domain to point to your install of Porto, copy everything to the root folder. If you want your site to be accessed as a subsection of your domain (for example: yourdomain.com/drupal) then simply rename the Drupal_7 folder to the desired name and upload to the root of your server. Also be sure to copy over the settings.php file mentioned in the previous step</li>
+<li>Copy the entire contents of the /demo/porto folder to the location on your web server where you want your site to be accessed. If you want your primary domain to point to your install of Porto, copy everything inside to the root folder. If you want your site to be accessed as a subsection of your domain (for example: yourdomain.com/drupal) then simply rename the /demo/porto folder to the desired name and upload to the root of your server. Also be sure to copy over the settings.php file mentioned in the previous step</li>
 <li>Login to your site with the username <strong>Steve</strong> and the password <strong>admin</strong> and visit /admin/people to change the admin username and password.</li>
 <li>Go through the Drupal configuration found in /admin/config options and update all the necessary information to reflect your website. Also be sure to visit /admin/config/media/file-system and change the Temporary Directory.</li>
 
@@ -60,7 +60,7 @@ Option 2:
 
 
 <h2>Modules</h2>
-<p>You can find all of the modules used in the demo in the modules.zip archive in the root of the folder you downloaded from ThemeForest. Not all modules are required to use the theme, but below is a list of modules you will need to utilize various elements of the theme</p>
+<p>You can find all of the modules used in the demo in the modules folder in the root of the folder you downloaded from ThemeForest. Not all modules are required to use the theme, but below is a list of modules you will need to utilize various elements of the theme</p>
 
 <h4>General Required Modules</h4>
 <ul>
@@ -82,7 +82,7 @@ Option 2:
 </ul>
 
 <h3>Porto Content Data</h3>
-<p>If you used the "theme only" option to install the theme on an existing install that already has content we recommend you use our Porto Content Data module to create the additional content types, fields and Views needed to fully utilize the theme. You will find it in the root of the directory that contains the download files. This module is a custom <a href="http://drupal.org/project/features" target="_blank">Features</a> module and will not run without it. We recommend copying all of the modules from the /drupal_7/sites/all/modules folder into your install if you do not already have them. After you have all the modules simply upload and activate the Porto Content Data module and the content types, fields and Views will automatically be created.</p>
+<p>If you used the "theme only" option to install the theme on an existing install that already has content we recommend you use our Porto Content Data module to create the additional content types, fields and Views needed to fully utilize the theme. You will find it in the assets folder in the root of the folder you downloaded from ThemeForest. This module is a custom <a href="http://drupal.org/project/features" target="_blank">Features</a> module and will not run without it. We recommend copying all of the modules from the /demo/porto/sites/all/modules folder into your install if you do not already have them. After you have all the modules simply upload and activate the Porto Content Data module and the content types, fields and Views will automatically be created.</p>
 
 <h2>Image Sliders</h2>
 <h4>Mega Slider</h4>
@@ -120,7 +120,7 @@ A custom page template called page--onepage.tpl.php was created and is intended 
 </ul>
 
 <p><strong>Portfolio Block - Example: <a href="http://refaktorthemes.com/porto/portfolio-4-columns" target="_blank"> http://refaktorthemes.com/porto/portfolio-4-columns</a></strong></p>
-<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
+<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
 <li>/templates/node/node--portfolio.tpl.php</li>
@@ -133,7 +133,7 @@ A custom page template called page--onepage.tpl.php was created and is intended 
 <p>To change the number of items appear in a row in the Portfolio block visit the theme settings (/admin/appearance/settings/Porto).</p>
 
 <h4>Related Projects:</h4>
-Porto also includes support for a "Related Projects" block that you can use to showcase additional Portfolio items on the single Portfolio node pages, or anywhere else you would like. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/related-projects.txt to import this View. Then simply place the "View: Related Projects" in the Content region and configure the block visibility settings to your liking.</p>
+Porto also includes support for a "Related Projects" block that you can use to showcase additional Portfolio items on the single Portfolio node pages, or anywhere else you would like. If you are not using the full demo or did not use the Custom Content module you can use the code in /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) to import this View. Then simply place the "View: Related Projects" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
 <li>/templates/node/node--view--related-projects--block.tpl.php</li>
@@ -143,7 +143,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <h4>Portfolio Filters:</h4>
 <p>The Portfolio includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
-<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio view.</p>
+<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) to import as a View for placement in the View header of the Portfolio view.</p>
 
 <p><strong>Template files</strong></p>
 <ul>
@@ -166,7 +166,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li><strong>LinkedIn Link:</strong> Used to add a link to the team member's LinkedIn page.</li>
 </ul>
 
-<p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/team.txt to import this View. Then simply place the "View: Team" in the Content region and configure the block visibility settings to your liking.</p>
+<p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) to import this View. Then simply place the "View: Team" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
 <li>/templates/node/node--view--team--block.tpl.php</li>
@@ -176,7 +176,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <h4>Team Filters:</h4>
 <p>The Team block view also includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Team). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Team content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
-<p>The filters are powered by a View called Team Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/team-filters.txt to import as a View for placement in the View header of the Team view.</p>
+<p>The filters are powered by a View called Team Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) to import as a View for placement in the View header of the Team view.</p>
 
 <p><strong>Template files</strong></p>
 <ul>
@@ -219,7 +219,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li>/templates/views/views-view-unformatted--testimonials.tpl.php</li>
 </ul>
 
-<p>The export code /views-exports/testimonials.txt can be used to create the Testimonials View which uses a Block display. This block can then be added to the region of your choice.</p>
+<p>The export code /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) can be used to create the Testimonials View which uses a Block display. This block can then be added to the region of your choice.</p>
 
 <h4>FAQ</h4>
 <img src="images/porto-faq.png"><br/><br/>
@@ -236,7 +236,7 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li>/templates/views/views-view-unformatted--faq.tpl.php</li>
 </ul>
 
-<p>The export code /views-exports/faq.txt can be used to create the FAQ View which uses a Block display. This block can then be added to the region of your choice.</p>
+<p>The export code /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) can be used to create the FAQ View which uses a Block display. This block can then be added to the region of your choice.</p>
 
 <h4>Parallax</h4>
 <img src="images/porto-parallax.png"><br/><br/>
@@ -258,10 +258,10 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li>/templates/views/views-view-unformatted--parallax.tpl.php</li>
 </ul>
 
-<p>The export code /views-exports/parallax.txt can be used to create the Parallax View which uses a Block displays. These blocks can then be added to the region of your choice.</p>
+<p>The export code /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) can be used to create the Parallax View which uses a Block displays. These blocks can then be added to the region of your choice.</p>
 
 <h2>Blog (posts)</h2>
-<p>The Porto demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Porto).</p>
+<p>The Porto demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /assets/views_exports/portfolio-filters.txt (in the root of the ThemeForest download files) to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Porto).</p>
 <h4>Author bio</h4>
 <p>To display a small author bio on the article node page, install the <a href="https://drupal.org/project/profile2" target="_blank">Profile2 module</a> and follow these steps to configure it:</p>
 <ol>
@@ -293,9 +293,9 @@ Porto also includes support for a "Related Projects" block that you can use to s
 
 <h2>Extras</h2>
 <h4>Tabbed Recent/Popular posts block</h4>
-<p>We have included support for a tabbed recent/popular posts block powered by views. If you're not working off the full install and did not use the custom content module to create all the theme content types, fields and views you can import the /views_exports/tabbed-recent-posts.txt and /views_exports/tabbed-popular-posts.txt views (in that order) which will create the necessary views. From there add the "Tabbed Popular Posts" block to the region of your choice (not the recent posts block, that is used inside the popular posts view block). You can also add an optional "thumbnail" field to your article content type to upload a small thumbnail image that is used within the block.</p>
+<p>We have included support for a tabbed recent/popular posts block powered by views. If you're not working off the full install and did not use the custom content module to create all the theme content types, fields and views you can import the /assets/views_exports/tabbed-recent-posts.txt and /assets/views_exports/tabbed-popular-posts.txt views (in that order) which will create the necessary views. From there add the "Tabbed Popular Posts" block to the region of your choice (not the recent posts block, that is used inside the popular posts view block). You can also add an optional "thumbnail" field to your article content type to upload a small thumbnail image that is used within the block.</p>
 <h4>Code Examples</h4>
-<p>We've included some code examples inside the /examples folder in the root of the theme with some markup used on several of the demo page templates.</p>
+<p>We've included some code examples inside the /assets/examples folder in the root of the folder you downloaded from ThemeForest with some markup used on several of the demo page templates.</p>
 <h4>Flickr Feed</h4>
 <p>The following markup can be used to generate a Flickr Feed anywhere on your site:</p>
 <pre>
@@ -410,6 +410,6 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <p>Version 1.1.2 of the theme introduced support for CSS3 animations which can be seen here on our <a href="http://refaktorthemes.com/porto/animations" target="_blank">demo></a>. Please refer to the /examples/animations.php file for code examples for each of the animations.</p>
 <h2>Thank You</h2>
 <p>Thank you very much for purchasing the Porto Responsive Drupal 7 theme. Once again if you have any issues or feedback please connect via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a>. Enjoy using Porto!</p>
-</p>&copy 2013 Refaktor.
+</p>&copy 2014 Refaktor.
 </div>
 <script>$('#toc').toc();</script></body></html>
