@@ -166,7 +166,7 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#default_value'] = t('Search...'); // Set a default value for the textfield
     
     // Add extra attributes to the text box
-    $form['search_block_form']['#attributes']['class'] = array('search');
+    $form['search_block_form']['#attributes']['class'] = array('form-control', 'search');
     // Add extra attributes to the text box
        
     $form['actions']['submit'] =  array(
@@ -176,20 +176,21 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
     	
     );
     
-    dpm($form);
+   
     
   }
 } 
 
 /**
- * Implements hook_block_view_alter() for "Header Menu" region.
+ * Implements hook_block_view_alter().
  */
 function porto_block_view_alter(&$data, $block) {
 
   if ($block->region == 'header_search') {
-    $data['content']['actions']['submit']['#input'] = FALSE;
-    dpm($data['content']);
-  
+    // Unset some additional wrappers in the Header Search region.
+  	unset($data['content']['search_block_form']['#theme_wrappers']);
+    unset($data['content']['actions']['#theme_wrappers']);
+    unset($data['content']['actions']['submit']['#theme_wrappers']);
   }
 
   if ($block->region == 'header_menu') {
