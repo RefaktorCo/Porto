@@ -6,7 +6,7 @@
 ?>
 
 <div class="body">
-  <header>
+  <header id="header">
     <div class="container">
 
       <?php if (isset($page['branding'])) : ?>
@@ -14,48 +14,68 @@
 	    <?php endif; ?>
     
       <?php if ($logo): ?>
-        <div class="logo">
-		      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-		        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-		      </a>
-        </div>
+      <div class="logo">
+	      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+	        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"  width="111" height="54" data-sticky-width="82" data-sticky-height="40" />
+	      </a>
+      </div>
 	    <?php endif; ?>
 	    
 	    <?php if ($site_name || $site_slogan): ?>
-	      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
-	
-	        <?php if ($site_name): ?>
-	          <?php if ($title): ?>
-	            <div id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
-		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-		          </div>
-	          <?php else: /* Use h1 when the content title is empty */ ?>
-		          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
-		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-		          </h1>
-	          <?php endif; ?>
-	        <?php endif; ?>
-	
-	        <?php if ($site_slogan): ?>
-	          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
-	            <?php print $site_slogan; ?>
-	          </div>
-	        <?php endif; ?>
-	
-	      </div> <!-- /#name-and-slogan -->
-	    <?php endif; ?>
+      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
 
+        <?php if ($site_name): ?>
+          <?php if ($title): ?>
+            <div id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+	            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+	          </div>
+          <?php else: /* Use h1 when the content title is empty */ ?>
+	          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+	            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+	          </h1>
+          <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if ($site_slogan): ?>
+          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
+            <?php print $site_slogan; ?>
+          </div>
+        <?php endif; ?>
+
+      </div> <!-- /#name-and-slogan -->
+	    <?php endif; ?>
+	    
+	    <?php if (isset($page['header_search'])) : ?>
+	    <div class="search">
+	      <?php print render($page['header_search']); ?>
+	    </div>
+	    <?php endif; ?>
+      
       <!-- /branding --> 
       <div id="header-top">
         <?php print render($page['header_top']); ?>
       </div>
-      <?php print render($page['header_icons']); ?>
-      <nav>
-        <?php print render($page['header_menu']); ?>
-      </nav>
+    
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+				<i class="icon icon-bars"></i>
+			</button>   
       
+    </div>
+    
+    <div class="navbar-collapse nav-main-collapse collapse">
+		  <div class="container">  
+      
+        <?php print render($page['header_icons']); ?>
+        
+        <nav>
+        <?php print render($page['header_menu']); ?>
+        </nav>
+        
+		  </div> 
     </div>  
+    
 	</header>
+	<!-- end header --> 
 	
 	<div role="main" class="main">
 	
