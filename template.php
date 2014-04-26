@@ -155,9 +155,42 @@ function porto_menu_tree__header_menu($variables){
 }
 
 /**
+ * Impelements hook_form_alter()
+ */
+function porto_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    
+    unset($form['search_block_form']['#title']); // Change the text on the label element
+    unset($form['search_block_form']['#title_display']); // Toggle label visibilty
+    $form['search_block_form']['#size'] = 40;  // define size of the textfield
+    $form['search_block_form']['#default_value'] = t('Search...'); // Set a default value for the textfield
+    
+    // Add extra attributes to the text box
+    $form['search_block_form']['#attributes']['class'] = array('search');
+    // Add extra attributes to the text box
+       
+    $form['actions']['submit'] =  array(
+      '#type' => 'submit',
+    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="icon icon-search">',
+    	'#suffix' => '</i></button></span>',
+    	
+    );
+    
+    dpm($form);
+    
+  }
+} 
+
+/**
  * Implements hook_block_view_alter() for "Header Menu" region.
  */
 function porto_block_view_alter(&$data, $block) {
+
+  if ($block->region == 'header_search') {
+    $data['content']['actions']['submit']['#input'] = FALSE;
+    dpm($data['content']);
+  
+  }
 
   if ($block->region == 'header_menu') {
    
@@ -209,21 +242,7 @@ function porto_links($variables) {
   return theme_links($variables);
 }
 
-/**
- * Customize search form.
- */
-function porto_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'search_block_form') {
-  
-    unset($form['search_block_form']['#title']);
-    
-    $form['search_block_form']['#title_display'] = 'invisible';
-    $form_default = t('Search...');
-    $form['search_block_form']['#default_value'] = $form_default;
-    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . drupal_get_path('theme', 'porto') . '/img/search_icon.png', '#alt' => 'search');
-    $form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
-  }
-} 
+
 
 /**
  * Put Breadcrumbs in a ul li structure and add descending z-index style to each <a href> tag.

@@ -1,5 +1,11 @@
 /* DRUPAL THEME STYLES */
 
+
+
+.input-group-btn input {
+	display: none;
+}
+
 .link-wrapper {
 	float: right;
 	padding: 20px 0px;
@@ -151,43 +157,6 @@ span.thumb-info-caption p {
 	-moz-border-radius: 10px 10px 0px 0px;
 	-webkit-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
-}
-
-.form-item-search-block-form input[type="text"] {
-	-webkit-border-radius: 14px 0 0 14px;
-  -moz-border-radius: 14px 0 0 14px;
-  border-radius: 14px 0 0 14px;
-  width: 180px;
-}
-
-#search-block-form--2 .form-item-search-block-form input[type="text"] {
-  width: 70%;
-}
-
-header div.search input[type="image"]:focus {
-  width: auto !important;
-}
-
-#search-block-form .form-actions{
-	padding: 3px 11px 4px 11px !important;
-	display: inline-block;
-	-webkit-border-radius: 0 14px 14px 0;
-	-moz-border-radius: 0 14px 14px 0;
-	border-radius: 0 14px 14px 0;
-	position: relative;
-	top: -4px;
-	margin-left: -5px;
-}
-
-#search-block-form--2 .form-actions{
-	padding: 3px 11px 4px 11px !important;
-	display: inline-block;
-	-webkit-border-radius: 0 14px 14px 0;
-	-moz-border-radius: 0 14px 14px 0;
-	border-radius: 0 14px 14px 0;
-	position: relative;
-	top: -4px;
-	margin-left: -4px;
 }
 
 #user-login .form-actions {

@@ -76,7 +76,7 @@
     
 	</header>
 	<!-- end header --> 
-	
+	<?php print $messages; ?>
 	<div role="main" class="main">
 	
 	  <?php if ( ($breadcrumb) AND (!drupal_is_front_page()) ): ?>
@@ -115,7 +115,7 @@
 			
 					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "span6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "span9"; }  else { echo "span12"; } ?>">
 					  
-					  <?php print $messages; ?>
+					  
 					  
 			     	<?php if ($tabs = render($tabs)): ?>
 						  <div id="drupal_tabs" class="tabs ">
