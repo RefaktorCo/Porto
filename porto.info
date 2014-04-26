@@ -5,8 +5,8 @@ engine = phptemplate
 version = 2.0 Alpha
 
 ; Define theme CSS.
-stylesheets[all][] = css/bootstrap.css
-stylesheets[all][] = css/fonts/font-awesome/css/font-awesome.css
+stylesheets[all][] = vendor/bootstrap/css/bootstrap.css
+stylesheets[all][] = vendor/font-awesome/css/font-awesome.css
 stylesheets[all][] = vendor/flexslider/flexslider.css
 stylesheets[all][] = vendor/prettyPhoto/css/prettyPhoto.css
 stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css
@@ -22,7 +22,7 @@ stylesheets[all][] = css/theme-responsive.css
 
 ; Define theme JS libraries.
 scripts[] = vendor/modernizr.js
-scripts[] = vendor/bootstrap.js
+scripts[] = vendor/bootstrap/js/bootstrap.js
 scripts[] = vendor/jquery.easing.js
 scripts[] = vendor/jquery.cookie.js
 scripts[] = includes/twitter/jquery.tweet.js

@@ -7,14 +7,21 @@ $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
 /**
- * Modify theme_js_alter()
- */
+*  Modify theme_js_alter().
+*/
 function porto_js_alter(&$js) {
+
   if (isset($js['misc/jquery.js'])) {
-       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
-       $js['misc/jquery.js']['version'] = '1.11.0';
-    $js['misc/jquery.js']['data'] = $jsPath;
+   $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
+   $js['misc/jquery.js']['version'] = '1.8.2';
+   $js['misc/jquery.js']['data'] = $jsPath;
   }
+
+ if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
+   global $parent_root;
+   unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
+ }
+ 
 }
 
 /**
@@ -434,15 +441,7 @@ function porto_user_css() {
   echo "<!-- End user defined CSS -->";	
 }
 
-/**
-*  Unset the sticky.js if theme settings don't allow or user is logged in.
-*/
-function porto_js_alter(&$js) {
- if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
-   global $parent_root;
-   unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
- }
-}
+
 
 /**
 * Add several style-related elements into the <head> tag.
