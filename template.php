@@ -7,6 +7,17 @@ $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
 /**
+ * Modify theme_js_alter()
+ */
+function porto_js_alter(&$js) {
+  if (isset($js['misc/jquery.js'])) {
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.11.0';
+    $js['misc/jquery.js']['data'] = $jsPath;
+  }
+}
+
+/**
  * Implements hook_html_head_alter().
  */
 function porto_html_head_alter(&$head_elements) {
@@ -430,21 +441,6 @@ function porto_js_alter(&$js) {
  if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
    global $parent_root;
    unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
- }
-}
-/**
-*  Unset Bootstrap stylesheets depending on theme settings.
-*/
-function porto_css_alter(&$css) {
- // If we don't have a boxed layout unset the css.
- if (theme_get_setting('site_layout') != "boxed") {
-   global $parent_root;
-   unset($css[drupal_get_path('theme', 'porto') . '/css/bootstrap-responsive-boxed.css']);
- }
-   // If we don't have a boxed layout unset the css.
- if (theme_get_setting('site_layout') != "wide") {
-   global $parent_root;
-   unset($css[drupal_get_path('theme', 'porto') . '/css/bootstrap-responsive.css']);
  }
 }
 
