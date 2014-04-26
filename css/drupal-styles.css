@@ -5,6 +5,18 @@
 	padding: 20px 0px;
 }
 
+.region-sidebar-right h4, .region-sidebar-left h4 {
+	margin-top: 25px;
+}
+
+.region-sidebar-right h4:first-child, .region-sidebar-left h4:first-child {
+	margin-top: 0px;
+}
+
+#admin-menu li {
+	line-height: 1.4em !important;
+}
+
 .theme-default .nivoSlider {box-shadow: none !important;}
 
 #edit-checkout {
@@ -152,7 +164,7 @@ span.thumb-info-caption p {
   width: 70%;
 }
 
-header div.search input:focus {
+header div.search input[type="image"]:focus {
   width: auto !important;
 }
 

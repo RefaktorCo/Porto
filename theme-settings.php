@@ -14,6 +14,30 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     ),
   );
   
+  // Default Drupal Settings    
+  $form['options']['drupal_default_settings'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Drupal Core Settings'),
+	);
+	
+	  // "Toggle Display" 
+		$form['options']['drupal_default_settings']['theme_settings'] = $form['theme_settings'];
+		
+		// "Unset default Toggle Display settings" 
+		unset($form['theme_settings']);
+		
+		// "Logo Image Settings" 
+		$form['options']['drupal_default_settings']['logo'] = $form['logo'];
+		
+		// "Unset default Logo Image Settings" 
+		unset($form['logo']);
+		
+		// "Shortcut Icon Settings" 
+		$form['options']['drupal_default_settings']['favicon'] = $form['favicon'];   
+		
+		// "Unset default Shortcut Icon Settings" 
+		unset($form['favicon']);
+  
   // General
   $form['options']['general'] = array(
     '#type' => 'fieldset',
@@ -135,9 +159,9 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Portfolio Columns'),
         '#default_value' => theme_get_setting('portfolio_columns'),
         '#options' => array(
-          'col-md-6' => 'Two',
-          'col-md-4' => 'Three',
-          'col-md-3' => 'Four (default)',
+          'span6' => 'Two',
+          'span4' => 'Three',
+          'span3' => 'Four (default)',
         ),
       ); 
       

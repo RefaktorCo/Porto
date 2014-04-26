@@ -1,5 +1,13 @@
-1.2 (11/19/13)
-  *Additional improvements for special characters in taxonmy terms.
+1.3 (04/01/14)
+  *Additional improvements for special characters in taxonomy terms.
+  *Updated Drupal Core in full demo install.
+  *Updated Mega Slider module to latest version.
+  *Fixed issue with pagination in Portfolio block.
+  *Fixed several missing translation function wrappers. 
+  *Renamed several view node templates to fix issue with adding additional displays.
+  *Fixed issue related to LESS errors on admin pages.
+  *CSS files no longer called in preprocess_html function.
+  *Porto navigation markup/style now only applies to menus in the "Header Menu" region.
 
 1.2.3 (11/11/13)
   *Updated "Mega Slider" to latest 2.4 version.

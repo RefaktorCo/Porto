@@ -6,16 +6,9 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
-
-/* Update Drupal's version of jQuery */
-function porto_js_alter(&$js) {
-  if (isset($js['misc/jquery.js'])) {
-       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
-       $js['misc/jquery.js']['version'] = '1.8.2';
-    $js['misc/jquery.js']['data'] = $jsPath;
-  }
-}
-
+/**
+ * Implements hook_html_head_alter().
+ */
 function porto_html_head_alter(&$head_elements) {
 	unset($head_elements['system_meta_generator']);
 	foreach ($head_elements as $key => $element) {
@@ -29,8 +22,7 @@ function porto_html_head_alter(&$head_elements) {
 }
 
 /**
- * Overwrite theme_button()
- * @file template.php
+ * Add Bootstrap classes to button elements.
  */
 function porto_button($variables) {
 
@@ -48,7 +40,8 @@ function porto_button($variables) {
 
 
 /**
- * Assign theme hook suggestions for custom templates.
+ * Assign theme hook suggestions for custom templates and pass color theme setting
+ * to skin.less file.
  */  
 function porto_preprocess_page(&$vars, $hook) {
   if (isset($vars['node'])) {
@@ -66,9 +59,22 @@ function porto_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
   }
   
- if (request_path() == 'one-page') {
+  if (request_path() == 'one-page') {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
+  
+  //Pass the color value from theme settings to @skinColor variable in skin.less
+  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
+  
+    'group' => CSS_THEME,
+    'preprocess' => false,
+    'less' => array(
+      'variables' => array(
+        '@skinColor' => '#'.theme_get_setting('skin_color').'',
+      ),
+    ),
+
+  )); 
 }
 
 /**
@@ -88,9 +94,9 @@ function porto_process_page(&$variables) {
 }	
 
 /**
- * Set up menu.
+ * Add list classes for links in "Header Menu" region.
  */
-function porto_menu_link(array $variables) {
+function porto_menu_link__header_menu(array $variables) {
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
   static $item_id = 0;
@@ -119,13 +125,58 @@ function porto_menu_link(array $variables) {
 }
 
 /**
- * Define menu UL class.
+ * Define menu UL class for "Header Menu" region.
  */
-function porto_menu_tree($variables){
+function porto_menu_tree__header_menu($variables){
+  
   // use global depth variable to define ul class
   global $depth;
   $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
   return '<ul class="'.$class.' porto-nav">' . $variables['tree'] . '</ul>';
+  
+}
+
+/**
+ * Implements hook_block_view_alter() for "Header Menu" region.
+ */
+function porto_block_view_alter(&$data, $block) {
+
+  if ($block->region == 'header_menu') {
+   
+    $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
+
+    foreach($data['content'] as &$key):
+     
+      if (isset($key['#theme'])) {
+        $key['#theme'] = 'menu_link__header_menu';
+      }
+      if (isset($key['#below']['#theme_wrappers'])) {
+        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+      }
+      if (isset($key['#below'])) {
+        foreach($key['#below'] as &$key2):
+        
+           if (isset($key2['#theme'])) {
+             $key2['#theme'] = 'menu_link__header_menu';
+           }
+           if (isset($key2['#below']['#theme_wrappers'])) {
+             $key2['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+           }
+           if (isset($key2['#below'])) {
+              foreach($key2['#below'] as &$key3):
+              
+                if (isset($key3['#theme'])) {
+                  $key3['#theme'] = 'menu_link__header_menu';
+                }
+              endforeach;
+              
+           }
+        endforeach;
+       
+      }
+    endforeach;
+
+  }
 }
 
 /**
@@ -196,7 +247,7 @@ function porto_preprocess_username(&$vars) {
  * Overrides theme_item_list().
  */
 function porto_item_list($vars) {
-  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
+  if (isset($vars['attributes']['class']) && in_array('pager', (array)$vars['attributes']['class'])) {
     unset($vars['attributes']['class']);
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
@@ -234,14 +285,6 @@ function porto_field($variables) {
   }
   
   elseif ($variables['element']['#field_name'] == 'field_portfolio_category') {
-    // For tags, concatenate into a single, comma-delimitated string.
-    foreach ($variables['items'] as $delta => $item) {
-      $rendered_tags[] = drupal_render($item);
-    }
-    $output .= implode(', ', $rendered_tags);
-  }
-  
-  elseif ($variables['element']['#field_name'] == 'body') {
     // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
       $rendered_tags[] = drupal_render($item);
@@ -381,55 +424,69 @@ function porto_user_css() {
 }
 
 /**
- * Get color from theme settings and pass it to LESS stylesheet.
- */
-$less_settings = array(
-  'variables' => array(
-    '@skinColor' => '#'.theme_get_setting('skin_color').'',
-  ),
-);
-
-drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
-  'group' => CSS_THEME,
-  'preprocess' => false,
-  'less' => $less_settings,
-)); 
-
+*  Unset the sticky.js if theme settings don't allow or user is logged in.
+*/
+function porto_js_alter(&$js) {
+ if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
+   global $parent_root;
+   unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
+ }
+}
 /**
- * Add theme META tags and style sheets to the header.
- */
-function porto_preprocess_html(&$vars){
-  global $parent_root;
-  
-  $viewport = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'viewport',
-      'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
-    )
-  );
-    
-   $background_image = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-  );
-  
-  $background_color = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-  );
-  
-  drupal_add_html_head( $viewport, 'viewport');
-      
-  if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
-    drupal_add_html_head( $background_image, 'background_image');
-  } 
-  
-  if (theme_get_setting('body_background') == "custom_background_color") {
-    drupal_add_html_head( $background_color, 'background_color');
-  }
-
+*  Unset Bootstrap stylesheets depending on theme settings.
+*/
+function porto_css_alter(&$css) {
+ // If we don't have a boxed layout unset the css.
+ if (theme_get_setting('site_layout') != "boxed") {
+   global $parent_root;
+   unset($css[drupal_get_path('theme', 'porto') . '/css/bootstrap-responsive-boxed.css']);
+ }
+   // If we don't have a boxed layout unset the css.
+ if (theme_get_setting('site_layout') != "wide") {
+   global $parent_root;
+   unset($css[drupal_get_path('theme', 'porto') . '/css/bootstrap-responsive.css']);
+ }
 }
 
-?>
+/**
+* Add several style-related elements into the <head> tag.
+*/
+function porto_preprocess_html(&$vars){
+ global $parent_root;
+
+ $viewport = array(
+   '#type' => 'html_tag',
+   '#tag' => 'meta',
+   '#attributes' => array(
+     'name' => 'viewport',
+     'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
+   )
+ );
+
+  $background_image = array(
+   '#type' => 'markup',
+   '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
+   '#weight' => 1,
+ );
+
+ $background_color = array(
+   '#type' => 'markup',
+   '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
+   '#weight' => 2,
+ );
+
+ drupal_add_html_head( $viewport, 'viewport');
+
+ if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
+   drupal_add_html_head( $background_image, 'background_image');
+ }
+
+ if (theme_get_setting('body_background') == "custom_background_color") {
+   drupal_add_html_head( $background_color, 'background_color');
+ }
+ // Add boxed class if layout is set that way.
+ if (theme_get_setting('site_layout') == 'boxed'){
+   $vars['classes_array'][] = 'boxed';
+ }
+
+}

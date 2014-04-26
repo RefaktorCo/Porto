@@ -2,11 +2,11 @@
 	<h2><?php print $title; ?></h2>
 
 	<div class="row">
+	  <?php if (render($content['field_image'])): ?>
 		<div class="span6">
-
 			<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="item">
-
 		</div>
+		<?php endif;?>
 
 		<div class="span6">
 

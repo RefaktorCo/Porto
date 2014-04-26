@@ -6,7 +6,7 @@
  */
 ?>
 
-<section class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>);">
+<section class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(<?php if (render($content['field_image'])) { echo file_create_url($node->field_image['und'][0]['uri']); } ?>);">
 	<div class="container">
 		<div class="row center">
 			<div class="span12">
