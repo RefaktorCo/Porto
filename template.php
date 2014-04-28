@@ -125,7 +125,7 @@ function porto_menu_link__header_menu(array $variables) {
   $depth = $element['#original_link']['depth'];
 
   if ( ($element['#below']) && ($depth == "1") ) {
-    $element['#attributes']['class'][] = 'dropdown';
+    $element['#attributes']['class'][] = 'dropdown '.$element['#original_link']['mlid'].'';
   }
   
   if ( ($element['#below']) && ($depth == "2") ) {
@@ -138,7 +138,7 @@ function porto_menu_link__header_menu(array $variables) {
   if(strpos($output,"active")>0){
     $element['#attributes']['class'][] = "active";
   }
-
+  dpm($element);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
