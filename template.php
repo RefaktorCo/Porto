@@ -138,7 +138,6 @@ function porto_menu_link__header_menu(array $variables) {
   if(strpos($output,"active")>0){
     $element['#attributes']['class'][] = "active";
   }
-  dpm($element);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
