@@ -431,6 +431,12 @@ function porto_js_alter(&$js) {
    global $parent_root;
    unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
  }
+ 
+ if (isset($js['misc/jquery.js'])) {
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.8';
+    $js['misc/jquery.js']['data'] = $jsPath;
+  }
 }
 /**
 *  Unset Bootstrap stylesheets depending on theme settings.
