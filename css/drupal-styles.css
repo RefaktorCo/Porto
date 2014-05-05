@@ -8,12 +8,21 @@
   background-color: transparent;
 }
 
-.tb-megamenu .nav > li > a {
-	color: inherit;
-}
 
 .tb-megamenu .nav > li > a {
   border-right: none;
+}
+
+.tb-megamenu .nav li.dropdown.active > .dropdown-toggle, .tb-megamenu .nav li.dropdown.open.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > a:hover, .tb-megamenu .nav > li > a:hover {
+	border-radius: 4px;
+}
+
+.tb-megamenu .nav li.dropdown.open > .dropdown-toggle {
+  color: #fff;
+}
+
+.tb-megamenu .nav > li > a {
+	padding: 10px 13px;
 }
 
 .link-wrapper {
