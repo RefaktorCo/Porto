@@ -55,11 +55,7 @@
       <div id="header-top">
         <?php print render($page['header_top']); ?>
       </div>
-    
-      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
-				<i class="icon icon-bars"></i>
-			</button>   
-      
+          
     </div>
     
     <div class="navbar-collapse nav-main-collapse collapse">

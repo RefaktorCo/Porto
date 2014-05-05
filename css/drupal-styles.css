@@ -1,6 +1,8 @@
 /* DRUPAL THEME STYLES */
 
-
+.tb-megamenu .nav-collapse.collapse {
+display: block;
+}
 
 
 
