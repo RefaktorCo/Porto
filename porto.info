@@ -38,9 +38,10 @@ scripts[] = vendor/magnific-popup/magnific-popup.js
 scripts[] = vendor/jquery.validate.js
 scripts[] = vendor/jquery.appear.js
 scripts[] = js/mobile-menu.js
-scripts[] = js/plugins.js
-scripts[] = js/porto.js
+scripts[] = js/theme.plugins.js
+scripts[] = js/theme.js
 scripts[] = js/sticky.js
+scripts[] = js/views/view.home.js
 
 ; Define theme block regions.
 regions[header_top] = Header Top
