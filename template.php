@@ -192,7 +192,7 @@ function porto_block_view_alter(&$data, $block) {
     unset($data['content']['actions']['submit']['#theme_wrappers']);
   }
 
-  if ($block->region == 'header_menu') {
+  if ( ($block->region == 'header_menu') && ($data['content']['#type'] != 'markup') ) {
    
     $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
 
@@ -226,7 +226,7 @@ function porto_block_view_alter(&$data, $block) {
        
       }
     endforeach;
-
+  dpm($data);
   }
 }
 
