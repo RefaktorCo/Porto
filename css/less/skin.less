@@ -151,12 +151,23 @@ header {
   .tb-megamenu .nav > li > a {
 	  color: @skinColor !important;
   }
- 
-   
+  
+  .large-mega {
+	  border-top: 6px solid @skinColor !important;
+  }
+    
   .tb-megamenu .nav li.dropdown.active > .dropdown-toggle,
   .tb-megamenu .nav > li > a:hover {
 	  color: #FFF !important;
 		background-color: @skinColor !important;
+  }
+  
+  .mega-dropdown-inner {
+	  background-color: @skinColor !important;
+  }
+  
+  .tb-megamenu .dropdown-menu .mega-nav > li:hover {
+	  background-color: lighten(@skinColor, 10%);
   }
 
 	nav ul.nav-main {
