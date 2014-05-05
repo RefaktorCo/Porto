@@ -1,10 +1,20 @@
 /* DRUPAL THEME STYLES */
 
 .tb-megamenu .nav-collapse.collapse {
-display: block;
+  display: block;
 }
 
+.tb-megamenu {
+  background-color: transparent;
+}
 
+.tb-megamenu .nav > li > a {
+	color: inherit;
+}
+
+.tb-megamenu .nav > li > a {
+  border-right: none;
+}
 
 .link-wrapper {
 	float: right;
