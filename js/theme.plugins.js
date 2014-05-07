@@ -3,7 +3,7 @@ Plugin Name: 	scrollToTop for jQuery.
 Written by: 	Okler Themes - (http://www.okler.net)
 */
 
-jQuery(document).ready(function ($) {
+(function($) {
 	$.extend({
 
 		scrollToTop: function() {
@@ -56,14 +56,14 @@ jQuery(document).ready(function ($) {
 		}
 
 	});
-});
+})(jQuery);
 
 /*
 Plugin Name: 	BrowserSelector
 Written by: 	Okler Themes - (http://www.okler.net)
 */
 
-jQuery(document).ready(function ($) {
+(function($) {
 	$.extend({
 
 		browserSelector: function() {
@@ -93,14 +93,14 @@ jQuery(document).ready(function ($) {
 		}
 
 	});
-});
+})(jQuery);
 
 /*
 Plugin Name: 	waitForImages jQuery Plugin - v1.5.0 - 2013-07-20
 Written by: 	https://github.com/alexanderdickson/waitForImages
 
 */
-jQuery(document).ready(function ($) {
+;(function ($) {
     // Namespace all events.
     var eventNamespace = 'waitForImages';
 
@@ -232,14 +232,14 @@ jQuery(document).ready(function ($) {
             });
         });
     };
-});
+}(jQuery));
 
 /*
 Plugin Name: 	Count To
 Written by: 	Matt Huggins - https://github.com/mhuggins/jquery-countTo
 
 */
-jQuery(document).ready(function ($) {
+(function ($) {
 	$.fn.countTo = function (options) {
 		options = options || {};
 
@@ -318,7 +318,7 @@ jQuery(document).ready(function ($) {
 	function formatter(value, settings) {
 		return value.toFixed(settings.decimals);
 	}
-});
+}(jQuery));
 
 /*
 Plugin Name: 	afterResize.js
@@ -326,7 +326,7 @@ Written by: 	https://github.com/mcshaman/afterResize.js
 Description: 	Simple jQuery plugin designed to emulate an 'after resize' event.
 
 */
-jQuery(document).ready(function ($) {
+( function( $ ) {
 	"use strict";
 
 	// Define default settings
@@ -424,7 +424,7 @@ jQuery(document).ready(function ($) {
 
 	};
 
-});
+})(jQuery);
 
 /*
 Plugin Name: 	smoothScroll for jQuery.
@@ -442,7 +442,7 @@ Based on:
 	 - Michael Herf     (Pulse Algorithm)
 
 */
-jQuery(document).ready(function ($) {
+(function($) {
 	$.extend({
 
 		smoothScroll: function() {
@@ -1003,4 +1003,4 @@ jQuery(document).ready(function ($) {
 		}
 
 	});
-});
+})(jQuery);

@@ -101,7 +101,7 @@
 	      
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
-					  <div class="<?php if ($page['sidebar_right']) { echo "span3";} else { echo "span3"; } ?>">
+					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
 					    <div id="sticky-sidebar">
 					    <?php print render($page['sidebar_left']); ?>
 					    </div>
@@ -129,7 +129,7 @@
 					</div>
 			  
 				  <?php if ( ($page['sidebar_right']) ) : ?>
-				  <div class="<?php if ($page['sidebar_left']) { echo "span3";} else { echo "span3"; } ?>">
+				  <div class="<?php if ($page['sidebar_left']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
 				    <?php print render($page['sidebar_right']); ?>
 				  </div>
 				  <?php endif; ?>
@@ -144,35 +144,35 @@
 
   <?php print render($page['after_content']); ?>
 
-<footer>
+<footer id="footer">
   <div class="container">
     <div class="row">
     
       <?php if (theme_get_setting('ribbon') == '1'): ?>
-			<div class="footer-ribon">
+			<div class="footer-ribbon">
 				<span><?php echo t("%string", array('%string' => theme_get_setting('ribbon_text')) );?></span>
 			</div>
       <?php endif; ?>
 		  
-	    <div class="span3">
+	    <div class="col-md-3">
 	      <?php if (isset($page['footer_1'])) : ?>
 			    <?php print render($page['footer_1']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span3">
+	    <div class="col-md-3">
 	      <?php if (isset($page['footer_2'])) : ?>
 			    <?php print render($page['footer_2']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span4">
+	    <div class="col-md-4">
 	      <?php if (isset($page['footer_3'])) : ?>
 			    <?php print render($page['footer_3']); ?>
 			  <?php endif; ?>
 	    </div>
 	    
-	    <div class="span2">
+	    <div class="col-md-2">
 	      <?php if (isset($page['footer_4'])) : ?>
 			    <?php print render($page['footer_4']); ?>
 			  <?php endif; ?>
@@ -184,14 +184,14 @@
 	  <div class="footer-copyright">  
 	    <div class="container">
 	      <div class="row">
-			    <div class="span6">
+			    <div class="col-md-6">
 			    
 					  <?php if (isset($page['footer_bottom_left'])) : ?>
 					    <?php print render($page['footer_bottom_left']); ?>
 					  <?php endif; ?>
 			  
 			    </div>
-			    <div class="span6">
+			    <div class="col-md-6">
 			    
 					  <?php if (isset($page['footer_bottom_right'])) : ?>
 					    <?php print render($page['footer_bottom_right']); ?>

@@ -27,10 +27,8 @@
  * @ingroup views_templates
  */
 ?>
-<div class="container">
-<div class="row center client-carousel">
-	<div class="flexslider unstyled flexslider-control-nav" data-plugin-options='{"directionNav":false, "animation":"slide", "slideshow": false, "maxVisibleItems": 6}'>
-		<ul class="slides">
+<div class="row center">
+						<div class="owl-carousel" data-plugin-options='{"singleItem": false, "autoPlay": true}'>
 		  <?php print render($title_prefix); ?>
 		  <?php if ($title): ?>
 		    <?php print $title; ?>
@@ -89,7 +87,6 @@
 		      <?php print $feed_icon; ?>
 		    </div>
 		  <?php endif; ?>
-		</ul>
-	</div>		
+	
 </div>
 </div><?php /* class view */ ?>

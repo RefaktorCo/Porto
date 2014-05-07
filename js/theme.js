@@ -204,6 +204,90 @@ jQuery(document).ready(function ($) {
 			}
 
 		},
+		
+		flexslider: function() {
+
+	$("div.flexslider").each(function() {
+
+		var slider = $(this);
+
+		var defaults = {
+			animationLoop: false,
+			controlNav: true,
+			directionNav: true
+		}
+
+		var config = $.extend({}, defaults, slider.data("plugin-options"));
+
+		if(($(window).width() < 768 && slider.hasClass("normal-device")) || $(window).width() > 768 && slider.hasClass("small-device") || (!slider.hasClass("flexslider-init"))) {
+
+			// Reset if already initialized.
+			if(slider.find("div.flex-viewport") && typeof(config.maxVisibleItems) != "undefined") {
+
+				var el = slider;
+
+				el.find("li.clone").remove();
+
+				var elClean = el.clone();
+
+				elClean.find("div.flex-viewport").children().unwrap();
+
+				elClean
+					.find("ul.flex-direction-nav, ol.flex-control-nav")
+					.remove()
+					.end()
+					.find("*").removeAttr("style").removeClass (function (index, css) {
+						return (css.match (/\bflex\S+/g) || []).join(" ");
+					});
+
+				elClean.insertBefore(el);
+
+				el.remove();
+
+				slider = elClean;
+
+			}
+
+			// Set max visible items.
+			if(typeof(config.maxVisibleItems) != "undefined") {
+
+				slider.find("ul.slides li > div").unwrap();
+
+				var items = slider.find("ul.slides").children("div");
+				var visibleItems = config.maxVisibleItems;
+
+				if($(window).width() < 768) {
+					visibleItems = 1;
+					slider
+						.removeClass("normal-device")
+						.addClass("small-device");
+				} else {
+					slider
+						.removeClass("small-device")
+						.addClass("normal-device");
+				}
+
+				for (var i = 0; i < items.length; i+= visibleItems) {
+					var slice = items.slice(i,i + visibleItems);
+
+					slice.wrapAll("<li></li>");
+				}
+
+			}
+
+		}
+		// Initialize Slider
+		slider.flexslider(config).addClass("flexslider-init");
+
+		if(config.controlNav)
+			slider.addClass("flexslider-control-nav");
+
+		if(config.directionNav)
+			slider.addClass("flexslider-direction-nav");
+
+	});
+
+},
 
 		stickyMenu: function() {
 
