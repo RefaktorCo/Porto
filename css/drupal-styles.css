@@ -1,5 +1,13 @@
 /* DRUPAL THEME STYLES */
 
+header .content {
+	overflow: visible;
+}
+
+.content {
+	overflow: hidden;
+}
+
 .owl-item li {
 	list-style: none;
 }

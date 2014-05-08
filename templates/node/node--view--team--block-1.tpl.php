@@ -1,4 +1,4 @@
-<li class="span3">
+<li class="col-md-3">
 <div class="team-item thumbnail">
 		<a href="#" class="thumb-info team">
 			<?php print render ($content['field_image']); ?>
