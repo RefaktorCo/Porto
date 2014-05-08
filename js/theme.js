@@ -93,8 +93,7 @@ jQuery(document).ready(function ($) {
 				// Featured Boxes
 				Core.featuredBoxes();
 
-				// Sticky Menu
-				Core.checkStickyMenu();
+				
 
 				// Revolution Slider Fix
 				Core.fixRevolutionSlider();
