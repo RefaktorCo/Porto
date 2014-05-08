@@ -1,5 +1,5 @@
-<li>
-	<div class="span3">
+
+  <div class="col-md-6">
 		<article>
 			<div class="date">
 			  <span class="day"><?php print format_date($node->created, 'custom', 'd'); ?></span>
@@ -17,4 +17,3 @@
 	    ?> <?php  echo substr($teaser, 0, 250)."...";?> <a href="<?php print $node_url; ?>" class="read-more"> <?php echo t('read more'); ?> <i class="icon-angle-right"></i></a></p>
 		</article>
 	</div>
-</li>	

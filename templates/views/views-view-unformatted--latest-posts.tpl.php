@@ -9,5 +9,7 @@
 ?>
 
 <?php foreach ($rows as $id => $row): ?>
+  <div class="test">
   <?php print $row; ?>
+  </div>
 <?php endforeach; ?>

@@ -1,5 +1,9 @@
 /* DRUPAL THEME STYLES */
 
+.owl-item li {
+	list-style: none;
+}
+
 .tb-megamenu .nav-collapse.collapse {
   display: block;
 }

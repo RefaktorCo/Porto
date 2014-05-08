@@ -27,18 +27,19 @@
  * @ingroup views_templates
  */
 ?>
+<?php if ($header): ?>
+		    <div class="view-header">
+		      <?php print $header; ?>
+		    </div>
+		  <?php endif; ?>
 <div class="row center">
-						<div class="owl-carousel" data-plugin-options='{"singleItem": false, "autoPlay": true}'>
+						<div class="owl-carousel" data-plugin-options='{"items": 6, "singleItem": false, "autoPlay": true}'>
 		  <?php print render($title_prefix); ?>
 		  <?php if ($title): ?>
 		    <?php print $title; ?>
 		  <?php endif; ?>
 		  <?php print render($title_suffix); ?>
-		  <?php if ($header): ?>
-		    <div class="view-header">
-		      <?php print $header; ?>
-		    </div>
-		  <?php endif; ?>
+		  
 		
 		  <?php if ($exposed): ?>
 		    <div class="view-filters">
