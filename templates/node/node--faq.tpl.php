@@ -8,5 +8,5 @@
 
 <section class="toggle <?php if ( render($content['field_active']) == 'active' ) { print render($content['field_active']); } ?>">
 	<label><?php echo $title; ?></label>
-	<p><?php print render($content['body']); ?></p>
+	<p><?php print strip_tags(render($content['body'])); ?></p>
 </section>
