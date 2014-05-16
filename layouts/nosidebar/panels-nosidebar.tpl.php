@@ -12,10 +12,19 @@
  *   $content['middle']: The only panel in the layout.
  */
 ?>
-<div class="panel-display panel-1col clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="panel-panel panel-col">
-    <div><?php print $content['before_content']; ?></div>
-    <div><?php print $content['content']; ?></div>
-    <div><?php print $content['after_content']; ?></div>
-  </div>
-</div>
+
+  
+  <?php print $content['before_content']; ?>
+  
+  <div id="content" class="content full">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-md-12">
+          <?php print $content['content']; ?>
+	      </div>
+	    </div>
+	  </div>
+  </div>      
+  
+  <?php print $content['after_content']; ?>
+  

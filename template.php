@@ -56,12 +56,79 @@ function porto_button($variables) {
   return '<input' . drupal_attributes($element['#attributes']) . ' />';
 }
 
+/**
+ * Helper function to test for panel page config.
+ */
+function _is_panel_page() {
+  $page = &drupal_static(__FUNCTION__);
+
+  if (function_exists("page_manager_get_current_page")) {
+    if (!isset($page)) {
+      $page = page_manager_get_current_page();
+    }
+  }
+  return $page ? $page : FALSE;
+}
+
+/**
+* Add several style-related elements into the <head> tag.
+*/
+function porto_preprocess_html(&$vars){
+ global $parent_root;
+ 
+  if ($page = _is_panel_page()) {
+    // Add a body class for panel pages.
+    $class = 'page-panel';
+  }
+  else {
+    // Add a body class for default pages.
+    $class = 'page-default';
+  }
+  $vars['classes_array'][] = drupal_html_class($class);
+
+ $viewport = array(
+   '#type' => 'html_tag',
+   '#tag' => 'meta',
+   '#attributes' => array(
+     'name' => 'viewport',
+     'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
+   )
+ );
+
+  $background_image = array(
+   '#type' => 'markup',
+   '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
+   '#weight' => 1,
+ );
+
+ $background_color = array(
+   '#type' => 'markup',
+   '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
+   '#weight' => 2,
+ );
+
+ drupal_add_html_head( $viewport, 'viewport');
+
+ if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
+   drupal_add_html_head( $background_image, 'background_image');
+ }
+
+ if (theme_get_setting('body_background') == "custom_background_color") {
+   drupal_add_html_head( $background_color, 'background_color');
+ }
+ // Add boxed class if layout is set that way.
+ if (theme_get_setting('site_layout') == 'boxed'){
+   $vars['classes_array'][] = 'boxed';
+ }
+
+}
 
 /**
  * Assign theme hook suggestions for custom templates and pass color theme setting
  * to skin.less file.
  */  
 function porto_preprocess_page(&$vars, $hook) {
+  
   if (isset($vars['node'])) {
     $suggest = "page__node__{$vars['node']->type}";
     $vars['theme_hook_suggestions'][] = $suggest;
@@ -80,6 +147,13 @@ function porto_preprocess_page(&$vars, $hook) {
   if (request_path() == 'one-page') {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
+  
+  if ($page = _is_panel_page()) {
+    // Add template suggestion for all panel pages.
+    $vars['theme_hook_suggestions'][] = 'page__panel';
+    // Add template suggestion per panel page.
+    $vars['theme_hook_suggestions'][] = 'page__panel__' . $page['name'];
+  }
   
   //Pass the color value from theme settings to @skinColor variable in skin.less
   drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
@@ -462,45 +536,3 @@ function porto_user_css() {
 
 
 
-/**
-* Add several style-related elements into the <head> tag.
-*/
-function porto_preprocess_html(&$vars){
- global $parent_root;
-
- $viewport = array(
-   '#type' => 'html_tag',
-   '#tag' => 'meta',
-   '#attributes' => array(
-     'name' => 'viewport',
-     'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
-   )
- );
-
-  $background_image = array(
-   '#type' => 'markup',
-   '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-   '#weight' => 1,
- );
-
- $background_color = array(
-   '#type' => 'markup',
-   '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-   '#weight' => 2,
- );
-
- drupal_add_html_head( $viewport, 'viewport');
-
- if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
-   drupal_add_html_head( $background_image, 'background_image');
- }
-
- if (theme_get_setting('body_background') == "custom_background_color") {
-   drupal_add_html_head( $background_color, 'background_color');
- }
- // Add boxed class if layout is set that way.
- if (theme_get_setting('site_layout') == 'boxed'){
-   $vars['classes_array'][] = 'boxed';
- }
-
-}
