@@ -28,7 +28,7 @@
  */
 ?>
 <div class="map-section">
-	<section class="featured footer map">
+	<section class="featured map">
 		<div class="container">
 			<div class="row">
 			

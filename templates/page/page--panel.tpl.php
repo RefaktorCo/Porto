@@ -94,14 +94,14 @@
 		</section>
 	  <?php endif; ?>
 	  
+	  <?php print render($page['before_content']); ?>
 	  
+	  <?php print render($page['content']); ?>
  
 		 
 	  
 	</div>
-  <?php print render($page['before_content']); ?>
-	  
-	  <?php print render($page['content']); ?>
+
   <?php print render($page['after_content']); ?>
 
 <footer id="footer">
