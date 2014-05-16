@@ -1,5 +1,17 @@
 /* DRUPAL THEME STYLES */
 
+#footer {
+  margin-top: 0px;
+}
+
+section.featured.footer {
+  margin: 0px;
+}
+
+.map-section {
+	margin-top: 10px;
+}
+
 header .content {
 	overflow: visible;
 }

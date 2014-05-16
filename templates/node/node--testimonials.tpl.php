@@ -6,7 +6,6 @@
  */
 ?>
 
-<div>
   <div class="col-md-12">
 		<blockquote class="testimonial">
 		<p><?php print render($content['field_testimonial_content']); ?></p>
@@ -21,4 +20,3 @@
 			<p><strong><?php print render($content['field_testimonial_name']); ?></strong><span><?php print render($content['field_testimonial_info']); ?></span></p>
 		</div>
 	</div>
-</div>

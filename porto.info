@@ -44,7 +44,6 @@ scripts[] = vendor/jquery.appear.js
 scripts[] = js/mobile-menu.js
 scripts[] = js/theme.plugins.js
 scripts[] = js/theme.js
-
 scripts[] = js/views/view.home.js
 
 ; Define theme block regions.
@@ -65,6 +64,9 @@ regions[footer_3] = Footer Box 3
 regions[footer_4] = Footer Box 4
 regions[footer_bottom_left] = Footer Bottom Left
 regions[footer_bottom_right]  = Footer Bottom Right
+
+; Define location for panels templates.
+plugins[panels][layouts] = layouts
 
 ; Define theme setting defaults.
 settings[breadcrumbs] = 1
