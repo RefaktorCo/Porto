@@ -329,9 +329,9 @@ function porto_breadcrumb($variables) {
  if (!empty($breadcrumb)) {
    $crumbs = '<ul class="breadcrumb">';
    foreach($breadcrumb as $value) {
-     $crumbs .= '<li>'.$value.' <span class="divider">/</span></li> ';
+     $crumbs .= '<li>'.$value.'</li> ';
    }
-   $crumbs .= '<li class="active"></li>';
+   
    $crumbs .= '</ul>';
     
  }
