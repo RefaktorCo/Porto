@@ -211,15 +211,27 @@ section.video blockquote i.icon-quote-left {
   .tb-megamenu .nav li.dropdown:hover a,
   .tb-megamenu .nav > .active > a {
 	  color: #FFF !important;
-		background-color: @skinColor !important;
+		background-color: @skinColor ;
   }
   
   .mega-dropdown-inner {
 	  background-color: @skinColor !important;
   }
   
+  .large-mega .mega-dropdown-inner {
+	  background: #fff !important;
+  }
+  
+ 
+  
+  #header .tb-megamenu .nav .large-mega .mega-dropdown-inner li.dropdown:hover a {
+   color: #222;
+	 background-color: #fff !important;
+  }
+
+  
   .tb-megamenu .dropdown-menu .mega-nav > li:hover {
-	  background-color: lighten(@skinColor, 10%);
+	  background-color: lighten(@skinColor, 10%) !important;
   }
 
 	nav ul.nav-main {
