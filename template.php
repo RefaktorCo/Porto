@@ -11,12 +11,6 @@ $parent_root = base_path() . drupal_get_path('theme', 'porto');
 */
 function porto_js_alter(&$js) {
 
-  if (isset($js['misc/jquery.js'])) {
-   $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
-   $js['misc/jquery.js']['version'] = '1.8.2';
-   $js['misc/jquery.js']['data'] = $jsPath;
-  }
-
  if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
    global $parent_root;
    unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
