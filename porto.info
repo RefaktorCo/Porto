@@ -45,6 +45,7 @@ scripts[] = js/mobile-menu.js
 scripts[] = js/theme.plugins.js
 scripts[] = js/theme.js
 scripts[] = js/views/view.home.js
+scripts[] = js/sticky.js
 
 ; Define theme block regions.
 regions[header_top] = Header Top

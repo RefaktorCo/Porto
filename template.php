@@ -10,12 +10,10 @@ $parent_root = base_path() . drupal_get_path('theme', 'porto');
 *  Modify theme_js_alter().
 */
 function porto_js_alter(&$js) {
-
- if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (user_is_logged_in())) {
-   global $parent_root;
+ global $user; 
+ if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (in_array('administrator', array_values($user->roles)))) {
    unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
  }
- 
 }
 
 /**

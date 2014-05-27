@@ -906,8 +906,6 @@ jQuery(document).ready(function ($) {
 
 	$(window).load(function () {
 
-	
-
 		// Window Resize
 		$(window).afterResize(function() {
 
