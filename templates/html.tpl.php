@@ -35,7 +35,9 @@
 	<?php if (theme_get_setting('site_layout') == 'boxed'): ?>
 	<script type='text/javascript'>jQuery(document).ready(function ($) { $('body').addClass('boxed'); });</script>
 	<?php endif; ?>
-	
+	<?php global $user; if ( (theme_get_setting('site_layout') == 'wide') AND (theme_get_setting('sticky_header') == '1') AND ( !user_is_logged_in() ) ): ?>
+<script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/js/sticky.js'></script>
+ <?php endif; ?>
 		
 <?php porto_user_css();?>  
 <script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/vendor/modernizr.js'></script>
