@@ -1,5 +1,11 @@
 /* DRUPAL THEME STYLES */
 
+#header nav ul.nav-main>li.dropdown>a::after {
+  font-family: 'FontAwesome';
+	content: "\f107";
+	margin-left: 5px;
+}
+
 section.featured {
 	margin: 35px 0px 0px 0px;
 }
@@ -108,12 +114,7 @@ body.sticky-menu-active header.single-menu .logo {
 	margin-top: 60px;
 }
 
-header .logo {
-	float: left;
-	margin: 15px 20px 15px 0px;
-	padding: 0;
-	position: relative;
-}
+
 
 body.sticky-menu-active header #site-name {
   margin: 2px 0px -10px 0px;
