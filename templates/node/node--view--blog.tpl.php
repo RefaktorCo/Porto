@@ -14,7 +14,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 
 ?>
 <?php if (theme_get_setting('blog_image') == 'full'): ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> post post-large-image blog-single-post"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> post post-large blog-single-post"<?php print $attributes; ?>>
 
   <?php if (render($content['field_image'])) : ?> 
 	  
@@ -29,7 +29,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 		<?php endif; ?>
 			
 		<?php if ($image_slide == 'false'): ?>
-		  <div class="single-post-image">
+		  <div class="single-post-image post-image">
 		    <?php print render($content['field_image']); ?>
 		  </div>  
 		<?php endif; ?>
@@ -138,7 +138,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 			<?php endif; ?>
 				
 			<?php if ($image_slide == 'false'): ?>
-			  <div class="single-post-image">
+			  <div class="single-post-image post-image">
 			    <?php print render($content['field_image']); ?>
 			  </div>    
 			<?php endif; ?>
