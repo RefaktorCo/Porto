@@ -6,7 +6,6 @@ version = 2.0 Alpha
 
 ; Define theme CSS.
 stylesheets[all][] = vendor/bootstrap/css/bootstrap.css
-stylesheets[all][] = vendor/font-awesome/css/font-awesome.css
 stylesheets[all][] = vendor/owl-carousel/owl.carousel.css
 stylesheets[all][] = vendor/owl-carousel/owl.theme.css
 stylesheets[all][] = vendor/prettyPhoto/css/prettyPhoto.css

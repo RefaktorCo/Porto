@@ -12,6 +12,11 @@
   }
 }
 
+.post-image img {
+	max-width: 100%;
+	height: auto;
+}
+
 section.featured {
 	margin: 35px 0px 0px 0px;
 }

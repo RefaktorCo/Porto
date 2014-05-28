@@ -17,19 +17,17 @@ if (module_exists('profile2')) {
 
 ?>
 
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix post post-large-image blog-single-post"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  post post-large-image blog-single-post"<?php print $attributes; ?>>
 
   <?php if (render($content['field_image'])) : ?> 
 	  
 	  <?php if ($image_slide == 'true'): ?>
 		  <div class="post-image">
-			  <div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"animation":"slide", "animationLoop": true, "maxVisibleItems": 1}'>
-			    <ul class="slides">
+			  <div class="owl-carousel" data-plugin-options='{"items":1}'>
 					  <?php if (render($content['field_image'])) : ?>
 					    <?php print render($content['field_image']); ?>
 					  <?php endif; ?>
-			    </ul>
-			  </div>    
+			    </div>    
 			</div>
 		<?php endif; ?>
 			
