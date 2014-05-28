@@ -159,9 +159,9 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Portfolio Columns'),
         '#default_value' => theme_get_setting('portfolio_columns'),
         '#options' => array(
-          'span6' => 'Two',
-          'span4' => 'Three',
-          'span3' => 'Four (default)',
+          'col-md-6' => 'Two',
+          'col-md-4' => 'Three',
+          'col-md-3' => 'Four (default)',
         ),
       ); 
       

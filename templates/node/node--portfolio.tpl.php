@@ -1,12 +1,12 @@
 <div class="row portfolio-wrap">
-	<div class="span6">
-	  <div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"animation":"slide", "animationLoop": true, "maxVisibleItems": 1}'>
-	    <ul class="slides">
+	<div class="col-md-4">
+	  <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+	   
 	      <?php print render ($content['field_image']); ?>
-	    </ul>
+	    
 	  </div>  
 	</div>
-	<div class="span6">
+	<div class="col-md-8">
 	<?php
 	  // Hide comments, tags, and links now so that we can render them later.
 	  hide($content['field_portfolio_slider']);

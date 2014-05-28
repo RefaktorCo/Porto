@@ -33,8 +33,6 @@
 			<div class="row">
 			
 				<div class="col-md-6">
-				
-         
 
 					<div class="recent-posts push-bottom">
 					 <?php if ($header): ?>
@@ -78,8 +76,6 @@
 							  <?php if ($more): ?>
 							    <?php print $more; ?>
 							  <?php endif; ?>
-							
-							 
 							
 							  <?php if ($feed_icon): ?>
 							    <div class="feed-icon">
