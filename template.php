@@ -363,6 +363,39 @@ function porto_preprocess_username(&$vars) {
 }
 
 /**
+ * Theme node pagination function().
+ */
+function porto_node_pagination($node, $mode = 'n') {
+  $query = new EntityFieldQuery();
+	$query
+    ->entityCondition('entity_type', 'node')
+    ->propertyCondition('status', 1)
+    ->entityCondition('bundle', $node->type);
+  $result = $query->execute();
+  $nids = array_keys($result['node']);
+  
+  while ($node->nid != current($nids)) {
+    next($nids);
+  }
+  
+  switch($mode) {
+    case 'p':
+      prev($nids);
+    break;
+		
+    case 'n':
+      next($nids);
+    break;
+		
+    default:
+    return NULL;
+  }
+  
+  return current($nids);
+}
+
+
+/**
  * Overrides theme_item_list().
  */
 function porto_item_list($variables) {

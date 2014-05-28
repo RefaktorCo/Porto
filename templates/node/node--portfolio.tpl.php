@@ -1,3 +1,22 @@
+<div class="portfolio-title">
+	<div class="row">
+		<div class="portfolio-nav-all col-md-1">
+			<a href="./" rel="tooltip" data-original-title="Back to list"><i class="fa fa-th"></i></a>
+		</div>
+		<div class="col-md-10 center">
+			<h2 class="shorter"><?php print $title; ?></h2>
+		</div>
+		<div class="portfolio-nav col-md-1">
+		  <?php if ( porto_node_pagination($node, 'p') != NULL ) : ?>
+			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="Previous"><i class="fa fa-chevron-left"></i></a>
+			<?php endif; ?>  
+			<?php if ( porto_node_pagination($node, 'n') != NULL ) : ?>
+			<a href="<?php print url('node/' . porto_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="portfolio-nav-next" rel="tooltip" data-original-title="Next"><i class="fa fa-chevron-right"></i></a>
+			<?php endif; ?>  
+		</div>
+	</div>
+</div>
+<hr class="tall">
 <div class="row portfolio-wrap">
 	<div class="col-md-4">
 	  <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
