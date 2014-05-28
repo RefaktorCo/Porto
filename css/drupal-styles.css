@@ -6,6 +6,12 @@
 	margin-left: 5px;
 }
 
+@media (max-width: 991px) {
+  #header nav ul.nav-main>li.dropdown>a::after {
+    float: right;
+  }
+}
+
 section.featured {
 	margin: 35px 0px 0px 0px;
 }

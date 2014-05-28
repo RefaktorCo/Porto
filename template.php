@@ -98,8 +98,21 @@ function porto_preprocess_html(&$vars){
    '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
    '#weight' => 2,
  );
+ 
+ $font_awesome = array(
+    '#tag' => 'link', 
+    '#attributes' => array( 
+      'href' => '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', 
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'media' => 'screen',
+    ),
+    '#weight' => 12,
+  );
+
 
  drupal_add_html_head( $viewport, 'viewport');
+ drupal_add_html_head( $font_awesome, 'fontawesome');
 
  if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
    drupal_add_html_head( $background_image, 'background_image');
@@ -522,11 +535,13 @@ function porto_field($variables) {
  * User CSS function. Separate from porto_preprocess_html so function can be called directly before </head> tag.
  */
 function porto_user_css() {
-  echo "<!-- User defined CSS -->";
-  echo "<style type='text/css'>";
-  echo theme_get_setting('user_css');
-  echo "</style>";
-  echo "<!-- End user defined CSS -->";	
+  if (theme_get_setting('user_css') != '') {
+	  echo "<!-- User defined CSS -->";
+	  echo "<style type='text/css'>";
+	  echo theme_get_setting('user_css');
+	  echo "</style>";
+	  echo "<!-- End user defined CSS -->";	
+  }
 }
 
 
