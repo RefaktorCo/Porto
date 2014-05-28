@@ -28,19 +28,20 @@
  */
 ?>
 <div class="map-section">
-	<section class="featured map">
+	<section class="featured footer map">
 		<div class="container">
 			<div class="row">
 			
 				<div class="col-md-6">
 				
-          <?php if ($header): ?>
+         
+
+					<div class="recent-posts push-bottom">
+					 <?php if ($header): ?>
 				    <?php print $header; ?>
 				   <?php endif; ?>
-
-					<div class="recent-posts">
 						<div class="row">
-						  <div class="owl-carousel" data-plugin-options='{"items": 2, "autoHeight": true}'>
+						  <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
 							  <?php print render($title_prefix); ?>
 							  <?php print render($title_suffix); ?>
 							  <?php if ($exposed): ?>
@@ -86,8 +87,9 @@
 							    </div>
 							  <?php endif; ?>
 
-							</div>
+							</div><!-- end owl carousel -->
 						</div>
+						
 					</div>
 				</div>
 				

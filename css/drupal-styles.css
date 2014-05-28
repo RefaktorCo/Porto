@@ -17,13 +17,8 @@
 	height: auto;
 }
 
-section.featured {
-	margin: 35px 0px 0px 0px;
-}
 
-#footer {
-  margin-top: 0px;
-}
+
 
 .map-section {
 	margin-top: 10px;
@@ -33,9 +28,7 @@ header .content {
 	overflow: visible;
 }
 
-.content {
-	overflow: hidden;
-}
+
 
 .owl-item li {
 	list-style: none;

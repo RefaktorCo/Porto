@@ -57,7 +57,7 @@
       </div>
       
 	    <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
-				<i class="icon icon-bars"></i>
+				<i class="fa fa-bars"></i>
 			</button>
       
     </div>

@@ -252,7 +252,7 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
        
     $form['actions']['submit'] =  array(
       '#type' => 'submit',
-    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="icon icon-search">',
+    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search">',
     	'#suffix' => '</i></button></span>',
     	
     );

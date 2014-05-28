@@ -10,6 +10,6 @@
 
 <?php $count = '0'; foreach ($rows as $id => $row): ?>
   <?php if ($count % 2 == 0) { echo "<div>"; } ?>
-  <?php $count++; print $row; ?>
+  <?php  print $row; $count++; ?>
   <?php if ($count % 2 == 0) { echo "</div>"; } ?><!--/end test -->
 <?php endforeach; ?>
