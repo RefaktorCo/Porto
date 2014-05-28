@@ -371,12 +371,11 @@ function porto_item_list($variables) {
   $type = $variables['type'];
   $variables['attributes']['class'] = 'pagination pagination-lg pull-right';
   $attributes = $variables['attributes'];
-  dpm($attributes);
 
   // Only output the list container and title, if there are any list items.
   // Check to see whether the block title exists before adding a header.
   // Empty headers are not semantic and present accessibility challenges.
-  $output = '<div class="pagination">';
+  $output = '';
   if (isset($title) && $title !== '') {
     $output .= '<h3>' . $title . '</h3>';
   }
@@ -390,6 +389,12 @@ function porto_item_list($variables) {
       $children = array();
       $data = '';
       $i++;
+      
+      if (in_array('pager-current', $item['class'])) {
+        $item['class'] = array('active');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+
       if (is_array($item)) {
         foreach ($item as $key => $value) {
           if ($key == 'data') {
@@ -410,17 +415,12 @@ function porto_item_list($variables) {
         // Render nested list.
         $data .= theme_item_list(array('items' => $children, 'title' => NULL, 'type' => $type, 'attributes' => $attributes));
       }
-      if ($i == 1) {
-        $attributes['class'][] = 'first active';
-      }
-      if ($i == $num_items) {
-        $attributes['class'][] = 'last';
-      }
+      
       $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
     }
     $output .= "</$type>";
   }
-  $output .= '</div>';
+  
   return $output;
 
 }
