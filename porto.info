@@ -20,6 +20,7 @@ stylesheets[all][] = css/theme-animate.css
 stylesheets[all][] = css/theme-blog.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-responsive.css
+stylesheets[all][] = css/skins/default.css
 
 ; Define theme JS libraries.
 scripts[] = vendor/modernizr.js

@@ -50,14 +50,14 @@ ul.nav-pills > li.active > a {
 // Pagination
 .pagination > .active > {
 	a, span, a:hover, span:hover, a:focus, span:focus {
-		background-color: @skinColor;
+		background-color: @skinColor !important;
 	}
 }
 
 // Buttons
 .btn-primary,
 .pagination > .active > a {
-	border-color: @skinColor;
+	border-color: @skinColor !important;
 	.buttonBackground(@skinColor, spin(@skinColor, 20%));
 }
 
@@ -67,8 +67,8 @@ ul.nav-pills > li.active > a {
 
 // Sections
 section.highlight {
-	background-color: @skinColor;
-	border-color: darken(@skinColor, 5%);
+	background-color: @skinColor !important;
+	border-color: darken(@skinColor, 5%) !important;
 }
 
 section.page-top h2 {
@@ -191,8 +191,15 @@ section.video blockquote i.icon-quote-left {
 }
 
 // Panel
-.panel-heading a {
-	color: @skinColor;
+.panel-group {
+	.panel-heading a {
+		color: @skinColor;
+	}
+	&.secundary {
+		.panel-heading {
+			background-color: @skinColor !important;
+		}
+	}
 }
 
 // Header
@@ -240,7 +247,7 @@ section.video blockquote i.icon-quote-left {
 
 	&.darken-top-border {
 
-		border-top: 5px solid darken(@skinColor,5%);
+		border-top: 5px solid darken(@skinColor,5%) !important;
 
 	}
 
