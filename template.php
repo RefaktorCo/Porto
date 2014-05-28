@@ -177,6 +177,7 @@ function porto_process_page(&$variables) {
   }
 }	
 
+
 /**
  * Add list classes for links in "Header Menu" region.
  */
@@ -185,13 +186,14 @@ function porto_menu_link__header_menu(array $variables) {
   $element = $variables['element'];
   static $item_id = 0;
   $menu_name = $element['#original_link']['menu_name'];
-  
+
   // set the global depth variable
   global $depth;
   $depth = $element['#original_link']['depth'];
 
   if ( ($element['#below']) && ($depth == "1") ) {
     $element['#attributes']['class'][] = 'dropdown '.$element['#original_link']['mlid'].'';
+    $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
   }
   
   if ( ($element['#below']) && ($depth == "2") ) {
@@ -204,6 +206,7 @@ function porto_menu_link__header_menu(array $variables) {
   if(strpos($output,"active")>0){
     $element['#attributes']['class'][] = "active";
   }
+ 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
 }
 
@@ -215,7 +218,7 @@ function porto_menu_tree__header_menu($variables){
   // use global depth variable to define ul class
   global $depth;
   $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
-  return '<ul class="'.$class.' porto-nav">' . $variables['tree'] . '</ul>';
+  return '<ul class="'.$class.'" id="mainMenu">' . $variables['tree'] . '</ul>';
   
 }
 

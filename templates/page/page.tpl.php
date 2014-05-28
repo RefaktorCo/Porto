@@ -67,7 +67,7 @@
       
         <?php print render($page['header_icons']); ?>
         
-        <nav>
+        <nav class="nav-main">
         <?php print render($page['header_menu']); ?>
         </nav>
         
