@@ -30,7 +30,7 @@
 
 <!-- Web Fonts  -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
-<script src="//maps.google.com/maps/api/js?sensor=false"></script>
+
 <?php porto_user_css();?>  
 </head>
 

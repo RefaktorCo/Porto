@@ -15,13 +15,13 @@ stylesheets[all][] = vendor/magnific-popup/magnific-popup.css
 stylesheets[all][] = vendor/mediaelement/mediaelementplayer.css
 stylesheets[all][] = vendor/isotope/jquery.isotope.css
 stylesheets[all][] = css/theme.css
-stylesheets[all][] = css/drupal-styles.css
 stylesheets[all][] = css/theme-elements.css
 stylesheets[all][] = css/theme-animate.css
 stylesheets[all][] = css/theme-blog.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-responsive.css
 stylesheets[all][] = css/skins/default.css
+stylesheets[all][] = css/drupal-styles.css
 
 ; Define theme JS libraries.
 scripts[] = vendor/modernizr.js

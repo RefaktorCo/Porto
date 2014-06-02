@@ -28,14 +28,14 @@
  */
 ?>
 
-
-<?php if ($header): ?>
-  <?php print $header; ?>
-<?php endif; ?>
-
-
+<div class="sort-source-wrapper">
+	<div class="container">
+	<?php if ($header): ?>
+	  <?php print $header; ?>
+	<?php endif; ?>
+	</div>	 
+</div>
 	
-<div class="row">
 	<!-- portfolio mason one uses ul id masonic -->
 	<ul class="portfolio-list sort-destination full-width" data-sort-id="portfolio">
 	  <?php print render($title_prefix); ?>
@@ -82,7 +82,6 @@
 	    </div>
 	  <?php endif; ?>
 	</ul>
-</div>
 
 <?php if ($pager): ?>
   <?php print $pager; ?>
