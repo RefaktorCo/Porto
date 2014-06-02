@@ -49,6 +49,6 @@
 <?php print render($items[0]); ?>
 <?php } else { ?> 
 <?php foreach ($items as $delta => $item): ?>
-  <div><div class="img-thumbnail"><?php print render($item); ?></div></div>
+  <div class="thumbnail"><?php print render($item); ?></div>
 <?php endforeach; ?>
 <?php } ?> 
