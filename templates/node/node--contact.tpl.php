@@ -17,7 +17,10 @@
 		      // We hide the comments and links now so that we can render them later.
 		      hide($content['comments']);
 		      hide($content['links']);
-		      hide($content['field_before_content']);
+		      hide($content['field_map_address']);
+		      hide($content['field_map_html']);
+		      hide($content['field_map_latitude']);
+		      hide($content['field_map_longitude']);
 		      print render($content);
 		    ?>
 			</div>
@@ -43,9 +46,9 @@
 	// Map Markers
 	var mapMarkers = [{
 		address: "<?php print strip_tags(render($content['field_map_address'])); ?>",
-		html: "<?php print strip_tags(render($content['field_map_html'])); ?>",
+		html: "<?php print render($content['field_map_html']); ?>",
 		icon: {
-			image: "img/pin.png",
+			image: "<?php print base_path() . drupal_get_path('theme', 'porto'); ?>/img/pin.png",
 			iconsize: [26, 46],
 			iconanchor: [12, 46]
 		},
