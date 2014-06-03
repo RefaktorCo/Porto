@@ -239,6 +239,7 @@ function porto_menu_tree__header_menu($variables){
  * Impelements hook_form_alter()
  */
 function porto_form_alter(&$form, &$form_state, $form_id) {
+  
   if ($form_id == 'search_block_form') {
     
     unset($form['search_block_form']['#title']); // Change the text on the label element
