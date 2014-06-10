@@ -30,15 +30,15 @@
 <section class="highlight top">
   <div class="container">
     <div class="row" id="projects">
-      <div class="span12">
+      <div class="col-md-12">
         
 			  <?php if ($header): ?>
 				  <?php print $header; ?>
 				<?php endif; ?>
 	
 	      <div class="row">
-	        <div class="flexslider flexslider-top-title flexslider-center-mobile unstyled" data-plugin-options='{"controlNav":false, "slideshow": false, "animationLoop": true, "animation":"slide", "maxVisibleItems": 4}'>
-	          <ul class="slides">
+	        <div class="owl-carousel owl-carousel-spaced" data-plugin-options='{"items": 4, "singleItem": false, "autoHeight": true}'>
+	         
 						  <?php print render($title_prefix); ?>
 						  <?php print render($title_suffix); ?>
 						  <?php if ($exposed): ?>
@@ -86,7 +86,7 @@
 						      <?php print $feed_icon; ?>
 						    </div>
 						  <?php endif; ?>
-		        </ul>
+		     
 	        </div>
 	      </div>
       </div>  
