@@ -1,5 +1,10 @@
 /* DRUPAL THEME STYLES */
 
+#block-nivo-slider-nivo-slider {
+  max-width: 1110px;
+  margin: auto;
+}
+
 .comment .img-thumbnail img {
 	height: 80px;
 	width: 80px;
@@ -218,10 +223,11 @@ span.thumb-info-caption p {
 	border: none;
 }
 
-.block ul.primary li a {
-	background: transparent;
-	border: 0px;
-}
+ul.primary li a {
+  background-color: transparent; 
+  border-color: none; 
+  border-style: none; 
+}  
 
 .block ul.primary {
 	border-bottom: 0px;
