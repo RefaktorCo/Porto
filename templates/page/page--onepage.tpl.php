@@ -38,17 +38,21 @@
 	
 	      </div> <!-- /#name-and-slogan -->
 	    <?php endif; ?>
-
-      <!-- /branding --> 
-      <div id="header-top">
-        <?php print render($page['header_top']); ?>
-      </div>
+      
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+				<i class="icon icon-bars"></i>
+			</button>
+    </div>    
+    <div class="navbar-collapse nav-main-collapse collapse">
+		  <div class="container">
+      <?php print render($page['header_top']); ?>
       <?php print render($page['header_icons']); ?>
-      <nav>
+      <nav class="nav-main">
        <?php print render($page['header_menu']); ?>
       </nav>
-      
-    </div>  
+		  </div>
+    </div>	  
+    
 	</header>
 	
 	<div role="main" class="main">
