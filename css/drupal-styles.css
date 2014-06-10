@@ -1,7 +1,20 @@
 /* DRUPAL THEME STYLES */
 
+.comment .img-thumbnail img {
+	height: 80px;
+	width: 80px;
+}
+
+#block-views-contact-us-block {
+	margin-top: -70px;
+}
+
 #header.single-menu .social-icons {
 margin-top: 15px;
+}
+
+body.sticky-menu-active #header.single-menu .social-icons {
+margin-top: 27px;
 }
 
 #header nav ul.nav-main>li.dropdown>a::after {

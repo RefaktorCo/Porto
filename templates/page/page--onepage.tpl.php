@@ -200,7 +200,7 @@ jQuery(document).ready(function ($) {
 	
 	$('header a').click(function(){
 	    $('html, body').animate({
-	        scrollTop: $(this.hash).offset().top -150
+	        scrollTop: $(this.hash).offset().top -200
 	    }, 800);
 	    return false;
 	});
