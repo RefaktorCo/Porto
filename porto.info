@@ -74,6 +74,7 @@ plugins[panels][layouts] = layouts
 settings[breadcrumbs] = 1
 settings[sticky_header] = 1
 settings[skin_color] = 0088cc
+settings[background_color] = light
 settings[site_layout] = wide
 settings[body_background] = porto_backgrounds
 settings[background_select] = az_subtle

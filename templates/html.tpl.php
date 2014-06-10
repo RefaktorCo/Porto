@@ -34,7 +34,7 @@
 <?php porto_user_css();?>  
 </head>
 
-<body class="<?php print $classes; ?> <?php if (theme_get_setting('site_layout') == 'boxed'){ echo "boxed"; } ?>"<?php print $attributes;?>>
+<body class="<?php print $classes; ?> <?php if (theme_get_setting('site_layout') == 'boxed'){ echo "boxed"; } if (theme_get_setting('background_color') == 'dark'){ echo "dark"; }?>"<?php print $attributes;?>>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>
