@@ -14,9 +14,8 @@ $output = '<a class="twitter-account" href="http://www.twitter.com/'. strip_tags
 if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($key_secret)) ){ 
   // Call the returnTweet() function passing field data variables as arguments.
   $tweet_data = returnTweet($token, $token_secret, $key, $key_secret, $handle, $count);
-  
+  // Start counter and loop through Tweets until count is reached.
   $i = '0';
-  
   while ($i < $count) {
   
   // Grab the raw text from the Tweet.
@@ -42,7 +41,7 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
 	  }
 	}
 	
-	// Get the hashtags and add the markup.
+	// Get the handles and add the markup.
 	$usernames = preg_match_all('/@\w+/',$tweet_text,$username);
 	if($username[0]) {
 	  foreach($username[0] as $name) {
@@ -50,11 +49,13 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
 	  }
 	}
 
+  $output .= '<div class="tweet-box">';
   $output .= '<i class="icon icon-twitter"></i>';
   $output .= $tweet_text;
   $output .= '<div class="tweet-time">';
   $output .= '<a href="http://twitter.com/'.strip_tags(render($content['field_twitter_handle'])).'/status/'.$tweet_data[$i]["id"].'">'. $tweet_created_trimmed.'</a>';
   $output .= '</div>';
+	$output .= '</div>';
 	
 	$i++;
 	
@@ -63,4 +64,9 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
 	print $output;
 	
 }
+
+else {
+	print "No Tweets to display, check your settings.";
+}
+
 ?>

@@ -1,5 +1,9 @@
 /* DRUPAL THEME STYLES */
 
+.tweet-box {
+	margin-bottom: 20px;
+}
+
 #block-nivo-slider-nivo-slider {
   max-width: 1110px;
   margin: auto;
