@@ -24,7 +24,7 @@ function buildAuthorizationHeader($oauth) {
   return $r;
 }
 
-function returnTweet($token, $token_secret, $key, $key_secret, $handle){
+function returnTweet($token, $token_secret, $key, $key_secret, $handle, $count){
 
   $oauth_access_token = $token;
   $oauth_access_token_secret = $token_secret;
@@ -36,7 +36,7 @@ function returnTweet($token, $token_secret, $key, $key_secret, $handle){
   // Create request.
   $request = array(
   'screen_name' => $handle,
-  'count' => '1' // Can call multiple Tweets. 
+  'count' => $count // Can call multiple Tweets. 
   );
 
   $oauth = array(

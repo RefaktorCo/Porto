@@ -5,23 +5,26 @@ $token = strip_tags(render($content['field_twitter_user_token']));
 $token_secret = strip_tags(render($content['field_twitter_user_secret']));
 $key = strip_tags(render($content['field_twitter_consumer_key']));
 $key_secret = strip_tags(render($content['field_twitter_consumer_secret']));
+$count = strip_tags(render($content['field_tweet_count']));
 $handle = strip_tags(render($content['field_twitter_handle']));
+
+// Output the handle and link at the top of the feed.
+$output = '<a class="twitter-account" href="http://www.twitter.com/'. strip_tags(render($content['field_twitter_handle'])). '" target="_blank">@ '.strip_tags(render($content['field_twitter_handle'])). '</a>';
 
 if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($key_secret)) ){ 
   // Call the returnTweet() function passing field data variables as arguments.
-  $tweet_data = returnTweet($token, $token_secret, $key, $key_secret, $handle);
+  $tweet_data = returnTweet($token, $token_secret, $key, $key_secret, $handle, $count);
+  
+  $i = '0';
+  
+  while ($i < $count) {
+  
   // Grab the raw text from the Tweet.
-  $tweet_text = $tweet_data[0]["text"];
-}
-
-else {
-	$tweet_text ="No Tweet to display, check your settings.";
-}
-
-if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($key_secret)) ){
+  $tweet_text = $tweet_data[$i]["text"];
+  
 	// Grab the Tweet date/time and trim to just the date.
-	$tweet_created = explode(" ", $tweet_data[0]['created_at']);
-	$tweet_created_trimmed = implode(" ",array_splice($tweet_created,0,3));
+	$tweet_created = explode(" ", $tweet_data[$i]['created_at']);
+	$tweet_created_trimmed = implode(" ",array_splice($tweet_created,1,2));
 	
 	// Get the links and add the markup.
 	$links = preg_match_all('/https?\:\/\/[^\" ]+/i',$tweet_text,$link);
@@ -46,27 +49,18 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
 	    $tweet_text = str_replace($name, "<a href='http://twitter.com/$name'>$name</a>", $tweet_text);
 	  }
 	}
+
+  $output .= '<i class="icon icon-twitter"></i>';
+  $output .= $tweet_text;
+  $output .= '<div class="tweet-time">';
+  $output .= '<a href="http://twitter.com/'.strip_tags(render($content['field_twitter_handle'])).'/status/'.$tweet_data[$i]["id"].'">'. $tweet_created_trimmed.'</a>';
+  $output .= '</div>';
+	
+	$i++;
+	
+	}
+	
+	print $output;
+	
 }
 ?>
-
-
-	<div class="tint largepadding">
-		<section class="row heading">
-		<div class="ten columns centered">
-			<!-- twitter icon -->
-			<div class="main-icon">
-				<i class="icon-twitter fa fa-twitter"></i>
-			</div>
-			<?php if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($key_secret)) ): ?>
-			<div class="tweet_time">
-			  <a href="http://twitter.com/<?php print strip_tags(render($content['field_twitter_handle'])); ?>/status/<?php print $tweet_data[0]["id"]; ?>"><?php print $tweet_created_trimmed; ?></a>
-			</div>
-			<?php endif; ?>
-			<div class="tweet_text">
-			  <?php print $tweet_text; ?>
-			</div>
-		</div>
-		<!-- link to your twitter profile -->
-		<a href="http://twitter.com/<?php print strip_tags(render($content['field_twitter_handle'])); ?>" class="rise-btn light small">Follow me on Twitter!</a>
-		</section>
-	</div>
