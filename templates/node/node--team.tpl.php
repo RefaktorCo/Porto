@@ -26,4 +26,3 @@
 	<?php print render($content['body']); ?>
 
 </div>
-

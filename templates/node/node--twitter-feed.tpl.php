@@ -19,7 +19,6 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
   // Start counter and loop through Tweets until count is reached.
   $i = '0';
   while ($i < $count) {
-  
   // Grab the raw text from the Tweet.
   $tweet_text = $tweet_data[$i]["text"];
 	// Grab the Tweet date/time and trim to just the date.

@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @file views-view--testimonials.tpl.php
- * Contour's views template for the Testimonials view.
+ * @file
+ * Main view template.
  *
  * Variables available:
  * - $classes_array: An array of classes determined in
