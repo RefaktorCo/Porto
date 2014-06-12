@@ -1,4 +1,6 @@
 <?php
+// Initialize oAuth helper functions.
+require_once(drupal_get_path('theme', 'porto').'/includes/twitter.inc');
 
 // Store all the node field data needed to authorize feed.
 $token = strip_tags(render($content['field_twitter_user_token']));

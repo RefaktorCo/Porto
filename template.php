@@ -2,38 +2,14 @@
 /**
  * Define $root global variable.
  */
-global $theme_root, $parent_root, $theme_path;
+global $theme_root, $parent_root;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'porto');
 
-require_once(drupal_get_path('theme', 'porto').'/includes/twitter.inc');
-
 
 
 /**
- * Implements theme_menu_local_tasks().
- */
-function porto_menu_local_tasks(&$variables) {
-  $output = '';
-
-  if (!empty($variables['primary'])) {
-    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
-    $variables['primary']['#prefix'] .= '<ul class="nav nav-tabs">';
-    $variables['primary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['primary']);
-  }
-  if (!empty($variables['secondary'])) {
-    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-    $variables['secondary']['#prefix'] .= '<ul class="tabs secondary">';
-    $variables['secondary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['secondary']);
-  }
-
-  return $output;
-}
-
-/**
-*  Modify theme_js_alter().
+*  Implements theme_js_alter().
 */
 function porto_js_alter(&$js) {
  global $user; 
@@ -75,17 +51,25 @@ function porto_button($variables) {
 }
 
 /**
- * Helper function to test for panel page config.
+ * Implements theme_menu_local_tasks().
  */
-function _is_panel_page() {
-  $page = &drupal_static(__FUNCTION__);
+function porto_menu_local_tasks(&$variables) {
+  $output = '';
 
-  if (function_exists("page_manager_get_current_page")) {
-    if (!isset($page)) {
-      $page = page_manager_get_current_page();
-    }
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="nav nav-tabs">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
   }
-  return $page ? $page : FALSE;
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="nav nav-tabs">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
+  return $output;
 }
 
 /**
@@ -94,15 +78,7 @@ function _is_panel_page() {
 function porto_preprocess_html(&$vars){
  global $parent_root;
  
-  if ($page = _is_panel_page()) {
-    // Add a body class for panel pages.
-    $class = 'page-panel';
-  }
-  else {
-    // Add a body class for default pages.
-    $class = 'page-default';
-  }
-  $vars['classes_array'][] = drupal_html_class($class);
+ $vars['classes_array'][] = drupal_html_class($class);
 
  $viewport = array(
    '#type' => 'html_tag',
@@ -165,11 +141,6 @@ function porto_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = $suggest;
   }
   
-  $status = drupal_get_http_header("status");  
-  if($status == "404 Not Found") {      
-    $vars['theme_hook_suggestions'][] = 'page__404';
-  }
-  
   if (arg(0) == 'taxonomy' && arg(1) == 'term' ){
     $term = taxonomy_term_load(arg(2));
     $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
@@ -178,14 +149,7 @@ function porto_preprocess_page(&$vars, $hook) {
   if (request_path() == 'one-page') {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
-  
-  if ($page = _is_panel_page()) {
-    // Add template suggestion for all panel pages.
-    $vars['theme_hook_suggestions'][] = 'page__panel';
-    // Add template suggestion per panel page.
-    $vars['theme_hook_suggestions'][] = 'page__panel__' . $page['name'];
-  }
-  
+    
   //Pass the color value from theme settings to @skinColor variable in skin.less
   drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
   
@@ -215,7 +179,6 @@ function porto_process_page(&$variables) {
     $variables['site_slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
   }
 }	
-
 
 /**
  * Add list classes for links in "Header Menu" region.
@@ -284,8 +247,6 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
     	
     );
     
-   
-    
   }
 } 
 
@@ -350,8 +311,6 @@ function porto_links($variables) {
   }
   return theme_links($variables);
 }
-
-
 
 /**
  * Put Breadcrumbs in a ul li structure and add descending z-index style to each <a href> tag.
@@ -645,6 +604,3 @@ function porto_user_css() {
 	  echo "<!-- End user defined CSS -->";	
   }
 }
-
-
-
