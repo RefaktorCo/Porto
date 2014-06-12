@@ -20,7 +20,6 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
   
   // Grab the raw text from the Tweet.
   $tweet_text = $tweet_data[$i]["text"];
-  
 	// Grab the Tweet date/time and trim to just the date.
 	$tweet_created = explode(" ", $tweet_data[$i]['created_at']);
 	$tweet_created_trimmed = implode(" ",array_splice($tweet_created,1,2));
@@ -62,7 +61,6 @@ if ( (!empty($token)) && (!empty($token_secret)) && (!empty($key)) && (!empty($k
 	}
 	
 	print $output;
-	
 }
 
 else {

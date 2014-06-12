@@ -1,5 +1,9 @@
 /* DRUPAL THEME STYLES */
 
+#user-login label {
+	display: block;
+}
+
 .tweet-box {
 	margin-bottom: 20px;
 }
