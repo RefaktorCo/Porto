@@ -340,7 +340,28 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li>/templates/node/node--twitter-feed.tpl.php</li>
 </ul>
 
-<p>The export code /assets/views-exports/twitter-feed.txt can be used to create the "Our History" view which uses a Block display. This block can then be added to the region of your choice.</p>
+<p>The export code /assets/views-exports/twitter-feed.txt can be used to create the "Twitter Feed" view which uses a Block display. This block can then be added to the region of your choice.</p>
+
+<h4>Video Background</h4>
+<img src="images/porto-video-background.png"><br/><br/>
+<p>This content type lets you create a "Video Background" view block.</p>
+
+<p><strong>Fields:</strong></p>
+
+<ul>
+<li><strong>Video Image:</strong> An image field for a fallback image to be used in case the videos cannot render.</li>
+<li><strong>Body:</strong> Default Drupal body field that will display inside the video background block.</li>
+<li><strong>MP4 Video:</strong> A file field for uploading an MP4 version of the video background.</li>
+<li><strong>OGG Video:</strong> A file field for uploading an OGG version of the video background.</li>
+<li><strong>Video Background Category:</strong> A term reference field linked to the "Video Background" taxonomy vocabulary. This can be used to assign taxonomy terms to your video background nodes to use as view filter criteria..</li>
+</ul>
+
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--video-background.tpl.php</li>
+</ul>
+
+<p>The export code /assets/views-exports/video-background.txt can be used to create the "Video Background" view which uses a Block display. This block can then be added to the region of your choice.</p>
 
 <h2>Blog (posts)</h2>
 <p>The Porto demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Porto).</p>
