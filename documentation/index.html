@@ -402,48 +402,24 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <h4>Flickr Feed</h4>
 <p>The following markup can be used to generate a Flickr Feed anywhere on your site:</p>
 <pre>
+&lt;ul class=&quot;thumbnail-gallery flickr-feed&quot;&gt;&lt;/ul&gt;
 &lt;script&gt;
-	jQuery(document).ready(function ($) {
-		$('ul.flickr-feed').jflickrfeed({
-			limit: 6,
-			qstrings: {
-				id: '93691989@N03'
-			},
-			itemTemplate: '&lt;li&gt;&lt;a rel=&quot;flickr[pp_gal]&quot; href=&quot;{{image_b}}&quot;&gt;&lt;span class=&quot;thumbnail&quot;&gt;&lt;img alt=&quot;{{title}}&quot; src=&quot;{{image_s}}&quot; /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;'
-	  });
-	});
+  jQuery(document).ready(function ($) {
+    $('ul.flickr-feed').jflickrfeed({
+    limit: 6,
+    qstrings: {
+	    id: '93691989@N03'
+    },
+    itemTemplate: '&lt;li&gt;&lt;a rel=&quot;flickr[pp_gal]&quot; href=&quot;{{image_b}}&quot;&gt;&lt;span class=&quot;thumbnail&quot;&gt;&lt;img alt=&quot;{{title}}&quot; src=&quot;{{image_s}}&quot; /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;'
+    });
+  });
 &lt;/script&gt;
 </pre>
-<h4>Twitter Widget</h4>
-<p>Before you can use the Twitter widget you need to configure the Twitter options in the theme settings (/admin/appearance/settings/porto). To get the necessary authentication keys you must visit <a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a> and log in with your Twitter account. Once there you can create an app and generate the OAuth keys needed to enter into the theme settings. Once you have those entered you can use the following markup in a Block (make sure to set the text filter to PHP code):</p>
-<pre>
-&lt;h6 class=&quot;whitetext bold meta&quot;&gt;PortoON TWITTER&lt;/h6&gt;
-&lt;div class='tweet query midtoppadding'&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-                        
-    jQuery(document).ready(function ($) {
-      
-      $(&quot;.tweet&quot;).tweet({
-        modpath: '&lt;?php global $parent_root; echo $parent_root;?&gt;/includes/twitter/',
-        username: &quot;envato&quot;,
-        avatar_size: 34,
-        count: 3,
-        loading_text: &quot;loading tweets...&quot;
-      });
-    
-    });
-    
-  &lt;/script&gt;
-</pre>
+
 <h4>Lightbox</h4>
 <p>The following is an example of how you can create a very simple image lightbox in your node content:</p>
 <pre>
-&lt;a class=&quot;thumbnail lightbox pull-left&quot;	href=&quot;path/to/img.jpg&quot; data-plugin-options='{&quot;type&quot;:&quot;image&quot;}'&gt;
-	&lt;img src=&quot;path/to/img.jpg&quot;&gt;
-	&lt;span class=&quot;zoom&quot;&gt;
-		&lt;i class=&quot;icon-16 icon-white-shadowed icon-search&quot;&gt;&lt;/i&gt;
-	&lt;/span&gt;
-&lt;/a&gt;
+&lt;a class=&quot;img-thumbnail lightbox pull-left&quot; data-plugin-options=&quot;{&quot;type&quot;:&quot;image&quot;}&quot; href=&quot;img.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;img.jpg&quot; width=&quot;215&quot; /&gt; &lt;span class=&quot;zoom&quot;&gt; &lt;i class=&quot;icon icon-16 icon-white-shadowed icon-search&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;/a&gt;
 </pre>
 <h4>Social Icons</h4>
 <p>You can easily display social icons with a roll-over effect with the following markup:</p>
