@@ -379,11 +379,11 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <p>Porto features four header regions: Header Branding, Header Top, Header Menu and Header Icons. You can use the "demonstrate block regions" link on /admin/structure/block to see exactly where these are located, but the names are fairly self explanatory. If you would like to mimic the social icon region seen next to the menu on the demo you can use the following markup in a block:</p>
 <pre>
 &lt;div class=&quot;social-icons&quot;&gt;
-	&lt;ul class=&quot;social-icons&quot;&gt;
-		&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;http://www.facebook.com/&quot; target=&quot;_blank&quot; title=&quot;Facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;http://www.twitter.com/&quot; target=&quot;_blank&quot; title=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;linkedin&quot;&gt;&lt;a href=&quot;http://www.linkedin.com/&quot; target=&quot;_blank&quot; title=&quot;Linkedin&quot;&gt;Linkedin&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
+  &lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;http://www.facebook.com/&quot; target=&quot;_blank&quot; title=&quot;Facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;http://www.twitter.com/&quot; target=&quot;_blank&quot; title=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;linkedin&quot;&gt;&lt;a href=&quot;http://www.linkedin.com/&quot; target=&quot;_blank&quot; title=&quot;Linkedin&quot;&gt;Linkedin&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;	
 </pre>
 
@@ -425,11 +425,11 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <p>You can easily display social icons with a roll-over effect with the following markup:</p>
 <pre>
 &lt;div class=&quot;social-icons&quot;&gt;
-	&lt;ul class=&quot;social-icons&quot;&gt;
-		&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;http://www.facebook.com/&quot; target=&quot;_blank&quot; title=&quot;Facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;http://www.twitter.com/&quot; target=&quot;_blank&quot; title=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;linkedin&quot;&gt;&lt;a href=&quot;http://www.linkedin.com/&quot; target=&quot;_blank&quot; title=&quot;Linkedin&quot;&gt;Linkedin&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
+  &lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;http://www.facebook.com/&quot; target=&quot;_blank&quot; title=&quot;Facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;http://www.twitter.com/&quot; target=&quot;_blank&quot; title=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;linkedin&quot;&gt;&lt;a href=&quot;http://www.linkedin.com/&quot; target=&quot;_blank&quot; title=&quot;Linkedin&quot;&gt;Linkedin&lt;/a&gt;&lt;/li&gt;  
+  &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
 
@@ -471,18 +471,80 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <p>If you want to manually create a toggle section like the FAQ page you can use the following markup:</p>
 <pre>
 &lt;div class=&quot;toogle&quot;&gt;
-	&lt;section class=&quot;toggle active&quot;&gt;
-		&lt;label&gt;Curabitur eget leo at velit imperdiet vague iaculis vitaes?&lt;/label&gt;
-		&lt;div class=&quot;toggle-content&quot;&gt;
-			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc.&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/section&gt;
-	&lt;section class=&quot;toggle&quot;&gt;
-		&lt;label&gt;Curabitur eget leo at imperdiet vague iaculis vitaes?&lt;/label&gt;
-		&lt;div class=&quot;toggle-content&quot;&gt;
-			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa.&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/section&gt;
+  &lt;section class=&quot;toggle active&quot;&gt;
+    &lt;label&gt;Curabitur eget leo at velit imperdiet vague iaculis vitaes?&lt;/label&gt;
+    &lt;div class=&quot;toggle-content&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class=&quot;toggle&quot;&gt;
+      &lt;label&gt;Curabitur eget leo at imperdiet vague iaculis vitaes?&lt;/label&gt;
+      &lt;div class=&quot;toggle-content&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa.&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</pre>
+<h4>Featured Highlight</h4>
+<pre>
+&lt;section class=&quot;featured highlight footer&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row center counters&quot;&gt;
+      &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;strong data-to=&quot;7000&quot; data-append=&quot;+&quot;&gt;7000+&lt;/strong&gt;
+        &lt;label&gt;Happy Clients&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;strong data-to=&quot;15&quot;&gt;15&lt;/strong&gt;
+        &lt;label&gt;Years in Business&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;strong data-to=&quot;352&quot;&gt;352&lt;/strong&gt;
+        &lt;label&gt;Cups of Coffee&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;strong data-to=&quot;159&quot;&gt;159&lt;/strong&gt;
+        &lt;label&gt;High Score&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt; 
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+<h4>Progress Bars</h4>
+<pre>
+&lt;div class=&quot;progress-bars&quot;&gt;
+  &lt;div class=&quot;progress-label&quot;&gt;
+    &lt;span&gt;HTML/CSS&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-primary&quot; data-appear-progress-animation=&quot;100%&quot; style=&quot;overflow: hidden; width: 100%;&quot;&gt;
+      &lt;span class=&quot;progress-bar-tooltip&quot; style=&quot;opacity: 1;&quot;&gt;100%&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress-label&quot;&gt;
+    &lt;span&gt;Design&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-primary&quot; data-appear-progress-animation=&quot;85%&quot; data-appear-animation-delay=&quot;300&quot; style=&quot;-webkit-animation: 300ms; overflow: hidden; width: 85%;&quot;&gt;
+      &lt;span class=&quot;progress-bar-tooltip&quot; style=&quot;opacity: 1;&quot;&gt;85%&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress-label&quot;&gt;
+    &lt;span&gt;WordPress&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-primary&quot; data-appear-progress-animation=&quot;75%&quot; data-appear-animation-delay=&quot;600&quot; style=&quot;-webkit-animation: 600ms; overflow: hidden; width: 75%;&quot;&gt;
+      &lt;span class=&quot;progress-bar-tooltip&quot; style=&quot;opacity: 1;&quot;&gt;75%&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress-label&quot;&gt;
+    &lt;span&gt;Photoshop&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-primary&quot; data-appear-progress-animation=&quot;85%&quot; data-appear-animation-delay=&quot;900&quot; style=&quot;-webkit-animation: 900ms; overflow: hidden; width: 85%;&quot;&gt;
+	    &lt;span class=&quot;progress-bar-tooltip&quot; style=&quot;opacity: 1;&quot;&gt;85%&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </pre>
 <h4>CSS3 Animations</h4>
