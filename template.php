@@ -78,8 +78,6 @@ function porto_menu_local_tasks(&$variables) {
 function porto_preprocess_html(&$vars){
  global $parent_root;
  
- $vars['classes_array'][] = drupal_html_class($class);
-
  $viewport = array(
    '#type' => 'html_tag',
    '#tag' => 'meta',

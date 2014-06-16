@@ -1,4 +1,4 @@
-<li class="col-md-3 isotope-item <?php print strip_tags(render($content['field_team_category'])); ?>">
+<li class="col-md-3 isotope-item <?php print str_replace('&amp;', 'and', str_replace(',-', ' ', str_replace(' ', '-',strip_tags(render($content['field_team_category']))))); ?>">
 	<div class="team-item thumbnail">
 		<a href="<?php print $node_url; ?>" class="thumb-info team">
 			<?php print render ($content['field_image']); ?>
