@@ -274,6 +274,7 @@ ul.primary li a {
 
 .block ul.primary {
 	border-bottom: 0px;
+	padding-left: 0px;
 }
 
 #block-search-form form {
