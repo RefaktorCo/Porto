@@ -1,11 +1,19 @@
 <div class="portfolio-title">
 	<div class="row">
+	  <?php if (!$teaser): ?>
 		<div class="portfolio-nav-all col-md-1">
 			<a href="./" rel="tooltip" data-original-title="Back to list"><i class="fa fa-th"></i></a>
 		</div>
-		<div class="col-md-10 center">
-			<h2 class="shorter"><?php print $title; ?></h2>
+		<?php endif; ?>
+		<div class="<?php if(!$teaser) { echo "col-md-10"; } else { echo "col-md-12"; } ?> center">
+		  <?php if (!$teaser): ?>
+			  <h2 class="shorter"><?php print $title; ?></h2>
+			<?php endif; ?>
+			<?php if ($teaser): ?>
+			  <h2 class="shorter"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+			<?php endif; ?>
 		</div>
+		<?php if (!$teaser): ?>
 		<div class="portfolio-nav col-md-1">
 		  <?php if ( porto_node_pagination($node, 'p') != NULL ) : ?>
 			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="Previous"><i class="fa fa-chevron-left"></i></a>
@@ -14,6 +22,7 @@
 			<a href="<?php print url('node/' . porto_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="portfolio-nav-next" rel="tooltip" data-original-title="Next"><i class="fa fa-chevron-right"></i></a>
 			<?php endif; ?>  
 		</div>
+		<?php endif; ?>
 	</div>
 </div>
 <hr class="tall">
