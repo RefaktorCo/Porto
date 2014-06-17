@@ -52,7 +52,7 @@ if (module_exists('profile2')) {
 	    <h2 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 	  <?php print render($title_suffix); ?>
 	    
-	  <?php if ($display_submitted && !$teaser): ?>
+	  <?php if ($display_submitted): ?>
 	  
 	    <div class="post-meta">
 				<span class="post-meta-user"><i class="fa fa-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
@@ -72,6 +72,7 @@ if (module_exists('profile2')) {
 	      hide($content['links']);
 	      hide($content['field_tags']);
 	      hide($content['field_image']);
+	      hide($content['field_thumbnail']);
 	      print render($content);
 	    ?>
 	  </div>
@@ -79,15 +80,9 @@ if (module_exists('profile2')) {
 		<?php if (!$page && $teaser): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon icon-user"></i> <?php echo t('By'); ?> <?php print $name; ?> </span>
-				<?php if (render($content['field_tags'])): ?> 
-				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
-				<?php endif; ?> 
-				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment');?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
-				<a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right"><?php echo t('Read more...'); ?></a>
+			  <a href="<?php print $node_url; ?>" class="btn btn-mini btn-primary pull-right"><?php echo t('Read more...'); ?></a>
 			</div>
-		
-	  
+
 	  <?php endif; ?>
 	  
 	  <?php if( (!$teaser) AND (module_exists('profile2')) ): ?>
@@ -130,9 +125,11 @@ if (module_exists('profile2')) {
     $links = render($content['links']);
     if ($links):
   ?>
-    <div class="link-wrapper">
-      <?php print $links; ?>
-    </div>
+    <?php if (!$teaser): ?>
+	    <div class="link-wrapper">
+	      <?php print $links; ?>
+	    </div>
+	  <?php endif; ?>  
   <?php endif; ?>
   
   <?php print render($content['comments']); ?>
