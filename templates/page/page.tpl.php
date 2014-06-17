@@ -129,9 +129,9 @@
 			        </ul>
 			      <?php endif; ?>
 			
-					  <div class="col-md-12">
+					 
 					    <?php if (isset($page['content'])) { print render($page['content']); } ?>
-			      </div>
+			      
 					</div>
 			  
 				  <?php if ( ($page['sidebar_right']) ) : ?>
