@@ -1,5 +1,40 @@
 /* DRUPAL THEME STYLES */
 
+#user-login input, #user-register-form input, #user-pass input {
+	width: 35%;
+}
+
+#user-login input[type="submit"], #user-register-form input[type="submit"], #user-pass input[type="submit"] {
+	width: auto;
+}
+
+#profile-main-field-bio-add-more-wrapper .form-textarea-wrapper {
+	width: 75%;
+	height: 300px;
+}
+
+#profile-main-field-bio-add-more-wrapper textarea {
+	height: 300px;
+}
+
+.body .form-text, .body .form-textarea {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
 #user-login label {
 	display: block;
 }
@@ -396,18 +431,6 @@ div.testimonial-author div.thumbnail img {
 
 .contact-form .form-item-name, .contact-form .form-item-subject {
 	margin-left: 0px;
-}
-
-.contact-form .form-item-name input[type="text"] {
-	width: 95%;
-}
-
-.contact-form .form-item-mail input[type="text"] {
-	width: 93%;
-}
-
-.contact-form .form-item-subject input[type="text"] {
-	width: 97%;
 }
 
 .contact-form .form-textarea-wrapper textarea {
