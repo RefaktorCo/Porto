@@ -358,7 +358,7 @@ ul.simple-post-list li {
 }
 
 ul.simple-post-list li:before, ul.simple-post-list li:after {
-	content: " ";
+
 	display: table;
 }
 

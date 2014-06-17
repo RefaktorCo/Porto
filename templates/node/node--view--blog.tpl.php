@@ -126,7 +126,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> post post-medium-image"<?php print $attributes; ?>>
   <div class="row">
   <?php if (render($content['field_image'])) : ?> 
-    <div class="span4">
+    <div class="col-md-5">
 		  <?php if ($image_slide == 'true'): ?>
 			  <div class="post-image">
 					 <div class="owl-carousel" data-plugin-options='{"items":1}'>
@@ -145,7 +145,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
     </div>	
   <?php endif; ?>
   
-  <div class="span5">
+  <div class="col-md-7">
 		<div class="post-content">
 	
 		  <?php print render($title_prefix); ?>
@@ -169,7 +169,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
   </div>
 		
   <div class="row">
-		<div class="span9">  
+		<div class="col-md-12">  
 		  
 	   <?php if (!$page && $teaser): ?>
 	  
