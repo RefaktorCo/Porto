@@ -115,8 +115,6 @@
 			
 					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "col-md-6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "col-md-9"; }  else { echo "col-md-12"; } ?>">
 					  
-					  
-					  
 			     	<?php if ($tabs = render($tabs)): ?>
 						  <div id="drupal_tabs" class="tabs ">
 						    <?php print render($tabs); ?>
@@ -128,9 +126,8 @@
 			          <?php print render($action_links); ?>
 			        </ul>
 			      <?php endif; ?>
-			
-					 
-					    <?php if (isset($page['content'])) { print render($page['content']); } ?>
+		
+					  <?php if (isset($page['content'])) { print render($page['content']); } ?>
 			      
 					</div>
 			  
@@ -143,8 +140,6 @@
 			  </div>
 	    </div>  
 	  </div>  
- 
-		 
 	  
 	</div>
 

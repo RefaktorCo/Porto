@@ -86,7 +86,7 @@
 	      
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
-					  <div class="<?php if ($page['sidebar_right']) { echo "span3";} else { echo "span3"; } ?>">
+					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
 					    <div id="sticky-sidebar">
 					    <?php print render($page['sidebar_left']); ?>
 					    </div>
@@ -94,9 +94,7 @@
 				  </aside>
 				  <?php endif; ?>
 			
-					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "span6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "span9"; }  else { echo "span12"; } ?>">
-					  
-					  <?php print $messages; ?>
+					<div class="<?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ) { echo "col-md-6";} elseif ( ($page['sidebar_right']) OR ($page['sidebar_left']) ) {  echo "col-md-9"; }  else { echo "col-md-12"; } ?>">
 					  
 			     	<?php if ($tabs = render($tabs)): ?>
 						  <div id="drupal_tabs" class="tabs ">
@@ -109,12 +107,13 @@
 			          <?php print render($action_links); ?>
 			        </ul>
 			      <?php endif; ?>
-			
+		
 					  <?php if (isset($page['content'])) { print render($page['content']); } ?>
+			      
 					</div>
 			  
 				  <?php if ( ($page['sidebar_right']) ) : ?>
-				  <div class="<?php if ($page['sidebar_left']) { echo "span3";} else { echo "span3"; } ?>">
+				  <div class="<?php if ($page['sidebar_left']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
 				    <?php print render($page['sidebar_right']); ?>
 				  </div>
 				  <?php endif; ?>
@@ -122,9 +121,7 @@
 			  </div>
 	    </div>  
 	  </div>  
- 
-		 
-	  
+	  	  
 	</div>
 
   <?php print render($page['after_content']); ?>
