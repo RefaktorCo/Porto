@@ -21,6 +21,7 @@ stylesheets[all][] = css/theme-blog.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-responsive.css
 stylesheets[all][] = css/drupal-styles.css
+stylesheets[all][] = css/skins/default-style.css
 
 ; Define theme JS libraries.
 scripts[] = vendor/modernizr.js
@@ -72,6 +73,7 @@ plugins[panels][layouts] = layouts
 settings[breadcrumbs] = 1
 settings[sticky_header] = 1
 settings[skin_color] = 0088cc
+settings[gradient] = 1
 settings[background_color] = light
 settings[site_layout] = wide
 settings[body_background] = porto_backgrounds

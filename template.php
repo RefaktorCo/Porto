@@ -147,19 +147,37 @@ function porto_preprocess_page(&$vars, $hook) {
   if (request_path() == 'one-page') {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
-    
-  //Pass the color value from theme settings to @skinColor variable in skin.less
-  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
   
-    'group' => CSS_THEME,
-    'preprocess' => false,
-    'less' => array(
-      'variables' => array(
-        '@skinColor' => '#'.theme_get_setting('skin_color').'',
-      ),
-    ),
-
-  )); 
+  if (theme_get_setting('gradient') == "1") {
+	  //Pass the color value from theme settings to @skinColor variable in skin.less
+	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin-gradient.less', array(
+	  
+	    'group' => CSS_THEME,
+	    'preprocess' => false,
+	    'less' => array(
+	      'variables' => array(
+	        '@skinColor' => '#'.theme_get_setting('skin_color').'',
+	      ),
+	    ),
+	
+	  )); 
+	} 
+	
+	if (theme_get_setting('gradient') == "0") {
+	  //Pass the color value from theme settings to @skinColor variable in skin.less
+	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
+	  
+	    'group' => CSS_THEME,
+	    'preprocess' => false,
+	    'less' => array(
+	      'variables' => array(
+	        '@skinColor' => '#'.theme_get_setting('skin_color').'',
+	      ),
+	    ),
+	
+	  )); 
+	}
+	 
 }
 
 /**
