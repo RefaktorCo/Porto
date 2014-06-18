@@ -1,6 +1,4 @@
-@skinColor: #0088CC;
 
-@import "mixins";
 
 // Basic
 h3, h4, h5 {
@@ -59,6 +57,11 @@ ul.nav-pills > li.active > a {
 .pagination > .active > a {
 	border-color: @skinColor !important;
 	.buttonBackground(@skinColor, spin(@skinColor, 20%));
+	background-color: @skinColor;
+}
+
+.btn-primary:hover {
+	background-color: lighten(@skinColor, 5%);
 }
 
 .progress-bar-primary {
