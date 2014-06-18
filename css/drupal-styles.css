@@ -35,6 +35,11 @@
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+.team-item img, .portfolio-item img {
+	max-width: 100%;
+	height: auto;
+}
+
 #user-login label {
 	display: block;
 }

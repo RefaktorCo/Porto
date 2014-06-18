@@ -218,7 +218,7 @@ function porto_menu_tree__header_menu($variables){
   // use global depth variable to define ul class
   global $depth;
   $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
-  return '<ul class="'.$class.'" id="mainMenu">' . $variables['tree'] . '</ul>';
+  return '<ul class="'.$class.'">' . $variables['tree'] . '</ul>';
   
 }
 
