@@ -1,5 +1,9 @@
 /* DRUPAL THEME STYLES */
 
+#toolbar.clearfix, .toolbar-menu.clearfix, .toolbar-drawer.clearfix {
+	display: block;
+}
+
 #user-login input, #user-register-form input, #user-pass input {
 	width: 35%;
 }
