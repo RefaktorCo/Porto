@@ -1,3 +1,8 @@
+2.0.1 (07/02/14)
+	*Fixed issue with sub-menu links in mobile navigation.
+	*Fixed issue with "Home Concept" circle URLs.
+	*Fixed minor layout issue with Bootstrap modal footer buttons.
+
 2.0 (06/18/14)
 	*Updated Bootstrap to version 3.1.1.
 	*New "Dark" background color option.

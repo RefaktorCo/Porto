@@ -1,5 +1,9 @@
 /* DRUPAL THEME STYLES */
 
+.modal-body {
+	overflow: auto;
+}
+
 #toolbar.clearfix, .toolbar-menu.clearfix, .toolbar-drawer.clearfix {
 	display: block;
 }
