@@ -427,7 +427,7 @@ function porto_item_list($variables) {
       $data = '';
       $i++;
       
-      if (in_array('pager-current', $item['class'])) {
+      if ( is_array($item) && in_array('pager-current', $item['class'])) {
         $item['class'] = array('active');
         $item['data'] = '<a href="#">' . $item['data'] . '</a>';
       }

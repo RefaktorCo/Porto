@@ -1,5 +1,18 @@
 /* DRUPAL THEME STYLES */
 
+#block-user-login .pagination {
+	margin-top: 10px;
+}
+
+#block-user-login .pagination-lg>li>a {
+	border-radius: 6px;
+	font-size: 13px;
+}
+
+#block-user-login .pagination-lg>li:first-child>a {
+	margin-bottom: 10px;
+}
+
 .modal-body {
 	overflow: auto;
 }

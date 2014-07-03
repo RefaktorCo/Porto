@@ -2,7 +2,7 @@ name = Porto
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 2.0
+version = 2.0.1
 
 ; Define theme CSS.
 stylesheets[all][] = vendor/bootstrap/css/bootstrap.css
