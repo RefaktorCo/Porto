@@ -229,15 +229,17 @@ function porto_menu_link__header_menu(array $variables) {
 }
 
 /**
- * Define menu UL class for "Header Menu" region.
+ * Define class for first menu UL.
  */
 function porto_menu_tree__header_menu($variables){
-  
-  // use global depth variable to define ul class
-  global $depth;
-  $class = ($depth == 1) ? 'nav nav-pills nav-main' : 'dropdown-menu';
-  return '<ul class="'.$class.'" id="mainMenu">' . $variables['tree'] . '</ul>';
-  
+  return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Define class for all other menu ULs.
+ */
+function porto_menu_tree__header_menu_below($variables){
+  return '<ul class="dropdown-menu">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -288,8 +290,9 @@ function porto_block_view_alter(&$data, $block) {
         $key['#theme'] = 'menu_link__header_menu';
       }
       if (isset($key['#below']['#theme_wrappers'])) {
-        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu_below');
       }
+      
       if (isset($key['#below'])) {
         foreach($key['#below'] as &$key2):
         
@@ -297,7 +300,7 @@ function porto_block_view_alter(&$data, $block) {
              $key2['#theme'] = 'menu_link__header_menu';
            }
            if (isset($key2['#below']['#theme_wrappers'])) {
-             $key2['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+             $key2['#below']['#theme_wrappers'] = array('menu_tree__header_menu_below');
            }
            if (isset($key2['#below'])) {
               foreach($key2['#below'] as &$key3):
@@ -312,7 +315,6 @@ function porto_block_view_alter(&$data, $block) {
        
       }
     endforeach;
-
   }
 }
 

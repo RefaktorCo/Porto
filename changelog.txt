@@ -2,6 +2,7 @@
 	*Fixed issue with sub-menu links in mobile navigation.
 	*Fixed issue with "Home Concept" circle URLs.
 	*Fixed minor layout issue with Bootstrap modal footer buttons.
+	*Fixed disappearing menu when last menu item has children.
 
 2.0 (06/18/14)
 	*Updated Bootstrap to version 3.1.1.
