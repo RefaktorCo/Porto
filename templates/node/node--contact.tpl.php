@@ -3,28 +3,27 @@
 
 <div class="container">
 
-		<div class="row">
-			<div class="col-md-6">
-			  <?php 
-			    require_once drupal_get_path('module', 'contact') .'/contact.pages.inc'; 
-		      $contact_form = drupal_get_form('contact_site_form');
-		      print drupal_render($contact_form); 
-				?>  
-			</div>
+	<div class="row">
+	
+		<div class="col-md-6">
+		  <?php 
+		    require_once drupal_get_path('module', 'contact') .'/contact.pages.inc'; 
+	      $contact_form = drupal_get_form('contact_site_form');
+	      print drupal_render($contact_form); 
+			?>  
+		</div>
 
-			<div class="col-md-6">
-				<?php
-		      // We hide the comments and links now so that we can render them later.
-		      hide($content['comments']);
-		      hide($content['links']);
-		      hide($content['field_map_address']);
-		      hide($content['field_map_html']);
-		      hide($content['field_map_latitude']);
-		      hide($content['field_map_longitude']);
-		      print render($content);
-		    ?>
-			</div>
-
+		<div class="col-md-6">
+			<?php
+	      // We hide the comments and links now so that we can render them later.
+	      hide($content['comments']);
+	      hide($content['links']);
+	      hide($content['field_map_address']);
+	      hide($content['field_map_html']);
+	      hide($content['field_map_latitude']);
+	      hide($content['field_map_longitude']);
+	      print render($content);
+	    ?>
 		</div>
 
 	</div>
