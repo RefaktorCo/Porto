@@ -1,3 +1,6 @@
+2.0.2 (07/14/14)
+  *Removed extra </div> from contact template.
+
 2.0.1 (07/03/14)
 	*Fixed issue with sub-menu links in mobile navigation.
 	*Fixed issue with "Home Concept" circle URLs.
