@@ -37,7 +37,7 @@
 				<?php endif; ?>
 	
 	      <div class="row">
-	        <div class="owl-carousel owl-carousel-spaced" data-plugin-options='{"items": 4, "singleItem": false, "autoHeight": true}'>
+	        <div class="owl-carousel owl-carousel-spaced" data-plugin-options='{"items": 4, "singleItem": false, "autoHeight": true,  "autoPlay": true}'>
 	         
 					  <?php print render($title_prefix); ?>
 					  <?php print render($title_suffix); ?>

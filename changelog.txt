@@ -1,5 +1,6 @@
 2.0.2 (07/14/14)
   *Removed extra </div> from contact template.
+  *Fixed issue with "latest posts" view and odd number of items.
 
 2.0.1 (07/03/14)
   *Fixed issue with sub-menu links in mobile navigation.

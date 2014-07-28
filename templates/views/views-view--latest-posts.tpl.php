@@ -35,32 +35,33 @@
 				<div class="col-md-6">
 
 					<div class="recent-posts push-bottom">
-					 <?php if ($header): ?>
-				    <?php print $header; ?>
-				   <?php endif; ?>
+					  <?php if ($header): ?>
+				      <?php print $header; ?>
+				    <?php endif; ?>
 						<div class="row">
+						
 						  <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
 							  <?php print render($title_prefix); ?>
 							  <?php print render($title_suffix); ?>
 							  <?php if ($exposed): ?>
-							    <div class="view-filters">
-							      <?php print $exposed; ?>
-							    </div>
+						    <div class="view-filters">
+						      <?php print $exposed; ?>
+						    </div>
 							  <?php endif; ?>
 							
 							  <?php if ($attachment_before): ?>
-							    <div class="attachment attachment-before">
-							      <?php print $attachment_before; ?>
-							    </div>
+						    <div class="attachment attachment-before">
+						      <?php print $attachment_before; ?>
+						    </div>
 							  <?php endif; ?>
 							  
 							  							
 							  <?php if ($rows): ?>
 							    <?php print $rows; ?>
 							  <?php elseif ($empty): ?>
-							    <div class="view-empty">
-							      <?php print $empty; ?>
-							    </div>
+						    <div class="view-empty">
+						      <?php print $empty; ?>
+						    </div>
 							  <?php endif; ?>
 							
 							  <?php if ($pager): ?>
@@ -68,9 +69,9 @@
 							  <?php endif; ?>
 							
 							  <?php if ($attachment_after): ?>
-							    <div class="attachment attachment-after">
-							      <?php print $attachment_after; ?>
-							    </div>
+						    <div class="attachment attachment-after">
+						      <?php print $attachment_after; ?>
+						    </div>
 							  <?php endif; ?>
 							
 							  <?php if ($more): ?>
@@ -78,16 +79,16 @@
 							  <?php endif; ?>
 							
 							  <?php if ($feed_icon): ?>
-							    <div class="feed-icon">
-							      <?php print $feed_icon; ?>
-							    </div>
+						    <div class="feed-icon">
+						      <?php print $feed_icon; ?>
+						    </div>
 							  <?php endif; ?>
 
 							</div><!-- end owl carousel -->
 						</div>
-						
 					</div>
-				</div>
+					
+				</div><!-- end col-md-6 -->
 				
 				<?php if ($footer): ?>
 				<div class="col-md-6">

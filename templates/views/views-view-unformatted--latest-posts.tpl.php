@@ -11,5 +11,5 @@
 <?php $count = '0'; foreach ($rows as $id => $row): ?>
   <?php if ($count % 2 == 0) { echo "<div>"; } ?>
   <?php  print $row; $count++; ?>
-  <?php if ($count % 2 == 0) { echo "</div>"; } ?><!--/end test -->
+  <?php if ($count % 2 == 0  || ($count % 2 != 0 && $count == count($rows))) { echo "</div>"; } ?>
 <?php endforeach; ?>

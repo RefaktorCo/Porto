@@ -1,5 +1,7 @@
 /* DRUPAL THEME STYLES */
 
+article.clearfix {display: inline;}
+
 #block-user-login .pagination {
 	margin-top: 10px;
 }
