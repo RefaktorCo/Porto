@@ -2,7 +2,7 @@
 	<div class="row">
 	  <?php if (!$teaser): ?>
 		<div class="portfolio-nav-all col-md-1">
-			<a href="./" rel="tooltip" data-original-title="Back to list"><i class="fa fa-th"></i></a>
+			<a href="./" rel="tooltip" data-original-title="<?php print t('Back to list');?>"><i class="fa fa-th"></i></a>
 		</div>
 		<?php endif; ?>
 		<div class="<?php if(!$teaser) { echo "col-md-10"; } else { echo "col-md-12"; } ?> center">
@@ -16,10 +16,10 @@
 		<?php if (!$teaser): ?>
 		<div class="portfolio-nav col-md-1">
 		  <?php if ( porto_node_pagination($node, 'p') != NULL ) : ?>
-			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="Previous"><i class="fa fa-chevron-left"></i></a>
+			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="<?php print t('Previous');?>"><i class="fa fa-chevron-left"></i></a>
 			<?php endif; ?>  
 			<?php if ( porto_node_pagination($node, 'n') != NULL ) : ?>
-			<a href="<?php print url('node/' . porto_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="portfolio-nav-next" rel="tooltip" data-original-title="Next"><i class="fa fa-chevron-right"></i></a>
+			<a href="<?php print url('node/' . porto_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="portfolio-nav-next" rel="tooltip" data-original-title="<?php print t('Next');?>"><i class="fa fa-chevron-right"></i></a>
 			<?php endif; ?>  
 		</div>
 		<?php endif; ?>
