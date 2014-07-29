@@ -319,6 +319,7 @@ body {
 #header .logo img {
 	position: relative;
 	color: transparent;
+	width: auto !important;
 }
 
 /* Header Container */

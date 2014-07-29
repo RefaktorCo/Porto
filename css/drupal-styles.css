@@ -76,6 +76,25 @@ article.clearfix {display: inline;}
   margin: auto;
 }
 
+@media (max-width: 1199px) {
+  #block-nivo-slider-nivo-slider {
+    max-width: 910px;
+  }
+}
+
+@media (max-width: 991px) {
+  #block-nivo-slider-nivo-slider {
+    max-width: 690px;
+  }
+}
+
+@media (max-width: 767px) {
+  #block-nivo-slider-nivo-slider {
+    max-width: 100%;
+    margin: 0 30px;
+  }
+}
+
 .comment .img-thumbnail img {
 	height: 80px;
 	width: 80px;

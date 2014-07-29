@@ -58,6 +58,25 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value' => theme_get_setting('sticky_header'),
     );
     
+    // Logo Height
+      $form['options']['general']['logo_height'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Logo Height'),
+        '#default_value' => theme_get_setting('logo_height'),
+      );   
+      
+    // Sticky Logo Height
+      $form['options']['general']['sticky_logo_height'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Sticky Header Logo Height'),
+        '#default_value' => theme_get_setting('sticky_logo_height'),
+        '#states' => array (
+          'invisible' => array(
+            'input[name="sticky_header"]' => array('checked' => FALSE)
+          )
+        )
+      );   
+    
   // Color
   $form['options']['color'] = array(
     '#type' => 'fieldset',

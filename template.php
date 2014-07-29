@@ -273,7 +273,7 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
  */
 function porto_block_view_alter(&$data, $block) {
 
-  if ($block->region == 'header_search') {
+  if ( $block->region == 'header_search' && isset($data['content']) ) {
     // Unset some additional wrappers in the Header Search region.
   	unset($data['content']['search_block_form']['#theme_wrappers']);
     unset($data['content']['actions']['#theme_wrappers']);

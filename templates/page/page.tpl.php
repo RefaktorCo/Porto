@@ -16,7 +16,7 @@
       <?php if ($logo): ?>
       <h1 class="logo">
 	      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-	        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"  width="111" height="54" data-sticky-width="82" data-sticky-height="40" />
+	        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" />
 	      </a>
       </h1>
 	    <?php endif; ?>

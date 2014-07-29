@@ -246,11 +246,7 @@ Version: 		3.0.0
 		top: 35px;
 	}
 
-  /* Logo */
-	#header h1.logo img {
-		max-width: 180px;
-	}
-
+ 
 	#header.center h1.logo {
 		text-align: left;
 	}
