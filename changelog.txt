@@ -1,10 +1,10 @@
 2.0.2 (07/29/14)
+  *Added logo height setting for regular and sticky header layout.
   *Removed extra </div> from contact template.
   *Fixed issue with "latest posts" view and odd number of items.
   *Modified output of body field in FAQ node template.
   *Improved responsive appearance of NivoSlider.
   *Updated Drupal core in full install.
-  *Added logo height setting for regular and sticky header layout.
   *Updated MD Slider.
   *Other minor fixes.
 
