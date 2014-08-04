@@ -46,14 +46,14 @@ ul.nav-pills > li.active > a {
 // Pagination
 .pagination > .active > {
 	a, span, a:hover, span:hover, a:focus, span:focus {
-		background-color: @skinColor !important;
+		background-color: @skinColor ;
 	}
 }
 
 // Buttons
 .btn-primary,
 .pagination > .active > a {
-	border-color: @skinColor !important;
+	border-color: @skinColor ;
 	.buttonBackground(@skinColor, spin(@skinColor, 20%));
 	background-color: @skinColor;
 }
@@ -68,8 +68,8 @@ ul.nav-pills > li.active > a {
 
 // Sections
 section.highlight {
-	background-color: @skinColor !important;
-	border-color: darken(@skinColor, 5%) !important;
+	background-color: @skinColor ;
+	border-color: darken(@skinColor, 5%) ;
 }
 
 section.page-top h2 {
@@ -198,7 +198,7 @@ section.video blockquote i.icon-quote-left {
 	}
 	&.secundary {
 		.panel-heading {
-			background-color: @skinColor !important;
+			background-color: @skinColor ;
 		}
 	}
 }
@@ -214,11 +214,11 @@ section.video blockquote i.icon-quote-left {
 		li > a:hover,
 		li.dropdown:hover a {
 			color: #FFF;
-			background-color: @skinColor !important;
+			background-color: @skinColor;
 		}
 
 		ul.dropdown-menu li:hover > a {
-			background-color: lighten(@skinColor, 10%) !important;
+			background-color: lighten(@skinColor, 10%);
 		}
 
 		ul.dropdown-menu {
@@ -226,11 +226,11 @@ section.video blockquote i.icon-quote-left {
 		}
 
 		li.dropdown:hover ul.dropdown-menu li > a {
-			background: none !important;
+			background: none;
 		}
 
 		li.dropdown:hover ul.dropdown-menu li > a:hover {
-			background: lighten(@skinColor, 5%) !important;
+			background: lighten(@skinColor, 5%);
 		}
 	}
 
@@ -248,7 +248,7 @@ section.video blockquote i.icon-quote-left {
 
 	&.darken-top-border {
 
-		border-top: 5px solid darken(@skinColor,5%) !important;
+		border-top: 5px solid darken(@skinColor,5%) ;
 
 	}
 
@@ -258,7 +258,7 @@ section.video blockquote i.icon-quote-left {
 			background-color: @skinColor;
 
 			ul.nav-top li a:hover {
-				background-color: lighten(@skinColor, 5%) !important;
+				background-color: lighten(@skinColor, 5%) ;
 			}
 
 		}
@@ -276,13 +276,13 @@ section.video blockquote i.icon-quote-left {
 
 			li.active > a {
 				color: @skinColor;
-				background-color: transparent !important;
+				background-color: transparent ;
 			}
 
 			li > a:hover,
 			li.dropdown:hover a {
 				color: #FFF;
-				background-color: @skinColor !important;
+				background-color: @skinColor ;
 			}
 
 		}
@@ -318,16 +318,8 @@ blockquote.testimonial {
 	}
 }
 
-// Pricing Tables
-.pricing-table {
-
-	.most-popular {
-		border-color: @skinColor;
-		h3 {
-			.gradient(@skinColor, darken(@skinColor, 15%), @gradient);
-		}
-	}
-
+.pricing-table .most-popular h3 {
+	background-color: @skinColor;
 }
 
 // Timeline
