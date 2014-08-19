@@ -1,3 +1,12 @@
+2.0.3 (08/19/14)
+  *Removed all !important tags from .less files for better customization support.
+  *Updated Font Awesome to version 4.10.
+  *Max width for latest projects content image.
+  *Fixed issue with active class on portfolio filter buttons.
+  *Bootstrap.css now called in html.tpl.php to fix @import conflict with respond.js(IE8 fix).
+  *Updated Drupal core in full install.
+  *Updated documentation.
+
 2.0.2 (07/29/14)
   *Added logo height setting for regular and sticky header layout.
   *Removed extra </div> from contact template.

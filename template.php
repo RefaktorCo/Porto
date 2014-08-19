@@ -84,19 +84,20 @@ function porto_preprocess_html(&$vars){
    '#attributes' => array(
      'name' => 'viewport',
      'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
-   )
+   ),
+   '#weight' => 1,
  );
 
   $background_image = array(
    '#type' => 'markup',
    '#markup' => "<style type='text/css'>body {background-image:url(".$parent_root."/img/patterns/".theme_get_setting('background_select').".png);}</style> ",
-   '#weight' => 1,
+   '#weight' => 2,
  );
 
  $background_color = array(
    '#type' => 'markup',
    '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important;}</style> ",
-   '#weight' => 2,
+   '#weight' => 3,
  );
  
  $font_awesome = array(
@@ -107,7 +108,7 @@ function porto_preprocess_html(&$vars){
       'type' => 'text/css',
       'media' => 'screen',
     ),
-    '#weight' => 12,
+    '#weight' => 4,
   );
 
 
@@ -491,6 +492,14 @@ function porto_field($variables) {
   }
   
   elseif ($variables['element']['#field_name'] == 'field_team_bio') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
+   elseif ($variables['element']['#field_name'] == 'field_team_category') {
     // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
       $rendered_tags[] = drupal_render($item);

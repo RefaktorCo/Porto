@@ -515,7 +515,7 @@ jQuery(document).ready(function ($) {
 
 		sort: function() {
 
-			$("ul.sort-source:not(.manual)").each(function() {
+			$("ul.sort-source").each(function() {
 
 				var source = $(this);
 				var destination = $("ul.sort-destination[data-sort-id=" + $(this).attr("data-sort-id") + "]");

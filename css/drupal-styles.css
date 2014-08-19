@@ -1,6 +1,12 @@
 /* DRUPAL THEME STYLES */
 
-article.clearfix {display: inline;}
+.latest-projects-content-image img {
+	max-width: 450px;
+}
+
+article.clearfix {
+  display: inline;
+}
 
 #block-user-login .pagination {
 	margin-top: 10px;
@@ -153,8 +159,6 @@ header .content {
 	overflow: visible;
 }
 
-
-
 .owl-item li {
 	list-style: none;
 }
@@ -273,8 +277,6 @@ body.sticky-menu-active header #site-name {
 header.flat-menu nav ul.nav-main li ul li a {
 	padding: 8px 10px 8px 5px;
 }
-
-
 
 .md-slide-wrap {
   margin-bottom: 0px;

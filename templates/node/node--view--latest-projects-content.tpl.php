@@ -3,7 +3,7 @@
 
 	<div class="row">
 	  <?php if (render($content['field_image'])): ?>
-		<div class="col-md-6">
+		<div class="col-md-6 latest-projects-content-image">
 			<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="item">
 		</div>
 		<?php endif;?>
