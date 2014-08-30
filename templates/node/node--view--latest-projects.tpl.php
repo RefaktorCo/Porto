@@ -1,7 +1,7 @@
 <div class="portfolio-item thumbnail">
 	<a class="thumb-info lightbox" href="#popupProject_<?php print $node->nid; ?>" data-plugin-options='{"type":"inline", preloader: false}'>
 	  <?php if (render($content['field_image'])): ?>
-		  <img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" class="img-responsive" alt="item">
+		  <?php print render ($content['field_image']); ?>
 		<?php endif; ?>
 		<span class="thumb-info-title">
 		  <span class="thumb-info-inner"><?php print $title; ?></span>

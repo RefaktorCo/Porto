@@ -45,6 +45,7 @@ scripts[] = js/theme.js
 scripts[] = js/views/view.home.js
 scripts[] = js/sticky.js
 
+
 ; Define theme block regions.
 regions[header_top] = Header Top
 regions[header_search] = Header Search
