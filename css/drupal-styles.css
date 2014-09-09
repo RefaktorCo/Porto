@@ -1,7 +1,23 @@
+/* FORUM STYLES */
+
+#forum thead {
+  background: #eaeaea;
+	border-top: 1px solid #eee;
+	font-weight: bold;
+	text-align: center;
+}
+#forum thead th {
+	padding: 8px;
+}
+
 /* DRUPAL THEME STYLES */
 
 .latest-projects-content-image img {
 	max-width: 450px;
+}
+
+.clearfix {
+	display: block;
 }
 
 article.clearfix {
