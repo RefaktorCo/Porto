@@ -117,7 +117,7 @@ jQuery(document).ready(function ($) {
 			// Responsive Menu Events
 			var addActiveClass = false;
 
-			$("#mainMenu li.dropdown > a, #mainMenu li.dropdown-submenu > a").on("click", function(e) {
+			$("#mainMenu li.dropdown > a:not(.disabled), #mainMenu li.dropdown-submenu > a:not(.disabled)").on("click", function(e) {
 
 				if($(window).width() > 979) return;
 

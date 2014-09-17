@@ -100,20 +100,7 @@ function porto_preprocess_html(&$vars){
    '#weight' => 3,
  );
  
- $font_awesome = array(
-    '#tag' => 'link', 
-    '#attributes' => array( 
-      'href' => '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', 
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'media' => 'screen',
-    ),
-    '#weight' => 4,
-  );
-
-
  drupal_add_html_head( $viewport, 'viewport');
- drupal_add_html_head( $font_awesome, 'fontawesome');
 
  if (theme_get_setting('body_background') == "porto_backgrounds" && theme_get_setting('site_layout') == "boxed") {
    drupal_add_html_head( $background_image, 'background_image');
@@ -201,6 +188,7 @@ function porto_process_page(&$variables) {
  * Add list classes for links in "Header Menu" region.
  */
 function porto_menu_link__header_menu(array $variables) {
+  $output = '';
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
   static $item_id = 0;
@@ -211,8 +199,9 @@ function porto_menu_link__header_menu(array $variables) {
   $depth = $element['#original_link']['depth'];
 
   if ( ($element['#below']) && ($depth == "1") ) {
+    $output .= '<a class="dropdown-toggle extra" href="#"></a>';
     $element['#attributes']['class'][] = 'dropdown '.$element['#original_link']['mlid'].'';
-    $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
+    $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle disabled';
   }
   
   if ( ($element['#below']) && ($depth == "2") ) {
@@ -220,13 +209,14 @@ function porto_menu_link__header_menu(array $variables) {
   }
   
   $sub_menu = $element['#below'] ? drupal_render($element['#below']) : '';
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  $output .= l($element['#title'], $element['#href'], $element['#localized_options']);
   // if link class is active, make li class as active too
   if(strpos($output,"active")>0){
     $element['#attributes']['class'][] = "active";
   }
  
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';
+  
 }
 
 /**
@@ -234,6 +224,7 @@ function porto_menu_link__header_menu(array $variables) {
  */
 function porto_menu_tree__header_menu($variables){
   return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
+  
 }
 
 /**
@@ -241,6 +232,51 @@ function porto_menu_tree__header_menu($variables){
  */
 function porto_menu_tree__header_menu_below($variables){
   return '<ul class="dropdown-menu">' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Impelements theme_status_messages()
+ */
+function porto_status_messages($variables) {
+  $display = $variables['display'];
+  $output = '';
+
+  $status_heading = array(
+    'status' => t('Status message'),
+    'error' => t('Error message'),
+    'warning' => t('Warning message'),
+  );
+  foreach (drupal_get_messages($display) as $type => $messages) {
+    switch ($type) {
+	    case 'status':
+	      $output .= "<div class=\"alert alert-success\">\n";
+	    break;
+	    case 'warning':
+	      $output .= "<div class=\"alert alert-warning\">\n";
+	    break;
+	    case 'error':
+	      $output .= "<div class=\"alert alert-danger\">\n";
+	    break;
+	    default: 
+	      $output .= "<div class=\"messages $type\">\n";
+	    break;
+    }
+    if (!empty($status_heading[$type])) {
+      $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
+    }
+    if (count($messages) > 1) {
+      $output .= " <ul>\n";
+      foreach ($messages as $message) {
+        $output .= '  <li>' . $message . "</li>\n";
+      }
+      $output .= " </ul>\n";
+    }
+    else {
+      $output .= $messages[0];
+    }
+    $output .= "</div>\n";
+  }
+  return $output;
 }
 
 /**
@@ -261,7 +297,7 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
        
     $form['actions']['submit'] =  array(
       '#type' => 'submit',
-    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search">',
+    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="icon icon-search">',
     	'#suffix' => '</i></button></span>',
     	
     );
@@ -281,8 +317,7 @@ function porto_block_view_alter(&$data, $block) {
     unset($data['content']['actions']['submit']['#theme_wrappers']);
   }
 
-  if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {
-   
+  if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {   
     $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
 
     foreach($data['content'] as &$key):

@@ -1,3 +1,10 @@
+2.0.4 (09/16/14)
+  *Added basic Drupal forum styles.
+  *Added "One Page" content type and page template for better "One Page" layout support.
+  *Added Bootstrap 3 alert classes to Drupal message wrappers.
+  *Improved mobile menu parent link functionality.
+  *Revised footer region markup.
+
 2.0.3 (08/19/14)
   *Removed all !important tags from .less files for better customization support.
   *Updated Font Awesome to version 4.10.

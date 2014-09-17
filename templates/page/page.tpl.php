@@ -57,7 +57,7 @@
       </div>
       
 	    <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
-				<i class="fa fa-bars"></i>
+				<i class="icon icon-bars"></i>
 			</button>
       
     </div>
@@ -76,7 +76,7 @@
     
 	</header>
 	<!-- end header --> 
-	<?php print $messages; ?>
+	
 	<div role="main" class="main">
 	
 	  <?php if ( ($breadcrumb) AND (!drupal_is_front_page()) ): ?>
@@ -102,7 +102,7 @@
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
-	      
+	      <?php print $messages; ?>
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
 					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
@@ -144,9 +144,10 @@
 	</div>
 
   <?php print render($page['after_content']); ?>
-
+  
   <footer id="footer">
-	  <div class="container">
+    <?php if (render($page['footer_1']) || render($page['footer_2']) || render($page['footer_3']) || render($page['footer_4'])) : ?>
+	  <div class="container main-footer">
 	    <div class="row">
 	    
 	      <?php if (theme_get_setting('ribbon') == '1'): ?>
@@ -155,33 +156,34 @@
 				</div>
 	      <?php endif; ?>
 			  
+			  <?php if (render($page['footer_1'])) : ?>
 		    <div class="col-md-3">
-		      <?php if (isset($page['footer_1'])) : ?>
-				    <?php print render($page['footer_1']); ?>
-				  <?php endif; ?>
+				  <?php print render($page['footer_1']); ?>
 		    </div>
+		    <?php endif; ?>
 		    
-		    <div class="col-md-3">
-		      <?php if (isset($page['footer_2'])) : ?>
-				    <?php print render($page['footer_2']); ?>
-				  <?php endif; ?>
+		    <?php if (render($page['footer_2'])) : ?>
+		    <div class="col-md-3">   
+				  <?php print render($page['footer_2']); ?>
 		    </div>
+		    <?php endif; ?>
 		    
+		    <?php if (render($page['footer_3'])) : ?>
 		    <div class="col-md-4">
-		      <?php if (isset($page['footer_3'])) : ?>
-				    <?php print render($page['footer_3']); ?>
-				  <?php endif; ?>
+				  <?php print render($page['footer_3']); ?>
 		    </div>
+		    <?php endif; ?>
 		    
+		    <?php if (render($page['footer_4'])) : ?>
 		    <div class="col-md-2">
-		      <?php if (isset($page['footer_4'])) : ?>
-				    <?php print render($page['footer_4']); ?>
-				  <?php endif; ?>
+				  <?php print render($page['footer_4']); ?>
 		    </div>
+		    <?php endif; ?>
 			    
 			</div>  
 	  </div>	
-	
+	  <?php endif; ?>
+	  
 	  <div class="footer-copyright">  
 	    <div class="container">
 	      <div class="row">

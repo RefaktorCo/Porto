@@ -16,7 +16,7 @@
 <div id="wrapper">
 <h2>Overview</h2>
 <p>Porto is a professional, multipurpose Drupal theme perfect for any business or portfolio website. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support"> support forum</a>. Once you have registered please contact us via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a> with your forum username so you can be granted posting rights.</p>
-<p>Updated: 08/14/14<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
+<p>Updated: 09/12/14<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
 okler" target="_blank">
 Okler</a></p>
 <h2>Porto 1.X vs 2.X</h2>
@@ -97,7 +97,8 @@ Option 2:
 
 <h2>One Page Site</h2>
 <p>New in version 1.1 is support for a "one-page" style page where all of the content is on a single page. For an example of what this looks like you can refer to the demo page <a href="http://refaktorthemes.com/porto/one-page" target="_blank">here.</a> 
- A custom page template called page--onepage.tpl.php was created and is intended to work with a page with the url-alias "one-page".  A new block region called "One Page" was created to be used specifically with this page template. It is completely optional, but it can allow you to keep better track of your different blocks.</p>
+
+The theme uses a content type called "One Page" and a corresponding template to create this one page style layout. If you don't have this content type already create it via /admin/structure/types. It requires no additional fields but we recommend you disable commenting and author information. You can add content directly into the node or add blocks to the One Page Content region which will only display on a one page node.</p>
 
 <h4>One Page Menu</h4>
 <p>The one page template also supports a smooth scrolling effect to #anchor elements. For example, you have four sections on your page: #about, #services, #team, #contact. Each of your menu items can link to those anchor elements by using the following URL structure: "node/ID/#contact". ID in this case is the node ID of the page you have created to use for the "one-page" template. To find the id simply visit /admin/content and press edit on that page. The URL will tell you the ID.</p>
@@ -298,6 +299,17 @@ Porto also includes support for a "Related Projects" block that you can use to s
 </ul>
 
 <p>The export code /assets/views-exports/home-concept.txt can be used to create the "Home Concept" view which uses a Block display. This block can then be added to the region of your choice.</p>
+
+<h4>One Page</h4>
+<img src="images/one-page.png"><br/><br/>
+
+<p><strong>Fields:</strong></p>
+<p>This content type does not use any custom fields.</p>
+
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/page/page--node--one-page.tpl.php</li>
+</ul>
 
 <h4>Our History</h4>
 <img src="images/porto-our-history.png"><br/><br/>

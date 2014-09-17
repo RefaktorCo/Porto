@@ -1395,9 +1395,13 @@ aside ul.nav-list > li > a {
 	border-top: 4px solid #1F1F1F;
 	font-size: 0.9em;
 	margin-top: 50px;
-	padding: 80px 0 0;
 	position: relative;
 	clear: both;
+}
+
+#footer .main-footer {
+  padding: 80px 0 0;
+  margin-bottom: 40px;
 }
 
 #footer a:hover {
@@ -1568,7 +1572,7 @@ aside ul.nav-list > li > a {
 #footer .footer-copyright {
 	background: #0C0C0C;
 	border-top: 4px solid #111;
-	margin-top: 40px;
+	
 	padding: 30px 0 10px;
 }
 
