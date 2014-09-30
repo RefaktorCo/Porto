@@ -13,6 +13,6 @@
       hide($content['field_tags']);
       hide($content['field_image']);
       $teaser = strip_tags(render($content['body']));
-    ?> <?php  echo substr($teaser, 0, 150)."...";?> <a href="<?php print $node_url; ?>" class="read-more"> <?php echo t('read more'); ?> <i class="fa fa-angle-right"></i></a></p>
+    ?> <?php  echo substr($teaser, 0, 150)."...";?> <a href="<?php print $node_url; ?>" class="read-more"> <?php echo t('read more'); ?> <i class="icon icon-angle-right"></i></a></p>
 	</article>
 </div>

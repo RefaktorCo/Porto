@@ -2,7 +2,7 @@
 	<div class="row">
 	  <?php if (!$teaser): ?>
 		<div class="portfolio-nav-all col-md-1">
-			<a href="./" rel="tooltip" data-original-title="<?php print t('Back to list');?>"><i class="fa fa-th"></i></a>
+			<a href="./" rel="tooltip" data-original-title="<?php print t('Back to list');?>"><i class="icon icon-th"></i></a>
 		</div>
 		<?php endif; ?>
 		<div class="<?php if(!$teaser) { echo "col-md-10"; } else { echo "col-md-12"; } ?> center">
@@ -16,10 +16,10 @@
 		<?php if (!$teaser): ?>
 		<div class="portfolio-nav col-md-1">
 		  <?php if ( porto_node_pagination($node, 'p') != NULL ) : ?>
-			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="<?php print t('Previous');?>"><i class="fa fa-chevron-left"></i></a>
+			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="<?php print t('Previous');?>"><i class="icon icon-chevron-left"></i></a>
 			<?php endif; ?>  
 			<?php if ( porto_node_pagination($node, 'n') != NULL ) : ?>
-			<a href="<?php print url('node/' . porto_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="portfolio-nav-next" rel="tooltip" data-original-title="<?php print t('Next');?>"><i class="fa fa-chevron-right"></i></a>
+			<a href="<?php print url('node/' . porto_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="portfolio-nav-next" rel="tooltip" data-original-title="<?php print t('Next');?>"><i class="icon icon-chevron-right"></i></a>
 			<?php endif; ?>  
 		</div>
 		<?php endif; ?>
@@ -38,10 +38,10 @@
 				<div class="col-md-12 center">
 					<ul>
 						<li>
-							<i class="fa fa-calendar"></i> <?php print format_date($node->created, 'custom', 'd M, Y'); ?>
+							<i class="icon icon-calendar"></i> <?php print format_date($node->created, 'custom', 'd M, Y'); ?>
 						</li>
 						<li>
-							<i class="fa fa-tags"></i> <?php print render($content['field_portfolio_category']); ?>
+							<i class="icon icon-tags"></i> <?php print render($content['field_portfolio_category']); ?>
 						</li>
 					</ul>
 				</div>
@@ -54,7 +54,7 @@
 	<?php endif; ?>  
 	
 	<?php if (render($content['field_portfolio_link'])): ?>
-	  <a href="<?php print strip_tags(render($content['field_portfolio_link'])); ?>" class="btn btn-primary btn-icon"><i class="fa fa-external-link"></i><?php print  t('Live Preview'); ?></a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
+	  <a href="<?php print strip_tags(render($content['field_portfolio_link'])); ?>" class="btn btn-primary btn-icon"><i class="icon icon-external-link"></i><?php print  t('Live Preview'); ?></a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
 	<?php endif; ?>  
 	
 	<ul class="portfolio-details">

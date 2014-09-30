@@ -46,5 +46,5 @@
 ?>
 
 <?php foreach ($items as $delta => $item): ?>
-  <li><i class="fa fa-check-circle"></i><?php print render($item); ?></li>
+  <li><i class="icon icon-check-circle"></i><?php print render($item); ?></li>
 <?php endforeach; ?>

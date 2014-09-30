@@ -16,7 +16,7 @@
 	  <?php endif; ?>  
 	
 		<?php if (render($content['field_portfolio_description'])): ?>
-	  	<a href="<?php print strip_tags(render($content['field_portfolio_link'])); ?>" class="btn btn-primary btn-icon"><i class="fa fa-external-link"></i><?php print  t('Live Preview'); ?></a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
+	  	<a href="<?php print strip_tags(render($content['field_portfolio_link'])); ?>" class="btn btn-primary btn-icon"><i class="icon icon-external-link"></i><?php print  t('Live Preview'); ?></a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
 	  <?php endif; ?>  
 	
 		<ul class="portfolio-details">

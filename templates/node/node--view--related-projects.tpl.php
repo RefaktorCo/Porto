@@ -7,7 +7,7 @@
 				<span class="thumb-info-type"><?php print str_replace('-', ' ', strip_tags(render($content['field_portfolio_category']))); ?></span>
 			</span>
 			<span class="thumb-info-action">
-				<span title="Universal" href="#" class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+				<span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon icon-link"></i></span>
 			</span>
 		</a>
 	</div>
