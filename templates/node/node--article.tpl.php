@@ -42,7 +42,7 @@ if (module_exists('profile2')) {
   <?php if ($display_submitted): ?>
     <div class="post-date">
 			<span class="day"><?php print format_date($node->created, 'custom', 'd'); ?></span>
-			<span class="month"><?php print format_date($node->created, 'custom', 'M'); ?></span>
+			<span class="month"><?php print t(format_date($node->created, 'custom', 'M')); ?></span>
 		</div>
 	<?php endif; ?>	
 	

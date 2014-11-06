@@ -1,5 +1,8 @@
-2.0.5 (10/01/14)
+2.0.5 (11/06/14)
   *Fix for missing icons related to 2.0.4 update.
+  *Fixed issue with menu/button gradient.
+  *Fixed issue with search input text.
+  *Updated Drupal core in full install.
 
 2.0.4 (09/30/14)
   *Added basic Drupal forum styles.

@@ -56,7 +56,6 @@ ul.nav-pills > li.active > a {
 .btn-primary,
 .pagination > .active > a {
 	border-color: @skinColor ;
-	.buttonBackground(@skinColor, spin(@skinColor, 20%));
 	background-color: @skinColor;
 }
 
@@ -221,10 +220,6 @@ section.video blockquote i.icon-quote-left {
 
 		ul.dropdown-menu li:hover > a {
 			background-color: lighten(@skinColor, 10%);
-		}
-
-		ul.dropdown-menu {
-			.buttonBackground(@skinColor, spin(@skinColor, 20%));
 		}
 
 		li.dropdown:hover ul.dropdown-menu li > a {

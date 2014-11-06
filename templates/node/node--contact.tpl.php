@@ -30,7 +30,7 @@
 
 </div>
 
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="//maps.google.com/maps/api/js?sensor=false"></script>
 <script>
   jQuery(document).ready(function ($) {
 	/*
