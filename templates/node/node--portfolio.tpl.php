@@ -13,7 +13,7 @@
 			  <h2 class="shorter"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 			<?php endif; ?>
 		</div>
-		<?php if (!$teaser): ?>
+		<?php if (!$teaser && $node->status == '1'): ?>
 		<div class="portfolio-nav col-md-1">
 		  <?php if ( porto_node_pagination($node, 'p') != NULL ) : ?>
 			<a href="<?php print url('node/' . porto_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="portfolio-nav-prev" rel="tooltip" data-original-title="<?php print t('Previous');?>"><i class="icon icon-chevron-left"></i></a>
