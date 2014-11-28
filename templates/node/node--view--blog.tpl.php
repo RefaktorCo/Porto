@@ -56,7 +56,9 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
+				<?php if (module_exists('comment')):?>
 				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<?php endif; ?>
 			</div>
 		
 	  <?php endif; ?>
@@ -179,7 +181,9 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
+				<?php if (module_exists('comment')):?>
 				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<?php endif; ?>
 				<a href="<?php print $node_url; ?>" class="btn btn-xs btn-primary pull-right"><?php echo t('Read more...'); ?></a>
 			</div>
 		
