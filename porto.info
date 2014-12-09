@@ -19,6 +19,7 @@ stylesheets[all][] = css/theme-animate.css
 stylesheets[all][] = css/theme-blog.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-responsive.css
+stylesheets[all][] = css/skins/default-style.css
 stylesheets[all][] = css/drupal-styles.css
 
 ; Define theme JS libraries.
