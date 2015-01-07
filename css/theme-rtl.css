@@ -1434,6 +1434,18 @@ body #header nav.mega-menu .mega-menu-signin ul.dropdown-menu li a, body #header
 	text-align: right;
 }
 
+.page-top h2 {
+	border-bottom: 5px solid #CCC;
+	color: #FFF;
+	display: inline-block;
+	font-weight: 200;
+	margin: 0 0 -25px;
+	min-height: 37px;
+	line-height: 46px;
+	padding: 0 0 17px;
+	position: relative;
+}
+
 .page-top ul.breadcrumb {
 	background: none;
 	margin: -3px 0 0;

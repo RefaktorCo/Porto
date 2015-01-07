@@ -1017,6 +1017,11 @@ ul.sitemap.list ul {
 }
 
 /* Owl Carousel */
+.owl-carousel {
+	position: relative;
+	z-index: 1;
+}
+
 .owl-carousel-spaced {
 	margin-right: -5px;
 }

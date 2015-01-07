@@ -52,9 +52,21 @@ ul.nav-pills > li.active > a {
 	}
 }
 
+// Carousel
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+	background-color: darken(@skinColor, 6%);
+}
+
+.owl-theme .owl-controls .owl-nav [class*="owl-"] {
+	border-color: @skinColor ;
+	background-color: @skinColor;
+}
+
 // Buttons
 .btn-primary,
-.pagination > .active > a {
+.pagination > .active > a 
+{
 	border-color: @skinColor ;
 	.buttonBackground(@skinColor, spin(@skinColor, 20%));
 	background-color: @skinColor;
