@@ -13,7 +13,6 @@ stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css
 stylesheets[all][] = vendor/magnific-popup/magnific-popup.css
 stylesheets[all][] = vendor/mediaelement/mediaelementplayer.css
 stylesheets[all][] = vendor/isotope/jquery.isotope.css
-stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-elements.css
 stylesheets[all][] = css/theme-animate.css
 stylesheets[all][] = css/theme-blog.css

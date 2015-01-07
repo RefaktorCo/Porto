@@ -19,6 +19,18 @@ function porto_js_alter(&$js) {
 }
 
 /**
+*  Implements theme_css_alter().
+*/
+function porto_css_alter(&$css) {
+ if (theme_get_setting('rtl') == 1) {
+	 unset($css[drupal_get_path('theme', 'porto') . '/css/theme.css']);
+	 unset($css[drupal_get_path('theme', 'porto') . '/css/theme-elements.css']);
+	 unset($css[drupal_get_path('theme', 'porto') . '/css/theme-blog.css']);
+	 unset($css[drupal_get_path('theme', 'porto') . '/css/ie.css']);
+ }
+}
+
+/**
  * Implements hook_html_head_alter().
  */
 function porto_html_head_alter(&$head_elements) {
@@ -78,6 +90,13 @@ function porto_menu_local_tasks(&$variables) {
 function porto_preprocess_html(&$vars){
  global $parent_root;
  
+ if (theme_get_setting('rtl') == 1) {
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-elements-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-blog-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/ie-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+ }
+ 
  $viewport = array(
    '#type' => 'html_tag',
    '#tag' => 'meta',
@@ -113,7 +132,7 @@ function porto_preprocess_html(&$vars){
  if (theme_get_setting('site_layout') == 'boxed'){
    $vars['classes_array'][] = 'boxed';
  }
-
+ 
 }
 
 /**
