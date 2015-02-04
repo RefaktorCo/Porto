@@ -1318,7 +1318,7 @@
 	 * @param {Number} coordinate - The coordinate in pixels.
 	 */
 	Owl.prototype.animate = function(coordinate) {
-		this.trigger('translate');
+		this.trigger('translating');
 		this.state.inMotion = this.speed() > 0;
 
 		if (this.support3d) {
@@ -1560,7 +1560,7 @@
 		}
 
 		this.state.inMotion = false;
-		this.trigger('translated');
+		this.trigger('translatingd');
 	};
 
 	/**
@@ -2516,10 +2516,10 @@
 					this.next = e.property.value;
 				}
 			}, this),
-			'drag.owl.carousel dragged.owl.carousel translated.owl.carousel': $.proxy(function(e) {
-				this.swapping = e.type == 'translated';
+			'drag.owl.carousel dragged.owl.carousel translatingd.owl.carousel': $.proxy(function(e) {
+				this.swapping = e.type == 'translatingd';
 			}, this),
-			'translate.owl.carousel': $.proxy(function(e) {
+			'translating.owl.carousel': $.proxy(function(e) {
 				if (this.swapping && (this.core.options.animateOut || this.core.options.animateIn)) {
 					this.swap();
 				}
@@ -2622,7 +2622,7 @@
 		this.core.options = $.extend({}, Autoplay.Defaults, this.core.options);
 
 		this.handlers = {
-			'translated.owl.carousel refreshed.owl.carousel': $.proxy(function() {
+			'translatingd.owl.carousel refreshed.owl.carousel': $.proxy(function() {
 				this.autoplay();
 			}, this),
 			'play.owl.autoplay': $.proxy(function(e, t, s) {

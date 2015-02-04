@@ -66,6 +66,7 @@
 			mapTypeControl: true,
 			scaleControl: true,
 			streetViewControl: true,
+			draggable: false,
 			overviewMapControl: true
 		},
 		scrollwheel: false,

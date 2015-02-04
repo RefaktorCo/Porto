@@ -1,10 +1,5 @@
 /* FORUM STYLES */
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-	background-color: #0074ad;
-}
-
 #forum {
 	border: 1px solid #eee;
 }
