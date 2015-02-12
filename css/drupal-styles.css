@@ -53,6 +53,11 @@
 
 /* DRUPAL THEME STYLES */
 
+body.boxed.sticky-menu-active #header {
+  left: 0;
+  padding: 8px 0px;
+}
+
 #header nav ul.nav-main li a.dropdown-toggle.extra {
   display: none;
 }

@@ -1,8 +1,5 @@
 jQuery(document).ready(function ($) { 
  function stickymenu() {
- 
-  if($("body").hasClass("boxed"))
-		return false;
 
 	var $this = this,
 		$body = $("body"),
@@ -28,12 +25,6 @@ jQuery(document).ready(function ($) {
 	});
 
 	$this.checkStickyMenu = function() {
-
-		if($body.hasClass("boxed") || $(window).width() < 991) {
-			$this.stickyMenuDeactivate();
-			header.removeClass("fixed")
-			return false;
-		}
 
 		if(!menuAfterHeader) {
 

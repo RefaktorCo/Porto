@@ -1,5 +1,5 @@
-2.0.8 (02/05/15)
-  *
+2.0.8 (02/12/15)
+  *Boxed layout sticky header functionality.
 
 2.0.7 (01/08/15)
   *Added RTL support.

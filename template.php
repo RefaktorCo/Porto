@@ -13,7 +13,7 @@ $parent_root = base_path() . drupal_get_path('theme', 'porto');
 */
 function porto_js_alter(&$js) {
  global $user; 
- if ((theme_get_setting('site_layout') != 'wide') || (theme_get_setting('sticky_header') != '1') || (in_array('administrator', array_values($user->roles)))) {
+ if ( (theme_get_setting('sticky_header') != '1') || (in_array('administrator', array_values($user->roles)))) {
    unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
  }
 }
