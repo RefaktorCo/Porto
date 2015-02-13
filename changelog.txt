@@ -1,5 +1,6 @@
 2.0.8 (02/12/15)
   *Boxed layout sticky header functionality.
+  *Fixed isotope issue with periods inside taxonomy terms.
 
 2.0.7 (01/08/15)
   *Added RTL support.
