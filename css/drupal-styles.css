@@ -1,5 +1,105 @@
 /* FORUM STYLES */
 
+.tb-megamenu .nav-collapse.collapse {
+  display: block;
+}
+
+.tb-megamenu {
+  background-color: transparent;
+}
+
+.tb-megamenu .nav > .active > a,
+.tb-megamenu .nav li.dropdown:hover a {
+	border-radius: 4px;
+}
+
+.tb-megamenu .mega-nav > li a, .tb-megamenu .dropdown-menu .mega-nav > li a:hover {
+	border-radius: 0px;
+}
+
+.tb-megamenu .nav {
+  margin: -7px 10px 8px 0;
+}
+
+.tb-megamenu .nav > li > a {
+  border-right: none;
+  margin-right: 3px;
+}
+
+.mega-dropdown-inner {
+	border-radius: 0px 6px 6px 6px;
+}
+
+.tb-megamenu .mega > .mega-dropdown-menu{
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	margin-left: 3px;
+	margin-top: -2px;
+}
+
+.tb-megamenu .nav li.dropdown.active > .dropdown-toggle, .tb-megamenu .nav li.dropdown.open.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > a:hover, .tb-megamenu .nav > li > a:hover {
+	border-radius: 4px;
+}
+
+.tb-megamenu .nav li.dropdown.open > .dropdown-toggle {
+  color: #fff;
+}
+
+.tb-megamenu .nav > li > a {
+	font-size: 12px;
+	font-style: normal;
+	line-height: 20px;
+	margin-left: 3px;
+	margin-right: 3px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 10px 13px;
+}
+
+.tb-megamenu .dropdown-menu .active > a {
+	background: none;
+	background-image: none;
+}
+
+.tb-megamenu .mega-inner {
+	display: block;
+}
+
+.tb-megamenu .dropdown-menu li > a, .tb-megamenu .dropdown-menu li > a:hover {
+	color: #fff;
+}
+
+.tb-megamenu .dropdown-menu li > a {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tb-megamenu .dropdown-menu .mega-nav > li a {
+	font-weight: 400;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	text-transform: none;
+	position: relative;
+	padding: 8px 10px 8px 5px;
+	font-size: 0.9em;
+}
+
+.tb-megamenu .mega-nav > li:first-child > a, .tb-megamenu .dropdown-menu .mega-nav > li:first-child > a {
+	margin-top: auto;
+	padding-top: 4px;
+}
+
+
+.tb-megamenu .large-mega li > a {
+  color: #777;
+}
+
+.tb-megamenu .large-mega .mega-nav > li:hover {
+  background-color: #000 !important;
+}
+
+
 #forum {
 	border: 1px solid #eee;
 }

@@ -37,12 +37,11 @@ function porto_html_head_alter(&$head_elements) {
  * Add Bootstrap classes to button elements.
  */
 function porto_button($variables) {
-
   $element = $variables['element'];
   $element['#attributes']['type'] = 'submit';
   element_set_attributes($element, array('id', 'name', 'value'));
-
   $element['#attributes']['class'][] = 'btn-primary btn form-' . $element['#button_type'];
+  
   if (!empty($element['#attributes']['disabled'])) {
     $element['#attributes']['class'][] = 'form-button-disabled';
   }
@@ -182,7 +181,25 @@ function porto_process_page(&$variables) {
   if ($variables['disable_site_slogan']) {
     $variables['site_slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
   }
-}	
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function porto_preprocess_block(&$vars) {
+	$sidebar = array('sidebar_left', 'sidebar_right');
+	
+	foreach ($sidebar as $item) {
+		if($vars['elements']['#block']->region == $item) {
+	    $vars['title_attributes_array']['class'] = 'sidebar-title';
+	  }
+	}
+	
+	if($vars['elements']['#block']->region == 'header_search') {
+		
+	}
+}
+
 
 /**
  * Add list classes for links in "Header Menu" region.
@@ -219,20 +236,6 @@ function porto_menu_link__header_menu(array $variables) {
   
 }
 
-/**
- * Define class for first menu UL.
- */
-function porto_menu_tree__header_menu($variables){
-  return '<ul class="nav nav-pills nav-main" id="mainMenu">' . $variables['tree'] . '</ul>';
-  
-}
-
-/**
- * Define class for all other menu ULs.
- */
-function porto_menu_tree__header_menu_below($variables){
-  return '<ul class="dropdown-menu">' . $variables['tree'] . '</ul>';
-}
 
 /**
  * Impelements theme_status_messages()
@@ -285,6 +288,7 @@ function porto_status_messages($variables) {
 function porto_form_alter(&$form, &$form_state, $form_id) {
   
   if ($form_id == 'search_block_form') {
+    
     
     $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
     $form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
