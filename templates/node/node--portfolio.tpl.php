@@ -29,7 +29,7 @@
 <div class="row portfolio-wrap">
 	<div class="col-md-4">
 	  <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
-	    <?php print render ($content['field_image']); ?>
+	    <?php dpm($content['field_image']); print render ($content['field_image']); ?>
 	  </div>  
 	</div>
 	<div class="col-md-8">

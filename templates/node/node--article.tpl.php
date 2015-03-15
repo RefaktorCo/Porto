@@ -17,6 +17,76 @@ if (module_exists('profile2')) {
 
 ?>
 
+<?php if($teaser): ?>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> post post-medium-image"<?php print $attributes; ?>>
+  <div class="row">
+  <?php if (render($content['field_image'])) : ?> 
+    <div class="col-md-5">
+		  <?php if ($image_slide == 'true'): ?>
+			  <div class="post-image">
+					 <div class="owl-carousel" data-plugin-options='{"items":1}'>
+						  <?php if (render($content['field_image'])) : ?>
+						    <?php print render($content['field_image']); ?>
+						  <?php endif; ?>
+				  </div>  
+				</div>
+			<?php endif; ?>
+				
+			<?php if ($image_slide == 'false'): ?>
+			  <div class="single-post-image post-image">
+			    <?php print render($content['field_image']); ?>
+			  </div>    
+			<?php endif; ?>
+    </div>	
+  <?php endif; ?>
+  
+  <div class="col-md-7">
+		<div class="post-content">
+	
+		  <?php print render($title_prefix); ?>
+		    <h2 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+		  <?php print render($title_suffix); ?>
+
+		  <div class="article_content"<?php print $content_attributes; ?>>
+		    <?php
+		      // Hide comments, tags, and links now so that we can render them later.
+		      hide($content['taxonomy_forums']);
+		      hide($content['comments']);
+		      hide($content['links']);
+		      hide($content['field_tags']);
+		      hide($content['field_image']);
+		      hide($content['field_thumbnail']);
+		      print render($content);
+		    ?>
+		  </div>
+		</div>
+  </div>		
+  </div>
+		
+  <div class="row">
+		<div class="col-md-12">  
+		  
+	   <?php if (!$page && $teaser): ?>
+	  
+	     <div class="post-meta">
+				<span class="post-meta-user"><i class="icon icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
+				<?php if (render($content['field_tags'])): ?> 
+				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				<?php endif; ?> 
+				<?php if (module_exists('comment')):?>
+				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<?php endif; ?>
+				<a href="<?php print $node_url; ?>" class="btn btn-xs btn-primary pull-right"><?php echo t('Read more...'); ?></a>
+			</div>
+		
+	  <?php endif; ?>
+		</div>
+	</div>
+</article>
+
+<?php endif; ?>
+
+<?php if(!$teaser): ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  post post-large blog-single-post"<?php print $attributes; ?>>
 
   <?php if (render($content['field_image'])) : ?> 
@@ -138,3 +208,4 @@ if (module_exists('profile2')) {
 
 </article>
 <!-- /node -->
+<?php endif; ?>
