@@ -28,9 +28,14 @@
 <hr class="tall">
 <div class="row portfolio-wrap">
 	<div class="col-md-4">
-	  <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
-	    <?php dpm($content['field_image']); print render ($content['field_image']); ?>
-	  </div>  
+	  <?php if (count($content['field_image']['#items']) == 1): ?>
+		  <?php print render ($content['field_image']); ?>
+		<?php endif; ?>
+		<?php if (count($content['field_image']['#items']) > 1): ?>
+		<div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+		  <?php print render ($content['field_image']); ?>
+		</div>  
+		<?php endif; ?>  
 	</div>
 	<div class="col-md-8">
 		<div class="portfolio-info">
