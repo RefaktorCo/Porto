@@ -22,12 +22,13 @@ function porto_js_alter(&$js) {
 *  Implements theme_css_alter().
 */
 function porto_css_alter(&$css) {
- if (theme_get_setting('rtl') == 1) {
-	 unset($css[drupal_get_path('theme', 'porto') . '/css/theme.css']);
-	 unset($css[drupal_get_path('theme', 'porto') . '/css/theme-elements.css']);
-	 unset($css[drupal_get_path('theme', 'porto') . '/css/theme-blog.css']);
-	 unset($css[drupal_get_path('theme', 'porto') . '/css/ie.css']);
- }
+  global $language;
+	if ($language->dir == 'rtl') {
+	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme.css']);
+	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-elements.css']);
+	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-blog.css']);
+	  unset($css[drupal_get_path('theme', 'porto') . '/css/ie.css']);
+	}
 }
 
 /**
@@ -89,8 +90,7 @@ function porto_menu_local_tasks(&$variables) {
 */
 function porto_preprocess_html(&$vars){
  global $parent_root;
- 
- if (theme_get_setting('rtl') == 1) {
+ if ($vars['language']->dir == 'rtl') {
 	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
 	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-elements-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
 	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-blog-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));

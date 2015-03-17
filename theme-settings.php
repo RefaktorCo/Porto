@@ -43,14 +43,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'fieldset',
     '#title' => t('General'),
   );
-  
-    // Breadcrumbs
-    $form['options']['general']['rtl'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('RTL'),
-      '#default_value' => theme_get_setting('rtl'),
-    );
-            
+        
     // Breadcrumbs
     $form['options']['general']['breadcrumbs'] = array(
       '#type' => 'checkbox',

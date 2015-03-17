@@ -5,16 +5,16 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="ie ie6" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if (theme_get_setting('rtl') == 1){ echo "rtl"; } ?>"> <![endif]-->
-<!--[if IE 7]>    <html class="ie ie7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if (theme_get_setting('rtl') == 1){ echo "rtl"; } ?>"> <![endif]-->
-<!--[if IE 8]>    <html class="ie ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if (theme_get_setting('rtl') == 1){ echo "rtl"; } ?>"> <![endif]-->
-<!--[if gt IE 8]> <!--> <html class="" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if (theme_get_setting('rtl') == 1){ echo "rtl"; } ?>"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="ie ie6" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <![endif]-->
+<!--[if IE 7]>    <html class="ie ie7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <![endif]-->
+<!--[if IE 8]>    <html class="ie ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <!--<![endif]-->
 <head>
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <!-- Call bootstrap.css before $scripts to resolve @import conflict with respond.js -->
 <link rel="stylesheet" href="<?php print base_path() . drupal_get_path('theme', 'porto'); ?>/vendor/bootstrap/css/bootstrap.css">
-<?php if (theme_get_setting('rtl') == 1): ?>
+<?php if ($language->dir == 'rtl'): ?>
 <link rel="stylesheet" href="<?php print base_path() . drupal_get_path('theme', 'porto'); ?>/vendor/bootstrap-rtl/bootstrap-rtl.css">
 <?php endif; ?>
 <?php print $styles; ?>
