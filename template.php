@@ -155,7 +155,7 @@ function porto_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
  
-  if (theme_get_setting('gradient') == "1") {
+  if (theme_get_setting('gradient') == "1" && module_exists('less')) {
 	  //Pass the color value from theme settings to @skinColor variable in skin.less
 	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin-gradient.less', array(
 	  
@@ -170,7 +170,7 @@ function porto_preprocess_page(&$vars, $hook) {
 	  )); 
 	} 
 	
-	if (theme_get_setting('gradient') == "0") {
+	if (theme_get_setting('gradient') == "0" && module_exists('less')) {
 	  //Pass the color value from theme settings to @skinColor variable in skin.less
 	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
 	  

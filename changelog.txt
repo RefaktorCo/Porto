@@ -1,5 +1,6 @@
-2.0.8 (03/12/15)
+2.0.9 (04/12/15)
 	*Language styles now controlled by Drupal language settings rather than theme setting.
+	*Responsive fix for owl carousel.
 	
 2.0.8 (03/12/15)
   *Boxed layout sticky header functionality.

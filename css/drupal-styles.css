@@ -1,3 +1,15 @@
+/* Image styles */
+
+.content img {
+	max-width: 100%;
+	height: auto; 
+	display: block;
+}
+
+.home-concept .process-image img {
+  display: inline;	
+}
+
 /* FORUM STYLES */
 
 #forum {
