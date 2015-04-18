@@ -192,7 +192,7 @@
 		</div>
 	  <?php endif; ?>  
 	  
-	  <?php if(!$teaser && (user_load($uid)->field_author_bio || module_exists('profile2'))): ?>
+	  <?php if(!$teaser && (isset(user_load($uid)->field_author_bio) || module_exists('profile2'))): ?>
 	  <div class="post-block post-author clearfix">
 			<h3><i class="icon icon-user"></i><?php print t('Author'); ?></h3>
 			<div class="img-thumbnail">
@@ -202,7 +202,7 @@
 			<?php if (module_exists('profile2') && isset($profile->field_bio['und'][0]['value'])): ?>
 			  <p><?php print ($profile->field_bio['und'][0]['value']); ?></p>
 			<?php endif; ?>
-			<?php if(user_load($uid)->field_author_bio): ?>
+			<?php if(isset(user_load($uid)->field_author_bio)): ?>
         <p><?php print user_load($uid)->field_author_bio['und'][0]['value']; ?></p>
 	    <?php endif; ?>  
 		</div>

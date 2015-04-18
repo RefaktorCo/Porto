@@ -530,6 +530,7 @@ function porto_item_list($variables) {
  * Modify theme_field()
  */
 function porto_field($variables) {
+	
   $output = '';
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
@@ -572,8 +573,13 @@ function porto_field($variables) {
 		    }
 	    }
 	    else if ($variables['element']['#bundle'] =='portfolio') {
+		    if ($variables['element']['#view_mode'] == 'teaser') {
+			    $output .=  drupal_render($variables['items'][0]);
+		    }
+		    else {
 		    foreach ($variables['items'] as $delta => $item) {
 		      $output .= '<div class="thumbnail">' . drupal_render($item) . '</div>';
+		    }
 		    }
 	    }
 	  break;
