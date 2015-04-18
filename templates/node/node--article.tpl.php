@@ -12,14 +12,7 @@
 	  <?php print render($content['field_image']); ?>
     </div>
   <?php endif; ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="post-date">
-			<span class="day"><?php print format_date($node->created, 'custom', 'd'); ?></span>
-			<span class="month"><?php print t(format_date($node->created, 'custom', 'M')); ?></span>
-		</div>
-	<?php endif; ?>	
-	
+  	
 	<div class="col-md-7">
 		<div class="post-content">
 	
@@ -46,9 +39,10 @@
   <div class="row">
 		<div class="col-md-12">  
 		  
-	   <?php if (!$page && $teaser): ?>
+	   <?php if (!$page && $teaser && $display_submitted): ?>
 	  
 	     <div class="post-meta">
+		    <span class="post-meta-date"><i class="icon icon-calendar"></i><?php print format_date($node->created, 'custom', 'F d, Y'); ?></span>
 				<span class="post-meta-user"><i class="icon icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
 				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>

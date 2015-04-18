@@ -1,3 +1,7 @@
+.post-meta-date i {
+	margin-right: 8px !important;
+}
+
 /* Image styles */
 
 .page-taxonomy .node-article {
