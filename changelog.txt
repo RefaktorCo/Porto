@@ -1,6 +1,10 @@
 2.1 (04/18/15)
+  *New "Porto Views" style plugin module with new Portfolio and Blog view layouts.
 	*Language styles now controlled by Drupal language settings rather than theme setting.
-	*Responsive fix for owl carousel.
+	*Responsive fix for Owl Carousel.
+	*Better support for taxonomy term pages.
+	*Updated Drupal core in full install.
+	*General style tweaks and bug fixes.
 	
 2.0.8 (03/12/15)
   *Boxed layout sticky header functionality.

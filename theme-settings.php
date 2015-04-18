@@ -233,8 +233,6 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
           'col-md-3' => 'Four (default)',
         ),
       ); 
-      
-	    );
     
   // CSS
   $form['options']['css'] = array(
