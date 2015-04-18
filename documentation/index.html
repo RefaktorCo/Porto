@@ -15,8 +15,8 @@
 
 <div id="wrapper">
 <h2>Overview</h2>
-<p>Porto is a professional, multipurpose Drupal theme perfect for any business or portfolio website. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support"> support forum</a>. Once you have registered please contact us via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a> with your forum username so you can be granted posting rights.</p>
-<p>Updated: 09/12/14<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
+<p>Porto is a professional, multipurpose Drupal theme perfect for any business or portfolio website. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support" target="_blank"> support forum</a>.
+<p>Updated: 04/18/15<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
 okler" target="_blank">
 Okler</a></p>
 <h2>Porto 1.X vs 2.X</h2>
@@ -80,6 +80,11 @@ Option 2:
 <li><a href="https://drupal.org/project/nivo_slider">Nivo Slider</a></li>
 </ul>
 
+<h4>Theme Modules</h4>
+<ul>
+<li>Porto Views - Views style plugin module used with the following views: Porto Blog, Porto Portfolio, Porto Taxonomy and Porto Team.</li>	
+</ul>
+
 <h3>Porto Content Data</h3>
 <p>If you used the "theme only" option to install the theme on an existing install that already has content we recommend you use our Porto Content Data module to create the additional content types, fields and Views needed to fully utilize the theme. You will find it in the /assets folder contained in the file you downloaded from ThemeForest. This module is a custom <a href="http://drupal.org/project/features" target="_blank">Features</a> module and will not run without it. We recommend copying all of the modules from the /modules folder into your install if you do not already have them. After you have all the modules simply upload and activate the Porto Content Data module and the content types, fields and Views will automatically be created.</p>
 
@@ -124,36 +129,47 @@ The theme uses a content type called "One Page" and a corresponding template to 
 <li><strong>Portfolio Client:</strong> An optional text field for listening the project client.</li>
 </ul>
 
-<p><strong>Portfolio Block - Example: <a href="http://refaktorthemes.com/porto/portfolio-4-columns" target="_blank"> http://refaktorthemes.com/porto/portfolio-4-columns</a></strong></p>
-<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
+<p><strong>Portfolio Main Block - Example: <a href="http://refaktorthemes.com/porto/portfolio" target="_blank"> http://refaktorthemes.com/porto/portfolio</a></strong></p>
+
+<p>This is the four column version of the standard Portfolio style which utilizes the "Porto Portfolio" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/porto-portfolio.txt to import this View. Then simply place the "View: Porto Portfolio: Portfolio 4 Columns" block in the block region and configure the block visibility settings to your liking.</p>
+
+<p><strong>Portfolio Full Width - Example: <a href="http://refaktorthemes.com/porto/portfolio-full-width" target="_blank"> http://refaktorthemes.com/porto/portfolio-full-width</a></strong></p>
+
+<p>This is the portfolio fullwidth layout which utilizes the "Porto Portfolio" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/porto-portfolio.txt to import this View. Then simply place the "View: Porto Portfolio: Portfolio Full Width" block in the block region and configure the block visibility settings to your liking.</p>
+
+<p><strong>Portfolio Lightbox Block - Example: <a href="http://refaktorthemes.com/porto/portfolio-lightbox" target="_blank"> http://refaktorthemes.com/porto/portfolio-lightbox</a></strong></p>
+
+<p>This is the lightbox portfolio layout which utilizes the "Porto Portfolio" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/porto-portfolio.txt to import this View. Then simply place the "View: Porto Portfolio: Portfolio Lightbox" block in the block region and configure the block visibility settings to your liking.</p>
+
+<p><strong>Portfolio Timeline - Example: <a href="http://refaktorthemes.com/porto/portfolio-timeline" target="_blank"> http://refaktorthemes.com/porto/portfolio-timeline</a></strong></p>
+
+<p>This is the portfolio timeline layout which utilizes the "Porto Portfolio" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/porto-portfolio.txt to import this View. Then simply place the "View: Porto Portfolio: Portfolio TImeline" block in the block region and configure the block visibility settings to your liking.</p>
+
 <p><strong>Template files</strong></p>
 <ul>
 <li>/templates/node/node--portfolio.tpl.php</li>
-<li>/templates/field--field_image--portfolio.tpl.php</li>
-<li>/templates/node/node--view--portfolio--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-block.tpl.php</li>
+<li><strike>/templates/field--field_image--portfolio.tpl.php</strike> - Legacy as of theme version 2.1</li>
+<li><strike>/templates/node/node--view--portfolio--block.tpl.php</strike> - Legacy as of theme version 2.1</li>
+<li><strike>templates/views/views-view--portfolio-block.tpl.php></strike> - Legacy as of theme version 2.1</li>
 </ul>
 
-<h4>Portfolio Columns</h4>
-<p>To change the number of items appear in a row in the Portfolio block visit the theme settings (/admin/appearance/settings/Porto).</p>
-
 <h4>Related Projects:</h4>
-Porto also includes support for a "Related Projects" block that you can use to showcase additional Portfolio items on the single Portfolio node pages, or anywhere else you would like. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/related-projects.txt to import this View. Then simply place the "View: Related Projects" in the Content region and configure the block visibility settings to your liking.</p>
+Porto also includes support for a "Related Projects" block that you can use to showcase additional Portfolio items on the single Portfolio node pages, or anywhere else you would like. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/porto-portfolio.txt to import this View. Then simply place the "View: Porto Portfolio: Related Projects" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--view--related-projects--block.tpl.php</li>
-<li>/templates/views/views-view--related-projects.tpl.php</li>
+<li><strike>/templates/node/node--view--related-projects--block.tpl.php</strike> - Legacy as of theme version 2.1</li>
+<li><strike>/templates/views/views-view--related-projects.tpl.php</strike> - Legacy as of theme version 2.1</li>
 </ul>
 
 <h4>Portfolio Filters:</h4>
-<p>The Portfolio includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
+<p>The Portfolio view (Timeline excluded) includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
-<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio view.</p>
+<p>The filters are powered by a View called Porto Taxonomy that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/porto-taxonomy.txt to import as a View for placement in the View header of the Portfolio view.</p>
 
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/views/views-view-list--portfolio-filters.tpl.php</li>
-<li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
+<li><strike>/templates/views/views-view-list--portfolio-filters.tpl.php</strike> - Legacy as of theme version 2.1</li>
+<li><strike>/templates/views/views-view-fields--portfolio-filters.tpl.php</strike> - Legacy as of theme version 2.1</li>
 </ul>
 
 <h4>Team</h4>
@@ -171,22 +187,23 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <li><strong>LinkedIn Link:</strong> Used to add a link to the team member's LinkedIn page.</li>
 </ul>
 
-<p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/team.txt to import this View. Then simply place the "View: Team" in the Content region and configure the block visibility settings to your liking.</p>
+<p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/porto-team.txt to import this View. Then simply place the "View: Porto Team: Team Main" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--view--team--block.tpl.php</li>
-<li>/templates/views/views-view--team.tpl.php</li>
+<li>/templates/node/node--team.tpl.php</li>
+<li><strike>/templates/node/node--view--team--block.tpl.php</strike> - Legacy as of theme version 2.1</li>
+<li><strike>/templates/views/views-view--team.tpl.php - Legacy as of theme version 2.1</strike></li>
 </ul>
 
 <h4>Team Filters:</h4>
 <p>The Team block view also includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Team). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Team content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
-<p>The filters are powered by a View called Team Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/team-filters.txt to import as a View for placement in the View header of the Team view.</p>
+<p>The filters are powered by a View called Porto Taxonomy that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/porto-taxonomy.txt to import as a View for placement in the View header of the Team view.</p>
 
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/views/views-view-list--team-filters.tpl.php</li>
-<li>/templates/views/views-view-fields--team-filters.tpl.php</li>
+<li><strike>/templates/views/views-view-list--team-filters.tpl.php</strike> - Legacy as of theme version 2.1</li>
+<li><strike>/templates/views/views-view-fields--team-filters.tpl.php</strike> - Legacy as of theme version 2.1</li>
 </ul>
 
 <h4>Carousel</h4>
@@ -375,14 +392,9 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <p>The export code /assets/views-exports/video-background.txt can be used to create the "Video Background" view which uses a Block display. This block can then be added to the region of your choice.</p>
 
 <h2>Blog (posts)</h2>
-<p>The Porto demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Porto).</p>
+<p>The Porto demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/porto-blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Porto).</p>
 <h4>Author bio</h4>
-<p>To display a small author bio on the article node page, install the <a href="https://drupal.org/project/profile2" target="_blank">Profile2 module</a> and follow these steps to configure it:</p>
-<ol>
-<li>Visit /admin/structure/profiles and create a new profile type called "main". If this already exists skip to the next step.</li>
-<li>Add a field to that profile called "Bio". If this exists skip to the next step.</li>
-<li>Visit /admin/people and edit your user. Then click on the "Main Profile" tab in the top right corner next to the "Account" link to add your author bio.</li>
-</ol>
+<p>To display a small author bio on the article node page visit admin/config/people/accounts/fields and create a long text field called Author Bio (machine name field_author_bio).</p>
 
 <h2>Block Regions</h2>
 <p>Porto features 16 block regions where you can add your own custom content. Visit yourdomain.com/admin/structure/block to add your own content to the defined block regions. Press "Add Block" to create a new custom blog, or select an existing block from the Disabled list below the defined block regions.</p>

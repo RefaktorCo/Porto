@@ -1,5 +1,22 @@
 /* Image styles */
 
+.page-taxonomy .node-article {
+  border-bottom: 1px solid #DDD;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
+
+.page-taxonomy article:last-child {
+	border-bottom: none;
+}
+
+.timeline-date-heading {
+	font-size: 22px;
+	font-weight: bold;
+	margin: 15px 0px 5px 0px;
+	color: #000;
+}
+
 .content img {
 	max-width: 100%;
 	height: auto; 
@@ -240,7 +257,7 @@ margin-top: 27px;
 }
 
 .sort-destination.full-width {
-	top: -96px;
+	top: -51px;
 }
 
 .portfolio-title .portfolio-nav-all .fa {
@@ -347,8 +364,6 @@ body.sticky-menu-active header.single-menu .logo {
 	margin-top: 60px;
 }
 
-
-
 body.sticky-menu-active header #site-name {
   margin: 2px 0px -10px 0px;
   font-size: 22px;
@@ -359,7 +374,7 @@ body.sticky-menu-active header #site-name {
 }
 
 .md-object .main-button {
-	padding: 18px;
+	padding: 18px !important;
 }
 
 .mobile-menu {

@@ -75,7 +75,39 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
             'input[name="sticky_header"]' => array('checked' => FALSE)
           )
         )
-      );   
+      );  
+      
+  // Blog
+  $form['options']['blog'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Blog'),
+  );       
+  
+	  // Blog Image Size
+    $form['options']['blog']['blog_image'] = array(
+      '#type' => 'select',
+      '#title' => t('Blog Teaser Image Size'),
+      '#default_value' => theme_get_setting('blog_image'),
+      '#options' => array(
+        'full' => t('Full (default)'),
+        'medium' => t('Medium'),
+      ),
+    );
+    
+    // Blog Image Slider
+    $form['options']['blog']['blog_image_slider'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Blog Image Slider'),
+      '#default_value' => theme_get_setting('blog_image_slider'),
+    );
+    
+    // Post Share
+    $form['options']['blog']['blog_share'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Blog Post Sharing'),
+      '#default_value' => theme_get_setting('blog_share'),
+    );
+     
     
   // Color
   $form['options']['color'] = array(
@@ -193,7 +225,7 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
       // Portfolio Columns
       $form['options']['layout']['portfolio_columns'] = array(
         '#type' => 'select',
-        '#title' => t('Portfolio Columns'),
+        '#title' => t('Portfolio Columns (Legacy Setting)'),
         '#default_value' => theme_get_setting('portfolio_columns'),
         '#options' => array(
           'col-md-6' => 'Two',
@@ -202,15 +234,6 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         ),
       ); 
       
-	    // Blog Image
-	    $form['options']['layout']['blog_image'] = array(
-	      '#type' => 'select',
-	      '#title' => t('Blog View Image Size'),
-	      '#default_value' => theme_get_setting('blog_image'),
-	      '#options' => array(
-	        'full' => t('Full (default)'),
-	        'medium' => t('Medium'),
-	      ),
 	    );
     
   // CSS

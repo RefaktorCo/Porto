@@ -28,10 +28,10 @@
 <hr class="tall">
 <div class="row portfolio-wrap">
 	<div class="col-md-4">
-	  <?php if (count($content['field_image']['#items']) == 1): ?>
+	  <?php if (isset($content['field_image']) && count($content['field_image']['#items']) == 1): ?>
 		  <?php print render ($content['field_image']); ?>
 		<?php endif; ?>
-		<?php if (count($content['field_image']['#items']) > 1): ?>
+		<?php if (isset($content['field_image']) && count($content['field_image']['#items']) > 1): ?>
 		<div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
 		  <?php print render ($content['field_image']); ?>
 		</div>  

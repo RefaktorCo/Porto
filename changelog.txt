@@ -1,4 +1,4 @@
-2.0.9 (04/12/15)
+2.1 (04/18/15)
 	*Language styles now controlled by Drupal language settings rather than theme setting.
 	*Responsive fix for owl carousel.
 	

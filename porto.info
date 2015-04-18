@@ -2,7 +2,7 @@ name = Porto
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 2.0.9
+version = 2.1
 
 ; Define theme CSS.
 stylesheets[all][] = vendor/owl-carousel/owl.carousel.css
@@ -81,5 +81,7 @@ settings[background_select] = az_subtle
 settings[body_background_color] = CCCCCC
 settings[portfolio_columns] = span3
 settings[blog_image] = full
+settings[blog_image_slider] = 1
+settings[blog_share] = 1
 settings[ribbon] = 1
 settings[ribbon_text] = "Get In Touch"
