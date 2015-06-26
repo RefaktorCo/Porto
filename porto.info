@@ -2,7 +2,7 @@ name = Porto
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 2.1
+version = 2.1.1
 
 ; Define theme CSS.
 stylesheets[all][] = vendor/owl-carousel/owl.carousel.css
