@@ -1,3 +1,7 @@
+2.1.1 (06/20/15)
+	*Updated prettyPhoto to 3.1.6.
+	*Improved menu functionality on touch devices with high resolutions.
+
 2.1 (04/18/15)
   *New "Porto Views" style plugin module with new Portfolio and Blog view layouts.
 	*Language styles now controlled by Drupal language settings rather than theme setting.

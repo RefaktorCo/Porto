@@ -23,7 +23,7 @@ function porto_js_alter(&$js) {
 */
 function porto_css_alter(&$css) {
   global $language;
-	if ($language->dir == 'rtl') {
+	if (isset($language->dir) && $language->dir == 'rtl') {
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme.css']);
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-elements.css']);
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-blog.css']);
@@ -140,7 +140,7 @@ function porto_preprocess_html(&$vars){
  * to skin.less file.
  */  
 function porto_preprocess_page(&$vars, $hook) {
-   
+  
   if (isset($vars['node'])) {
     $suggest = "page__node__{$vars['node']->type}";
     $vars['theme_hook_suggestions'][] = $suggest;
@@ -216,6 +216,7 @@ function porto_menu_link__header_menu(array $variables) {
   // set the global depth variable
   global $depth;
   $depth = $element['#original_link']['depth'];
+  
 
   if ( ($element['#below']) && ($depth == "1") ) {
     $output .= '<a class="dropdown-toggle extra" href="#"></a>';
@@ -461,11 +462,11 @@ function porto_node_pagination($node, $mode = 'n') {
   return current($nids);
 }
 
-
 /**
  * Overrides theme_item_list().
  */
 function porto_item_list($variables) {
+	
   $items = $variables['items'];
   $title = $variables['title'];
   $type = $variables['type'];
@@ -548,6 +549,7 @@ function porto_field($variables) {
 	  case 'field_big_caption':
 	  case 'field_small_caption':
 	  case 'field_text_color':
+	  case 'field_team_bio':
     case 'field_twitter_link':
     case 'field_facebook_link':
     case 'field_linkedin_link':

@@ -34,7 +34,8 @@
 <![endif]-->
 
 <!-- Web Fonts  -->
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext" type="text/css" rel="stylesheet">
+<link href="Shadows+Into+Light" rel="stylesheet" type="text/css">
 
 <?php porto_user_css();?>  
 </head>

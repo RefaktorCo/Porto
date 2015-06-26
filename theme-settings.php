@@ -266,6 +266,6 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Footer Ribbon Text'),
         '#default_value' => theme_get_setting('ribbon_text'),
       );   
-    
+
 }
 ?>

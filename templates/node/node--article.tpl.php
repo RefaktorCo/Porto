@@ -6,35 +6,35 @@
 
 <?php if ($teaser && theme_get_setting('blog_image') == 'medium'): ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  post post-medium"<?php print $attributes; ?>>
-
-  <?php if (render($content['field_image'])) : ?> 
-    <div class="col-md-5">
-	  <?php print render($content['field_image']); ?>
-    </div>
-  <?php endif; ?>
-  	
-	<div class="col-md-7">
-		<div class="post-content">
+  <div class="row">
+	  <?php if (render($content['field_image'])) : ?> 
+	    <div class="col-md-5">
+		  <?php print render($content['field_image']); ?>
+	    </div>
+	  <?php endif; ?>
+	  	
+		<div class="col-md-7">
+			<div class="post-content">
+		
+			  <?php print render($title_prefix); ?>
+			    <h2 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+			  <?php print render($title_suffix); ?>
 	
-		  <?php print render($title_prefix); ?>
-		    <h2 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-		  <?php print render($title_suffix); ?>
-
-		  <div class="article_content"<?php print $content_attributes; ?>>
-		    <?php
-		      // Hide comments, tags, and links now so that we can render them later.
-		      hide($content['taxonomy_forums']);
-		      hide($content['comments']);
-		      hide($content['links']);
-		      hide($content['field_tags']);
-		      hide($content['field_image']);
-		      hide($content['field_thumbnail']);
-		      print render($content);
-		    ?>
-		  </div>
-		</div>
-  </div>		
-
+			  <div class="article_content"<?php print $content_attributes; ?>>
+			    <?php
+			      // Hide comments, tags, and links now so that we can render them later.
+			      hide($content['taxonomy_forums']);
+			      hide($content['comments']);
+			      hide($content['links']);
+			      hide($content['field_tags']);
+			      hide($content['field_image']);
+			      hide($content['field_thumbnail']);
+			      print render($content);
+			    ?>
+			  </div>
+			</div>
+	  </div>		
+  </div>
 		
   <div class="row">
 		<div class="col-md-12">  

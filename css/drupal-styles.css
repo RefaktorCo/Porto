@@ -1,3 +1,15 @@
+.google-map img { 
+	max-width: none !important; 
+}
+
+.captcha {
+	max-width: 100%;
+}
+
+.breadcrumb a.active {
+  color: #777;
+}
+
 .post-meta-date i {
 	margin-right: 8px !important;
 }
@@ -103,7 +115,7 @@ body.boxed.sticky-menu-active #header {
 	  height: 30px;
 	  text-align: center;
 	  line-height: 30px;
-	  margin: 3px 0 -38px 0;
+	  margin: 3px 0 -38px 0 !important;
 	  z-index: 10;
 	  display: block;
   }

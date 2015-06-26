@@ -8,7 +8,9 @@
 			</span>
 		</a>
 		<span class="thumb-info-caption">
+			<?php if ($content['field_team_bio']): ?>
 			<p><?php print render ($content['field_team_bio']); ?></p>
+			<?php endif; ?>
 			<span class="thumb-info-social-icons">
 			
 			  <?php if ( render ($content['field_facebook_link']) ): ?>

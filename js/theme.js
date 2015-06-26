@@ -118,7 +118,10 @@ jQuery(document).ready(function ($) {
 		navMenu: function() {
 
 			// Responsive Menu Events
-			var addActiveClass = false;
+			var addActiveClass = false,
+					$header = $('#header'),
+					tapped = false,
+					$window = $(window);
 
 			$("#mainMenu li.dropdown > a:not(.disabled), #mainMenu li.dropdown-submenu > a:not(.disabled)").on("click", function(e) {
 
@@ -172,6 +175,38 @@ jQuery(document).ready(function ($) {
 					self.location = $(this).attr("href");
 				}
 			});
+			
+			// Touch Devices with normal resolutions
+				if(Modernizr.touch) { 
+					$header.find('.dropdown-toggle:not([href=#]), .dropdown-submenu a:not([href=#])')
+						.on('touchstart click', function(e) {
+							if($window.width() > 991) {
+
+								event.stopPropagation();
+								event.preventDefault();
+
+								if(event.handled !== true) {
+
+									var li = $(this).closest('li');
+
+									if(li.hasClass('tapped')) {
+										location.href = $(this).attr('href');
+									}
+
+									li.addClass('tapped');
+
+									event.handled = true;
+								} else {
+									return false;
+								}
+
+							}
+						})
+						.on('blur', function(e) {
+							$(this).closest('li').removeClass('tapped');
+						});
+
+				}
 
 		},
 
