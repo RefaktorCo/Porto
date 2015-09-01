@@ -202,7 +202,7 @@
 			<?php if (module_exists('profile2') && isset($profile->field_bio['und'][0]['value'])): ?>
 			  <p><?php print ($profile->field_bio['und'][0]['value']); ?></p>
 			<?php endif; ?>
-			<?php if(isset(user_load($uid)->field_author_bio)): ?>
+			<?php if(isset(user_load($uid)->field_author_bio['und'][0])): ?>
         <p><?php print user_load($uid)->field_author_bio['und'][0]['value']; ?></p>
 	    <?php endif; ?>  
 		</div>

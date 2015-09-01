@@ -176,16 +176,16 @@ jQuery(document).ready(function ($) {
 				}
 			});
 			
-			// Touch Devices with normal resolutions
-				if(Modernizr.touch) { 
-					$header.find('.dropdown-toggle:not([href=#]), .dropdown-submenu a:not([href=#])')
+			  // Touch Devices with normal resolutions
+				if(('ontouchstart' in window || 'onmsgesturechange' in window)) {
+					$header.find('.dropdown-toggle:not([href=#]), .dropdown-submenu > a:not([href=#])')
 						.on('touchstart click', function(e) {
 							if($window.width() > 991) {
 
-								event.stopPropagation();
-								event.preventDefault();
+								e.stopPropagation();
+								e.preventDefault();
 
-								if(event.handled !== true) {
+								if(e.handled !== true) {
 
 									var li = $(this).closest('li');
 
@@ -195,10 +195,12 @@ jQuery(document).ready(function ($) {
 
 									li.addClass('tapped');
 
-									event.handled = true;
+									e.handled = true;
 								} else {
 									return false;
 								}
+
+								return false;
 
 							}
 						})

@@ -454,6 +454,17 @@ Version: 		3.0.0
 		-moz-border-radius: 0;
 		border-radius: 0;
 	}
+	
+  body.sticky-menu-active #header .nav-main-collapse.in,
+	#header.fixed .nav-main-collapse.in {
+		overflow: hidden !important;
+		overflow-x: hidden !important;
+		overflow-y: auto !important;
+	}
+	
+	body.sticky-menu-active #header .nav-main-collapse, #header.fixed .nav-main-collapse {
+    max-height: 330px;
+  }
 }
 
 @media (max-width: 767px) {

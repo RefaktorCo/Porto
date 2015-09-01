@@ -73,8 +73,8 @@ $counter = count($items);
 					</div>
 					<?php endif ?>
 					<?php if ($image_slide == 'false'): ?>
-					  <a href="<?php print strip_tags(render($content['field_circle_4_url'])); ?>">
-					  <img src="<?php echo file_create_url($node->field_circle_4_image['und'][0]['uri']); ?>" alt="item">
+					<a href="<?php print strip_tags(render($content['field_circle_4_url'])); ?>">
+					  <img class="project-image-single" src="<?php echo file_create_url($node->field_circle_4_images['und'][0]['uri']); ?>" alt="item">
 				  </a>
 					<?php endif ?>
 					<strong class="our-work"><?php print strip_tags(render($content['field_circle_4_caption'])); ?></strong>

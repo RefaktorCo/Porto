@@ -5,10 +5,10 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="ie ie6" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <![endif]-->
-<!--[if IE 7]>    <html class="ie ie7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <![endif]-->
-<!--[if IE 8]>    <html class="ie ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <![endif]-->
-<!--[if gt IE 8]> <!--> <html class="" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?> <?php if ($language->dir == 'rtl'){ echo "rtl"; } ?>"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="ie ie6" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?><?php if ($language->dir == 'rtl'){ echo " rtl"; } ?>"> <![endif]-->
+<!--[if IE 7]>    <html class="ie ie7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?><?php if ($language->dir == 'rtl'){ echo " rtl"; } ?>"> <![endif]-->
+<!--[if IE 8]>    <html class="ie ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?><?php if ($language->dir == 'rtl'){ echo " rtl"; } ?>"> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?><?php if ($language->dir == 'rtl'){ echo " rtl"; } ?>"> <!--<![endif]-->
 <head>
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
@@ -35,7 +35,7 @@
 
 <!-- Web Fonts  -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext" type="text/css" rel="stylesheet">
-<link href="Shadows+Into+Light" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 
 <?php porto_user_css();?>  
 </head>

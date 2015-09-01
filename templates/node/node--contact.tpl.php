@@ -1,4 +1,4 @@
-<?php if ($content['field_map_address'] && $content['field_map_latitude'] && $content['field_map_longitude']): ?>
+<?php if (isset($content['field_map_address']) && isset($content['field_map_latitude']) && isset($content['field_map_longitude'])): ?>
 <!-- Google Maps -->
 <div id="googlemaps" class="google-map"></div>
 <?php endif; ?>
