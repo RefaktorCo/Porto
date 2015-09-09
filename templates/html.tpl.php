@@ -13,7 +13,7 @@
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <!-- Call bootstrap.css before $scripts to resolve @import conflict with respond.js -->
-<link rel="stylesheet" href="<?php print base_path() . drupal_get_path('theme', 'porto'); ?>/vendor/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="<?php print base_path() . drupal_get_path('theme', 'porto'); ?>/vendor/bootstrap/bootstrap.css">
 <?php if ($language->dir == 'rtl'): ?>
 <link rel="stylesheet" href="<?php print base_path() . drupal_get_path('theme', 'porto'); ?>/vendor/bootstrap-rtl/bootstrap-rtl.css">
 <?php endif; ?>

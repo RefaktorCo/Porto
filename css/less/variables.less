@@ -1,4 +1,10 @@
 // =============================================================================
+// BORDERS
+// =============================================================================
+
+@border-radius: 4px;
+
+// =============================================================================
 // COLORS
 // =============================================================================
 
@@ -6,16 +12,16 @@
 @color-background-dark: #1d2127;
 
 @color-primary: #0088CC;
-@color-primary-inverse: #FFF;
+@color-primary-inverse: contrast(@color-primary, #777, #FFF);
 
 @color-secondary: #E36159;
-@color-secondary-inverse: #FFF;
+@color-secondary-inverse: contrast(@color-secondary, #777, #FFF);
 
 @color-tertiary: #2BAAB1;
-@color-tertiary-inverse: #FFF;
+@color-tertiary-inverse: contrast(@color-tertiary, #777, #FFF);
 
 @color-quaternary: #383f48;
-@color-quaternary-inverse: #FFF;
+@color-quaternary-inverse: contrast(@color-quaternary, #777, #FFF);
 
 @color-dark: #2e353e;
 @color-dark-inverse: #FFF;

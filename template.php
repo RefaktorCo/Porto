@@ -13,9 +13,7 @@ $parent_root = base_path() . drupal_get_path('theme', 'porto');
 */
 function porto_js_alter(&$js) {
  global $user; 
- if ( (theme_get_setting('sticky_header') != '1') || (in_array('administrator', array_values($user->roles)))) {
-   unset($js[drupal_get_path('theme', 'porto') . '/js/sticky.js']);
- }
+ 
 }
 
 /**
@@ -154,38 +152,25 @@ function porto_preprocess_page(&$vars, $hook) {
   if (request_path() == 'one-page') {
     $vars['theme_hook_suggestions'][] = 'page__onepage';
   }  
- 
-  if (theme_get_setting('gradient') == "1" && module_exists('less')) {
-	  //Pass the color value from theme settings to @skinColor variable in skin.less
-	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin-gradient.less', array(
-	  
-	    'group' => CSS_THEME,
-	    'preprocess' => false,
-	    'less' => array(
-	      'variables' => array(
-	        '@skinColor' => '#'.theme_get_setting('skin_color').'',
-	      ),
-	    ),
-	
-	  )); 
-	} 
-	
-	if (theme_get_setting('gradient') == "0" && module_exists('less')) {
-	  //Pass the color value from theme settings to @skinColor variable in skin.less
-	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/less/skin.less', array(
-	  
-	    'group' => CSS_THEME,
-	    'preprocess' => false,
-	    'less' => array(
-	      'variables' => array(
-	        '@skinColor' => '#'.theme_get_setting('skin_color').'',
-	      ),
-	    ),
-	
-	  )); 
+ 	
+	if (!module_exists('less')) {
+	  drupal_add_css(drupal_get_path('theme', 'porto') .'/css/skins/default.css', array('group'=>CSS_THEME)); 
 	}
+	
+	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/theme.js',array('type' => 'file','scope' => 'footer'));
+	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/views/view.home.js',array('type' => 'file','scope' => 'footer'));
+	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/theme.init.js',array('type' => 'file','scope' => 'footer'));
 	 
 }
+
+if (module_exists('less')) {
+	function porto_less_variables_alter(array &$less_variables, $system_name) {	
+	  if ($system_name === 'porto') {
+	    $less_variables['@color-primary'] = '#'.theme_get_setting('skin_color').'';
+	  }
+	}
+}
+
 
 /**
  * Define some variables for use in theme templates.
@@ -216,10 +201,8 @@ function porto_menu_link__header_menu(array $variables) {
   // set the global depth variable
   global $depth;
   $depth = $element['#original_link']['depth'];
-  
-
+ 
   if ( ($element['#below']) && ($depth == "1") ) {
-    $output .= '<a class="dropdown-toggle extra" href="#"></a>';
     $element['#attributes']['class'][] = 'dropdown '.$element['#original_link']['mlid'].'';
     $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle disabled';
   }
@@ -230,6 +213,7 @@ function porto_menu_link__header_menu(array $variables) {
   
   $sub_menu = $element['#below'] ? drupal_render($element['#below']) : '';
   $output .= l($element['#title'], $element['#href'], $element['#localized_options']);
+  
   // if link class is active, make li class as active too
   if(strpos($output,"active")>0){
     $element['#attributes']['class'][] = "active";
@@ -325,7 +309,7 @@ function porto_form_alter(&$form, &$form_state, $form_id) {
        
     $form['actions']['submit'] =  array(
       '#type' => 'submit',
-    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="icon icon-search">',
+    	'#prefix' => '<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search">',
     	'#suffix' => '</i></button></span>',
     	
     );

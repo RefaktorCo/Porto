@@ -5,44 +5,42 @@ engine = phptemplate
 version = 2.1.1
 
 ; Define theme CSS.
-stylesheets[all][] = vendor/owl-carousel/owl.carousel.css
-stylesheets[all][] = vendor/font-awesome/css/font-awesome.css
-stylesheets[all][] = vendor/owl-carousel/owl.theme.default.css
+stylesheets[all][] = vendor/owlcarousel/owl.carousel.css
+stylesheets[all][] = vendor/fontawesome/css/font-awesome-legacy.css
+stylesheets[all][] = vendor/fontawesome/css/font-awesome.css
+stylesheets[all][] = vendor/owlcarousel/owl.theme.default.css
 stylesheets[all][] = vendor/prettyPhoto/css/prettyPhoto.css
 stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css
 stylesheets[all][] = vendor/magnific-popup/magnific-popup.css
 stylesheets[all][] = vendor/mediaelement/mediaelementplayer.css
 stylesheets[all][] = vendor/isotope/jquery.isotope.css
+stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-elements.css
 stylesheets[all][] = css/theme-animate.css
 stylesheets[all][] = css/theme-blog.css
-stylesheets[all][] = css/theme.css
-stylesheets[all][] = css/theme-responsive.css
 stylesheets[all][] = css/drupal-styles.css
+stylesheets[all][] = css/less/skin.less
+
 
 ; Define theme JS libraries.
-scripts[] = vendor/modernizr.js
-scripts[] = vendor/bootstrap/js/bootstrap.js
-scripts[] = vendor/jquery.easing.js
-scripts[] = vendor/jquery.cookie.js
-scripts[] = vendor/owl-carousel/owl.carousel.js
-scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
+scripts[] = vendor/modernizr/modernizr.js
+scripts[] = vendor/jquery.appear/jquery.appear.js
+scripts[] = vendor/jquery.easing/jquery.easing.js
+scripts[] = vendor/jquery-cookie/jquery-cookie.js
+scripts[] = vendor/bootstrap/bootstrap.js
+scripts[] = vendor/common/common.js
+scripts[] = vendor/jquery.validation/jquery.validation.js
+scripts[] = vendor/jquery.stellar/jquery.stellar.js
+scripts[] = vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js
+scripts[] = vendor/jquery.gmap/jquery.gmap.js
+scripts[] = vendor/jquery.lazyload/jquery.lazyload.js
 scripts[] = vendor/isotope/jquery.isotope.js
-scripts[] = vendor/prettyPhoto/js/jquery.prettyPhoto.js
+scripts[] = vendor/owlcarousel/owl.carousel.js
 scripts[] = vendor/jflickrfeed/jflickrfeed.js
-scripts[] = vendor/jquery.mapmarker.js
-scripts[] = vendor/jquery.stellar.js
-scripts[] = vendor/jquery.gmap.js
-scripts[] = vendor/jquery.knob.js
-scripts[] = vendor/magnific-popup/magnific-popup.js
-scripts[] = vendor/mediaelement/mediaelement-and-player.js
-scripts[] = vendor/jquery.validate.js
-scripts[] = vendor/jquery.appear.js
-scripts[] = js/mobile-menu.js
-scripts[] = js/theme.plugins.js
-scripts[] = js/theme.js
-scripts[] = js/views/view.home.js
-scripts[] = js/sticky.js
+scripts[] = vendor/magnific-popup/jquery.magnific-popup.js
+scripts[] = vendor/vide/vide.js
+
+scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
 
 ; Define theme block regions.
 regions[header_top] = Header Top

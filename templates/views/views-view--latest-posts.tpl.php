@@ -27,8 +27,8 @@
  * @ingroup views_templates
  */
 ?>
-<div class="map-section">
-	<section class="featured footer map">
+<section class="section section-custom-map">
+  <section class="section section-default section-footer">
 		<div class="container">
 			<div class="row">
 			
@@ -99,4 +99,4 @@
 			</div>
 		</div>
   </section>
-</div> 
+</section> 
