@@ -122,11 +122,11 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
 	    '#default_value' => theme_get_setting('skin_color'),
     ); 
     
-    // Gradient
-    $form['options']['color']['gradient'] = array(
+    // Dark
+    $form['options']['color']['dark'] = array(
       '#type' => 'checkbox',
-      '#title' => t('Gradient'),
-      '#default_value' => theme_get_setting('gradient'),
+      '#title' => t('Dark Background'),
+      '#default_value' => theme_get_setting('dark'),
     );
     
     // Background Color

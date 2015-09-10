@@ -18,13 +18,36 @@
 				    <?php endif; ?>
 			    
 			      <?php if ($logo): ?>
-			      <div class="header-logo">
-				      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-				        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" />
-				      </a>
-			      </div>
+				      <div class="header-logo">
+					      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+					        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" />
+					      </a>
+				      </div>
 				    <?php endif; ?>
-				    
+				     
+				    <?php if ($site_name || $site_slogan): ?>
+				      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
+				
+				        <?php if ($site_name): ?>
+				          <?php if ($title): ?>
+					          <div id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+					            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+					          </div>
+					        <?php else: ?>
+					          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+					            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+					          </h1>
+					        <?php endif; ?>  
+				        <?php endif; ?>
+				
+				        <?php if ($site_slogan): ?>
+				          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
+				            <?php print $site_slogan; ?>
+				          </div>
+				        <?php endif; ?>
+				
+				      </div> <!-- /#name-and-slogan -->
+					  <?php endif; ?>
 				    				    
           </div>
           
@@ -55,15 +78,9 @@
 				<?php print render($page['header_icons']); ?>
 				 
 		    <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
-				  
-		      
-		        
-		        
-		        <nav class="nav-main">
+		      <nav class="nav-main">
 		        <?php print render($page['header_menu']); ?>
-		        </nav>
-		        
-				  
+		      </nav>
 		    </div>  
 		  </div>
       
@@ -74,7 +91,7 @@
 	<div role="main" class="main">
 	
 	  <?php if ( $title && $breadcrumb && !drupal_is_front_page() ): ?>
-	  <section class="page-top breadcrumb-wrap">
+	  <section class="page-header breadcrumb-wrap">
 		  <div class="container">
 		    <?php if (theme_get_setting('breadcrumbs') == '1'): ?>
 				<div class="row">
@@ -85,7 +102,7 @@
 				<?php endif; ?>
 				<div class="row">
 					<div class="col-md-12">
-						<h2><?php print drupal_get_title(); ?></h2>
+						<h1><?php print drupal_get_title(); ?></h1>
 					</div>
 				</div>
 			</div>

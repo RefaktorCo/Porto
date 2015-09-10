@@ -2,7 +2,7 @@ name = Porto
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 2.1.1
+version = 3.0
 
 ; Define theme CSS.
 stylesheets[all][] = vendor/owlcarousel/owl.carousel.css
@@ -12,7 +12,6 @@ stylesheets[all][] = vendor/owlcarousel/owl.theme.default.css
 stylesheets[all][] = vendor/prettyPhoto/css/prettyPhoto.css
 stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css
 stylesheets[all][] = vendor/magnific-popup/magnific-popup.css
-stylesheets[all][] = vendor/mediaelement/mediaelementplayer.css
 stylesheets[all][] = vendor/isotope/jquery.isotope.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/theme-elements.css
@@ -39,8 +38,8 @@ scripts[] = vendor/owlcarousel/owl.carousel.js
 scripts[] = vendor/jflickrfeed/jflickrfeed.js
 scripts[] = vendor/magnific-popup/jquery.magnific-popup.js
 scripts[] = vendor/vide/vide.js
-
 scripts[] = vendor/circle-flip-slideshow/js/jquery.flipshow.js
+scripts[] = js/custom.js
 
 ; Define theme block regions.
 regions[header_top] = Header Top
@@ -70,7 +69,7 @@ settings[logo_height] = "54"
 settings[sticky_logo_height] = "40"
 settings[sticky_header] = 1
 settings[skin_color] = 0088cc
-settings[gradient] = 1
+settings[dark] = 0
 settings[background_color] = light
 settings[site_layout] = wide
 settings[body_background] = porto_backgrounds

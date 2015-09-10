@@ -1,8 +1,9 @@
-2.2 (09/10/15)
-  *Updated all theme libraries.
-  *Removed "gradient" color option.
+3.0 (09/10/15)
+  *Updated all theme vendor libraries.
+  *Removed gradient color option and added dark background option.
   *Updated Drupal core in full install.
   *Updated MD Slider to latest version.
+  *General style updates/improvements.
 
 2.1.1 (06/25/15)
 	*Updated prettyPhoto to 3.1.6.
