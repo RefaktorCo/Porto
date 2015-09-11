@@ -213,7 +213,7 @@ jQuery(document).ready(function ($) {
 	
 	$('header a').click(function(){
 	    $('html, body').animate({
-	        scrollTop: $(this.hash).offset().top -200
+	        scrollTop: $(this.hash).offset().top -100
 	    }, 800);
 	    return false;
 	});

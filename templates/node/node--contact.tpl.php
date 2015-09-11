@@ -3,7 +3,7 @@
 <div id="googlemaps" class="google-map"></div>
 <?php endif; ?>
 
-<div class="container">
+<div id="contact-us" class="container">
 
 	<div class="row">
 	

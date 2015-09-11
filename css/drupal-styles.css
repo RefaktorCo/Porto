@@ -1,3 +1,7 @@
+.mb-none.black {
+	color: #000 !important;
+}
+
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
   background-color: transparent;
 }
@@ -231,10 +235,6 @@ article.clearfix {
 .comment .img-thumbnail img {
 	height: 80px;
 	width: 80px;
-}
-
-#block-views-contact-us-block {
-	margin-top: -70px;
 }
 
 #header.single-menu .social-icons {
