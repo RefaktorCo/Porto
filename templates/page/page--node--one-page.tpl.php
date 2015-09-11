@@ -25,22 +25,28 @@
 	      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
 	
 	        <?php if ($site_name): ?>
-	          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
-	            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-	          </h1>
+	          <?php if ($title): ?>
+		          <div id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+		          </div>
+		        <?php else: ?>
+		          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+		          </h1>
+		        <?php endif; ?>  
 	        <?php endif; ?>
 	
 	        <?php if ($site_slogan): ?>
-		          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
-		            <?php print $site_slogan; ?>
-		          </div>
-		        <?php endif; ?>
+	          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
+	            <?php print $site_slogan; ?>
+	          </div>
+	        <?php endif; ?>
 	
 	      </div> <!-- /#name-and-slogan -->
-	    <?php endif; ?>
-      
+		  <?php endif; ?>
+
       <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
-				<i class="icon icon-bars"></i>
+				<i class="fa fa-bars"></i>
 			</button>
     </div>    
     <div class="navbar-collapse nav-main-collapse collapse">

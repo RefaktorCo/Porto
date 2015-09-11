@@ -8,6 +8,7 @@ version = 3.0
 stylesheets[all][] = vendor/owlcarousel/owl.carousel.css
 stylesheets[all][] = vendor/fontawesome/css/font-awesome-legacy.css
 stylesheets[all][] = vendor/fontawesome/css/font-awesome.css
+stylesheets[all][] = vendor/simple-line-icons/css/simple-line-icons.css
 stylesheets[all][] = vendor/owlcarousel/owl.theme.default.css
 stylesheets[all][] = vendor/prettyPhoto/css/prettyPhoto.css
 stylesheets[all][] = vendor/circle-flip-slideshow/css/component.css

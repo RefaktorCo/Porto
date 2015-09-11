@@ -4,55 +4,69 @@
  * Porto's theme implementation to display a single Drupal page.
  */
 ?>
-<body class="<?php print $classes; ?> one-page" data-target=".single-menu" data-spy="scroll" data-offset="200" <?php print $attributes;?>>
+<body class="<?php print $classes; ?> one-page" data-target="#header" data-spy="scroll" data-offset="100" <?php print $attributes;?>>
 <div id="top" class="body">
-  <header id="header" class="single-menu flat-menu">
-    <div class="container">
-
-      <?php if (isset($page['branding'])) : ?>
-	      <?php print render($page['branding']); ?>
-	    <?php endif; ?>
-    
-      <?php if ($logo): ?>
-      <h1 class="logo">
-	      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-	        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" />
-	      </a>
-      </h1>
-	    <?php endif; ?>
-	    
-	    <?php if ($site_name || $site_slogan): ?>
-	      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
-	
-	        <?php if ($site_name): ?>
-	          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
-	            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-	          </h1>
-	        <?php endif; ?>
-	
-	        <?php if ($site_slogan): ?>
-		          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
-		            <?php print $site_slogan; ?>
-		          </div>
-		        <?php endif; ?>
-	
-	      </div> <!-- /#name-and-slogan -->
-	    <?php endif; ?>
+  <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 47, "stickySetTop": "-47px", "stickyChangeLogo": true}'>
+	  <div class="header-body">
+      <div class="header-container container">
+	      
+	      <div class="header-row">
+          <div class="header-column">
+	           
+			      <?php if (isset($page['branding'])) : ?>
+				      <?php print render($page['branding']); ?>
+				    <?php endif; ?>
+			    
+			      <?php if ($logo): ?>
+				      <div class="header-logo">
+					      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+					        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" />
+					      </a>
+				      </div>
+				    <?php endif; ?>
+				     
+				    <?php if ($site_name || $site_slogan): ?>
+				      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
+				
+				        <?php if ($site_name): ?>
+				          <?php if ($title): ?>
+					          <div id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+					            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+					          </div>
+					        <?php else: ?>
+					          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+					            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+					          </h1>
+					        <?php endif; ?>  
+				        <?php endif; ?>
+				
+				        <?php if ($site_slogan): ?>
+				          <div id="site-slogan"<?php if ( ($disable_site_slogan ) ) { print ' class="hidden"'; } if ( (!$disable_site_slogan ) AND ($disable_site_name) ) { print ' class="slogan-no-name"'; } ?>>
+				            <?php print $site_slogan; ?>
+				          </div>
+				        <?php endif; ?>
+				
+				      </div> <!-- /#name-and-slogan -->
+					  <?php endif; ?>
+				    				    
+          </div>
+	      </div>  
+      </div> 
+      <div class="header-container container header-nav header-nav-top-line">
       
-      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
-				<i class="icon icon-bars"></i>
-			</button>
-    </div>    
-    <div class="navbar-collapse nav-main-collapse collapse">
-		  <div class="container">
-      <?php print render($page['header_top']); ?>
-      <?php print render($page['header_icons']); ?>
-      <nav class="nav-main">
-       <?php print render($page['header_menu']); ?>
-      </nav>
-		  </div>
-    </div>	  
-    
+	      <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+					<i class="fa fa-bars"></i>
+				</button>
+				<?php print render($page['header_icons']); ?>
+	     
+		    <div class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+		      <?php print render($page['header_top']); ?>
+		      <nav>
+		       <?php print render($page['header_menu']); ?>
+		      </nav>
+		    </div>	  
+      </div>  
+	  </div>
 	</header>
 	
 	<div role="main" class="main">
