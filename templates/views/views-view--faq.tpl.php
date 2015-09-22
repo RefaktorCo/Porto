@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="toogle">
+<div class="toggle toggle-primary" data-plugin-toggle>
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>

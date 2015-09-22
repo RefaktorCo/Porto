@@ -8,6 +8,7 @@
 	<div class="row">
 	
 		<div class="col-md-6">
+			
 		  <?php 
 		    require_once drupal_get_path('module', 'contact') .'/contact.pages.inc'; 
 	      $contact_form = drupal_get_form('contact_site_form');
