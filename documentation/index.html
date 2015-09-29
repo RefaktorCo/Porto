@@ -16,11 +16,11 @@
 <div id="wrapper">
 <h2>Overview</h2>
 <p>Porto is a professional, multipurpose Drupal theme perfect for any business or portfolio website. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support" target="_blank"> support forum</a>.
-<p>Updated: 04/18/15<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
+<p>Updated: 10/04/15<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
 okler" target="_blank">
 Okler</a></p>
-<h2>Porto 1.X vs 2.X</h2>
-<p>There are a lot of differences between version 1.X and 2.X that users looking to upgrade need to be aware of. Users that have made significant customizations are advised to consider not updating, or at the very least prepare the update in a separate install location which can be easily transferred to your live site.</p>
+<h2>Porto 2.X vs 3.X</h2>
+<p>There are some minor differences between 2.x and the latest 3.x version of the theme. If you plan on updating it is advised to do so in a local or testing environment first, or at the very least back up your existing theme folder in case you wish to revert.</p>
 <p>For all information pertaining to the differences between the two versions please refer to this <a href="http://refaktorthemes.com/support/viewtopic.php?f=19&t=2620" target="_blank">forum thread</a>.</p>
 
 <h2>Installation</h2>
@@ -112,6 +112,48 @@ The theme uses a content type called "One Page" and a corresponding template to 
 
 <h2>Theme Settings</h2>
 <p>Visit /admin/appearance/settings/Porto to configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
+
+<h2>Drupal Commerce</h2>
+<p>Porto now includes styles, views and template support for the <a href="https://www.drupal.org/project/commerce" target="_blank">Drupal Commerce</a> eCommerce module. In these docs we will go over the Product Display content type and the corresponding views we have utilized in the demo to display products. Drupal Commerce is a complex module, so for additional documentation and information about addon modules please visit <a href="https://drupalcommerce.org/" target="_blank">https://drupalcommerce.org/</a>.</p>
+
+<p>All modules utilized in the demo are included in the modules.zip file in the download files. For basic Commerce configuration visit /admin/commerce where you can manage customer profiles and orders, manage products and product types, and set other configuration options.</p>
+
+<h4>Product Display</h4>
+<img src="images/porto-product-display.png" height="400px"><br/><br/>
+<p>Porto utilizes a content type called Product Display to create and display product information. It includes a Product Reference field which is the link between the node and the actual product within Commerce. </p>
+
+<p><strong>Fields:</strong></p>
+<ul>
+<li><strong>Body:</strong> The default body field.</li>
+<li><strong>Product Variations:</strong> This is the Product Reference field which connects the content type to Commerce. It allows for the creation of a product (including variations) along with the product display node.</li>
+<li><strong>Product Description:</strong> This is a long text field which is displayed below the main product info. It can be used to add an addition description or more information about the product.</li>
+<li><strong>Product Rating:</strong> An optional <a href="https://www.drupal.org/project/fivestar" target="_blank">Fivestar</a> rating field.</li>
+<li><strong>Category:</strong> An term reference field to assign your product to a category or categories.</li>
+<li><strong>Tags:</strong> An term reference field to add individual tags to your product node.</li>
+</ul>
+
+<p><strong>Template files</strong></p>
+<ul>
+<li>/templates/node/node--product-display.tpl.php</li>
+<li>/templates/commerce-line-item-summary.tpl.php</li>
+</ul>
+
+<p><strong>Important:</strong> Any product reference fields that are intended to function as attribute selection fields on Add to Cart forms need to be configured to do so. When editing that field, scroll down to the ATTRIBUTE FIELD SETTINGS option and enable the option. For example, if you have several variations of a "Hat" product (red, blue, green) and you want the customer to be able to select the color they want when adding the item to the cart, the Color field would need to be configured in this way.</p>
+<img src="images/field-attribute.png"><br>
+<h4>Creating products using "Product Display"</h4>
+<p>As described earlier in the documentation, Porto uses a content type called Product Display which acts as a bridge between Drupal and Commerce products. The "Product Reference" field allows you to create your product(s) at the same time of the node creation. Below is a step by step guide for using this content type to create a Drupal Commerce product node in Contour: </p>
+<ul>
+<li>1. Visit /node/add/product-display to begin creating your product. Enter a title like you would for any other Drupal node.</li>
+<li>2. Under the "Product Reference" field select the type of product you are creating and press "Add New Product". </li>
+<li>3. Configure your product and press the "Save Product" button. If you are doing multiple variations of the same product, add another product variation of the same product type and configure as necessary. For example if you are creating a Hat product and it comes in three colors, create a variation for each of the three colors.</li>
+<li>4. Configure the rest of the Product Display fields and save the node. </li>
+</ul>
+<h4>Views</h4>
+<p>Porto utilizes several views to display products. There is a main "shop" view which displays all available products as well as a "Related Products" and "Top Rated" which display products related to the current product being viewed and the top rated products via the Fivestar ratings field. Finally there is a simple "Header Cart" view which will display the number of items in the cart and the cart total. It is intended to be placed in the header but it would work in any region.</p>
+
+<p>The export code /assets/views-exports/shop.txt and /assets/views-exports/header-cart.txt(in the root of the folder you downloaded from ThemeForest) can be used to create the shop views.</p>
+
+<p><strong>Note:</strong> Two of the shop views utilize a new custom display plugin option in the Porto Views module. If you are upgrading from a 2.x installation  update your existing version with the latest found inside the modules.zip file in the download files.</p>
 
 <h2>Custom Content Types</h2>
 
