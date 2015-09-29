@@ -25,6 +25,7 @@ function porto_css_alter(&$css) {
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme.css']);
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-elements.css']);
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-blog.css']);
+	  unset($css[drupal_get_path('theme', 'porto') . '/css/theme-shop.css']);
 	  unset($css[drupal_get_path('theme', 'porto') . '/css/ie.css']);
 	}
 }
@@ -89,10 +90,11 @@ function porto_menu_local_tasks(&$variables) {
 function porto_preprocess_html(&$vars){
  global $parent_root;
  if ($vars['language']->dir == 'rtl') {
-	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
-	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-elements-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
-	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/theme-blog-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
-	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/ie-rtl.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/rtl-theme.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/rtl-theme-elements.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/rtl-theme-blog.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/rtl-theme-shop.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+	 drupal_add_css(drupal_get_path('theme', 'porto') . '/css/rtl-ie.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
  }
  
  $viewport = array(
@@ -142,6 +144,7 @@ function porto_preprocess_page(&$vars, $hook) {
   if (isset($vars['node'])) {
     $suggest = "page__node__{$vars['node']->type}";
     $vars['theme_hook_suggestions'][] = $suggest;
+    $vars['node_type'] = $vars['node']->type;
   }
   
   if (arg(0) == 'taxonomy' && arg(1) == 'term' ){
@@ -167,6 +170,9 @@ if (module_exists('less')) {
 	function porto_less_variables_alter(array &$less_variables, $system_name) {	
 	  if ($system_name === 'porto') {
 	    $less_variables['@color-primary'] = '#'.theme_get_setting('skin_color').'';
+	    $less_variables['@color-secondary'] = '#'.theme_get_setting('secondary_color').'';
+	    $less_variables['@color-tertiary'] = '#'.theme_get_setting('tertiary_color').'';
+	    $less_variables['@color-quaternary'] = '#'.theme_get_setting('quaternary_color').'';
 	  }
 	}
 }
@@ -283,11 +289,61 @@ function porto_status_messages($variables) {
   return $output;
 }
 
+function porto_preprocess_views_view_table(&$vars) {
+  $vars['classes_array'][] = 'table';
+}
+
+/**
+ * Themes the optional checkout review page data.
+ */
+function porto_commerce_checkout_review($variables) {
+  $form = $variables['form'];
+
+  // Turn the review data array into table rows.
+  $rows = array();
+
+  foreach ($form['#data'] as $pane_id => $data) {
+    // First add a row for the title.
+    $rows[] = array(
+      'data' => array(
+        array('data' => $data['title'], 'colspan' => 2),
+      ),
+      'class' => array('pane-title', 'odd'),
+    );
+
+    // Next, add the data for this particular section.
+    if (is_array($data['data'])) {
+      // If it's an array, treat each key / value pair as a 2 column row.
+      foreach ($data['data'] as $key => $value) {
+        $rows[] = array(
+          'data' => array(
+            array('data' => $key .':', 'class' => array('pane-data-key')),
+            array('data' => $value, 'class' => array('pane-data-value')),
+          ),
+          'class' => array('pane-data', 'even'),
+        );
+      }
+    }
+    else {
+      // Otherwise treat it as a block of text in its own row.
+      $rows[] = array(
+        'data' => array(
+          array('data' => $data['data'], 'colspan' => 2, 'class' => array('pane-data-full')),
+        ),
+        'class' => array('pane-data', 'even'),
+      );
+    }
+  }
+
+  return theme('table', array('rows' => $rows, 'attributes' => array('class' => array('checkout-review table'))));
+}
+
+
 /**
  * Impelements hook_form_alter()
  */
 function porto_form_alter(&$form, &$form_state, $form_id) {
-  
+	
   if ($form_id == 'search_block_form') {
     
     $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
@@ -524,6 +580,8 @@ function porto_field($variables) {
   switch ($variables['element']['#field_name']) {
 	  case 'field_tags':
 	  case 'field_portfolio_category':
+	  case 'field_product_categories':
+	  case 'field_product_tags':
 	  case 'field_team_category':
 	  case 'field_testimonial_content':
 	  case 'field_testimonial_name':
@@ -558,6 +616,20 @@ function porto_field($variables) {
 		      }
 		    }
 	    }
+	    else if ($variables['element']['#entity_type'] =='commerce_product') {
+		    if (count($variables['items']) >= 2) {
+			    $output .= '<div class="owl-carousel" data-plugin-options=\'{"items":1}\'>';
+		      foreach ($variables['items'] as $delta => $item) {
+		        $output .= '<div>' . drupal_render($item) . '</div>';
+		      }
+		      $output .= '</div>';
+		    }
+		    else {
+			    foreach ($variables['items'] as $delta => $item) {
+		        $output .= '<div class="img-responsive">' . drupal_render($item) . '</div>';
+		      }
+		    }
+		  }
 	    else if ($variables['element']['#bundle'] =='portfolio') {
 		    if ($variables['element']['#view_mode'] == 'teaser') {
 			    $output .=  drupal_render($variables['items'][0]);
@@ -581,7 +653,7 @@ function porto_field($variables) {
 	  case 'field_portfolio_skills':
 	    foreach ($variables['items'] as $delta => $item) {
 	      $output .= '<li><i class="icon icon-check-circle"></i>' . drupal_render($item) . '</li>';
-	    }
+	    }	    
 	  break;
 	  default:
 	    $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';

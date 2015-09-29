@@ -20,7 +20,7 @@
 			      <?php if ($logo): ?>
 				      <div class="header-logo">
 					      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-					        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" />
+					        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" height="<?php print theme_get_setting('logo_height'); ?>" data-sticky-height="<?php print theme_get_setting('sticky_logo_height'); ?>" data-sticky-top="33" />
 					      </a>
 				      </div>
 				    <?php endif; ?>
@@ -58,17 +58,13 @@
 				      <?php print render($page['header_search']); ?>
 				    </div>
 				    <?php endif; ?>
-			      
-			     
-			      
-			        <?php print render($page['header_top']); ?>
+
+			      <?php print render($page['header_top']); ?>
 			      
           </div>  
 	      </div>  
       </div> 
-      
-    
-        
+
       <div class="header-container container header-nav header-nav-push-top">
   
 		    <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
@@ -87,7 +83,7 @@
 	  </div>  	
 	</header>
 	<!-- end header --> 
-	
+
 	<div role="main" class="main">
 	
 	  <?php if ( $title && $breadcrumb && !drupal_is_front_page() ): ?>
@@ -100,6 +96,7 @@
 					</div>
 				</div>
 				<?php endif; ?>
+				
 				<div class="row">
 					<div class="col-md-12">
 						<h1><?php print drupal_get_title(); ?></h1>
@@ -113,7 +110,11 @@
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
-	      <?php print $messages; ?>
+		      <?php if ($messages): ?>  
+			      <div class="col-md-12">
+		          <?php print $messages; ?>
+			      </div>
+			    <?php endif; ?>  
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
 					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">

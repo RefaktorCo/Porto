@@ -115,20 +115,34 @@ function porto_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Color'),
   );  
   
-    // Custom Skin Color
+    // Primary Color
     $form['options']['color']['skin_color'] =array(
       '#type' => 'jquery_colorpicker',
-	    '#title' => t('Color Scheme'),
+	    '#title' => t('Primary Color'),
 	    '#default_value' => theme_get_setting('skin_color'),
     ); 
     
-    // Dark
-    $form['options']['color']['dark'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Dark Background'),
-      '#default_value' => theme_get_setting('dark'),
-    );
+    // Secondary Color
+    $form['options']['color']['secondary_color'] =array(
+      '#type' => 'jquery_colorpicker',
+	    '#title' => t('Secondary Color'),
+	    '#default_value' => theme_get_setting('secondary_color'),
+    ); 
     
+    // Tertiary Color
+    $form['options']['color']['tertiary_color'] =array(
+      '#type' => 'jquery_colorpicker',
+	    '#title' => t('Tertiary Color'),
+	    '#default_value' => theme_get_setting('tertiary_color'),
+    ); 
+    
+    // Quaternary Color
+    $form['options']['color']['quaternary_color'] =array(
+      '#type' => 'jquery_colorpicker',
+	    '#title' => t('Quaternary Color'),
+	    '#default_value' => theme_get_setting('quaternary_color'),
+    ); 
+        
     // Background Color
     $form['options']['color']['background_color'] = array(
       '#type' => 'select',

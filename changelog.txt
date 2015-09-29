@@ -1,8 +1,9 @@
-3.0 (09/10/15)
+3.0 (10/05/15)
   *Updated all theme vendor libraries.
-  *Removed gradient color option and added dark background option.
+  *Removed gradient color option and added new secondary color options.
   *Updated Drupal core in full install.
   *Updated MD Slider to latest version.
+  *Added Drupal Commerce support.
   *General style updates/improvements.
 
 2.1.1 (06/25/15)

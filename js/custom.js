@@ -1,3 +1,3 @@
-jQuery(document).ready(function($){
-	$('.cloned .img-responsive').removeClass('img-responsive');
+jQuery(document).ready(function ($) {
+
 });

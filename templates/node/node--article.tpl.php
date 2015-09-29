@@ -42,13 +42,13 @@
 	   <?php if (!$page && $teaser && $display_submitted): ?>
 	  
 	     <div class="post-meta">
-		    <span class="post-meta-date"><i class="icon icon-calendar"></i><?php print format_date($node->created, 'custom', 'F d, Y'); ?></span>
-				<span class="post-meta-user"><i class="icon icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
+		    <span class="post-meta-date"><i class="fa fa-calendar"></i><?php print format_date($node->created, 'custom', 'F d, Y'); ?></span>
+				<span class="post-meta-user"><i class="fa fa-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
-				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				  <span class="post-meta-tag"><i class="fa fa-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
 				<?php if (module_exists('comment')):?>
-				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<span class="post-meta-comments"><i class="fa fa-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 				<?php endif; ?>
 				<a href="<?php print $node_url; ?>" class="btn btn-xs btn-primary pull-right"><?php echo t('Read more...'); ?></a>
 			</div>
@@ -82,12 +82,12 @@
 	  <?php if ($display_submitted && !$teaser): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="fa fa-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
-				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				  <span class="post-meta-tag"><i class="fa fa-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
 				<?php if (module_exists('comment')):?>
-				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<span class="post-meta-comments"><i class="fa fa-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 				<?php endif; ?>
 			</div>
 		
@@ -108,11 +108,11 @@
 	  
 		<?php if (!$page && $teaser): ?>
 	  <div class="post-meta">
-			<span class="post-meta-user"><i class="icon icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
+			<span class="post-meta-user"><i class="fa fa-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
 			<?php if (render($content['field_tags'])): ?> 
-			  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+			  <span class="post-meta-tag"><i class="fa fa-tag"></i> <?php print render($content['field_tags']); ?> </span>
 			<?php endif; ?> 
-			<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+			<span class="post-meta-comments"><i class="fa fa-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 			<a href="<?php print $node_url; ?>" class="btn btn-xs btn-primary pull-right"><?php echo t('Read more...'); ?></a>
 		</div>
 	  <?php endif; ?>
@@ -145,12 +145,12 @@
 	  <?php if ($display_submitted): ?>
 	  
 	    <div class="post-meta">
-				<span class="post-meta-user"><i class="icon icon-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
+				<span class="post-meta-user"><i class="fa fa-user"></i> <?php print t('By'); ?> <?php print $name; ?> </span>
 				<?php if (render($content['field_tags'])): ?> 
-				  <span class="post-meta-tag"><i class="icon icon-tag"></i> <?php print render($content['field_tags']); ?> </span>
+				  <span class="post-meta-tag"><i class="fa fa-tag"></i> <?php print render($content['field_tags']); ?> </span>
 				<?php endif; ?> 
 				<?php if (module_exists('comment')):?>
-				<span class="post-meta-comments"><i class="icon icon-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+				<span class="post-meta-comments"><i class="fa fa-comments"></i> <a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> <?php print t('Comment'); ?><?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 				<?php endif; ?>
 			</div>
 		
@@ -179,7 +179,7 @@
 	  
 	  <?php if(!$teaser && theme_get_setting('blog_share') == '1'): ?>
 	  <div class="post-block post-share">
-			<h3><i class="icon icon-share"></i><?php print t('Share this post');?></h3>
+			<h3 class="heading-primary"><i class="fa fa-share"></i><?php print t('Share this post');?></h3>
 			<!-- AddThis Button BEGIN -->
 			<div class="addthis_toolbox addthis_default_style ">
 				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -194,7 +194,7 @@
 	  
 	  <?php if(!$teaser && (isset(user_load($uid)->field_author_bio) || module_exists('profile2'))): ?>
 	  <div class="post-block post-author clearfix">
-			<h3><i class="icon icon-user"></i><?php print t('Author'); ?></h3>
+			<h3 class="heading-primary"><i class="fa fa-user"></i><?php print t('Author'); ?></h3>
 			<div class="img-thumbnail">
 			 <?php print $user_picture; ?>
 			</div>
