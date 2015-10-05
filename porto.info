@@ -22,7 +22,6 @@ stylesheets[all][] = css/theme-shop.css
 stylesheets[all][] = css/drupal-styles.css
 stylesheets[all][] = css/less/skin.less
 
-
 ; Define theme JS libraries.
 scripts[] = vendor/modernizr/modernizr.js
 scripts[] = vendor/jquery.appear/jquery.appear.js

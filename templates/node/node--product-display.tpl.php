@@ -1,11 +1,17 @@
-<div class="row shop">
+<div class="row <?php if (!$teaser) { print "shop"; } ?>">
 	<div class="col-md-6 product-image">
 		<?php print render($content['product:field_image']); ?>
 	</div>
 
 	<div class="col-md-6">
 		<div class="summary entry-summary">
+			<?php if ($teaser): ?>
+			<a href="<?php print $node_url; ?>">
+			<?php endif; ?>	
 			<h2 class="mb-none"><strong><?php print $title; ?></strong></h2>
+			<?php if ($teaser): ?>
+			</a>
+			<?php endif; ?>
 			
 			<?php print render($content['field_product_rating']); ?>
 
@@ -39,12 +45,17 @@
 				<span class="posted_in"><?php print render($content['field_product_categories']); ?></span>
 				<span class="posted_in"><?php print render($content['field_product_tags']); ?></span>
 			</div>
-
+			
 		</div>
-
 	</div>
+
 </div>
 
+<?php if ($teaser): ?>
+	<hr class="tall">
+<?php endif; ?>
+
+<?php if (!$teaser): ?>
 <div class="row">
 	<div class="col-md-12">
 		<div class="tabs tabs-product">
@@ -65,3 +76,4 @@
 		</div>
 	</div>
 </div>
+<?php endif; ?>
