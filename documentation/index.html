@@ -125,7 +125,7 @@ The theme uses a content type called "One Page" and a corresponding template to 
 <p><strong>Fields:</strong></p>
 <ul>
 <li><strong>Body:</strong> The default body field.</li>
-<li><strong>Product Variations:</strong> This is the Product Reference field which connects the content type to Commerce. It allows for the creation of a product (including variations) along with the product display node.</li>
+<li><strong>Product Info:</strong> This is the Product Reference field which connects the content type to Commerce. It allows for the creation of a product  along with the product display node.</li>
 <li><strong>Product Description:</strong> This is a long text field which is displayed below the main product info. It can be used to add an addition description or more information about the product.</li>
 <li><strong>Product Rating:</strong> An optional <a href="https://www.drupal.org/project/fivestar" target="_blank">Fivestar</a> rating field.</li>
 <li><strong>Category:</strong> An term reference field to assign your product to a category or categories.</li>
@@ -144,9 +144,8 @@ The theme uses a content type called "One Page" and a corresponding template to 
 <p>As described earlier in the documentation, Porto uses a content type called Product Display which acts as a bridge between Drupal and Commerce products. The "Product Reference" field allows you to create your product(s) at the same time of the node creation. Below is a step by step guide for using this content type to create a Drupal Commerce product node in Contour: </p>
 <ul>
 <li>1. Visit /node/add/product-display to begin creating your product. Enter a title like you would for any other Drupal node.</li>
-<li>2. Under the "Product Reference" field select the type of product you are creating and press "Add New Product". </li>
-<li>3. Configure your product and press the "Save Product" button. If you are doing multiple variations of the same product, add another product variation of the same product type and configure as necessary. For example if you are creating a Hat product and it comes in three colors, create a variation for each of the three colors.</li>
-<li>4. Configure the rest of the Product Display fields and save the node. </li>
+<li>2. Configure your product info (SKU, Price etc).</li>
+<li>3. Configure the rest of the Product Display fields and save the node. </li>
 </ul>
 <h4>Views</h4>
 <p>Porto utilizes several views to display products. There is a main "shop" view which displays all available products as well as a "Related Products" and "Top Rated" which display products related to the current product being viewed and the top rated products via the Fivestar ratings field. Finally there is a simple "Header Cart" view which will display the number of items in the cart and the cart total. It is intended to be placed in the header but it would work in any region.</p>
@@ -539,18 +538,24 @@ Porto also includes support for a "Related Projects" block that you can use to s
 <h4>Toggle</h4>
 <p>If you want to manually create a toggle section like the FAQ page you can use the following markup:</p>
 <pre>
-&lt;div class=&quot;toogle&quot;&gt;
+&lt;div class=&quot;toggle toggle-primary&quot; data-plugin-toggle=&quot;&quot;&gt;
   &lt;section class=&quot;toggle active&quot;&gt;
     &lt;label&gt;Curabitur eget leo at velit imperdiet vague iaculis vitaes?&lt;/label&gt;
-    &lt;div class=&quot;toggle-content&quot;&gt;
-      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc.&lt;/p&gt;
+    &lt;div class=&quot;toggle-content&quot; style=&quot;display: block;&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc &lt;a href=&quot;#&quot;&gt;vehicula&lt;/a&gt; lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;toggle&quot;&gt;
-      &lt;label&gt;Curabitur eget leo at imperdiet vague iaculis vitaes?&lt;/label&gt;
-      &lt;div class=&quot;toggle-content&quot;&gt;
-        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa.&lt;/p&gt;
-      &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;toggle active&quot;&gt;
+    &lt;label&gt;Curabitur eget leo at imperdiet vague iaculis vitaes?&lt;/label&gt;
+    &lt;div class=&quot;toggle-content&quot; style=&quot;display: block;&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;toggle&quot;&gt;
+    &lt;label&gt;Curabitur eget leo at velit imperdiet vague iaculis vitaes?&lt;/label&gt;
+    &lt;div class=&quot;toggle-content&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor, orci eros pellentesque odio, nec pellentesque erat ligula nec massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.&lt;/p&gt;
+    &lt;/div&gt;
   &lt;/section&gt;
 &lt;/div&gt;
 </pre>
