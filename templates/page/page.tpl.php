@@ -110,11 +110,11 @@
 	  <div id="content" class="content full">
 	    <div class="container">
 	      <div class="row">
-		      <?php if ($messages): ?>  
-			      <div class="col-md-12">
-		          <?php print $messages; ?>
-			      </div>
-			    <?php endif; ?>  
+		      
+			    <div class="col-md-12">
+		        <?php print $messages; ?>
+			    </div>
+			    
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
 					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">

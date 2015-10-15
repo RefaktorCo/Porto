@@ -294,6 +294,18 @@ function porto_preprocess_views_view_table(&$vars) {
 }
 
 /**
+ * Helper function to display original product price.
+ */
+function porto_original_price($id){
+	$product = commerce_product_load($id);
+	$currency = $product->commerce_price['und'][0]['currency_code'];
+	$orig_price = $product->commerce_price['und'][0]['original']['amount'];
+	$price_display = commerce_currency_format($orig_price, $currency, $product);
+	
+	return $price_display;
+}
+
+/**
  * Themes the optional checkout review page data.
  */
 function porto_commerce_checkout_review($variables) {

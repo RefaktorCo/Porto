@@ -1,3 +1,9 @@
+3.0.1 (10/15/15)
+  *Updated Drupal core in full install.
+  *Fixed bug with boxed layout.
+  *Changed handling of product sale prices.
+  *Minor CSS tweaks/fixes.
+
 3.0 (10/05/15)
   *Updated all theme vendor libraries.
   *Removed gradient color option and added new secondary color options.

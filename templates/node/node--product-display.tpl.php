@@ -1,3 +1,4 @@
+
 <div class="row <?php if (!$teaser) { print "shop"; } ?>">
 	<div class="col-md-6 product-image">
 		<?php print render($content['product:field_image']); ?>
@@ -18,10 +19,12 @@
 			<p class="price">
 				<span class="amount">
 				
-				<?php if (isset($content['product:field_sale_price'][0])): ?><strike><?php endif; ?>
-			  <?php print strip_tags(render($content['product:commerce_price'])); ?>
-			  <?php if (isset($content['product:field_sale_price'][0])): ?></strike><?php endif; ?>
-			  <?php print strip_tags(render($content['product:field_sale_price'])); ?>
+					<?php if (isset($content['product:field_commerce_saleprice'][0])): ?><strike><?php endif; ?>
+				  <?php print porto_original_price($content['field_product_variations']['#items'][0]['product_id']); ?>
+				  <?php if (isset($content['product:field_commerce_saleprice'][0])): ?></strike><?php endif; ?>
+				  <?php print strip_tags(render($content['product:field_commerce_saleprice'])); ?>
+				
+			
 			  </span>
 			</p>
 
@@ -34,8 +37,9 @@
 	      hide($content['field_image']);
 	      hide($content['field_product_categories']);
 	      hide($content['field_product_tags']);
-	      hide($content['product:field_sale_price']);
-	      hide($content['product:field_product_sale']);
+	      hide($content['product:commerce_price']);
+	      hide($content['product:field_commerce_saleprice']);
+	      hide($content['product:field_commerce_saleprice_on_sale']);
 	      print render($content);
 	    ?>
 
