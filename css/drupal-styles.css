@@ -1,3 +1,8 @@
+.pagination {
+	position: relative;
+	z-index: 1000;
+}
+
 .form-select {
     display: block;
     
@@ -962,4 +967,11 @@ div.testimonial-author div.thumbnail img {
 
 .region-content .progress {
   overflow: visible !important;
+}
+
+#googlemaps img{
+  max-width:none !important;
+}
+#googlemaps label {
+  width: auto; display:inline;
 }
