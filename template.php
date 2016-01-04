@@ -518,11 +518,14 @@ function porto_node_pagination($node, $mode = 'n') {
  * Overrides theme_item_list().
  */
 function porto_item_list($variables) {
-	
   $items = $variables['items'];
   $title = $variables['title'];
   $type = $variables['type'];
-  $variables['attributes']['class'] = 'pagination pagination-lg pull-right';
+  if (isset($variables['attributes']['class'])) {
+	  if ($variables['attributes']['class'][0] == 'pager') {
+	   $variables['attributes']['class'] = 'pagination pagination-lg pull-right'; 
+	  }
+  }
   $attributes = $variables['attributes'];
 
   // Only output the list container and title, if there are any list items.
