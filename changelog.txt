@@ -1,10 +1,15 @@
+3.0.2 (02/10/16)
+  *Updated Drupal core in full install.
+  *Updated MD Slider to latest version.
+  *Updated Recent/Popular tabbed widget view to render fields instead of content.
+  *Minor CSS tweaks/fixes.
+
 3.0.1 (10/15/15)
   *Updated Drupal core in full install.
   *Fixed bug with boxed layout.
   *Fixed bug with third level nav on mobile menu.
   *Changed handling of product sale prices.
-  *Minor CSS tweaks/fixes.
-
+  
 3.0 (10/05/15)
   *Updated all theme vendor libraries.
   *Removed gradient color option and added new secondary color options.
