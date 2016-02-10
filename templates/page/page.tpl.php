@@ -117,7 +117,7 @@
 			    
 			    <?php if ( ($page['sidebar_left']) ) : ?>
 				  <aside id="sidebar-left">
-					  <div class="<?php if ($page['sidebar_right']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
+					  <div class="col-md-3">
 					    <div id="sticky-sidebar">
 					    <?php print render($page['sidebar_left']); ?>
 					    </div>
@@ -144,7 +144,7 @@
 					</div>
 			  
 				  <?php if ( ($page['sidebar_right']) ) : ?>
-				  <div class="<?php if ($page['sidebar_left']) { echo "col-md-3";} else { echo "col-md-3"; } ?>">
+				  <div class="<col-md-3">
 				    <?php print render($page['sidebar_right']); ?>
 				  </div>
 				  <?php endif; ?>

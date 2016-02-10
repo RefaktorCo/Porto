@@ -57,9 +57,7 @@
 	
 	  <?php if ($rows): ?>
     	<div class="tab-pane active" id="popularPosts">
-        <ul class="simple-post-list">
         <?php print $rows; ?>
-        </ul>
     	</div>  
 	
 	  <?php elseif ($empty): ?>
@@ -84,9 +82,7 @@
 	
 	  <?php if ($footer): ?>
 	    <div class="tab-pane" id="recentPosts">
-		    <ul class="simple-post-list">
-	        <?php print $footer; ?>
-		    </ul>
+	      <?php print $footer; ?>
 	    </div>  
 	  <?php endif; ?>
 	
