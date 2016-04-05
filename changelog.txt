@@ -1,3 +1,7 @@
+3.0.3 (02/10/16)
+  *Updated Drupal core in full install.
+  *Fixed date formatting in timeline view style to properly support multilingual sites.
+
 3.0.2 (02/10/16)
   *Updated Drupal core in full install.
   *Updated MD Slider to latest version.
