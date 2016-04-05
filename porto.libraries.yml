@@ -1,0 +1,38 @@
+global:
+  version: 1.X
+  js:
+    js/theme.js: {}
+    js/theme.init.js: {}
+  css:
+    theme:
+      vendor/fontawesome/css/font-awesome.css: {}
+      css/base/theme-responsive.css: {}
+      css/base/drupal-styles.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+      
+theme-default:
+  version: 1.X
+  css:
+    theme:
+      css/ltr/theme.css: {}
+      css/ltr/theme-animate.css: {}
+      css/ltr/theme-blog.css: {}
+      css/ltr/theme-elements.css: {}
+      vendor/bootstrap/bootstrap.css: {}
+      
+theme-rtl:
+  version: 1.X
+  css:
+    theme:
+      css/rtl/rtl-theme.css: {}
+      css/rtl/rtl-theme-animate.css: {}
+      css/rtl/rtl-theme-blog.css: {}
+      css/rtl/rtl-theme-elements.css: {}
+      vendor/bootstrap-rtl/bootstrap-rtl.css: {}      
+
+bootstrap:
+  version: 1.X
+  js:
+    vendor/bootstrap/bootstrap.js: {}

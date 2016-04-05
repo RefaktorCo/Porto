@@ -1,0 +1,35 @@
+name: Porto
+type: theme
+description: 'Responsive Drupal 8 Theme.'
+package: porto
+# version: VERSION
+core: 8.x
+base theme: false
+hidden: false
+
+libraries:
+  - porto/global
+  - porto/theme-default
+  - porto/bootstrap
+
+regions:
+  header_top: 'Header Top'
+  header_search: 'Header Search'
+  branding: 'Branding'
+  header_icons: 'Header Icons'
+  header_menu: 'Header Menu'
+  one_page: 'One Page'
+  full_width: 'Full Width'
+  breadcrumbs: 'Breadcrumbs'
+  before_content: 'Before Content'
+  content: 'Content'
+  sidebar_left: 'Left Sidebar'
+  sidebar_right: 'Right Sidebar'
+  after_content: 'After Content'
+  before_footer: 'Before Footer'
+  footer_1: 'Footer Box 1'
+  footer_2: 'Footer Box 2'
+  footer_3: 'Footer Box 3'
+  footer_4: 'Footer Box 4'
+  footer_bottom_left: 'Footer Bottom Left'
+  footer_bottom_right: 'Footer Bottom Right'

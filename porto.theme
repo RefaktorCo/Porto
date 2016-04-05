@@ -1,0 +1,30 @@
+<?php
+	
+/**
+ * Impelements hook_form_alter()
+ */
+function porto_form_alter(&$form, &$form_state, $form_id) {
+	
+  if ($form_id == 'search_block_form') {
+    
+     // Alternative (HTML5) placeholder attribute instead of using the javascript
+    $form['#attributes']['placeholder'] = t('Search');
+       
+    $form['actions']['submit'] =  array(
+      '#type' => 'submit',
+    	'#prefix' => '<span class="input-group-btn"><span class="btn btn-default search-submit-wrapper" type="submit"><i class="fa fa-search">',
+    	'#suffix' => '</i></span></span>',
+    	
+    );
+    object_log('search', $form);
+  }
+} 
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function porto_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#form_id'] == 'search_block_form') {
+    $suggestions[] = 'form__search_block_form';
+  }
+}

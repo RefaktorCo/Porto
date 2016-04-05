@@ -1,0 +1,171 @@
+{#
+/**
+ * @file
+ * Porto's theme implementation to display a single Drupal page.
+ */
+#}
+
+<div class="body">
+  <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
+	  <div class="header-body">
+      <div class="header-container container">
+	      <div class="header-row">
+	      	{% if page.branding %}
+          <div class="header-column">
+				    {{ page.branding }} 				    
+          </div>
+          {% endif %}
+          {% if page.header_search or page.header_top %}
+          <div class="header-column header-column-valign-top">  
+				    {% if page.header_search %}
+				    <div class="header-search hidden-xs">
+				      {{ page.header_search }}
+				    </div>
+				    {% endif %}
+			      {{ page.header_top }}
+          </div>  
+          {% endif %}
+	      </div>  
+      </div>
+      {% if page.header_menu or page.header_icons %} 
+      <div class="header-container container header-nav header-nav-push-top">
+        {% if page.header_menu %} 
+		    <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+					<i class="fa fa-bars"></i>
+				</button>
+				{% endif %}
+				<div class="header-icons">
+				  {{ page.header_icons }}
+				</div>
+				{% if page.header_menu %} 
+		    <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+		      <nav class="nav-main">
+		        {{ page.header_menu }}
+		      </nav>
+		    </div>  
+		    {% endif %}
+		  </div>
+      {% endif %}
+	  </div>  	
+	</header>
+	<!-- end header --> 
+	<div role="main" class="main">
+	  {% if page.breadcrumbs %}
+	  <section class="page-header breadcrumb-wrap">
+		  <div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="breadcrumbs">
+						  {{ page.header_menu }} 
+						</div>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<h1>TITLE WILL GO HERE</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+	  {% endif %}
+	  {% if page.full_width %}
+	  <div class="page-full-width">
+	    {{ page.full_width }} 
+	  </div>
+	  {% endif %}
+	  <div id="content" class="content full">
+	    <div class="container">
+	      <div class="row">
+		      {% if page.before_content %}
+			    <div class="col-md-12">
+		        {{ page.before_content }}
+			    </div>
+			    {% endif %}
+			    {% if page.sidebar_left %}
+				  <aside id="sidebar-left">
+					  <div class="col-md-3">
+					    <div id="sticky-sidebar">
+					    {{ page.sidebar_left }}
+					    </div>
+					  </div>
+				  </aside>
+				  {% endif %}
+					<div
+				  	{% if page.sidebar_right and page.sidebar_left %}
+				  	  class="col-md-6"
+				  	{% elseif page.sidebar_right or page.sidebar_left %}  
+				  	  class="col-md-9"
+				  	{% else %}  
+				  	  class="col-md-12"
+				  {% endif %}>
+					{{ page.content }}
+					</div>
+				  {% if page.sidebar_right %}
+				  <aside id="right-left">
+					  <div class="col-md-3">
+					    {{ page.sidebar_right }}
+					  </div>
+				  </aside>
+				  {% endif %}
+				  {% if page.after_content %}
+			    <div class="col-md-12">
+		        {{ page.after_content }}
+			    </div>
+			    {% endif %}
+			  </div>
+	    </div>  
+	  </div>  
+	</div>
+	{{ page.before_footer }}
+  <footer id="footer">
+    {% if page.footer_1 or page.footer_2 or page.footer_3 or page.footer_4 %} 
+	  <div class="container main-footer">
+	    <div class="row">
+	      {% if theme.settings.ribbon %}
+				<div class="footer-ribbon">
+					<span>RIBBON TEXT</span>
+				</div>
+	      {% endif %}
+			  {% if page.footer_1 %}
+		    <div class="col-md-3">
+				  {{ page.footer_1 }}
+		    </div>
+		    {% endif %}
+		    {% if page.footer_2 %}
+		    <div class="col-md-3">
+				  {{ page.footer_2 }}
+		    </div>
+		    {% endif %}
+		    {% if page.footer_3 %}
+		    <div class="col-md-3">
+				  {{ page.footer_3 }}
+		    </div>
+		    {% endif %}
+		    {% if page.footer_4 %}
+		    <div class="col-md-3">
+				  {{ page.footer_4 }}
+		    </div>
+		    {% endif %}
+			</div>  
+	  </div>	
+	  {% endif %}
+	  {% if page.footer_bottom_left or page.footer_bottom_right %} 
+	  <div class="footer-copyright">  
+	    <div class="container">
+	      <div class="row">
+	        {% if page.footer_bottom_left  %}
+			    <div class="col-md-6">
+					  {{ page.footer_bottom_left }}
+			    </div>
+			    {% endif %}
+			    {% if page.footer_bottom_right  %}
+			    <div class="col-md-6">
+					  {{ page.footer_bottom_right }}
+			    </div>
+			    {% endif %}
+	      </div>  
+	    </div>
+	  </div> 
+	  {% endif %} 
+	</footer>
+</div>	
