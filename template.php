@@ -161,8 +161,9 @@ function porto_preprocess_page(&$vars, $hook) {
 	}
 	
 	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/theme.js',array('type' => 'file','scope' => 'footer'));
-	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/views/view.home.js',array('type' => 'file','scope' => 'footer'));
 	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/theme.init.js',array('type' => 'file','scope' => 'footer'));
+	drupal_add_js(drupal_get_path('theme', 'porto') . '/js/views/view.home.js',array('type' => 'file','scope' => 'footer'));
+	
 	 
 }
 

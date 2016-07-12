@@ -1,3 +1,7 @@
+.dropdown .dropdown-menu > .active > a:hover {
+  background: #f5f5f5 !important;
+}
+
 .pagination {
 	position: relative;
 	z-index: 1000;

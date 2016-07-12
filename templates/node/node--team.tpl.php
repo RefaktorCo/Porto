@@ -25,8 +25,18 @@
 			<?php endif; ?>
 				
 		</span>
-	
-		<?php print render($content['body']); ?>
+	   
+		<?php
+			hide($content['field_image']);
+			hide($content['comments']);
+			hide($content['field_team_category']);
+			hide($content['field_facebook_link']);
+			hide($content['field_twitter_link']);
+			hide($content['field_linkedin_link']);
+	    print render($content);
+	  ?>
+	  
+	  <?php print render($content['comments']); ?>
 	
 	</div>
 </div>
